@@ -20,8 +20,8 @@
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href="index.html"><img src="<?php echo base_url();?>asset/admin/images/logo.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="<?php echo base_url();?>asset/admin/images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <div class="search-field d-none d-md-block">
@@ -38,7 +38,7 @@
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
               <div class="nav-profile-img">
-                <img src="images/faces/face1.jpg" alt="image">
+                <img src="<?php echo base_url();?>asset/admin/images/faces/face1.jpg" alt="image">
                 <span class="availability-status online"></span>             
               </div>
               <div class="nav-profile-text">
@@ -72,7 +72,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                    <img src="<?php echo base_url();?>asset/admin/images/faces/face4.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Mark send you a message</h6>
@@ -84,7 +84,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                    <img src="<?php echo base_url();?>asset/admin/images/faces/face2.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Cregh send you a message</h6>
@@ -96,7 +96,7 @@
               <div class="dropdown-divider"></div>
               <a class="dropdown-item preview-item">
                 <div class="preview-thumbnail">
-                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                    <img src="<?php echo base_url();?>asset/admin/images/faces/face3.jpg" alt="image" class="profile-pic">
                 </div>
                 <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
                   <h6 class="preview-subject ellipsis mb-1 font-weight-normal">Profile picture updated</h6>
@@ -186,7 +186,7 @@
           <li class="nav-item nav-profile">
             <a href="#" class="nav-link">
               <div class="nav-profile-image">
-                <img src="images/faces/face1.jpg" alt="profile">
+                <img src="<?php echo base_url();?>asset/admin/images/faces/face1.jpg" alt="profile">
                 <span class="login-status online"></span> <!--change to offline or busy as needed-->              
               </div>
               <div class="nav-profile-text d-flex flex-column">
@@ -307,7 +307,7 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-danger card-img-holder text-white">
                 <div class="card-body">
-                  <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
+                  <img src="<?php echo base_url();?>asset/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>
                   <h4 class="font-weight-normal mb-3">Weekly Sales
                     <i class="mdi mdi-chart-line mdi-24px float-right"></i>
                   </h4>
@@ -319,7 +319,7 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-info card-img-holder text-white">
                 <div class="card-body">
-                  <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
+                  <img src="<?php echo base_url();?>asset/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                  
                   <h4 class="font-weight-normal mb-3">Weekly Orders
                     <i class="mdi mdi-bookmark-outline mdi-24px float-right"></i>
                   </h4>
@@ -331,7 +331,7 @@
             <div class="col-md-4 stretch-card grid-margin">
               <div class="card bg-gradient-success card-img-holder text-white">
                 <div class="card-body">
-                  <img src="images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
+                  <img src="<?php echo base_url();?>asset/admin/images/dashboard/circle.svg" class="card-img-absolute" alt="circle-image"/>                                    
                   <h4 class="font-weight-normal mb-3">Visitors Online
                     <i class="mdi mdi-diamond mdi-24px float-right"></i>
                   </h4>
@@ -392,7 +392,7 @@
                       <tbody>
                         <tr>
                           <td>
-                            <img src="images/faces/face1.jpg" class="mr-2" alt="image">
+                            <img src="<?php echo base_url();?>asset/admin/images/faces/face1.jpg" class="mr-2" alt="image">
                             David Grey
                           </td>
                           <td>
@@ -410,14 +410,14 @@
                         </tr>
                         <tr>
                           <td>
-                            <img src="images/faces/face2.jpg" class="mr-2" alt="image">
+                            <img src="<?php echo base_url();?>asset/admin/images/faces/face2.jpg" class="mr-2" alt="image">
                             Stella Johnson
                           </td>
                           <td>
                             High loading time
                           </td>
                           <td>
-                            <label class="badge badge-gradient-warning">PROGRESS</label>
+                            <label class="<?php echo base_url();?>asset/admin/badge badge-gradient-warning">PROGRESS</label>
                           </td>
                           <td>
                             Dec 12, 2017
@@ -428,7 +428,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <img src="images/faces/face3.jpg" class="mr-2" alt="image">
+                            <img src="<?php echo base_url();?>asset/admin/images/faces/face3.jpg" class="mr-2" alt="image">
                             Marina Michel
                           </td>
                           <td>
@@ -446,7 +446,7 @@
                         </tr>
                         <tr>
                           <td>
-                            <img src="images/faces/face4.jpg" class="mr-2" alt="image">
+                            <img src="<?php echo base_url();?>asset/admin/images/faces/face4.jpg" class="mr-2" alt="image">
                             John Doe
                           </td>
                           <td>
@@ -486,16 +486,16 @@
                   </div>
                   <div class="row mt-3">
                     <div class="col-6 pr-1">
-                      <img src="images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                      <img src="images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
+                      <img src="<?php echo base_url();?>asset/admin/images/dashboard/img_1.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                      <img src="<?php echo base_url();?>asset/admin/images/dashboard/img_4.jpg" class="mw-100 w-100 rounded" alt="image">
                     </div>
                     <div class="col-6 pl-1">
-                      <img src="images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
-                      <img src="images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
+                      <img src="<?php echo base_url();?>asset/admin/images/dashboard/img_2.jpg" class="mb-2 mw-100 w-100 rounded" alt="image">
+                      <img src="<?php echo base_url();?>asset/admin/images/dashboard/img_3.jpg" class="mw-100 w-100 rounded" alt="image">
                     </div>
                   </div>
                   <div class="d-flex mt-5 align-items-top">
-                    <img src="images/faces/face3.jpg" class="img-sm rounded-circle mr-3" alt="image">
+                    <img src="<?php echo base_url();?>asset/admin/images/faces/face3.jpg" class="img-sm rounded-circle mr-3" alt="image">
                     <div class="mb-0 flex-grow">
                       <h5 class="mr-2 mb-2">School Website - Authentication Module.</h5>
                       <p class="mb-0 font-weight-light">It is a long established fact that a reader will be distracted by the readable
