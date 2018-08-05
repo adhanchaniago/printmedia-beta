@@ -1,0 +1,201 @@
+/*------------------------------------------------------------------
+[Main Stylesheet]
+
+Author:	WREP
+Version:	1.0
+Created:	8 Agustus 2018
+Template:	PRINT MEDIA
+-------------------------------------------------------------------*/
+body{
+    background: #fff;
+}
+
+/*---------- HEADER NAVBAR ----------*/
+#navbar{
+    background: #F9A825;
+}
+.navbar span{
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat 50%;
+    background-size: 100% 100%;
+}
+.navbar .navbar-brand{
+    color: #000;
+}
+.navbar ul li{
+    margin: 0 15px;
+}
+.navbar ul li a{
+    color: #000;
+}
+.navbar ul li a .kotak-biru{
+    color: #fff;
+}
+.navbar ul li .kotak-biru{
+    border: 2px solid #fff;
+    border-color: #005e59;
+    border-radius: 25px;
+    width: 150px;
+    text-align: center;
+    transition: all 1s;
+}
+.navbar ul li .kotak-biru:hover{    
+    border: 2px solid #005e59;
+    background: #005e59;
+    border-radius: 25px;
+    width: 150px;
+    color: #fff;
+    transition: all 1s;
+}
+.navbar ul li .kotak-hijau{
+    border: 2px solid #F9A825;
+    background: #F9A825;
+    border-radius: 25px;
+    width: 150px;
+    text-align: center;
+    color: #fff;
+    transition: all 1s;
+}
+.navbar ul li .kotak-hijau:hover{
+    border: 2px solid #fff;
+    border-color: #F9A825;
+    background: #fff;
+    border-radius: 25px;
+    width: 150px;
+    color: #000;
+    transition: all 1s;
+}
+
+.section .default-header{
+    text-align: center;
+}
+.section .default-header h3{
+    text-transform: uppercase;
+    font-size: 2em;
+    padding-bottom: 50px;
+    font-weight: 700;
+}
+
+/*---------- SECTION INTRO ----------*/
+.section .container{
+    padding-top: 75px;
+}
+.section-intro{
+    min-height: 100vh;
+}
+.section-intro .intro-kiri{
+    padding: 70px 50px 0 0;
+}
+.section-intro .intro-kiri h2{
+    text-transform: uppercase;
+    font-size: 3em;
+    padding: 5px 0;
+}
+.section-intro .intro-kiri ul{
+    list-style-type: none;
+    padding-left: 0;
+    padding-top: 25px;
+}
+.section-intro .intro-kiri ul li{
+    display: inline-block;
+}
+.section-intro .intro-kiri .kotak{
+    position: relative;
+    border: 2px solid #fff;
+    padding: 10px 25px;
+    color: #000;
+}
+.section-intro .intro-kiri .kotak-kiri{
+    border-radius: 20px;
+    background: #005e59;
+    color: #fff;
+}
+.section-intro .intro-kiri .kotak-kanan{
+    border-radius: 20px;
+    background: #F9A825;
+    color: #fff;
+}
+
+/*---------- SECTION TUTORIAL ----------*/
+.section-tutorial{
+    text-align: center;
+    min-height: 100vh;
+}
+.section-tutorial .tutorial-body{
+    padding: 25px 20px;
+}
+.section-tutorial .tutorial-body h4{
+    font-weight: 700;
+}
+
+/*---------- SECTION LAYANAN ----------*/
+.section-layanan{
+    min-height: 100vh;
+    background: #F9A825;
+}
+.section-layanan .card{
+    text-align: center;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.section-layanan .card:hover{
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.section-layanan .card .card-img{
+    padding: 25px 0 15px;
+}
+.section-layanan .card h4{
+    padding: 5px 0 10px;
+}
+
+/*---------- SECTION HARGA ----------*/
+.section-harga{
+    min-height: 100vh;
+    background: #fff;
+}
+.section-harga .card-header{
+    background: #F9A825;
+    height: 70px;
+    text-align: center;
+    line-height: 60px;
+}
+.section-harga .card-header h4{
+    font-size: 2.5em;
+    font-weight: 700;
+}
+.section-harga .card-footer{
+    text-align: center;
+}
+.section-harga .card-footer .btn-primary{
+    background: #1E88E5;
+    color: #fff;
+}
+
+.footer{
+    background: #F5F5F5;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.footer .kelebihan{
+    text-align: center;
+    padding: 30px 0;
+}
+.footer .kelebihan h4{
+    padding: 15px 0;
+}
+.footer .about{
+    padding: 25px 0;
+}
+.footer .copyright{
+    background: #BDBDBD;
+    width: 100%;
+    padding: 0;
+    line-height: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
