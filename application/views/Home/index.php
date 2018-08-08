@@ -5,11 +5,12 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Material Design for Bootstrap CSS -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
+
 <!-- Material Design for Bootstrap fonts and icons -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<!-- Material Design for Bootstrap CSS -->
-<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 
 </head>
 <body>
