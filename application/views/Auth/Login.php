@@ -55,18 +55,18 @@
                    <form action="" style="border:1px solid #ccc">
                         <div class="containerform">
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
+                            <input type="text" placeholder="Masukan Email Mahasiswa" name="email" required>
 
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input type="password" placeholder="Masukan Password Password" name="psw" required>
 
                             <label>
                             <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
                             </label>
 
                             <div class="clearfix">
-                                <button type="submit" class="signupbtn">Sign Up</button>
-                                <button type="button" class="cancelbtn">Cancel</button>
+                                <button type="submit" class="signupbtn">Masuk</button>
+                                <button type="button" class="cancelbtn">Kembali</button>
                             </div>
                         </div>
                     </form>
