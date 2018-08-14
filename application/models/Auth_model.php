@@ -1,0 +1,27 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+ 
+class Auth_model extends CI_Model{ 
+    public function __construct()
+	{
+		parent::__construct();
+		$this->load->database();
+	}
+    public function Insert($table,$data)
+    {
+        $res = $this->db->insert($table, $data); 
+        return $res; 
+    }
+
+    public function cek($username, $password)
+    {
+        $res = $this->db->get_where('auth', array(
+            'email' => $username,
+            'password' => md5($password),
+        ));
+        return $res;
+    }
+    
+
+}
+?>

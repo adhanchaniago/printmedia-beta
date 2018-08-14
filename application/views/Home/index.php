@@ -1,16 +1,17 @@
-<!doctype html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
 <title>Print Media | Solusi Percetakan Masa Kini</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Material Design for Bootstrap fonts and icons -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 
-<!-- Material Design for Bootstrap fonts and icons -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
 
 </head>
 <body>
@@ -34,10 +35,10 @@
                         <a class="nav-link" href="#">Fitur</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link kotak kotak-biru" href="#">Masuk</a>
+                        <a class="nav-link kotak kotak-biru" href="<?php echo base_url('login'); ?>">Masuk</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link kotak kotak-hijau" href="#">Daftar</a>
+                        <a class="nav-link kotak kotak-hijau" href="<?php echo base_url('register'); ?>">Daftar</a>
                     </li>
                 </ul>
             </div>
@@ -229,8 +230,9 @@
         </div>
     </div>
     <div class="copyright">
-        <div class="container-fluid">
-        <p>© 2018 - PT Print Media</p>
+        <div class="garis"></div>
+        <div class="container-fluid">    
+            <p>© 2018 - PT Print Media</p>
         </div>
     </div>
 </section>

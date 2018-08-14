@@ -176,7 +176,7 @@ body{
 }
 
 .footer{
-    background: #F5F5F5;
+    background: #fafafa;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -192,10 +192,15 @@ body{
     padding: 25px 0;
 }
 .footer .copyright{
-    background: #BDBDBD;
     width: 100%;
-    padding: 0;
+    padding: 15px 0 0;
     line-height: 15px;
     padding-top: 15px;
     text-align: center;
+}
+.footer .copyright .garis{
+    border-top: 2px solid #e0e0e0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 20px;
 }

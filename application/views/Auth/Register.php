@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/login.css"> 
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/login.css"> 
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 
 
@@ -17,33 +17,7 @@
 </head>
 <body>
 <div id="navbar">
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url('/'); ?>">PrintMedia</a>
-            <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fitur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link kotak kotak-biru" href="#">Masuk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link kotak kotak-hijau" href="#">Daftar</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php $this->load->view('auth/header'); ?>
 </div>
 
 <section class="section section-intro" id="mulai">
@@ -51,26 +25,50 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="intro-kiri" style="padding-top:5px">
-                    <h2>PrintMedia</h2>
-                   <form action="" style="border:1px solid #ccc">
-                        <div class="containerform">
-                            <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Masukan Email Mahasiswa" name="email" required>
+                    <!-- <h2>PrintMedia</h2> -->
+                    <div class="card">
+                        <?php echo form_open('auth/prosesregister'); ?>
+                            <div class="containerform">
+                                <div class="form-top">
+                                    <h4>Daftar Sekarang</h4>
+                                    <span>Sudah punya akun PrintMedia? <a href="<?php echo base_url('login'); ?>">Masuk!</a></span>
+                                </div>
+                                <?php        
+                                if($this->session->flashdata('error'))
+                                {
+                                ?>
+                                    <div class="alert alert-danger">
+                                    <?php echo $this->session->flashdata('error'); ?>
+                                    </div>
+                                <?php
+                                }
 
-                            <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Masukan Password" name="psw" required>
-                            <label for="psw"><b>Re-Enter Password</b></label>
-                            <input type="password" placeholder="Masukan Ulang Password" name="psw" required>
-                            <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                            </label>
+                                if($this->session->flashdata('success'))
+                                {
+                                ?>
+                                    <div class="alert alert-success">
+                                    <?php echo $this->session->flashdata('success'); ?>
+                                    </div>
+                                <?php
+                                }
+                                ?>
+                                <div class="form-group">
+                                    <label>Email address</label>
+                                    <?php $email=array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Masukkan Email'); echo form_input($email); ?>
+                                    <?php echo form_error('email', '<div class="alert alert-danger">', '</div>'); ?>
+                                </div>
+                                <div class="form-group">
+                                    <label>Password</label>
+                                    <?php $password=array('type' => 'password', 'name' => 'password', 'class' => 'form-control', 'placeholder' => 'Masukkan Password'); echo form_input($password); ?>
+                                    <?php echo form_error('password', '<div class="alert alert-danger">', '</div>'); ?>
+                                </div>
 
-                            <div class="clearfix">
-                                <button type="submit" class="signupbtn">Daftar</button>
-                                <button type="button" class="cancelbtn">Kembali</button>
+                                <div class="clearfix">
+                                    <button type="submit" class="signupbtn">Daftar</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
@@ -80,7 +78,7 @@
     </div> 
 
 
-<section class="footer">
+<!-- <section class="footer">
     <div class="container">
         <div class="kelebihan">
             <div class="row">
@@ -122,7 +120,7 @@
         <p>© 2018 - PT Print Media</p>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <!-- Optional JavaScript -->
