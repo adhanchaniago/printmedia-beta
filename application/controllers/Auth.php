@@ -99,15 +99,7 @@ class Auth extends CI_Controller {
 		$where = array('token' => $token);
 		$data = $this->Auth_model->GetWhere('auth', $where);
 		$data = array('data' => $data);
-		if($data->token == 'Belum Aktif')
-		{
-			$this->load->view('auth/suksesaktivasi', $data);
-		}
-		else
-		{
-			redirect('login');
-		}
-		
+		$this->load->view('auth/suksesaktivasi', $data);	
 	}
 
 	public function validasi($email)
