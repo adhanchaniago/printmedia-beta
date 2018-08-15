@@ -22,6 +22,21 @@ class Auth_model extends CI_Model{
         return $res;
     }
     
+    public function aktivasi($email)
+    {
+        $data = array(
+            'status' => 'Aktif',
+        );
+        $this->db->from('auth');
+        $this->db->where('token', $email);
+        $this->db->update('auth', $data);
+        return true;
+    }
+
+    public function GetWhere($table, $data){
+        $res=$this->db->get_where($table, $data);
+        return $res->result_array();
+    }
 
 }
 ?>

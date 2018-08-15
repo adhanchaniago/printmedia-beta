@@ -8,6 +8,9 @@ $route['translate_uri_dashes'] = FALSE;
 // AUTH
 $route['login'] = 'auth/login';
 $route['register'] = 'auth/register';
+$route['sukses'] = 'auth/sukses';
+//$route['aktivasi'] = 'auth/aktivasi';
+$route['aktivasi/(:any)'] = 'auth/aktivasi/$1';
 
 // ADMIN
 

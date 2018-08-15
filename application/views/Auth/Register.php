@@ -53,13 +53,14 @@
                                 }
                                 ?>
                                 <div class="form-group">
-                                    <label>Email address</label>
-                                    <?php $email=array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'placeholder' => 'Masukkan Email'); echo form_input($email); ?>
+                                    <label class="bmd-label-floating">Email address</label>
+                                    <?php $email=array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email') ); echo form_input($email); ?>
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     <?php echo form_error('email', '<div class="alert alert-danger">', '</div>'); ?>
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <?php $password=array('type' => 'password', 'name' => 'password', 'class' => 'form-control', 'placeholder' => 'Masukkan Password'); echo form_input($password); ?>
+                                    <label class="bmd-label-floating">Password</label>
+                                    <?php $password=array('type' => 'password', 'name' => 'password', 'class' => 'form-control',); echo form_input($password); ?>
                                     <?php echo form_error('password', '<div class="alert alert-danger">', '</div>'); ?>
                                 </div>
 

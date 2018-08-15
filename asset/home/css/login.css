@@ -41,3 +41,10 @@ button:hover {
 .clearfix{
     padding: 10px 0;
 }
+
+/*---------- SUKSES DAFTAR ----------*/
+.section-sukses .jumbotron{
+    margin-top: 100px;
+    text-align: center;
+    background: #F9A825;
+}
