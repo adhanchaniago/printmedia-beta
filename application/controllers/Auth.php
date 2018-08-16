@@ -11,14 +11,77 @@ class Auth extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('security');
 	}
+
 	public function login()
 	{
-		$this->load->view('Auth/Login');
+		$this->load->view('auth/Login');
 	}
+
+	public function proseslogin()
+	{		
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]');
+		$this->form_validation->set_message('required', 'Mohon Maaf! Kolom <b>%s</b> tidak boleh kosong.');
+		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin kurang dari 8 karakter.');
+		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin lebih dari 15 karakter.');
+		$email=$this->input->post('email', TRUE);
+		$password=$this->input->post('password', TRUE);
+		
+		if($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('auth/login');
+		}
+		else
+		{
+			$cek=$this->Auth_model->login('auth', array('email' => $email, 'password' => md5($password)));
+
+			if( $cek->num_rows() > 0 )
+			{
+				$data = $cek->row_array();	
+				//$this->session->set_userdata('login', TRUE);
+
+				if($data['status'] == 'Aktif')
+				{
+					if($data['level'] === 'Member' )
+					{
+						$this->session->set_userdata('akses', 'Member');
+						$this->session->set_userdata('email', $data['email']);
+						$this->session->set_userdata('status', 'login');
+						redirect(base_url('user/myprofile'));
+					}
+					
+					if($data['level'] === 'Admin' )
+					{
+						$this->session->set_userdata('akses', 'Admin');
+						$this->session->set_userdata('email', $data['email']);
+						$this->session->set_userdata('status', 'login');
+						redirect(base_url('Admin'));
+					}
+				}
+				if($data['status'] == 'Belum Aktif')
+				{
+					$this->session->set_flashdata('error', 'Maaf Akun Anda <b>BELUM AKFITF</b>. Silahkan aktifkan terlebih dahulu dengan cara mengecek Email yang telah kami kirimkan.');
+					redirect(base_url('login'));
+				}
+				if($data['status'] == 'Suspend')
+				{
+					$this->session->set_flashdata('error', 'Maaf! Akun Anda telah kami <b>SUSPEND</b>. Karena terbukti melanggar beberapa peraturan yang telah diterapkan. Harap hubungi kami melalui menu Kontak, jika terbukti tidak melakukan kesalahan.');
+					redirect(base_url('login'));
+				}
+			}
+			else
+			{
+				$this->session->set_flashdata('error', 'Maaf Akun Anda Tidak Terdaftar');
+				redirect(base_url('login'));
+			}
+		}		
+	}
+
 	public function register()
 	{
 		$this->load->view('Auth/Register');
 	}
+
 	public function prosesregister()
 	{
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[auth.email]');
@@ -36,13 +99,13 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
-			if(preg_match("/ac.id/", $this->input->post('email')) || preg_match("/.edu/", $this->input->post('email')) || preg_match("/.com/", $email)) {
+			if(preg_match("/ac.id/", $this->input->post('email', TRUE)) || preg_match("/.edu/", $this->input->post('email', TRUE)) || preg_match("/.com/", $this->input->post('email', TRUE))) {
 				date_default_timezone_set("Asia/Jakarta");
 				$data = array(
-					'email' => $this->input->post('email'),
-					'password' => md5($this->input->post('password')),
+					'email' => $this->input->post('email', TRUE),
+					'password' => md5($this->input->post('password', TRUE)),
 					'level' => 'Member',
-					'token' => md5($this->input->post('email')),
+					'token' => md5($this->input->post('email', TRUE)),
 					'waktu' => date('Y-m-d H:i:s'),
 					'status' => 'Belum Aktif',
 				);
@@ -102,22 +165,28 @@ class Auth extends CI_Controller {
 		$this->load->view('auth/suksesaktivasi', $data);	
 	}
 
-	public function validasi($email)
-	{
-		if(preg_match("/ac.id/", $email) || preg_match("/.edu/", $email) || preg_match("/.com/", $email) ){
-			return true;
-		} else { 
-			return false;
-		}           
-	}
+	public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect(base_url('login'), 'refresh');
+    }
 
-	public function cek()
-	{
-		$email = '111201609357@mhs.dinus.ac.id';
-		$code = md5($email);
-		// echo '<p>Aktivasi Kode Anda';
-		// echo '<a href="'.base_url('aktivasi/". $code ."').'">Kode Aktivasi</a>';
-		// echo '</p>';
-		echo 'Aktivasi kode Anda <a href="http://localhost/printmedia-beta/aktivasi/'.$code.' ">http://localhost/printmedia-beta/aktivasi/'.$code.'</a>';
-	}
+	// public function validasi($email)
+	// {
+	// 	if(preg_match("/ac.id/", $email) || preg_match("/.edu/", $email) || preg_match("/.com/", $email) ){
+	// 		return true;
+	// 	} else { 
+	// 		return false;
+	// 	}           
+	// }
+
+	// public function cek()
+	// {
+	// 	$email = '111201609357@mhs.dinus.ac.id';
+	// 	$code = md5($email);
+	// 	// echo '<p>Aktivasi Kode Anda';
+	// 	// echo '<a href="'.base_url('aktivasi/". $code ."').'">Kode Aktivasi</a>';
+	// 	// echo '</p>';
+	// 	echo 'Aktivasi kode Anda <a href="http://localhost/printmedia-beta/aktivasi/'.$code.' ">http://localhost/printmedia-beta/aktivasi/'.$code.'</a>';
+	// }
 }

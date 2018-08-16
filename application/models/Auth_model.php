@@ -13,12 +13,9 @@ class Auth_model extends CI_Model{
         return $res; 
     }
 
-    public function cek($username, $password)
+    public function login($table, $data)
     {
-        $res = $this->db->get_where('auth', array(
-            'email' => $username,
-            'password' => md5($password),
-        ));
+        $res = $this->db->get_where($table, $data);
         return $res;
     }
     
