@@ -27,7 +27,7 @@
                 <div class="intro-kiri" style="padding-top:5px">
                     <!-- <h2>PrintMedia</h2> -->
                     <div class="card">
-                        <?php echo form_open('auth/prosesregister'); ?>
+                        <?php echo form_open('auth/prosesregister', array('id' => 'commentForm')); ?>
                             <div class="containerform">
                                 <div class="form-top">
                                     <h4>Daftar Sekarang</h4>
@@ -54,13 +54,13 @@
                                 ?>
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Email address</label>
-                                    <?php $email=array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email') ); echo form_input($email); ?>
+                                    <?php $data=array('type' => 'email', 'id' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email') ); echo form_input($data); ?>
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     <?php echo form_error('email', '<div class="alert alert-danger">', '</div>'); ?>
                                 </div>
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Password</label>
-                                    <?php $password=array('type' => 'password', 'name' => 'password', 'class' => 'form-control',); echo form_input($password); ?>
+                                    <?php $data=array('type' => 'password', 'id' => 'password', 'name' => 'password', 'class' => 'form-control',); echo form_input($data); ?>
                                     <?php echo form_error('password', '<div class="alert alert-danger">', '</div>'); ?>
                                 </div>
 
@@ -77,58 +77,13 @@
             </div>
         </div>
     </div> 
-
-
-<!-- <section class="footer">
-    <div class="container">
-        <div class="kelebihan">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/aman.png'); ?>" alt="" width="75" height="75">
-                    <h4>Aman</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/customer.png'); ?>" alt="" width="75" height="75">
-                    <h4>24/7 Support</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/pembayaran.png'); ?>" alt="" width="75" height="75">
-                    <h4>Berbagai Pembayaran</h4>
-                </div>
-            </div>
-        </div>
-        <div class="about">
-            <div class="row">
-                <div class="col-md-3">
-                    logo
-                </div>
-                <div class="col-md-3">
-                    Perusahaan
-                </div>
-                <div class="col-md-3">
-                    Bantuan
-                </div>
-                <div class="col-md-3">
-                    Social Media
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright">
-        <div class="container-fluid">
-        <p>© 2018 - PT Print Media</p>
-        </div>
-    </div>
-</section> -->
-
-
+</section>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"  crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"  crossorigin="anonymous"></script>
+<script src="<?php echo base_url(); ?>asset/home/js/jquery-validate.min.js"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
 <script>
@@ -149,5 +104,19 @@ $(document).ready(function(){
     }
 });
 </script>
+<script>
+jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+$("#commentForm").validate({
+    rules: {
+        field: {
+            required: true,
+        }
+    }
+});
+</script>
+
 </body>
 </html>
