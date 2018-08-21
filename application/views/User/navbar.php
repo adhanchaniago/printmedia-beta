@@ -19,7 +19,7 @@
               
                 <!-- Logout    -->
                 <li class="nav-item">
-                  <a href="<?php echo base_url('login'); ?>" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
+                  <a href="<?php echo base_url('logout'); ?>" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
                 </li>
               </ul>
             </div>

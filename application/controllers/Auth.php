@@ -179,7 +179,7 @@ class Auth extends CI_Controller {
 		$this->session->sess_destroy();
 		date_default_timezone_set("Asia/Jakarta");
 		$data = array(
-			'email' => $this->input->post('email'),
+			'email' => $this->session->userdata('email'),
 			'alamat_ip' => $this->input->ip_address(),
 			'browser' => $this->input->user_agent(),
 			'waktu_masuk' => date('Y-m-d h:i:s'),
