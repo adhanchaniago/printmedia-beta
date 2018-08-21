@@ -176,7 +176,16 @@ class Auth extends CI_Controller {
 
 	public function logout()
     {
-        $this->session->sess_destroy();
+		$this->session->sess_destroy();
+		date_default_timezone_set("Asia/Jakarta");
+		$data = array(
+			'email' => $this->input->post('email'),
+			'alamat_ip' => $this->input->ip_address(),
+			'browser' => $this->input->user_agent(),
+			'waktu_masuk' => date('Y-m-d h:i:s'),
+			'keterangan' => 'Offline',
+		);
+		$data = $this->Auth_model->Insert('activity_user', $data);
         redirect(base_url('login'), 'refresh');
     }
 
