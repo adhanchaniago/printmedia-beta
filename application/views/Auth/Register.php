@@ -104,7 +104,7 @@ $(document).ready(function(){
     }
 });
 </script>
-<script>
+<!-- <script>
 jQuery.validator.setDefaults({
   debug: true,
   success: "valid"
@@ -116,7 +116,7 @@ $("#commentForm").validate({
         }
     }
 });
-</script>
+</script> -->
 
 </body>
 </html>

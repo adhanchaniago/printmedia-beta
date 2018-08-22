@@ -112,8 +112,8 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_message('required', 'Mohon Maaf! Kolom <b>%s</b> tidak boleh kosong.');
 		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin kurang dari 8 karakter.');
 		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin lebih dari 15 karakter.');
-		$email=$this->input->post('email', TRUE);
-		$password=$this->input->post('password', TRUE);
+		$email=$this->input->post('email');
+		$password=$this->input->post('password');
 		
 		if($this->form_validation->run() == FALSE)
 		{
@@ -177,34 +177,31 @@ class Auth extends CI_Controller {
 	public function logout()
     {
 		$this->session->sess_destroy();
-		date_default_timezone_set("Asia/Jakarta");
-		$data = array(
-			'email' => $this->session->userdata('email'),
-			'alamat_ip' => $this->input->ip_address(),
-			'browser' => $this->input->user_agent(),
-			'waktu_masuk' => date('Y-m-d h:i:s'),
-			'keterangan' => 'Offline',
-		);
-		$data = $this->Auth_model->Insert('activity_user', $data);
+		// date_default_timezone_set("Asia/Jakarta");
+		// $data = array(
+		// 	'email' => $this->session->userdata('email'),
+		// 	'alamat_ip' => $this->input->ip_address(),
+		// 	'browser' => $this->input->user_agent(),
+		// 	'waktu_masuk' => date('Y-m-d h:i:s'),
+		// 	'keterangan' => 'Offline',
+		// );
+		// $data = $this->Auth_model->Insert('activity_user', $data);
         redirect(base_url('login'), 'refresh');
-    }
+	}
+	
+	public function hash()
+	{
+		$password = 'hunter2';
+		$hash = $this->bcrypt->hash_password($password);
+		echo $hash . "<br>";
 
-	// public function validasi($email)
-	// {
-	// 	if(preg_match("/ac.id/", $email) || preg_match("/.edu/", $email) || preg_match("/.com/", $email) ){
-	// 		return true;
-	// 	} else { 
-	// 		return false;
-	// 	}           
-	// }
-
-	// public function cek()
-	// {
-	// 	$email = '111201609357@mhs.dinus.ac.id';
-	// 	$code = md5($email);
-	// 	// echo '<p>Aktivasi Kode Anda';
-	// 	// echo '<a href="'.base_url('aktivasi/". $code ."').'">Kode Aktivasi</a>';
-	// 	// echo '</p>';
-	// 	echo 'Aktivasi kode Anda <a href="http://localhost/printmedia-beta/aktivasi/'.$code.' ">http://localhost/printmedia-beta/aktivasi/'.$code.'</a>';
-	// }
+		if ($this->bcrypt->check_password($password, $hash))
+		{
+			return $password;
+		}
+		else
+		{
+			return false;
+		}
+	}
 }
