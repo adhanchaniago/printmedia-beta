@@ -28,6 +28,9 @@
     
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="<?php echo base_url('asset/user/css/custom.css');?>">    
+
+    <!-- bootstrap datepicker -->
+    <link rel="stylesheet" href="<?php echo base_url('asset/user/plugin/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css');?>">
         
   </head>
 
@@ -47,7 +50,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-7">
-                  <h2 class="no-margin-bottom">Profile</h2>    
+                  <h2 class="no-margin-bottom">Pengaturan Akun</h2>    
                 </div>
 
                 <div class="col-md-5">
@@ -62,54 +65,73 @@
           <div style="margin-top: 10px;" class="container">
             <div class="card">
               <div class="card-body">
-
-             
-
               <form class="form-horizontal">
                     <div class="form-group row">
                       <div class="container">
-                        <h1>Pribadi</h1>
+                        <h1>Profile Pribadi</h1>
                       </div>
-                    </div>  
-
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">Nama</label>
-                      <div class="col-sm-9">
-                      <input id="inputHorizontalSuccess" type="text" class="form-control form-control-success">
-                      <small class="form-text">Silahkan isi nama anda.</small>
-                      </div>
-                    </div>
+                    </div>           
 
                     <div class="form-group row">
                       <div class="container">
                         <div class="row">
                           <div class="col-md-6">
                             <div class="form-group-material">
-                              <input type="text" name="registerUsername" required class="input-material">
-                              <label for="register-username" class="label-material">No.Handphone</label>
-                        </div>   
+                              <input id="register-username" type="text" name="registerUsername" required class="input-material">
+                              <label for="register-username" class="label-material">Nama Lengkap*</label>
+                            </div>
                           </div>
 
                           <div class="col-md-6">
                             <div class="form-group-material">
                               <input type="text" name="registerUsername" required class="input-material">
-                              <label for="register-username" class="label-material">Email</label>
-                        </div>   
+                              <label for="register-username" class="label-material">Nomer Handphone*</label>
+                            </div>   
                           </div>
                         </div>
-                        
-                      </div>
-                      
-                    </div>
 
+                        <div class="row">
+                          <div class="col-md-4">
+                            <label class="label">Jenis Kelamin : </label>
+                              <div class="select">
+                              <select name="account" class="form-control">
+                                <option>Laki - laki</option>
+                                <option>Perempuan</option>
+                              </select>
+                              </div>
+                          </div>
 
-                                                                      
+                          <div class="col-md-4">
+                            <i class="fa fa-calendar"></i>
+                            <label class="label">Tanggal Lahir : </label>                            
+                              <div class="input-group date">
+                                <div class="input-group-addon">
+                                </div>
+                              <input type="text" class="form-control pull-right" id="datepicker">
+                              </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label class="label">Email : </label>
+                            <input type="text" class="form-control" disabled="" value="<?php echo $this->session->userdata('email');?>">
+                          </div>                          
+                        </div>
+                      </div>                      
+                    </div>                                                                      
 
                     <div class="form-group row">
                       <label class="col-sm-3 form-control-label">Alamat Asal</label>
                       <div class="col-sm-9">
                       <textarea class="form-control" rows="3"></textarea>
-                      <small>Silahkan isi alamat asal, bukan alamat kos.</small>
+                      <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 form-control-label">Detail Tempat Tinggal</label>
+                      <div class="col-sm-9">
+                      <textarea class="form-control" rows="3"></textarea>
+                      <small>Misal: Perumahan Elok Permai Blok BC, RT/RW 03/09</small>
                       </div>
                     </div>
 
@@ -205,12 +227,21 @@
   <script src="<?php echo base_url('asset/user/js/charts-home.js');?>"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
 
+  <!-- bootstrap datepicker -->
+  <script src="<?php echo base_url('asset/user/plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js');?>"></script>
+
 
   <script>
     $(document).ready(function() {
     $('#example').DataTable();
     } );
+
+    $('#datepicker').datepicker({
+      autoclose: true
+    })
   </script>
+
+
 
   <!-- Scrip Data table -->
   <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>

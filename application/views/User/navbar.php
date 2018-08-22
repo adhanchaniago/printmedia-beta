@@ -19,7 +19,7 @@
               
                 <!-- Logout    -->
                 <li class="nav-item">
-                  <a href="<?php echo base_url('logout'); ?>" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
+                  <a href="<?php echo base_url('Auth/logout'); ?>" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a>
                 </li>
               </ul>
             </div>
@@ -34,7 +34,7 @@
           <div class="sidebar-header d-flex align-items-center">            
             <div class="title">
               <h1 class="h4">Bugi Setiawan</h1>
-              <p>bugisetiawan98@gmail.com</p>
+              <p><?php echo $this->session->userdata('email');?></p>
             </div>
           </div>
 
