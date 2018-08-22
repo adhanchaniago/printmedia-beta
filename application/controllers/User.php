@@ -4,7 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller 
 {
 
-
+	public function index()
+	{
+		$this->load->view('user/history');
+	}
 
 	public function myprofile()
 	{
@@ -16,8 +19,5 @@ class User extends CI_Controller
 		$this->load->view('user/upload');
 	}
 
-	public function history()
-	{
-		$this->load->view('user/history');
-	}
+	
 }

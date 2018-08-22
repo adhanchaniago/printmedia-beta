@@ -135,6 +135,39 @@
                       </div>
                     </div>
 
+                    <div class="row">
+                      <div class="col-md-4">
+                            <label class="label">Provinsi : </label>
+                              <div class="select">
+                              <select name="account" class="form-control">
+                                <option>Laki - laki</option>
+                                <option>Perempuan</option>
+                              </select>
+                              </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label class="label">Kota / Kabupaten : </label>
+                              <div class="select">
+                              <select name="account" class="form-control">
+                                <option>Laki - laki</option>
+                                <option>Perempuan</option>
+                              </select>
+                              </div>
+                          </div>
+
+                          <div class="col-md-4">
+                            <label class="label">Kecamatan :</label>
+                              <div class="select">
+                              <select name="account" class="form-control">
+                                <option>Laki - laki</option>
+                                <option>Perempuan</option>
+                              </select>
+                              </div>
+                          </div>
+                      
+                    </div>
+
                     <div class="form-group row">
                       <div class="container">
                         <h1>Pelajar</h1>
