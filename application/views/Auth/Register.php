@@ -104,19 +104,6 @@ $(document).ready(function(){
     }
 });
 </script>
-<!-- <script>
-jQuery.validator.setDefaults({
-  debug: true,
-  success: "valid"
-});
-$("#commentForm").validate({
-    rules: {
-        field: {
-            required: true,
-        }
-    }
-});
-</script> -->
 
 </body>
 </html>

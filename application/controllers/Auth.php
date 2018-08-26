@@ -204,4 +204,9 @@ class Auth extends CI_Controller {
 			return false;
 		}
 	}
+
+	public function wilayah()
+	{
+		$this->load->view('auth/wilayah');
+	}
 }
