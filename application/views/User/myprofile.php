@@ -171,34 +171,16 @@
                       <label class="label">Kota/Kabupaten : </label>
                       <div class="select">
                         <select name="account" class="form-control" id="kota">
-                        <?php
-                        $this->db->from('regencies');
-                        //$this->db->join('provinces', 'provinces.id = regencies.province_id' );
-                        //$this->db->where('province_id', $row['id']);
-                        $kota = $this->db->get();
-                        $data_kota = $kota->result_array();
-                        foreach($data_kota as $rows){ 
-                        ?>
-                          <option value="<?php echo $rows['name']; ?>"><?php echo $rows['name']; ?></option>
-                        <?php } ?>
+                          <option value=""></option>
                         </select>
                       </div>
                     </div>
 
                     <div class="col-md-4">
-                      <label class="label">Provinsi : </label>
+                      <label class="label">Kecamatan : </label>
                       <div class="select">
                         <select name="account" class="form-control" id="kecamatan">
-                        <?php
-                        $this->db->from('districts');
-                        //$this->db->join('provinces', 'provinces.id = regencies.province_id' );
-                        //$this->db->where('province_id', $row['id']);
-                        $kecamatan = $this->db->get();
-                        $data_kecamatan = $kecamatan->result_array();
-                        //foreach($data_kecamatan as $rowss){ 
-                        ?>
-                          <option value="<?php //$rowss['name']; ?>"><?php //$rowss['name']; ?></option>
-                        <?php //} ?>
+                          <option value=""></option>
                         </select>
                       </div>
                     </div>
@@ -315,9 +297,58 @@
   <!-- Main File-->
   <script src="<?php echo base_url();?>asset/user/js/front.js"></script>
   <script>
-            $("#kota").chained("#provinsi"); // disini kita hubungkan kota dengan provinsi
-            $("#kecamatan").chained("#kota"); // disini kita hubungkan kecamatan dengan kota
-        </script>
+  $(document).ready(function(){ 
+    $("#provinsi").change(function(){ // Ketika user mengganti atau memilih data provinsi
+      $("#kota").hide(); // Sembunyikan dulu combobox kota nya
+    
+      $.ajax({
+        type: "POST", // Method pengiriman data bisa dengan GET atau POST
+        url: "<?php echo base_url("user/listkota"); ?>", // Isi dengan url/path file php yang dituju
+        data: {province_id : $("#provinsi").val()}, // data yang akan dikirim ke file yang dituju
+        dataType: "json",
+        beforeSend: function(e) {
+          if(e && e.overrideMimeType) {
+            e.overrideMimeType("application/json;charset=UTF-8");
+          }
+        },
+        success: function(response){ // Ketika proses pengiriman berhasil
+          // set isi dari combobox kota
+          // lalu munculkan kembali combobox kotanya
+          $("#kota").html(response.list_kota).show();
+        },
+        error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+          alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+        }
+      });
+    });
+  });
+
+  $(document).ready(function(){ 
+    $("#kota").change(function(){ // Ketika user mengganti atau memilih data provinsi
+      $("#kecamatan").hide(); // Sembunyikan dulu combobox kota nya
+    
+      $.ajax({
+        type: "POST", // Method pengiriman data bisa dengan GET atau POST
+        url: "<?php echo base_url("user/listkecamatan"); ?>", // Isi dengan url/path file php yang dituju
+        data: {regency_id : $("#kota").val()}, // data yang akan dikirim ke file yang dituju
+        dataType: "json",
+        beforeSend: function(e) {
+          if(e && e.overrideMimeType) {
+            e.overrideMimeType("application/json;charset=UTF-8");
+          }
+        },
+        success: function(response){ // Ketika proses pengiriman berhasil
+          // set isi dari combobox kota
+          // lalu munculkan kembali combobox kotanya
+          $("#kecamatan").html(response.list_kota).show();
+        },
+        error: function (xhr, ajaxOptions, thrownError) { // Ketika ada error
+          alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Munculkan alert error
+        }
+      });
+    });
+  });
+  </script>
 
   </body>
 </html>

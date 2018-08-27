@@ -55,7 +55,7 @@
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Email address</label>
                                     <?php $data=array('type' => 'email', 'id' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email') ); echo form_input($data); ?>
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    <small id="emailHelp" class="form-text text-muted">Harap saat mendaftar, menggunakan email berdomain <b>ac.id</b> atau <b>.edu</b>.</small>
                                     <?php echo form_error('email', '<div class="alert alert-danger">', '</div>'); ?>
                                 </div>
                                 <div class="form-group">

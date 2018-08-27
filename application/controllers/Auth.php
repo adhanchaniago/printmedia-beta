@@ -19,8 +19,8 @@ class Auth extends CI_Controller {
 
 	public function prosesregister()
 	{
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[auth.email]');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[auth.email]|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>');
 		$this->form_validation->set_message('is_unique', 'Mohon Maaf! <b>%s</b> sudah digunakan.');
 		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal 8 karakter.');
@@ -168,8 +168,29 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				$this->session->set_flashdata('error', 'Maaf Akun Anda Tidak Terdaftar');
-				redirect(base_url('login'));
+				$cek = $this->db->get_where('auth', array('email' => $email));
+				$data = $cek->row_array();
+
+				if($data['email'] != $email && $data['password'] != $password)
+				{
+					$this->session->set_flashdata('error', 'Maaf Akun Anda Tidak Terdaftar');
+					redirect(base_url('login'));
+				}
+				else
+				{
+					if($data['email'] != $email)
+					{
+						$this->session->set_flashdata('error', 'Maaf Email Salah');
+						var_dump($data); echo "<br>";
+						redirect(base_url('login'));
+					}
+					if($data['password'] != $password)
+					{
+						$this->session->set_flashdata('error', 'Maaf Password Salah');
+						var_dump($data); echo "<br>";
+						redirect(base_url('login'));
+					}
+				}	
 			}
 		}		
 	}
