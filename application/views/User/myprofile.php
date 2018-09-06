@@ -154,7 +154,7 @@
                     <div class="col-md-4">
                       <label class="label">Provinsi : </label>
                       <div class="select">
-                        <select name="account" class="form-control" id="provinsi">
+                        <select name="provinsi" class="form-control" id="provinsi">
                         <?php
                         $this->db->from('provinces');
                         $provinsi = $this->db->get();
@@ -171,7 +171,7 @@
                     <div class="col-md-4">
                       <label class="label">Kota/Kabupaten : </label>
                       <div class="select">
-                        <select name="account" class="form-control" id="kota">
+                        <select name="kota" class="form-control" id="kota">
                           <option value=""></option>
                         </select>
                       </div>
@@ -180,7 +180,7 @@
                     <div class="col-md-4">
                       <label class="label">Kecamatan : </label>
                       <div class="select">
-                        <select name="account" class="form-control" id="kecamatan">
+                        <select name="kecamatan" class="form-control" id="kecamatan">
                           <option value=""></option>
                         </select>
                       </div>
