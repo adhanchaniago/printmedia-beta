@@ -23,6 +23,26 @@ class User extends CI_Controller
 		$this->load->view('user/upload');
 	}
 
+	public function inputdata()
+	{
+		$data = array(
+					'nama' => $this->input->post('nama_lengkap'),
+					'nohape' => $this->input->post('no_handphone'),
+					'gender' => $this->input->post('jenis_kelamin'),
+					'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+					'email' => $this->input->post('email'),
+					'alamat' => $this->input->post('alamat'),
+					'detail_alamat' => $this->input->post('detail_alamat'),
+					'provinsi' => $this->input->post('provinsi'),
+					'kota' => $this->input->post('kota'),
+					'kecamatan' => $this->input->post('kecamatan'),
+					'kodepos' => $this->input->post('kodepos'),
+				);
+
+		$data = $this->User_model->Insert('user', $data);
+		redirect('user/upload');
+	}
+
 	public function listkota()
 	{
 		// Ambil data ID Provinsi yang dikirim via ajax post

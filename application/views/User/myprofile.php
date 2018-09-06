@@ -63,7 +63,7 @@
           <div style="margin-top: 10px;" class="container">
             <div class="card">
               <div class="card-body">
-                <?php echo form_open('', array('class' => 'form-horizontal')); ?>
+                <?php echo form_open('user/inputdata', array('class' => 'form-horizontal')); ?>
                   <div class="form-group row">
                     <div class="container">
                       <h1>Profile Pribadi</h1>
@@ -108,11 +108,11 @@
                         <div class="col-md-4">
                           <i class="fa fa-calendar"></i>
                           <label class="label">Tanggal Lahir : </label>                            
-                            <div class="input-group date">
-                              <div class="input-group-addon">
-                              </div>
-                            <input type="text" class="form-control pull-right" id="datepicker">
-                            </div>
+                            <?php
+                              $data = array('class' => 'form-control', 'name' => 'tanggal_lahir', 'rows' => 3);
+                              echo form_input($data);
+                            ?>
+                            <small>Contoh : 11 September 1998</small>
                         </div>
 
                         <div class="col-md-4">
@@ -163,6 +163,7 @@
                         ?>
                           <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
                         <?php } ?>
+                                                                  
                         </select>
                       </div>
                     </div>
@@ -186,8 +187,21 @@
                     </div>
                   </div>
 
+                  <div class="row">
+                    <div class="col-md-4">
+                      <label class="label">Kode Pos: </label>
+                      <?php
+                        $data = array('class' => 'form-control', 'name' => 'kodepos', 'rows' => 3);
+                        echo form_input($data);
+                      ?>
+                      <small>Cari <a href="https://carikodepos.com/">disini</a> jika belum tau</small>
+                    </div>
+                    
+                  </div>
+
                   <div class="form-group row">
                     <div class="container">
+                      <br>
                       <h1>Pelajar</h1>
                     </div>
                   </div>
