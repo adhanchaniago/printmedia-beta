@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="navbar">
-    <?php $this->load->view('auth/header'); ?>
+    <?php $this->load->view('home/inc/header'); ?>
 </div>
 
 <section class="section section-intro" id="mulai">
@@ -75,52 +75,7 @@
             </div>
         </div>
     </div> 
-
-
-<!-- <section class="footer">
-    <div class="container">
-        <div class="kelebihan">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/aman.png'); ?>" alt="" width="75" height="75">
-                    <h4>Aman</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/customer.png'); ?>" alt="" width="75" height="75">
-                    <h4>24/7 Support</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/pembayaran.png'); ?>" alt="" width="75" height="75">
-                    <h4>Berbagai Pembayaran</h4>
-                </div>
-            </div>
-        </div>
-        <div class="about">
-            <div class="row">
-                <div class="col-md-3">
-                    logo
-                </div>
-                <div class="col-md-3">
-                    Perusahaan
-                </div>
-                <div class="col-md-3">
-                    Bantuan
-                </div>
-                <div class="col-md-3">
-                    Social Media
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright">
-        <div class="container-fluid">
-        <p>© 2018 - PT Print Media</p>
-        </div>
-    </div>
-</section> -->
-
+</section>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

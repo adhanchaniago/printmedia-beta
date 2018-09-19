@@ -17,7 +17,7 @@
 </head>
 <body>
 <div id="navbar">
-    <?php $this->load->view('auth/header'); ?>
+    <?php $this->load->view('home/inc/header'); ?>
 </div>
 
 <section class="section section-sukses" id="mulai">

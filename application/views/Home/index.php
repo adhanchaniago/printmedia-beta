@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>Print Media | Solusi Percetakan Masa Kini</title>
+<title><?php echo SITE_NAME .": ". ucfirst($this->uri->segment(1)) ." - ". ucfirst($this->uri->segment(2)) ?></title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,39 +11,11 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 
-
-
 </head>
 <body>
 
 <div id="navbar">
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="<?php echo base_url('/'); ?>">PrintMedia</a>
-            <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url('/'); ?>">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fitur</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link kotak kotak-biru" href="<?php echo base_url('login'); ?>">Masuk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link kotak kotak-hijau" href="<?php echo base_url('register'); ?>">Daftar</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php $this->load->view('home/inc/header'); ?>
 </div>
 
 
@@ -193,48 +165,7 @@
 </section>
 
 <section class="footer">
-    <div class="container">
-        <div class="kelebihan">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/aman.png'); ?>" alt="" width="75" height="75">
-                    <h4>Aman</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/customer.png'); ?>" alt="" width="75" height="75">
-                    <h4>24/7 Support</h4>
-                </div>
-
-                <div class="col-md-4">
-                    <img src="<?php echo base_url('asset/home/img/pembayaran.png'); ?>" alt="" width="75" height="75">
-                    <h4>Berbagai Pembayaran</h4>
-                </div>
-            </div>
-        </div>
-        <div class="about">
-            <div class="row">
-                <div class="col-md-3">
-                    logo
-                </div>
-                <div class="col-md-3">
-                    Perusahaan
-                </div>
-                <div class="col-md-3">
-                    Bantuan
-                </div>
-                <div class="col-md-3">
-                    Social Media
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright">
-        <div class="garis"></div>
-        <div class="container-fluid">    
-            <p>© 2018 - PT Print Media</p>
-        </div>
-    </div>
+    <?php $this->load->view('home/inc/footer'); ?>
 </section>
 
 <!-- Optional JavaScript -->

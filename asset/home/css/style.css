@@ -204,3 +204,29 @@ body{
     margin: 0 auto;
     padding: 0 0 20px;
 }
+
+/*--------------- 
+    TENTANG 
+---------------*/
+/*---------- SECTION BANNER ----------*/
+.section-tentang-banner{
+    background: url('../../../asset/home/img/banner1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    transform: translate(-50%, 222px, 0px);
+    margin-top: 60px;
+    padding: 50px;
+}
+.section-tentang-banner .container{
+    padding-top: 0px !important;
+}
+.section-tentang-banner h4{
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+}
