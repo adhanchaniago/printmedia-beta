@@ -34,7 +34,7 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
-			if(preg_match("/ac.id/", $this->input->post('email', TRUE)) || preg_match("/.edu/", $this->input->post('email', TRUE)) || preg_match("/.com/", $this->input->post('email', TRUE))) {
+			if(preg_match("/ac.id/", $this->input->post('email', TRUE)) || preg_match("/.edu/", $this->input->post('email', TRUE)) ) {
 				date_default_timezone_set("Asia/Jakarta");
 				$data = array(
 					'email' => $this->input->post('email', TRUE),

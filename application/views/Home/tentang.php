@@ -5,11 +5,14 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Material Design for Bootstrap fonts and icons -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
+<!-- Material Design for Bootstrap fonts and icons -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script|PT+Sans" rel="stylesheet">
+
 
 </head>
 <body>
@@ -18,7 +21,7 @@
     <?php $this->load->view('home/inc/header'); ?>
 </div>
 
-<section class="section section-tentang-banner">
+<section class="section section-tentang-banner" id="mulai">
     <div class="container">
         <h4>Tentang Kami</h4>
     </div>
@@ -48,7 +51,34 @@
     <div class="container">
         <h4>TEAM</h4>
         <div class="row">
-            
+            <div class="col-lg-3">
+                <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
+                <div class="team-body">
+                    <h5>Wahyu Rizky</h5>
+                    <span>Penggembira</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
+                <div class="team-body">
+                    <h5>Abdiel Reyhan</h5>
+                    <span>Web Developer</span>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
+                <div class="team-body">
+                    <h5>Bugi Setiawan</h5>
+                    <span>Backend Developer</span>
+                </div>   
+            </div>
+            <div class="col-lg-3">
+                <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
+                <div class="team-body">
+                    <h5>Ira Kusuma</h5>
+                    <span>Frontend Developer</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>

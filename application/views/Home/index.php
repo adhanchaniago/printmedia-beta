@@ -20,7 +20,7 @@
 
 
 <section class="section section-intro" id="mulai">
-    <div class="container">
+    <!-- <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="intro-kiri">
@@ -36,7 +36,45 @@
                 <img src="<?php echo base_url('asset/home/img/intro-foto.png'); ?>" alt="" class="img-fluid">
             </div>
         </div>
-    </div> 
+    </div>  -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner2.jpg') ?>" alt="First slide">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Ini Judulnya</h5>
+            <p>Ini deskripsinya</p>
+        </div>
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner1.jpg') ?>" alt="Second slide">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Ini Judulnya</h5>
+            <p>Ini deskripsinya</p>
+        </div>
+            </div>
+            <div class="carousel-item">
+            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner2.jpg') ?>" alt="Third slide">
+            <div class="carousel-caption d-none d-md-block">
+            <h5>Ini Judulnya</h5>
+            <p>Ini deskripsinya</p>
+        </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 </section>
 
 <section class="section section-tutorial">
@@ -51,7 +89,7 @@
                 </div>
                 <div class="tutorial-body">
                     <h4>Daftar di PrintMedia</h4>
-                    <p>User melakukan pendaftaran di Print Media dan melengkapi data-datanya.</p>
+                    <p>Mahasiswa / siswa melakukan pendaftaran di Print Media dan melengkapi data-datanya. Hanya email berdomain <b>.ac.id</b> atau <b>.edu</b> yang bisa mendaftar.</p>
                 </div>
             </div>
             <div class="col-md-4">
@@ -80,87 +118,110 @@
 
 <section class="section section-layanan">
     <div class="container">
-        <div class="default-header">
-            <h3>LAYANAN KAMI</h3>
-        </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url('asset/home/img/file.svg'); ?>" class="card-img-top" width="64" height="64">
+            <div class="col-lg-6">
+                <div class="header-layanan">
+                    <h4>Mengapa Harus Print Media?</h4>
+                </div>
+
+                <div class="row my-3">
+                    <div class="col-lg-6">
+                        <img src="<?php echo base_url('asset/home/img/layanan1.jpg'); ?>" class="img-fluid" alt="">
                     </div>
-                    <div class="card-body">
-                        <h4>Kualitas Terbaik</h4>
-                        <p class="card-text">Seluruh data pembelian anda setiap harinya akan kami simpan dengan baik, bukan hanya harian saja bahkan data pembelian bulanan anda juga akan kami simpan.</p>
+                    <div class="col-lg-6">
+                        <h4>Cetak Mudah &amp; Efisien</h4>
+                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
+                    </div>
+                </div>
+                    
+                <div class="row my-3">
+                    <div class="col-lg-6">
+                        <img src="<?php echo base_url('asset/home/img/layanan2.jpg'); ?>" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>Cetak Mudah &amp; Efisien</h4>
+                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
+                    </div>
+                </div>
+                    
+                <div class="row my-3">
+                    <div class="col-lg-6">
+                        <img src="<?php echo base_url('asset/home/img/layanan3.jpg'); ?>" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6">
+                        <h4>Cetak Mudah &amp; Efisien</h4>
+                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url('asset/home/img/money.svg'); ?>" class="card-img-top" width="64" height="64">
-                    </div>
-                    <div class="card-body">
-                        <h4>Harga Murah</h4>
-                        <p class="card-text">Seluruh data pembelian anda setiap harinya akan kami simpan dengan baik, bukan hanya harian saja bahkan data pembelian bulanan anda juga akan kami simpan.</p>
-                    </div>
+            <div class="col-lg-6">
+                <div class="header-layanan">
+                    <h4>Pilih Kertasmu</h4>
                 </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-img">
-                        <img src="<?php echo base_url('asset/home/img/shipping.svg'); ?>" class="card-img-top" width="64" height="64">
-                    </div>
-                    <div class="card-body">
-                        <h4>Hemat Waktu</h4>
-                        <p class="card-text">Seluruh data pembelian anda setiap harinya akan kami simpan dengan baik, bukan hanya harian saja bahkan data pembelian bulanan anda juga akan kami simpan.</p>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-dark">
+                        <thead>
+                            <tr>
+                                <th>Jenis</th>
+                                <th>Harga</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">A4</th>
+                                <td>Rp. 300</td>
+                            </tr>
+                            
+                            <tr>
+                                <th scope="row">F4</th>
+                                <td>Rp. 300</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section section-harga">
+<section class="section section-about">
     <div class="container">
-        <div class="default-header">
-            <h3>HARGA</h3>
+        <div class="header-about">
+            <h3>Print Media <span>Hadir di Indonesia</span></h3>
+            <span>Solusi Cetak Tugas, Skripsi!</span>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>KERTAS A4</h4>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Kualitas Kertas Terbaik</li>
-                        <li class="list-group-item">Bisa Hitam Putih dan Berwarna</li>
-                        <li class="list-group-item">Harga Mulai Rp. 150/lembar</li>
-                    </ul>
-                    <div class="card-footer">
-                        <a href="" class="btn btn-primary">PESAN SEKARANG</a>
-                    </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Mengenal Lebih Jauh Print Media
+                    </button>
+                </h5>
                 </div>
-            </div>
 
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>KERTAS F4</h4>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Kualitas Kertas Terbaik</li>
-                        <li class="list-group-item">Bisa Hitam Putih dan Berwarna</li>
-                        <li class="list-group-item">Harga Mulai Rp. 150/lembar</li>
-                    </ul>
-                    <div class="card-footer">
-                        <a href="" class="btn btn-primary">PESAN SEKARANG</a>
-                    </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
                 </div>
             </div>
-        </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Panduan Menggunakan Print Media
+                    </button>
+                </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+                </div>
+            </div>
+        </div>      
     </div>
 </section>
 

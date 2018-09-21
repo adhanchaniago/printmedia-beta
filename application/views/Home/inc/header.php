@@ -7,13 +7,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="<?php echo base_url('/'); ?>">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Fitur</a>
+                        <a class="nav-link" href="<?php echo base_url('tentang'); ?>">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link kotak kotak-biru" href="<?php echo base_url('login'); ?>">Masuk</a>
