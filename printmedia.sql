@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2018 at 08:34 AM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.2
+-- Generation Time: Sep 25, 2018 at 04:49 PM
+-- Server version: 10.1.34-MariaDB
+-- PHP Version: 7.2.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -7892,6 +7892,26 @@ INSERT INTO `regencies` (`id`, `province_id`, `name`) VALUES
 ('9435', '94', 'KABUPATEN INTAN JAYA'),
 ('9436', '94', 'KABUPATEN DEIYAI'),
 ('9471', '94', 'KOTA JAYAPURA');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `universitas`
+--
+
+CREATE TABLE `universitas` (
+  `id` int(11) NOT NULL,
+  `nama_univ` varchar(100) NOT NULL,
+  `kota` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `universitas`
+--
+
+INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
+(1, 'hai', 'halo'),
+(2, 'Dian Nuswantoro', 'Semarang');
 
 -- --------------------------------------------------------
 
@@ -83030,6 +83050,13 @@ ALTER TABLE `regencies`
   ADD KEY `regencies_province_id_index` (`province_id`);
 
 --
+-- Indexes for table `universitas`
+--
+ALTER TABLE `universitas`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `nama_univ` (`nama_univ`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -83058,6 +83085,12 @@ ALTER TABLE `activity_user`
 --
 ALTER TABLE `auth`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `universitas`
+--
+ALTER TABLE `universitas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
