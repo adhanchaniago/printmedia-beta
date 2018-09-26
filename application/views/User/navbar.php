@@ -33,22 +33,22 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">            
             <div class="title">
-              <h1 class="h4">Bugi Setiawan</h1>
+              <h1 class="h4"><?php echo $this->session->userdata('username');?></h1>
               <p><?php echo $this->session->userdata('email');?></p>
             </div>
           </div>
 
           <!-- Sidebar Navidation Menus-->          
           <ul class="list-unstyled">                      
-            <li class="<?php if ( $this->uri->uri_string() == 'welcome/member' ){ echo 'active'; } ?>">
+            <li class="<?php if ( $this->uri->uri_string() == 'user/history' ){ echo 'active'; } ?>">
                 <a href="<?php echo base_url('user/index'); ?>"> <i class="fa fa-history"></i>HISTORY</a>
             </li>
 
-            <li class="<?php if ( $this->uri->uri_string() == 'welcome/upload' ){ echo 'active'; } ?>">
+            <li class="<?php if ( $this->uri->uri_string() == 'user/upload' ){ echo 'active'; } ?>">
                 <a href="<?php echo base_url('user/upload'); ?>"> <i class="fa fa-upload"></i>UPLOAD</a>
             </li>      
 
-            <li class="<?php if ( $this->uri->uri_string() == 'welcome/profile' ){ echo 'active'; } ?>">
+            <li class="<?php if ( $this->uri->uri_string() == 'user/profile' ){ echo 'active'; } ?>">
                 <a href="<?php echo base_url('user/myprofile'); ?>"> <i class="icon-user"></i>My Profile</a>
             </li>                    
         </nav>

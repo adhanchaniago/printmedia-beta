@@ -19,3 +19,7 @@ $route['aktivasi/(:any)'] = 'auth/aktivasi/$1';
 $route['tentang'] = 'home/tentang';
 
 // USER
+$route['myprofile'] = 'user/myprofile';
+$route['history'] = 'user/index';
+$route['upload']='user/upload';
+

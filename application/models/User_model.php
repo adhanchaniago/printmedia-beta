@@ -13,6 +13,8 @@ class User_model extends CI_Model{
         return $res; 
     }
 
+    
+
     public function GetWhere($table, $data)
     {
         $res = $this->db->get_where($table, $data);

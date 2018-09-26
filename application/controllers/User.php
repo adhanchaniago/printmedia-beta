@@ -15,7 +15,31 @@ class User extends CI_Controller
 
 	public function myprofile()
 	{
-		$this->load->view('user/myprofile');
+		if($this->session->userdata('akses') || $this->session->userdata('akses') == 'Member' )
+			{
+			$this->load->model('user_model');
+			$email=$this->session->userdata('email');
+			$data=array('email'=>$email);
+			$cek=$this->user_model->GetWhere('user',$data)->num_rows();
+				if($cek==NULL)
+				{
+					redirect(base_url('user/myprofile'));
+					
+				}
+
+				else
+				{
+					
+					
+					$this->session->set_userdata('username', $cek['nama']);
+					redirect(base_url('user/index'));
+				}
+				
+			}
+			else
+			{
+				redirect('login');
+			}		
 	}
 
 	public function upload()
@@ -25,7 +49,8 @@ class User extends CI_Controller
 
 	public function inputdata()
 	{
-		$data = array(
+		$data = array
+		(
 					'nama' => $this->input->post('nama_lengkap'),
 					'nohape' => $this->input->post('no_handphone'),
 					'gender' => $this->input->post('jenis_kelamin'),
@@ -37,7 +62,7 @@ class User extends CI_Controller
 					'kota' => $this->input->post('kota'),
 					'kecamatan' => $this->input->post('kecamatan'),
 					'kodepos' => $this->input->post('kodepos'),
-				);
+		);
 
 		$data = $this->User_model->Insert('user', $data);
 		redirect('user/upload');
