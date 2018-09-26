@@ -11,65 +11,6 @@ body{
 }
 
 /*---------- HEADER NAVBAR ----------*/
-#navbar{
-    background: #F9A825;
-}
-.navbar span{
-    display: inline-block;
-    width: 1.5em;
-    height: 1.5em;
-    vertical-align: middle;
-    content: "";
-    background: no-repeat 50%;
-    background-size: 100% 100%;
-}
-.navbar .navbar-brand{
-    color: #000;
-}
-.navbar ul li{
-    margin: 0 15px;
-}
-.navbar ul li a{
-    color: #000;
-}
-.navbar ul li a .kotak-biru{
-    color: #fff;
-}
-.navbar ul li .kotak-biru{
-    border: 2px solid #fff;
-    border-color: #005e59;
-    border-radius: 25px;
-    width: 150px;
-    text-align: center;
-    transition: all 1s;
-}
-.navbar ul li .kotak-biru:hover{    
-    border: 2px solid #005e59;
-    background: #005e59;
-    border-radius: 25px;
-    width: 150px;
-    color: #fff;
-    transition: all 1s;
-}
-.navbar ul li .kotak-hijau{
-    border: 2px solid #F9A825;
-    background: #F9A825;
-    border-radius: 25px;
-    width: 150px;
-    text-align: center;
-    color: #fff;
-    transition: all 1s;
-}
-.navbar ul li .kotak-hijau:hover{
-    border: 2px solid #fff;
-    border-color: #F9A825;
-    background: #fff;
-    border-radius: 25px;
-    width: 150px;
-    color: #000;
-    transition: all 1s;
-}
-
 .section .default-header{
     text-align: center;
 }
@@ -80,47 +21,33 @@ body{
     font-weight: 700;
 }
 
+/*---------- ALERT ----------*/
+.bg-success{
+    background: #4CAF50;
+    color: #fff;
+}
+.bg-danger{
+    background: #E53935;
+    color: #fff;
+}
+.bg-warning{
+    background: #E65100;
+    color: #fff;
+}
+.bg-primary{
+    background: #0288D1;
+    color: #fff;
+}
+
 /*---------- SECTION INTRO ----------*/
 .section .container{
     padding: 75px 0;
 }
 .section-intro{
-    min-height: 50vh;
-}
-.section-intro .intro-kiri{
-    padding: 70px 50px 0 0;
-}
-.section-intro .intro-kiri h2{
-    text-transform: uppercase;
-    font-size: 3em;
-    padding: 5px 0;
-}
-.section-intro .intro-kiri ul{
-    list-style-type: none;
-    padding-left: 0;
-    padding-top: 25px;
-}
-.section-intro .intro-kiri ul li{
-    display: inline-block;
-}
-.section-intro .intro-kiri .kotak{
-    position: relative;
-    border: 2px solid #fff;
-    padding: 10px 25px;
-    color: #000;
-}
-.section-intro .intro-kiri .kotak-kiri{
-    border-radius: 20px;
-    background: #005e59;
-    color: #fff;
-}
-.section-intro .intro-kiri .kotak-kanan{
-    border-radius: 20px;
-    background: #F9A825;
-    color: #fff;
+    min-height: 100vh;
 }
 .section-intro img{
-    height: 400px;
+    height: 100vh;
 }
 /*---------- SECTION TUTORIAL ----------*/
 .section-tutorial{
@@ -154,9 +81,6 @@ body{
 }
 
 /*---------- SECTION ABOUT ----------*/
-.section-about{
-    
-}
 .section-about .header-about{
     text-align: center;
     padding: 10px 0 50px;
@@ -169,34 +93,53 @@ body{
     color: #000;
 }
 
-.footer{
-    background: #fafafa;
-    display: flex;
-    flex-wrap: wrap;
+/*---------- SECTION AUTH ----------*/
+.section-auth{
+    padding-top: 35px;
+    min-height: 50vh;
+}
+.section-auth .intro-kiri{
+    padding: 70px 50px 0 0;
+}
+.section-auth .intro-kiri .form-top{
     text-align: center;
+    padding-bottom: 10px;
 }
-.footer .kelebihan{
-    text-align: center;
-    padding: 30px 0;
-}
-.footer .kelebihan h4{
-    padding: 15px 0;
-}
-.footer .about{
-    padding: 25px 0;
-}
-.footer .copyright{
-    width: 100%;
-    padding: 15px 0 0;
-    line-height: 15px;
+.section-auth .intro-kiri ul{
+    list-style-type: none;
+    padding-left: 0;
     padding-top: 15px;
-    text-align: center;
 }
-.footer .copyright .garis{
-    border-top: 2px solid #e0e0e0;
+.section-auth .intro-kiri ul li{
+    display: inline-block;
+}
+.section-auth .intro-kiri .card{
+    height: 425px;
+}
+.section-auth .intro-kiri .containerform{
+    padding: 25px; 
+}
+.section-auth .intro-kiri .btn-sign{
+    background-color: #F9A825;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 2px;
+    cursor: pointer;
     width: 100%;
-    margin: 0 auto;
-    padding: 0 0 20px;
+    border-radius: 24px;
+    border: 2px solid #fff;
+    transition: all 1s;
+    font-weight: 700;
+}
+.section-auth .intro-kiri .btn-sign:hover{
+    background: #fff;
+    color: #F9A825;
+    border: 2px solid #F9A825;
+    transition: all 1s;
+    font-weight: 700;
+}
+.section-auth img{
+    height: 400px;
 }
 
 /*--------------- 
@@ -214,12 +157,25 @@ body{
     margin-top: 60px;
 }
 .section-tentang-banner h4{
+    font-family: 'Fredoka One', cursive;
     text-align: center;
     text-transform: uppercase;
     color: #fff;
-    text-shadow: 5px 2px #000;
-    font-size: 3em;
+    text-shadow: 4px 2px #000;
+    font-size: 4em;
     padding-top: 0;
+}
+.section-visi-misi .col-lg-6{
+    padding: 0 25px;
+}
+.section-visi-misi h4{
+    color: #000;
+    font-size: 2.5em;
+    font-weight: 700;
+    padding: 10px 0;
+}
+.section-visi-misi h4 span{
+    color: #F9A825;
 }
 /*---------- SECTION TEAM ----------*/
 .section-team{
@@ -241,4 +197,375 @@ body{
 .section-team .team-body h5{
     font-weight: bold;
     font-size: 1.5em;
+}
+
+/*---------- SECTION SUKSES ----------*/
+.section-sukses{
+    margin: 50px 0;
+}
+.section-sukses .jumbotron{
+    background: #F9A825;
+    text-align: center;
+}
+
+/*---------- FOOTER ----------*/
+.footer{
+    background: #f5f5f5;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 30px 20px 0;
+}
+.footer .list ul{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.footer .list ul li{
+    background: #b9babe;
+    margin: 0 10px;
+    border-radius: 10px;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.footer .list ul .facebook{
+    background: #3b5998;
+    color: #fff;
+}
+.footer .list ul .instagram{
+    background: #c32aa3;
+    color: #fff;
+}
+.footer .list ul .youtube{
+    background: #ff0000;
+    color: #fff;
+}
+.footer .copyright{
+    width: 100%;
+    padding: 15px 0 0;
+    line-height: 15px;
+    padding-top: 15px;
+    text-align: center;
+}
+.footer .copyright .garis{
+    border-top: 2px solid #e0e0e0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 20px;
+}
+
+/* RESPONSIVE */
+/* ----- MOBILE ----- */
+@media only screen and (min-width: 320px) and (max-width: 370px){
+    .navbar{
+        background: #fff;
+    }
+    .navbar .navbar-brand{
+        color: #000;
+    }
+    .navbar .navbar-nav .nav-link{
+        color: #000;
+    }
+    .navbar .navbar-nav .kotak2 .nav-link{
+        color: #000;
+    }
+    .section-intro{
+        display: none;
+    }
+    .desktop{
+        display: none;
+    }
+    .section-auth-mobile{
+        padding: 175px 0;
+    }
+    .section-auth-mobile .header-mobile{
+        text-align: center;
+    }
+    .section-auth-mobile .btn-sign{
+        background-color: #F9A825;
+        color: #fff;
+        padding: 14px 20px;
+        margin: 2px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 24px;
+        border: 2px solid #fff;
+        transition: all 1s;
+        font-weight: 700;
+    }
+    .section .container{
+        width: 100%;
+        padding: 25px 30px;
+    }
+    .section-tutorial{
+        padding-top: 50px;
+    }
+    .section .default-header h3{
+        font-size: 1.5em;
+        padding-bottom: 15px;
+    }
+    .section-layanan{
+        text-align: center;
+    }
+    .section-layanan .header-layanan h4{
+        font-weight: 700;
+    }
+    .section .row{
+        margin-right: 0;
+    }
+    .section-layanan .my-4 .col-lg-6{
+        margin-left: 15px;
+    }
+    .section-layanan .col-lg-6 img{
+        width: 100%;
+        margin-left: 15px;
+    }
+    .section-layanan .col-lg-6 h4{
+        padding: 10px 0;
+        font-weight: 700;
+        color: #fff;
+    }
+    .section-about{
+        display: none;
+    }
+}
+@media only screen and (min-width: 375px) and (max-width: 480px){
+    .navbar{
+        background: #fff;
+    }
+    .navbar .navbar-brand{
+        color: #000;
+    }
+    .navbar .navbar-nav .nav-link{
+        color: #000;
+    }
+    .navbar .navbar-nav .kotak2 .nav-link{
+        color: #000;
+    }
+    .section-intro{
+        display: none;
+    }
+    .section-auth{
+        display: none;
+    }
+    .section-auth-mobile{
+        padding: 190px 0;
+    }
+    .section-auth-mobile .header-mobile{
+        text-align: center;
+    }
+    .section-auth-mobile .btn-sign{
+        background-color: #F9A825;
+        color: #fff;
+        padding: 14px 20px;
+        margin: 2px;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 24px;
+        border: 2px solid #fff;
+        transition: all 1s;
+        font-weight: 700;
+    }
+    .section .container{
+        width: 100%;
+        padding: 25px 30px;
+    }
+    .section-tutorial{
+        padding-top: 50px;
+    }
+    .section .default-header h3{
+        font-size: 1.5em;
+        padding-bottom: 15px;
+    }
+    .section-layanan{
+        text-align: center;
+    }
+    .section-layanan .header-layanan h4{
+        font-weight: 700;
+    }
+    .section .row{
+        margin-right: 0;
+    }
+    .section-layanan .my-4 .col-lg-6{
+        margin-left: 15px;
+    }
+    .section-layanan .col-lg-6 img{
+        width: 100%;
+        margin-left: 15px;
+    }
+    .section-layanan .col-lg-6 h4{
+        padding: 10px 0;
+        font-weight: 700;
+        color: #fff;
+    }
+ }
+ /* ----- TABLET IPAD ----- */
+ @media screen and (min-width: 485px) and (max-width: 800px){
+    .navbar{
+        background: #fff;
+    }
+    .navbar .navbar-brand{
+        color: #000;
+    }
+    .navbar .navbar-nav .nav-link{
+        color: #000;
+    }
+    .navbar .navbar-nav .kotak2 .nav-link{
+        color: #000;
+    }
+    .section .container{
+        width: 100%;
+        padding: 25px;
+    }
+    .section .default-header h3{
+        font-size: 1.5em;
+        padding-bottom: 15px;
+    }
+    .section-layanan .header-layanan{
+        text-align: center;
+    }
+    .section-layanan .header-layanan h4{
+        font-weight: 700;
+    }
+    .section-layanan .col-lg-6{
+        padding: 0 30px;
+    }
+    .section-layanan .col-lg-6 img{
+        width: 100%;
+    }
+    .section-layanan .col-lg-6 h4{
+        padding: 10px 0;
+        font-weight: 700;
+        color: #fff;
+    }
+    .section-tutorial{
+        min-height: 50vh;
+    }
+    .section-layanan{
+        text-align: center;
+    }
+    .section-layanan .col-lg-6{
+        padding: 0 30px;
+    }
+    .section-layanan .col-lg-6 img{
+        width: 100%;
+    }
+    .section-layanan .col-lg-6 h4{
+        padding: 10px 0;
+        font-weight: 700;
+        color: #fff;
+    }
+ }
+@media only screen and (min-width:960px) and (max-width: 1440px){
+    #navbar{
+        background: #F9A825;
+    }
+    .navbar span{
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        content: "";
+        background: no-repeat 50%;
+        background-size: 100% 100%;
+    }
+    .navbar .navbar-brand{
+        color: #000;
+    }
+    .navbar ul li{
+        margin: 0 15px;
+    }
+    .navbar .navbar-nav .nav-link{
+        color: #000;
+    }
+    .navbar .navbar-nav .kotak1 .nav-link:hover{
+        color: #fff;
+    }
+    .navbar .navbar-nav .kotak2 .nav-link{
+        color: #fff;
+    }
+    .navbar .navbar-nav .kotak2 .nav-link:hover{
+        color: #000;
+    }
+    .navbar ul li a .kotak-biru{
+        color: #fff;
+    }
+    .navbar span{
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        content: "";
+        background: no-repeat 50%;
+        background-size: 100% 100%;
+    }
+    .navbar ul li .kotak-biru{
+        border: 2px solid #fff;
+        border-color: #005e59;
+        border-radius: 25px;
+        width: 150px;
+        text-align: center;
+        transition: all 1s;
+    }
+    .navbar ul li .kotak-biru:hover{    
+        border: 2px solid #005e59;
+        background: #005e59;
+        border-radius: 25px;
+        width: 150px;
+        color: #fff;
+        transition: all 1s;
+    }
+    .navbar ul li .kotak-hijau{
+        border: 2px solid #F9A825;
+        background: #F9A825;
+        border-radius: 25px;
+        width: 150px;
+        text-align: center;
+        color: #fff;
+        transition: all 1s;
+    }
+    .navbar ul li .kotak-hijau:hover{
+        border: 2px solid #fff;
+        border-color: #F9A825;
+        background: #fff;
+        border-radius: 25px;
+        width: 150px;
+        color: #000;
+        transition: all 1s;
+    }
+    
+    .section-tutorial{
+        min-height: 50vh;
+    }
+    .mobile{
+        display: none;
+    }
+}
+
+@media only screen and (min-width:960px){
+    /* styles for browsers larger than 960px; */
+}
+@media only screen and (min-width:1440px){
+    /* styles for browsers larger than 1440px; */
+}
+@media only screen and (min-width:2000px){
+    /* for sumo sized (mac) screens */
+}
+@media only screen and (max-device-width:480px){
+   /* styles for mobile browsers smaller than 480px; (iPhone) */
+}
+@media only screen and (device-width:768px){
+   /* default iPad screens */
+}
+/* different techniques for iPad screening */
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+  /* For portrait layouts only */
+}
+
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape) {
+  /* For landscape layouts only */
 }
