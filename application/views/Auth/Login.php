@@ -7,12 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/login.css"> 
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
-
-
+<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/login.css"> -->
 <!-- Material Design for Bootstrap fonts and icons -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
 
 </head>
 <body>
@@ -20,7 +18,7 @@
     <?php $this->load->view('home/inc/header'); ?>
 </div>
 
-<section class="section section-intro" id="mulai">
+<section class="section section-auth desktop" id="mulai">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -33,40 +31,35 @@
                                     <span>Belum punya akun PrintMedia? <a href="<?php echo base_url('register'); ?>">Daftar!</a></span>
                                 </div>
                                 <?php        
-                                if($this->session->flashdata('error'))
-                                {
-                                ?>
-                                    <div class="alert alert-danger">
-                                    <?php echo $this->session->flashdata('error'); ?>
-                                    </div>
-                                <?php
-                                }
-
-                                if($this->session->flashdata('success'))
-                                {
-                                ?>
-                                    <div class="alert alert-success">
-                                    <?php echo $this->session->flashdata('success'); ?>
-                                    </div>
-                                <?php
-                                }
+                                if($this->session->flashdata('error')):
+                                    echo '<div class="alert bg-danger">'.$this->session->flashdata('error').'</div>';
+                                endif;
+                                if($this->session->flashdata('success')):
+                                    echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+                                endif;
                                 ?>
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Email address</label>
-                                    <?php $data=array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email') ); echo form_input($data); ?>
-                                    <?php echo form_error('email', '<div class="alert alert-danger">', '</div>'); ?>
+                                    <?php 
+                                    $data = array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Email Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                                    echo form_input($data);
+                                    echo form_error('email', '<p class="text-danger">', '</p>'); 
+                                    ?>
                                 </div>
                                 <div class="form-group">
                                     <label class="bmd-label-floating">Password</label>
-                                    <?php $data=array('type' => 'password', 'name' => 'password', 'class' => 'form-control',); echo form_input($data); ?>
-                                    <?php echo form_error('password', '<div class="alert alert-danger">', '</div>'); ?>
+                                    <?php 
+                                    $data = array('type' => 'password', 'name' => 'password', 'class' => 'form-control', 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Password Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')'); 
+                                    echo form_input($data);
+                                    echo form_error('password', '<p class="text-danger">', '</p>'); 
+                                    ?>
                                 </div>
 
                                 <div class="clearfix">
-                                    <button type="submit" class="signupbtn">Login</button>
+                                    <?php echo form_submit('submit', 'Login', array('class' => 'btn btn-sign')); ?>
                                 </div>
                             </div>
-                        </form>
+                        <?php echo form_close(); ?>
                     </div>
                 </div>
             </div>
@@ -75,6 +68,46 @@
             </div>
         </div>
     </div> 
+</section>
+
+<section class="section section-auth-mobile mobile">
+    <div class="container-fluid">
+        <div class="header-mobile">
+            <h3>Login</h3>
+            <p>Belum punya akun Print Media? Silahkan <a href="<?php echo base_url('register'); ?>">Daftar</a></p>
+        </div>
+        <?php echo form_open('auth/proseslogin'); ?>
+            <?php        
+            if($this->session->flashdata('error')):
+                echo '<div class="alert bg-danger">'.$this->session->flashdata('error').'</div>';
+            endif;
+            if($this->session->flashdata('success')):
+                echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+            endif;
+            ?>
+            <div class="form-group">
+                <label class="bmd-label-floating">Email address</label>
+                <?php 
+                $data = array('type' => 'email', 'name' => 'email', 'class' => 'form-control', 'value' => set_value('email')); 
+                echo form_input($data);
+                echo form_error('email', '<p class="text-danger">', '</p>');
+                ?>
+            </div>
+            <div class="form-group">
+                <label class="bmd-label-floating">Password</label>
+                <?php 
+                $data = array('type' => 'password', 'name' => 'password', 'class' => 'form-control', 'value' => set_value('password')); 
+                echo form_input($data);
+                echo form_error('password', '<p class="text-danger">', '</p>'); 
+                ?>
+            </div>
+            <?php echo form_submit('submit', 'Login', array('class' => 'btn btn-sign')); ?>
+        <?php echo form_close(); ?>
+    </div>
+</section>
+
+<section class="footer">
+    <?php $this->load->view('home/inc/footer'); ?>
 </section>
 
 <!-- Optional JavaScript -->

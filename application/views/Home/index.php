@@ -5,11 +5,11 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Material Design for Bootstrap fonts and icons -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 </head>
 <body>
@@ -18,63 +18,8 @@
     <?php $this->load->view('home/inc/header'); ?>
 </div>
 
-
 <section class="section section-intro" id="mulai">
-    <!-- <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="intro-kiri">
-                    <h2>PrintMedia</h2>
-                    <p>Donec a tortor tortor. Phasellus in vulputate felis, nec viverra tellus. Sed tempus enim imperdiet, semper ex et, laoreet massa. Ut in fringilla sapien. Phasellus eu laoreet metus. Suspendisse non nunc id neque varius sodales. Nulla et metus in ipsum scelerisque condimentum. In varius venenatis elit ac semper. Sed ultricies volutpat lacus sit amet porttitor. Mauris fringilla lacus sed diam aliquet, ac lacinia elit fermentum. Proin urna purus, interdum et leo quis, lacinia aliquam nunc.</p>
-                    <ul>
-                        <li><a href="" class="kotak kotak-kiri">ABOUT US</a></li>
-                        <li><a href="" class="kotak kotak-kanan">ABOUT US</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <img src="<?php echo base_url('asset/home/img/intro-foto.png'); ?>" alt="" class="img-fluid">
-            </div>
-        </div>
-    </div>  -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner2.jpg') ?>" alt="First slide">
-            <div class="carousel-caption d-none d-md-block">
-            <h5>Ini Judulnya</h5>
-            <p>Ini deskripsinya</p>
-        </div>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner1.jpg') ?>" alt="Second slide">
-            <div class="carousel-caption d-none d-md-block">
-            <h5>Ini Judulnya</h5>
-            <p>Ini deskripsinya</p>
-        </div>
-            </div>
-            <div class="carousel-item">
-            <img class="d-block w-100" src="<?php echo base_url('asset/home/img/banner2.jpg') ?>" alt="Third slide">
-            <div class="carousel-caption d-none d-md-block">
-            <h5>Ini Judulnya</h5>
-            <p>Ini deskripsinya</p>
-        </div>
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+    <img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" alt="" width="100%">
 </section>
 
 <section class="section section-tutorial">
@@ -83,7 +28,7 @@
             <h3>LANGKAH PEMESANAN</h3>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
                     <img src="<?php echo base_url('asset/home/img/register.png'); ?>" class="img-fluid" width="150" height="150">
                 </div>
@@ -92,7 +37,7 @@
                     <p>Mahasiswa / siswa melakukan pendaftaran di Print Media dan melengkapi data-datanya. Hanya email berdomain <b>.ac.id</b> atau <b>.edu</b> yang bisa mendaftar.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
                     <img src="<?php echo base_url('asset/home/img/upload-dokumen.png'); ?>" class="img-fluid" width="150" height="150">
                 </div>
@@ -103,7 +48,7 @@
                     <p><b>3.</b> Pihak Print Media akan memproses pesanan Anda.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
                     <img src="<?php echo base_url('asset/home/img/shipping.png'); ?>" class="img-fluid" width="150" height="150">
                 </div>
@@ -139,18 +84,18 @@
                         <img src="<?php echo base_url('asset/home/img/layanan2.jpg'); ?>" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6">
-                        <h4>Cetak Mudah &amp; Efisien</h4>
-                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
+                        <h4>Berbagai Pilihan Kertas</h4>
+                        <span>Kami menawarkan macam - macam kertas, agar bisa digunakan sesuai kebutuhan Anda.</span>
                     </div>
                 </div>
-                    
+                    <!-- 'oninvalid' => 'this.setCustomValidity('."'Username Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', -->
                 <div class="row my-3">
                     <div class="col-lg-6">
                         <img src="<?php echo base_url('asset/home/img/layanan3.jpg'); ?>" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6">
-                        <h4>Cetak Mudah &amp; Efisien</h4>
-                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
+                        <h4>Pengiriman Yang Fleksibel</h4>
+                        <span>Tersedia pilihan pengiriman oleh pihak Perusahaan atau Ojek Online.</span>
                     </div>
                 </div>
             </div>
@@ -163,22 +108,26 @@
                     <table class="table table-bordered table-dark">
                         <thead>
                             <tr>
-                                <th>Jenis</th>
-                                <th>Harga</th>
+                                <th class="text-white">Jenis</th>
+                                <th class="text-white">Hitam Putih</th>
+                                <th class="text-white">Berwarna</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">A4</th>
-                                <td>Rp. 300</td>
+                                <td>A4</td>
+                                <td>Rp. 300 / pcs</td>
+                                <td>Rp. 1000 / pcs</td>
                             </tr>
                             
                             <tr>
-                                <th scope="row">F4</th>
-                                <td>Rp. 300</td>
+                                <td>F4</td>
+                                <td>Rp. 300 / pcs</td>
+                                <td>Rp. 1000 / pcs</td>
                             </tr>
                         </tbody>
                     </table>
+                    <span>* Harga sewaktu - waktu dapat berubah.</span>
                 </div>
             </div>
         </div>
@@ -226,7 +175,20 @@
 </section>
 
 <section class="footer">
-    <?php $this->load->view('home/inc/footer'); ?>
+    <div class="container">
+        <div class="list">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
+                        <li class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                        <li class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php $this->load->view('home/inc/footer'); ?>
+    </div>
 </section>
 
 <!-- Optional JavaScript -->

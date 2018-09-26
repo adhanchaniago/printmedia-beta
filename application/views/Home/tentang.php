@@ -9,13 +9,13 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 <!-- Material Design for Bootstrap fonts and icons -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Dancing+Script|PT+Sans" rel="stylesheet">
-
+<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 </head>
-<body>
+<body id="body-tentang">
 
 <div id="navbar">
     <?php $this->load->view('home/inc/header'); ?>
@@ -30,17 +30,17 @@
 <section class="section section-visi-misi">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <h4 class="text-center">Visi</h4>
-                <p>Di awali dengan memberitahu kepada semua orang bahwa kita adalah startup karya anak bangsa Indonesia. Kami ingin meningkatkan kesejahteraan taraf hidup keluarga. Melalui teknologi kami berusaha menyebarkan dampak sosial yaitu kehidupan yang lebih baik untuk ibu rumah tangga dan keluarganya dengan meningkatkan jumlah penghasilan mereka. Karena setiap ibu rumah tangga memiliki resep makanan yang khas dan berbeda. Dengan itu kita ingin mengubah resep keluarga menjadi nilai ekonomi yang lebih.</p>
+            <div class="col-lg-6 visi">
+                <h4 class="text-center">VI<span>SI</span></h4>
+                <p>Sebuah karya anak bangsa Indonesia yang berfokus pada dunia percetakan. Kami hadir dengan nuansa yang beda dan membantu para pelajar agar mudah untuk belajar.</p>
             </div>
 
             <div class="col-lg-6">
-                <h4 class="text-center">Misi</h4>
+                <h4 class="text-center"><span>MI</span>SI</h4>
                 <ul class="list-group">
-                    <li class="list-group-item">Misi 1</li>
-                    <li class="list-group-item">Misi 1</li>
-                    <li class="list-group-item">Misi 1</li>
+                    <li class="list-group-item">Mencetak Generasi yang cerdas dan tidak malas.</li>
+                    <li class="list-group-item">Memudahkan para pelajar agar tidak pusing memikirkan tugas - tugas.</li>
+                    <li class="list-group-item">Membuat sebuah perubahan dalam dunia Percetakan.</li>
                 </ul>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 </div>   
             </div>
             <div class="col-lg-3">
-                <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
+                <img src="<?php echo base_url('asset/home/img/avatarfemale.png'); ?>" alt="">
                 <div class="team-body">
                     <h5>Ira Kusuma</h5>
                     <span>Frontend Developer</span>
@@ -84,7 +84,20 @@
 </section>
 
 <section class="footer">
-    <?php $this->load->view('home/inc/footer'); ?>
+    <div class="container">
+        <div class="list">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul>
+                        <li class="facebook"><i class="fa fa-facebook-official" aria-hidden="true"></i></li>
+                        <li class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                        <li class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <?php $this->load->view('home/inc/footer'); ?>
+    </div>
 </section>
 
 <!-- Optional JavaScript -->
