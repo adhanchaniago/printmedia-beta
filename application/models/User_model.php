@@ -11,9 +11,8 @@ class User_model extends CI_Model{
     {
         $res = $this->db->insert($table, $data); 
         return $res; 
-    }
+    } 
 
-    
 
     public function GetWhere($table, $data)
     {

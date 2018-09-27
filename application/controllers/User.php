@@ -7,39 +7,28 @@ class User extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('User_model');
+		$this->load->library('form_validation');
 	}
 	public function index()
 	{
-		$this->load->view('user/history');
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->GetWhere('user', $email);
+		$cek = $cek->row_array();
+		
+		if($cek == NULL)
+		{
+			redirect(base_url('myprofile'));
+		}
+		else
+		{
+			$this->session->set_userdata('username', $cek['nama']);
+			$this->load->view('user/history');
+		}
 	}
 
 	public function myprofile()
-	{
-		if($this->session->userdata('akses') || $this->session->userdata('akses') == 'Member' )
-			{
-			$this->load->model('user_model');
-			$email=$this->session->userdata('email');
-			$data=array('email'=>$email);
-			$cek=$this->user_model->GetWhere('user',$data)->num_rows();
-				if($cek==NULL)
-				{
-					redirect(base_url('user/myprofile'));
-					
-				}
-
-				else
-				{
-					
-					
-					$this->session->set_userdata('username', $cek['nama']);
-					redirect(base_url('user/index'));
-				}
-				
-			}
-			else
-			{
-				redirect('login');
-			}		
+	{	
+		$this->load->view('user/myprofile');			
 	}
 
 	public function upload()
@@ -49,23 +38,43 @@ class User extends CI_Controller
 
 	public function inputdata()
 	{
-		$data = array
-		(
-					'nama' => $this->input->post('nama_lengkap'),
-					'nohape' => $this->input->post('no_handphone'),
-					'gender' => $this->input->post('jenis_kelamin'),
-					'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-					'email' => $this->input->post('email'),
-					'alamat' => $this->input->post('alamat'),
-					'detail_alamat' => $this->input->post('detail_alamat'),
-					'provinsi' => $this->input->post('provinsi'),
-					'kota' => $this->input->post('kota'),
-					'kecamatan' => $this->input->post('kecamatan'),
-					'kodepos' => $this->input->post('kodepos'),
-		);
+		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|min_length[10]|max_length[13]');
+		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|min_length[5]|max_length[5]');
 
-		$data = $this->User_model->Insert('user', $data);
-		redirect('user/upload');
+
+		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
+		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
+		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
+		$this->form_validation->set_message('min_length', 'KOlom %s  Wajib 5 Angka');
+		$this->form_validation->set_message('max_length', '%s Nomernya Kebanyakan Bos');	
+
+		if($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('user/myprofile');
+		}
+		else
+		{
+			$data = array
+			(
+				'nama' => $this->input->post('nama_lengkap'), // Kiri Nama Kolom
+				'nohape' => $this->input->post('no_handphone'), // Kanan nama form di views
+				'gender' => $this->input->post('jenis_kelamin'),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+				'detail_alamat' => $this->input->post('detail_alamat'),
+				'provinsi' => $this->input->post('provinsi'),
+				'kota' => $this->input->post('kota'),
+				'kecamatan' => $this->input->post('kecamatan'),
+				'kodepos' => $this->input->post('kodepos'),
+			);
+
+			$data = $this->User_model->Insert('user', $data);
+			redirect('user/upload');
+		}
+
+		
 	}
 
 	public function listkota()

@@ -73,12 +73,11 @@
                   <div class="form-group row">
                     <div class="container">
                       <div class="row">
-                        <div class="col-md-6">                  
+                        <div class="col-md-6">
                           <div class="form-group-material">
                             <?php 
                               $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
                               echo form_input($data);
-                              echo form_error('nama_lengkap');
                             ?>
                             <label for="nama_lengkap" class="label-material">Nama Lengkap*</label>
                           </div>
@@ -89,7 +88,6 @@
                             <?php 
                               $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
                               echo form_input($data);
-                              echo form_error('no_handphone');
                             ?>
                             <label for="no_handphone" class="label-material">Nomer Handphone*</label>
                           </div>   
@@ -195,7 +193,6 @@
                       <?php
                         $data = array('class' => 'form-control', 'name' => 'kodepos', 'rows' => 3);
                         echo form_input($data);
-                        echo form_error('kodepos');
                       ?>
                       <small>Cari <a href="https://carikodepos.com/">disini</a> jika belum tau</small>
                     </div>
