@@ -12,6 +12,7 @@ $route['logout'] = 'auth/logout';
 $route['sukses'] = 'auth/sukses';
 //$route['aktivasi'] = 'auth/aktivasi';
 $route['aktivasi/(:any)'] = 'auth/aktivasi/$1';
+$route['login_adm']='auth/login_admin';
 
 // ADMIN
 
