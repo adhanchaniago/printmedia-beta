@@ -17,13 +17,18 @@ class User extends CI_Controller
 		
 		if($cek == NULL)
 		{
-			redirect(base_url('myprofile'));
+			redirect(base_url('profile'));
 		}
 		else
 		{
 			$this->session->set_userdata('username', $cek['nama']);
 			$this->load->view('user/history');
 		}
+	}
+
+	public function inputprofile()
+	{
+		$this->load->view('user/inputprofile');
 	}
 
 	public function myprofile()

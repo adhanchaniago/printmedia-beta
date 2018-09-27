@@ -22,4 +22,5 @@ $route['tentang'] = 'home/tentang';
 $route['myprofile'] = 'user/myprofile';
 $route['history'] = 'user/index';
 $route['upload']='user/upload';
+$route['profile']='user/inputprofile';
 

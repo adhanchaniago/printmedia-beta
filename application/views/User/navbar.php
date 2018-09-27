@@ -6,7 +6,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand -->
-                <a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+                <a href="<?php echo base_url('/'); ?>" class="navbar-brand d-none d-sm-inline-block">
                 <div class="brand-text d-none d-lg-inline-block"><span>Print</span><strong> Media</strong></div>
                 </a>
               
@@ -40,15 +40,15 @@
 
           <!-- Sidebar Navidation Menus-->          
           <ul class="list-unstyled">                      
-            <li class="<?php if ( $this->uri->uri_string() == 'user/history' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('user/index'); ?>"> <i class="fa fa-history"></i>HISTORY</a>
+            <li class="<?php if ( $this->uri->uri_string() == 'history' ){ echo 'active'; } ?>">
+                <a href="<?php echo base_url('history'); ?>"> <i class="fa fa-history"></i>HISTORY</a>
             </li>
 
-            <li class="<?php if ( $this->uri->uri_string() == 'user/upload' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('user/upload'); ?>"> <i class="fa fa-upload"></i>UPLOAD</a>
+            <li class="<?php if ( $this->uri->uri_string() == 'upload' ){ echo 'active'; } ?>">
+                <a href="<?php echo base_url('upload'); ?>"> <i class="fa fa-upload"></i>UPLOAD</a>
             </li>      
 
-            <li class="<?php if ( $this->uri->uri_string() == 'user/profile' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('user/myprofile'); ?>"> <i class="icon-user"></i>My Profile</a>
+            <li class="<?php if ( $this->uri->uri_string() == 'myprofile' ){ echo 'active'; } ?>">
+                <a href="<?php echo base_url('myprofile'); ?>"> <i class="icon-user"></i>My Profile</a>
             </li>                    
         </nav>

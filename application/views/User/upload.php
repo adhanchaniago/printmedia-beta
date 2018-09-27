@@ -168,7 +168,7 @@
                 </div>
               </div>
             </div>
-          </footer>                  
+          </footer>      
         </div>
         <!-- Akhir Konten -->
 
