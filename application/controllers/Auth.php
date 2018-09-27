@@ -241,4 +241,8 @@ class Auth extends CI_Controller {
 	{
 		$this->load->view('auth/wilayah');
 	}
+	public function login_admin()
+	{
+		$this->load->view('Auth/Login_Adm');
+	}
 }
