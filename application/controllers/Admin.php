@@ -10,7 +10,10 @@ class Admin extends CI_Controller {
 	}
 	public function Input_Universitas()
 	{
-		$this->load->view('Admin/Input_Universitas');
+		$this->load->model('Admin_model');
+		$data = $this->Admin_model->tampiluniv('regencies');
+		$data=array('data'=> $data);
+		$this->load->view('Admin/Input_Universitas',$data);
 	}
 
 	public function Inputdb_Univ()

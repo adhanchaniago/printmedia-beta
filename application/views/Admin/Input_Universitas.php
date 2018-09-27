@@ -57,11 +57,15 @@
                             <input type="text" class="form-control mb-2 mr-sm-2" name="univ" placeholder="Nama Universitas">
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><i class="mdi mdi-home-modern"></i></div>
+                                    <div class="col-sm-9">
+                                      <select class="form-control" name="kota">
+                                        <?php foreach ($data as $info) {?>
+                                          <option><?php echo $info['name'];?></option>
+                                        <?php } ?>
+                                      </select>
+                                    </div>
                                 </div>
-                                    <input type="text" class="form-control" name="kota" placeholder="Kota Universitas">
-                               
-                            </div>
+                                </div>
                                 <div class="form-check mx-sm-2">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" checked>
