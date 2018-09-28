@@ -23,9 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
-$newurl = str_replace("index.php","", $_SERVER['SCRIPT_NAME']);
-$config['base_url']    = 'http://127.0.0.1:8888/printmedia-beta/';
+// $http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
+// $newurl = str_replace("index.php","", $_SERVER['SCRIPT_NAME']);
+// $config['base_url']    = 'http://127.0.0.1:8888/printmedia-beta/';
+$config['base_url']  =  "http://".$_SERVER['HTTP_HOST'];
+$config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
 
 /*
 |--------------------------------------------------------------------------
