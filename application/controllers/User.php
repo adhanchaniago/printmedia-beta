@@ -28,12 +28,18 @@ class User extends CI_Controller
 
 	public function inputprofile()
 	{
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->GetWhere('user', $email);
+		$cek = $cek->row_array();
 		$this->load->view('user/inputprofile');
 	}
 
 	public function myprofile()
 	{	
-		$this->load->view('user/myprofile');			
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->tampilProfile('user', $email);
+		$cek=array('cek'=> $cek);
+		$this->load->view('user/myprofile', $cek);			
 	}
 
 	public function upload()

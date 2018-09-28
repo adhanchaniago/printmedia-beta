@@ -26,8 +26,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
 // $newurl = str_replace("index.php","", $_SERVER['SCRIPT_NAME']);
 // $config['base_url']    = 'http://127.0.0.1:8888/printmedia-beta/';
-$config['base_url']  =  "http://".$_SERVER['HTTP_HOST'];
-$config['base_url'] .= preg_replace('@/+$@', '', dirname($_SERVER['SCRIPT_NAME'])).'/';
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://".$_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 
 /*
 |--------------------------------------------------------------------------

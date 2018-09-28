@@ -68,53 +68,61 @@
                     <div class="container">
                       <h1>Profile Pribadi</h1>
                     </div>
-                  </div>           
+                  </div>       
+
+                  <?php foreach ($cek as $info)  { ?>
+                    
+                
 
                   <div class="form-group row">
                     <div class="container">
                       <div class="row">
                         <div class="col-md-6">                  
                           <div class="form-group-material">
-                            <?php 
-                              $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
+                            <label class="label">Nama Lengkap : </label>
+                            <?php                              
+                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => $info['nama'], 'readonly' => 'true'); 
                               echo form_input($data);
-                              echo form_error('nama_lengkap');
-                            ?>
-                            <label for="nama_lengkap" class="label-material">Nama Lengkap*</label>
+                              echo form_error('nama_lengkap');                              
+                            ?>                            
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <div class="form-group-material">
+                            <label class="label">No. Handphone : </label>
                             <?php 
-                              $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
+                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => $info['nohape'], 'readonly'=>'true'); 
                               echo form_input($data);
                               echo form_error('no_handphone');
-                            ?>
-                            <label for="no_handphone" class="label-material">Nomer Handphone*</label>
+                            ?>                                                  
                           </div>   
                         </div>
                       </div>
 
                       <div class="row">
                         <div class="col-md-4">
-                          <label class="label">Jenis Kelamin : </label>
+                          <div class="form-group-material">
+                            <label class="label">Jenis Kelamin : </label>
                             <div class="select">
-                            <?php
-                              $data = array('Laki-Laki' => 'Laki-Laki', 'Perempuan' => 'Perempuan');
-                              echo form_dropdown('jenis_kelamin', $data, set_value('jenis_kelamin'), ['class' => 'form-control']);
-                            ?>
-                          </div>
+                            <?php 
+                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'jenis_kelamin', 'id' => 'no_handphone', 'value' => $info['gender'], 'readonly'=>'true'); 
+                              echo form_input($data);
+                              echo form_error('no_handphone');
+                            ?>    
+                            </div>
+                          </div>                          
                         </div>
 
                         <div class="col-md-4">
-                          <i class="fa fa-calendar"></i>
-                          <label class="label">Tanggal Lahir : </label>                            
-                            <?php
-                              $data = array('class' => 'form-control', 'name' => 'tanggal_lahir', 'rows' => 3);
+                          <div class="form-group-material">
+                            <i class="fa fa-calendar"></i>
+                          <label class="label">Tanggal Lahir : </label>                             
+                              <?php
+                              $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tanggal_lahir', 'id' =>'datepicker', 'rows' => 3);
                               echo form_input($data);
-                            ?>
-                            <small>Contoh : 11 September 1998</small>
+                              ?>       
+                          </div>                    
                         </div>
 
                         <div class="col-md-4">
@@ -128,13 +136,13 @@
                         </div>                          
                       </div>
                     </div>                      
-                  </div>                                                                      
+                  </div>   
 
                   <div class="form-group row">
                     <label class="col-sm-3 form-control-label">Alamat Asal</label>
                     <div class="col-sm-9">
                       <?php
-                        $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3);
+                        $data = array('class' => 'form-control', 'name' => 'alamat', 'value' => $info['alamat'], 'rows' => 3, 'readonly' => 'true');
                         echo form_textarea($data);
                       ?>
                       <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
@@ -151,6 +159,8 @@
                       <small>Misal: Perumahan Elok Permai Blok BC, RT/RW 03/09</small>
                     </div>
                   </div>
+
+                    <?php } ?>
 
                   <div class="row">
                     <div class="col-md-4">
@@ -187,19 +197,6 @@
                         </select>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-4">
-                      <label class="label">Kode Pos: </label>
-                      <?php
-                        $data = array('class' => 'form-control', 'name' => 'kodepos', 'rows' => 3);
-                        echo form_input($data);
-                        echo form_error('kodepos');
-                      ?>
-                      <small>Cari <a href="https://carikodepos.com/">disini</a> jika belum tau</small>
-                    </div>
-                    
                   </div>
 
                   <div class="form-group row">
@@ -308,11 +305,23 @@
   <script src="<?php echo base_url();?>asset/user/vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="<?php echo base_url();?>asset/user/vendor/jquery.cookie/jquery.cookie.js"> </script>
   <script src="<?php echo base_url();?>asset/user/vendor/jquery-validation/jquery.validate.min.js"></script>
+
   <!-- bootstrap datepicker -->
   <script src="<?php echo base_url();?>asset/user/plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
   <!-- Main File-->
   <script src="<?php echo base_url();?>asset/user/js/front.js"></script>
+
+  <script>
+  $(function () 
+  {
+    //Date picker
+    $('#datepicker').datepicker({
+      autoclose: true
+    })
+  }    
+  </script>
+
   <script>
   $(document).ready(function(){ 
     $("#provinsi").change(function(){ // Ketika user mengganti atau memilih data provinsi

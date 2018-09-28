@@ -41,14 +41,14 @@
           <!-- Sidebar Navidation Menus-->          
           <ul class="list-unstyled">                      
             <li class="<?php if ( $this->uri->uri_string() == 'history' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('history'); ?>"> <i class="fa fa-history"></i>HISTORY</a>
+                <a href="<?php echo base_url('history'); ?>"> <i class="fa fa-history"></i>RIWAYAT</a>
             </li>
 
             <li class="<?php if ( $this->uri->uri_string() == 'upload' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('upload'); ?>"> <i class="fa fa-upload"></i>UPLOAD</a>
+                <a href="<?php echo base_url('upload'); ?>"> <i class="fa fa-upload"></i>PEMESANAN</a>
             </li>      
 
             <li class="<?php if ( $this->uri->uri_string() == 'myprofile' ){ echo 'active'; } ?>">
-                <a href="<?php echo base_url('myprofile'); ?>"> <i class="icon-user"></i>My Profile</a>
+                <a href="<?php echo base_url('myprofile'); ?>"> <i class="icon-user"></i>PROFIL-KU</a>
             </li>                    
         </nav>

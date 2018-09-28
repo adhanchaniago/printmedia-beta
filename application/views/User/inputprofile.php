@@ -192,18 +192,6 @@
                     </div>
                   </div>
 
-                  <div class="row">                    
-                    <label class="col-sm-2 form-control-label">Kode Pos : </label>
-                      <div class="col-sm-5">                  
-                          <?php
-                          $data = array('class' => 'form-control', 'name' => 'kodepos', 'rows' => 3);
-                          echo form_input($data);
-                          echo form_error('kodepos');
-                          ?>
-                        <small>Cari <a href="https://carikodepos.com/">disini</a> jika belum tau</small>                
-                    </div>                    
-                  </div>
-
                   <div class="form-group row">
                     <div class="container">
                       <br>

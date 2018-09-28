@@ -19,6 +19,12 @@ class User_model extends CI_Model{
         $res = $this->db->get_where($table, $data);
         return $res;
     }
+
+     public function tampilProfile($table, $data)
+    {
+        $res = $this->db->get_where($table, $data);
+        return $res->result_array();
+    }
     
     public function viewByProvinsi($province_id)
     {
