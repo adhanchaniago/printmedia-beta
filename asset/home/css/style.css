@@ -545,6 +545,17 @@ body{
         display: none;
     }
 }
+/* ----- FULL HD ----- */
+@media only screen and (min-width:1440px){
+    .container{
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .section-auth-mobile{
+        display: none;
+    }
+}
 
 @media only screen and (min-width:960px){
     /* styles for browsers larger than 960px; */
