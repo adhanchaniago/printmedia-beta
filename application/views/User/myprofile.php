@@ -153,7 +153,7 @@
                     <label class="col-sm-3 form-control-label">Detail Tempat Tinggal</label>
                     <div class="col-sm-9">
                       <?php
-                        $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3);
+                        $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3, 'value' => $info['detail_alamat'], 'readonly' => 'true');
                         echo form_textarea($data);
                       ?>
                       <small>Misal: Perumahan Elok Permai Blok BC, RT/RW 03/09</small>
@@ -169,11 +169,14 @@
                         <select name="provinsi" class="form-control" id="provinsi">
                         <?php
                         $this->db->from('provinces');
-                        $provinsi = $this->db->get();
+                        $data = array('id' => $info['provinsi']) ;
+                        $provinsi = $this->db->get_where('provinces', $data);
                         $data_provinsi = $provinsi->result_array();
                         foreach($data_provinsi as $row) {
                         ?>
+                        <?php var_dump($row['id']);  var_dump($data);?>
                           <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+
                         <?php } ?>
                                                                   
                         </select>
