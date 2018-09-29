@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 25, 2018 at 04:49 PM
+-- Generation Time: Sep 29, 2018 at 04:18 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -7313,6 +7313,24 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jurusan`
+--
+
+CREATE TABLE `jurusan` (
+  `id` int(11) NOT NULL,
+  `jurusan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jurusan`
+--
+
+INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
+(1, 'uwewe');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `provinces`
 --
 
@@ -7910,8 +7928,51 @@ CREATE TABLE `universitas` (
 --
 
 INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
-(1, 'hai', 'halo'),
-(2, 'Dian Nuswantoro', 'Semarang');
+(3, 'Universitas Islam Sultan Agung', 'KOTA SEMARANG'),
+(4, 'Universitas Katolik Soegijapranoto', 'KOTA SEMARANG'),
+(5, 'Universitas Dian Nuswantoro', 'KOTA SEMARANG'),
+(6, 'Universitas STIKUBANK Semarang', 'KOTA SEMARANG'),
+(7, 'Universitas 17 Agustus 1945', 'KOTA SEMARANG'),
+(8, 'Universitas Muhammadiyah Semarang', 'KOTA SEMARANG'),
+(9, 'Universitas Semarang', 'KOTA SEMARANG'),
+(10, 'Universitas PGRI Semarang', 'KOTA SEMARANG'),
+(11, 'Universitas Pandanaran', 'KOTA SEMARANG'),
+(12, 'Universitas Wahid Hasyim', 'KOTA SEMARANG'),
+(13, 'Universitas AKI', 'KOTA SEMARANG'),
+(14, 'Institut Keguruan dan Ilmu Pendidikan Veteran Semarang', 'KOTA SEMARANG'),
+(15, 'Politeknik STI Bisnis', 'KOTA SEMARANG'),
+(16, 'Sekolah Tinggi Ilmu Kesehatan Telogorejo', 'KOTA SEMARANG'),
+(17, 'Sekolah Tinggi Ilmu Kesehatan St. Elisabeth', 'KOTA SEMARANG'),
+(18, 'Sekolah Tinggi Ilmu Kesehatan Widya Husada', 'KOTA SEMARANG'),
+(19, 'Sekolah Tinggi Ilmu Elektronika dan Komputer Semarang', 'KOTA SEMARANG'),
+(20, 'Sekolah Tinggi Ilmu Komunikasi Semarang', 'KOTA SEMARANG'),
+(21, 'Sekolah Tinggi Ilmu Manajemen Informatika dan Komputer ProVisi IT College', 'KOTA SEMARANG'),
+(22, 'Sekolah Tinggi Ilmu Ekonomi Semarang', 'KOTA SEMARANG'),
+(23, 'Sekolah Tinggi Ilmu Ekonomi Anindyaguna', 'KOTA SEMARANG'),
+(24, 'Sekolah Tinggi Ilmu Ekonomi Widya Manggala', 'KOTA SEMARANG'),
+(25, 'Sekolah Tinggi Ilmu Ekonomi Dharma Putra', 'KOTA SEMARANG'),
+(26, 'Sekolah Tinggi Ilmu Ekonomi Bank BPD Jateng', 'KOTA SEMARANG'),
+(27, 'Sekolah Tinggi Ilmu Ekonomi Totalwin Semarang', 'KOTA SEMARANG'),
+(28, 'Sekolah Tinggi Ilmu Ekonomi Pelita Nusantara', 'KOTA SEMARANG'),
+(29, 'Sekolah Tinggi Maritim dan Transport AMNI', 'KOTA SEMARANG'),
+(30, 'Sekolah Tinggi Ilmu Ekonomi Pariwisata Semarang', 'KOTA SEMARANG'),
+(31, 'Sekolah Tinggi Ilmu Farmasi Yayasan Pharmasi', 'KOTA SEMARANG'),
+(32, 'Sekolah Tinggi Ilmu Pertanian Farming', 'KOTA SEMARANG'),
+(33, 'Sekolah Tinggi Theologia Baptis Indonesia', 'KOTA SEMARANG'),
+(34, 'Sekolah Tinggi Pastoral Kateketik St. Fransiskus Assisi Semarang', 'KOTA SEMARANG'),
+(35, 'Akademi Teknik Perkapalan Veteran', 'KOTA SEMARANG'),
+(36, 'Akademi Perawatan Kesdam IV/Diponegoro', 'KOTA SEMARANG'),
+(37, 'Akademi Kebidanan Panti Wilasa Yakkum', 'KOTA SEMARANG'),
+(38, 'Akademi Kebidanan Abdi Husada', 'KOTA SEMARANG'),
+(39, 'Akademi Farmasi Nasional', 'KOTA SEMARANG'),
+(40, 'Akademi Farmasi Nusaputera', 'KOTA SEMARANG'),
+(41, 'Akademi Statistika Muhammadiyah Semarang', 'KOTA SEMARANG'),
+(42, 'Akademi Sekretari Santa Maria Semarang', 'KOTA SEMARANG'),
+(43, 'Akademi Bahasa Asing 17 Agustus 1945', 'KOTA SEMARANG'),
+(44, 'Akademi Pelayaran Nasional Semarang', 'KOTA SEMARANG'),
+(45, 'Akademi Teknik Elektro Medik (ATEM) Semarang', 'KOTA SEMARANG'),
+(46, 'Akademi Kesejahteraan Sosial (AKS) Ibu Kartini', 'KOTA SEMARANG'),
+(47, 'Akademi Kolese Pika', 'KOTA SEMARANG');
 
 -- --------------------------------------------------------
 
@@ -83037,6 +83098,13 @@ ALTER TABLE `districts`
   ADD KEY `districts_id_index` (`regency_id`);
 
 --
+-- Indexes for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `jurusan` (`jurusan`);
+
+--
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
@@ -83087,10 +83155,16 @@ ALTER TABLE `auth`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
+-- AUTO_INCREMENT for table `jurusan`
+--
+ALTER TABLE `jurusan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `universitas`
 --
 ALTER TABLE `universitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `user`

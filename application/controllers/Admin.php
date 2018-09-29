@@ -15,6 +15,10 @@ class Admin extends CI_Controller {
 		$data=array('data'=> $data);
 		$this->load->view('Admin/Input_Universitas',$data);
 	}
+	public function Input_Jurusan()
+	{
+		$this->load->view('Admin/Input_Jurusan');
+	}
 
 	public function Inputdb_Univ()
 	{
@@ -27,6 +31,28 @@ class Admin extends CI_Controller {
 	        );
 
 			$data = $this->Admin_model->insert('universitas', $data);
+
+			if( $data )
+			{
+				redirect(base_url('Admin/Tampil_Univ'));
+			}
+			else
+			{
+				$this->session->set_flashdata('error', 'GAGAL MENAMBAHAN');
+				redirect(base_url('Admin/Tampil_Univ'));
+			}
+	}
+
+	public function Inputdb_Jurusan()
+	{
+		$this->load->model('Admin_model');
+		
+		$data = array
+			(
+				'jurusan' => $this->input->post('jurusan') // yang kanan nama di form
+	        );
+
+			$data = $this->Admin_model->insert('jurusan', $data);
 
 			if( $data )
 			{

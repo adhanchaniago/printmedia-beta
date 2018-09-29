@@ -46,7 +46,8 @@
             <div class="collapse" id="general-pages">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('Admin/Tampil_Univ'); ?>"> Data </a></li>
-                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('Admin/Input_Universitas');?>"> Tambah </a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('Admin/Input_Universitas');?>"> Tambah Universitas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('Admin/Input_Jurusan');?>"> Tambah Jurusan</a></li>
               </ul>
               </div>
           </li>
