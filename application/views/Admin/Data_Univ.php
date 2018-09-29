@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<title>PrintMedia</title>
   <?php $this->load->view('Admin/head'); ?>
 </head>
 <body>
