@@ -24,23 +24,29 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left p-5">
               <div class="brand-logo">
-                <img src="<?php echo base_url();?>asset/admin/images/logo.svg">
+                <h4>Sign In Developer</h4>
               </div>
-              <h4>HelloAdmin! Smile Again</h4>
-              <h6 class="font-weight-light">Sign in untuk produktifitas</h6>
-              <form class="pt-3">
+              <?php echo form_open('auth/prosesloginadmin'); ?>
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="username" placeholder="Username">
+                  <?php
+                  $data = array('type' => 'email', 'class' => 'form-control', 'id' => 'email', 'name' => 'email', 'placeholder' => 'Masukkan Email', 'value' => set_value('email'), 'required' => 'true');
+                  echo form_input($data);
+                  echo form_error('email');
+                  ?>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="password" placeholder="Password">
+                  <?php
+                  $data = array('type' => 'password', 'class' => 'form-control', 'id' => 'password', 'name' => 'password', 'placeholder' => 'Masukkan Email', 'value' => set_value('password'), 'required' => 'true');
+                  echo form_input($data);
+                  echo form_error('password');
+                  ?>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn" href="../../index.html">SIGN IN</a>
+                  <?php echo form_submit('submit', 'Login', array('class' => 'btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn')); ?>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                 </div>
-              </form>
+              <?php echo form_close(); ?>
             </div>
           </div>
         </div>

@@ -94,15 +94,15 @@ class Auth extends CI_Controller {
 		$where = array('token' => $token);
 		$data = $this->Auth_model->GetWhere('auth', $where);
 		$data = array('data' => $data);
-		
-		if($data[0]['status'] == 'Belum Aktif')
-		{
-			$this->load->view('auth/suksesaktivasi', $data);	
-		}
-		else
-		{
-			redirect(base_url('login'));
-		}
+		$this->load->view('auth/suksesaktivasi', $data);	
+		// if($data[0]['status'] == 'Belum Aktif')
+		// {
+		// 	$this->load->view('auth/suksesaktivasi', $data);	
+		// }
+		// else
+		// {
+		// 	redirect(base_url('login'));
+		// }
 	}
 
 	public function login()
@@ -236,11 +236,6 @@ class Auth extends CI_Controller {
 			return false;
 		}
 	}
-
-	public function wilayah()
-	{
-		$this->load->view('auth/wilayah');
-	}
 	
 	public function login_admin()
 	{
@@ -270,9 +265,9 @@ class Auth extends CI_Controller {
 				$data = $cek->row_array();	
 				if($data['status'] == 'Aktif')
 				{
-					if($data['level'] === 'Member' )
+					if($data['level'] === 'Admin' )
 					{
-						$this->session->set_userdata('akses', 'Member');
+						$this->session->set_userdata('akses', 'Admin');
 						$this->session->set_userdata('email', $data['email']);
 						$this->session->set_userdata('status', 'login');
 
@@ -303,13 +298,7 @@ class Auth extends CI_Controller {
 							'session' => session_id(),
 						);
 						$data = $this->Auth_model->Insert('activity_user', $data);
-						redirect(base_url('user/index'));
-					}
-					
-					if($data['level'] === 'Admin' )
-					{
-						$this->session->set_flashdata('error', 'Maaf Akun Anda <b>TIDAK TERDAFTAR</b>.');
-						redirect(base_url('login'));
+						redirect(base_url('admin/index'));
 					}
 				}
 				if($data['status'] == 'Belum Aktif')
