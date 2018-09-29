@@ -2,18 +2,9 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
   <title>PrintMedia</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo base_url();?>asset/admin/images/favicon.png" />
+  <?php $this->load->view('Admin/head'); ?>
 </head>
 <body>
   <div class="container-scroller">
@@ -58,7 +49,7 @@
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
                                     <div class="col-sm-9">
-                                      <select class="form-control" name="kota">
+                                      <select class="form-control js-example-basic-single" name="kota">
                                         <?php foreach ($data as $info) {?>
                                           <option><?php echo $info['name'];?></option>
                                         <?php } ?>
@@ -96,18 +87,14 @@
   <!-- container-scroller -->
 
   <!-- plugins:js -->
-<script src="<?php echo base_url();?>asset/admin/vendors/js/vendor.bundle.base.js"></script>
-<script src="<?php echo base_url();?>asset/admin/vendors/js/vendor.bundle.addons.js"></script>
-<!-- endinject -->
-<!-- Plugin js for this page-->
-<!-- End plugin js for this page-->
-<!-- inject:js -->
-<script src="<?php echo base_url();?>asset/admin/js/off-canvas.js"></script>
-<script src="<?php echo base_url();?>asset/admin/js/misc.js"></script>
-<!-- endinject -->
-<!-- Custom js for this page-->
-<!-- <script src="<?php echo base_url();?>asset/admin/js/dashboard.js"></script> -->
+<?php $this->load->view('Admin/script'); ?>
 <!-- End custom js for this page-->
+
+<script>
+  $(document).ready(function() {
+    $('.js-example-basic-single').select2();
+});
+</script>
 <script>
 (function($) {
   'use strict';
