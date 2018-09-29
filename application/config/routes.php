@@ -19,6 +19,7 @@ $route['developer'] ='auth/login_admin';
 $route['tentang'] = 'home/tentang';
 
 // USER
+$route['dashboard'] = 'user/dashboard';
 $route['myprofile'] = 'user/myprofile';
 $route['history'] = 'user/index';
 $route['upload'] ='user/upload';

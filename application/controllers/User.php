@@ -9,6 +9,7 @@ class User extends CI_Controller
 		$this->load->model('User_model');
 		$this->load->library('form_validation');
 	}
+	
 	public function index()
 	{
 		$email = array('email' => $this->session->userdata('email')) ;
@@ -22,8 +23,13 @@ class User extends CI_Controller
 		else
 		{
 			$this->session->set_userdata('username', $cek['nama']);
-			$this->load->view('user/history');
+			$this->load->view('user/dashboard');
 		}
+	}
+
+	public function dashboard()
+	{
+		$this->load->view('user/dashboard');
 	}
 
 	public function inputprofile()
@@ -76,6 +82,7 @@ class User extends CI_Controller
 				'provinsi' => $this->input->post('provinsi'),
 				'kota' => $this->input->post('kota'),
 				'kecamatan' => $this->input->post('kecamatan'),				
+				'kodepos' => $this->input->post('kodepos'),
 			);
 
 			$data = $this->User_model->Insert('user', $data);

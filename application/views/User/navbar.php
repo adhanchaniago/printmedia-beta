@@ -40,6 +40,10 @@
 
           <!-- Sidebar Navidation Menus-->          
           <ul class="list-unstyled">                      
+            <li class="<?php if ( $this->uri->uri_string() == 'dashboard' ){ echo 'active'; } ?>">
+                <a href="<?php echo base_url('dashboard'); ?>"> <i class="fa fa-history"></i>Dashboard</a>
+            </li>
+
             <li class="<?php if ( $this->uri->uri_string() == 'history' ){ echo 'active'; } ?>">
                 <a href="<?php echo base_url('history'); ?>"> <i class="fa fa-history"></i>RIWAYAT</a>
             </li>

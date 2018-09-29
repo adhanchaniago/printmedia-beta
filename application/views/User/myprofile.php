@@ -225,7 +225,7 @@
                   <div class="form-group row">
                     <div class="container">
                       <br>
-                      <h1>Pelajar</h1>
+                      <h1>Profil Mahasiswa</h1>
                     </div>
                   </div>
 

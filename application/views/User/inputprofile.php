@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Print Media - Layanan Jasa Cetak Masa Kini</title>
-    <link rel="shortcut icon" href="<?php echo base_url('asset/iconprintmedia.png');?>">    
-
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="robots" content="all,follow">
     
-    <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/vendor/bootstrap/css/bootstrap.min.css">
-    
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/vendor/font-awesome/css/font-awesome.min.css">
-    
-    <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/fontastic.css">
-    
-    <!-- Google fonts - Poppins -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
-    
-    <!-- theme stylesheet-->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/style.blue.css" id="theme-stylesheet">
-    
-    <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/custom.css">    
-
-    <!-- bootstrap datepicker -->
-    <link rel="stylesheet" href="<?php echo base_url();?>asset/user/plugin/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <!-- All StyleSheet --> 
+    <?php $this->load->view('user/user_stylesheet'); ?>
+    <!-- All StyleSheet -->
         
   </head>
 
@@ -156,7 +130,7 @@
                   </div>
 
                   <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label class="label">Provinsi : </label>
                       <div class="select">
                         <select name="provinsi" class="form-control" id="provinsi">
@@ -173,7 +147,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label class="label">Kota/Kabupaten : </label>
                       <div class="select">
                         <select name="kota" class="form-control" id="kota">
@@ -182,7 +156,7 @@
                       </div>
                     </div>
 
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                       <label class="label">Kecamatan : </label>
                       <div class="select">
                         <select name="kecamatan" class="form-control" id="kecamatan">
@@ -190,23 +164,41 @@
                         </select>
                       </div>
                     </div>
+
+                    <div class="col-md-3">
+                      <label class="label">Kode Pos : </label>
+                      <?php 
+                        $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => set_value('kodepos')); 
+                        echo form_input($data);                        
+                      ?>                            
+                    </div>
+
+
                   </div>
 
                   <div class="form-group row">
                     <div class="container">
                       <br>
-                      <h1>Pelajar</h1>
+                      <h1>Profil Mahasiswa</h1>
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label class="col-sm-3 form-control-label">Universitas</label>
                     <div class="col-sm-9">
-                      <?php
-                        $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'instansi', 'id' => 'instansi', 'value' => set_value('instansi'));
-                        echo form_input($data);
-                      ?>
-                      <small class="form-text">Silahkan isi Instansi anda.</small>
+                      <div class="select">
+                        <select name="universitas" class="form-control" id="universitas">
+                        <?php
+                        $this->db->from('universitas');
+                        $universitas = $this->db->get();
+                        $data_universitas = $universitas->result_array();
+                        foreach($data_universitas as $row) {
+                        ?>
+                          <option value="<?php echo $row['id']; ?>"><?php echo $row['nama_univ']; ?></option>
+                        <?php } ?>                                                                  
+                        </select>
+                      </div>                
+                      <small class="form-text">Silahkan isi Nama Universitas anda.</small>
                     </div>
                   </div>                  
 
@@ -305,6 +297,8 @@
   <!-- Main File-->
   <script src="<?php echo base_url();?>asset/user/js/front.js"></script>
 
+
+<!-- Datepicker -->
   <script>
     $(document).ready(function () {
                 $('#tanggal_lahir').datepicker({
@@ -314,6 +308,7 @@
             });
   </script>
 
+<!-- Untuk Provinsi, Kota dan kecamatan -->
   <script>
   $(document).ready(function(){ 
     $("#provinsi").change(function(){ // Ketika user mengganti atau memilih data provinsi
