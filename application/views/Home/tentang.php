@@ -51,28 +51,28 @@
     <div class="container">
         <h4>TEAM</h4>
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
                 <div class="team-body">
                     <h5>Wahyu Rizky</h5>
                     <span>Penggembira</span>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
                 <div class="team-body">
                     <h5>Abdiel Reyhan</h5>
                     <span>Web Developer</span>
                 </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <img src="<?php echo base_url('asset/home/img/avatar.png'); ?>" alt="">
                 <div class="team-body">
                     <h5>Bugi Setiawan</h5>
                     <span>Backend Developer</span>
                 </div>   
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <img src="<?php echo base_url('asset/home/img/avatarfemale.png'); ?>" alt="">
                 <div class="team-body">
                     <h5>Ira Kusuma</h5>

@@ -20,7 +20,7 @@
 <section class="section section-auth desktop" id="mulai">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="intro-kiri" style="padding-top:5px">
                     <!-- <h2>PrintMedia</h2> -->
                     <div class="card">
@@ -63,7 +63,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-lg-6 col-md-12 col-sm-12">
                 <img src="<?php echo base_url('asset/home/img/intro-foto.png'); ?>" alt="" class="img-fluid">
             </div>
         </div>

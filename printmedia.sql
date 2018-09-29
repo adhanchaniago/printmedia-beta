@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.2
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 29, 2018 at 04:18 AM
--- Server version: 10.1.34-MariaDB
--- PHP Version: 7.2.7
+-- Generation Time: Sep 29, 2018 at 04:47 AM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,21 +34,34 @@ CREATE TABLE `activity_user` (
   `alamat_ip` varchar(100) DEFAULT NULL,
   `browser` varchar(255) DEFAULT NULL,
   `waktu_masuk` datetime DEFAULT NULL,
-  `keterangan` varchar(15) DEFAULT NULL
+  `keterangan` varchar(15) DEFAULT NULL,
+  `session` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `activity_user`
 --
 
-INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk`, `keterangan`) VALUES
-(2, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-21 08:49:03', 'Online'),
-(3, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-21 08:51:02', 'Online'),
-(4, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-21 08:51:04', 'Offline'),
-(5, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-22 06:17:56', 'Online'),
-(6, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-22 06:43:34', 'Online'),
-(7, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-27 03:32:02', 'Online'),
-(8, '111201609357@mhs.dinus.ac.id', '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36', '2018-08-27 01:13:43', 'Online');
+INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk`, `keterangan`, `session`) VALUES
+(12, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-26 12:29:48', 'Melakukan Login', 'oufpmogu6chblcpktc8df7ecr7qugmho'),
+(13, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 05:27:21', 'Melakukan Login', '0ulvh5taglmglnou67gcqvvk7fq2scj4'),
+(14, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:20:55', 'Melakukan Login', '2s6qev3cebsn1tpf79mv7j66h0aniof1'),
+(15, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:34:48', 'Melakukan Login', 'hp38tvj2gjh723j9lfkchiv7st5v4gm6'),
+(16, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:35:37', 'Melakukan Login', 'j5et4i8k5kn6v7ie2900rqeko3rbk3rr'),
+(17, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:36:10', 'Melakukan Login', 'hp38tvj2gjh723j9lfkchiv7st5v4gm6'),
+(18, '111201609358@mhs.dinus.ac.id', '::1', 'Edge 17.17134 - Windows 10', '2018-09-27 02:38:47', 'Melakukan Login', '1cvq844ino2mdf79o1h7nhjj0fb5pmb7'),
+(19, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:40:01', 'Melakukan Login', 'et49r06l7h6fc30ehafccf4r3q3j2f5d'),
+(20, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 02:45:45', 'Melakukan Login', 'nkt7hcsbheb3ojuaqlpoi02tjdd7p362'),
+(21, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 03:05:14', 'Melakukan Login', 'falsvn2tg5ug4tgrt0k0sfu4cl8hshl9'),
+(22, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 03:11:52', 'Melakukan Login', 'egdad9qroeusm8bqr0g2gfob1ijk40dv'),
+(23, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 03:13:50', 'Melakukan Login', 'ej8sli5qar4h85m9bcd1os9gsc5mkv7s'),
+(24, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 03:37:11', 'Melakukan Login', 'ua2iagjj0ecbvg5gp97580ouo5dn66rq'),
+(25, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-27 03:56:48', 'Melakukan Login', 'ujriejjvvsus253hr84iaehvo9118ndc'),
+(26, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 07:49:21', 'Melakukan Login', 'mqldijqe95k2t98esnb1s30cn2t93qs1'),
+(27, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:06:56', 'Melakukan Login', 'vraa67b520l54nu7e67bsjd35d63p4b7'),
+(28, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:43:27', 'Melakukan Login', 'a7gou807qnk5fm8efavmul4fhft6pr5h'),
+(29, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:46:34', 'Melakukan Login', 'ou10ttmgdc84iq32u5u9t02e0q55vuan'),
+(30, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:46:46', 'Melakukan Login', 'm6v8i19ho70rk905o4l95joampvr5so9');
 
 -- --------------------------------------------------------
 
@@ -71,7 +84,8 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(29, '111201609357@mhs.dinus.ac.id', '25D55AD283AA400AF464C76D713C07AD', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-08-22 11:17:47', 'Aktif');
+(31, '111201609357@mhs.dinus.ac.id', '1b37770a3a2ae24f29db76b1e322ba3e', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-09-26 14:08:28', 'Aktif'),
+(32, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-09-27 07:20:34', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -7320,13 +7334,6 @@ CREATE TABLE `jurusan` (
   `id` int(11) NOT NULL,
   `jurusan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `jurusan`
---
-
-INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
-(1, 'uwewe');
 
 -- --------------------------------------------------------
 
@@ -83101,8 +83108,7 @@ ALTER TABLE `districts`
 -- Indexes for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `jurusan` (`jurusan`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `provinces`
@@ -83121,8 +83127,7 @@ ALTER TABLE `regencies`
 -- Indexes for table `universitas`
 --
 ALTER TABLE `universitas`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `nama_univ` (`nama_univ`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`
@@ -83146,19 +83151,19 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `universitas`
@@ -83170,7 +83175,7 @@ ALTER TABLE `universitas`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
