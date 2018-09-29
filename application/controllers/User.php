@@ -49,20 +49,18 @@ class User extends CI_Controller
 
 	public function inputdata()
 	{
-		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
-		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|min_length[10]|max_length[13]');
-		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|min_length[5]|max_length[5]');
-
+		//$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|min_length[10]|max_length[13]');	
 
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
-		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
+		//$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
 		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
 		$this->form_validation->set_message('min_length', 'KOlom %s  Wajib 5 Angka');
 		$this->form_validation->set_message('max_length', '%s Nomernya Kebanyakan Bos');	
 
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('user/myprofile');
+			$this->load->view('user/inputprofile');
 		}
 		else
 		{
@@ -77,8 +75,7 @@ class User extends CI_Controller
 				'detail_alamat' => $this->input->post('detail_alamat'),
 				'provinsi' => $this->input->post('provinsi'),
 				'kota' => $this->input->post('kota'),
-				'kecamatan' => $this->input->post('kecamatan'),
-				'kodepos' => $this->input->post('kodepos'),
+				'kecamatan' => $this->input->post('kecamatan'),				
 			);
 
 			$data = $this->User_model->Insert('user', $data);

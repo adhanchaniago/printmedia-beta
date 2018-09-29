@@ -63,7 +63,7 @@
           <div style="margin-top: 10px;" class="container">
             <div class="card">
               <div class="card-body">
-                <?php echo form_open('user/inputdata', array('class' => 'form-horizontal')); ?>
+                <?php echo form_open('user/editdata', array('class' => 'form-horizontal')); ?>
                   <div class="form-group row">
                     <div class="container">
                       <h1>Profile Pribadi</h1>
@@ -103,14 +103,11 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group-material">
-                            <label class="label">Jenis Kelamin : </label>
-                            <div class="select">
+                            <label class="label">Jenis Kelamin : </label>                            
                             <?php 
                               $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'jenis_kelamin', 'id' => 'no_handphone', 'value' => $info['gender'], 'readonly'=>'true'); 
-                              echo form_input($data);
-                              echo form_error('no_handphone');
-                            ?>    
-                            </div>
+                              echo form_input($data);                          
+                            ?>                                
                           </div>                          
                         </div>
 
@@ -160,47 +157,70 @@
                     </div>
                   </div>
 
-                    <?php } ?>
+                    
 
                   <div class="row">
-                    <div class="col-md-4">
-                      <label class="label">Provinsi : </label>
-                      <div class="select">
-                        <select name="provinsi" class="form-control" id="provinsi">
-                        <?php
-                        $this->db->from('provinces');
-                        $data = array('id' => $info['provinsi']) ;
-                        $provinsi = $this->db->get_where('provinces', $data);
-                        $data_provinsi = $provinsi->result_array();
-                        foreach($data_provinsi as $row) {
+                    <div class="col-md-3">
+                      <div class="form-group-material">
+                        <label class="label">Provinsi : </label>                  
+                        <?php                    
+                          $data = array('id' => $info['provinsi']) ;
+                          $provinsi = $this->db->get_where('provinces', $data);
+                          $data_provinsi = $provinsi->result_array();
+                        ?>  
+
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'provinsi', 'id' => 'provinsi', 'value' => $data_provinsi[0]['name'], 'readonly'=>'true'); 
+                          echo form_input($data);                          
                         ?>
-                        <?php var_dump($row['id']);  var_dump($data);?>
-                          <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
-
-                        <?php } ?>
-                                                                  
-                        </select>
-                      </div>
+                      </div>                                      
                     </div>
 
-                    <div class="col-md-4">
-                      <label class="label">Kota/Kabupaten : </label>
-                      <div class="select">
-                        <select name="kota" class="form-control" id="kota">
-                          <option value=""></option>
-                        </select>
-                      </div>
+                    <div class="col-md-3">
+                      <div class="form-group-material">
+                        <label class="label">Kota : </label>                  
+                        <?php                    
+                          $data = array('id' => $info['kota']) ;
+                          $kota = $this->db->get_where('regencies', $data);
+                          $data_kota = $kota->result_array();
+                        ?>  
+
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'provinsi', 'id' => 'provinsi', 'value' => $data_kota[0]['name'], 'readonly'=>'true'); 
+                          echo form_input($data);                          
+                        ?>
+                      </div>                    
                     </div>
 
-                    <div class="col-md-4">
-                      <label class="label">Kecamatan : </label>
-                      <div class="select">
-                        <select name="kecamatan" class="form-control" id="kecamatan">
-                          <option value=""></option>
-                        </select>
-                      </div>
-                    </div>
+                    <div class="col-md-3">
+                      <div class="form-group-material">
+                        <label class="label">Kecamatan : </label>                  
+                        <?php                    
+                          $data = array('id' => $info['kecamatan']) ;
+                          $kecamatan = $this->db->get_where('districts', $data);
+                          $data_kecamatan = $kecamatan->result_array();
+                        ?>  
+
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'provinsi', 'id' => 'provinsi', 'value' => $data_kecamatan[0]['name'], 'readonly'=>'true'); 
+                          echo form_input($data);                          
+                        ?>
+                      </div>                                      
                   </div>
+
+                  <div class="col-md-3">
+                      <div class="form-group-material">
+                        <label class="label">Kodepos : </label>                                    
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'provinsi', 'id' => 'provinsi', 'value' => $info['kodepos'], 'readonly'=>'true'); 
+                          echo form_input($data);                          
+                        ?>
+                      </div>                    
+                    </div>
+
+                  <?php } ?>
+
+                </div>
 
                   <div class="form-group row">
                     <div class="container">
