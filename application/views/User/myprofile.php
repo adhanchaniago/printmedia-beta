@@ -116,7 +116,7 @@
                             <i class="fa fa-calendar"></i>
                           <label class="label">Tanggal Lahir : </label>                             
                               <?php
-                              $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tanggal_lahir', 'id' =>'datepicker', 'rows' => 3);
+                              $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tanggal_lahir','value' => $info['tanggal_lahir'], 'readonly' => 'true');
                               echo form_input($data);
                               ?>       
                           </div>                    

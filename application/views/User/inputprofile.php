@@ -113,10 +113,10 @@
                           <div class="form-group-material">
                             <i class="fa fa-calendar"></i>
                           <label class="label">Tanggal Lahir : </label>                             
-                              <?php
-                              $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tanggal_lahir', 'id' =>'datepicker', 'rows' => 3);
-                              echo form_input($data);
-                              ?>       
+                            <div class="input-group date">
+                              <div class="input-group-addon"></div>                              
+                                <input type="text" class="form-control pull-right" id="tanggal_lahir" name="tanggal_lahir">                                                     
+                            </div>                              
                           </div>                    
                         </div>
 
@@ -306,13 +306,12 @@
   <script src="<?php echo base_url();?>asset/user/js/front.js"></script>
 
   <script>
-  $(function () 
-  {
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    })
-  }    
+    $(document).ready(function () {
+                $('#tanggal_lahir').datepicker({
+                    format: "yyyy-mm-dd",
+                    autoclose:true
+                });
+            });
   </script>
 
   <script>
