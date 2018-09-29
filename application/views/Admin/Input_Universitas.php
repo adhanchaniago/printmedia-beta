@@ -44,7 +44,7 @@
                         <p class="card-description">
                             Isikan data secara lengkap dan benar.
                         </p>
-                        <form class="form-inline" method="POST" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>">
+                        <!-- <form class="form-inline" method="POST" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>"> 
                             <input type="text" class="form-control mb-2 mr-sm-2" name="univ" placeholder="Nama Universitas">
                             <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
@@ -64,6 +64,25 @@
                                 </label>
                                 </div>
                             <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
+                        </form>-->
+
+                        <form class="forms-sample">
+                          <div class="form-group">
+                            <label for="univ">Nama Universitas</label>
+                            <input type="text" class="form-control" name="univ" placeholder="Nama Universitas">
+                          </div>
+                          <div class="form-group">
+                            <label for="kota">Kota</label>
+                              <select class="form-control js-example-basic-single" name="kota">
+                                <?php foreach ($data as $info) {?>
+                                      <option><?php echo $info['name'];?></option>
+                                <?php } ?>
+                                
+                              </select>      
+                          </div>
+                           
+                          <button type="submit" class="btn btn-gradient-primary mr-2">Submit</button>
+                          <button class="btn btn-light">Cancel</button>
                         </form>
                     </div>
                 </div>
