@@ -1,9 +1,4 @@
-<<!DOCTYPE html>
-<html>
-<head>
-    
-</head>
-<body>
+
     <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
             <a class="navbar-brand brand-logo" href="index.html"><img src="<?php echo base_url();?>asset/admin/images/logo.svg" alt="logo"/></a>
@@ -60,5 +55,3 @@
             </ul>
         </div>
     </nav>
-</body>
-</html>
