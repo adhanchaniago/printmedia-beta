@@ -65,11 +65,18 @@
                                 </div>
                             <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
                         </form>-->
-
-                        <form class="forms-sample">
+                       
+                        <form class="forms-sample" method="post" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>" >
+                        <?php
+                        if($this->session->flashdata('success')):
+                                    echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+                                endif;?>
                           <div class="form-group">
                             <label for="univ">Nama Universitas</label>
-                            <input type="text" class="form-control" name="univ" placeholder="Nama Universitas">
+                            <?php 
+                                    $data1 = array('type' => 'text', 'id' => 'univ', 'name' => 'univ', 'class' => 'form-control', 'value' => set_value('univ'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                                    echo form_input($data1); ?>
+                                    <?php echo form_error('univ', '<p class="text-danger">', '</p>'); ?>
                           </div>
                           <div class="form-group">
                             <label for="kota">Kota</label>

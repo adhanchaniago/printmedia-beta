@@ -35,7 +35,7 @@
           </div>
           
           <div class="row">
-            
+         
             <!-- Untuk form Inputan -->
             <div class="col-12 grid-margin stretch-card">
                 <div class="card">
@@ -44,8 +44,17 @@
                         <p class="card-description">
                             Isikan data secara lengkap dan benar.
                         </p>
+                        <?php
+                        if($this->session->flashdata('success')):
+                                    echo '<script>alert("Berhasil Menambahkan")</script>';
+                                endif;?>
                         <form class="form-inline" method="POST" action="<?php echo base_url('Admin/Inputdb_Jurusan'); ?>">
-                            <input type="text" class="form-control mb-2 mr-sm-2" name="jurusan" placeholder="JURUSAN">
+                            <!-- <input type="text" class="form-control mb-2 mr-sm-2" name="jurusan" placeholder="JURUSAN"> -->
+                            <!-- <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button> -->
+                            <?php 
+                            $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                            echo form_input($data1); ?>
+                            <?php echo form_error('jurusan', '<p class="text-danger">', '</p>'); ?>
                             <button type="submit" class="btn btn-gradient-primary mb-2">Submit</button>
                         </form>
                     </div>
