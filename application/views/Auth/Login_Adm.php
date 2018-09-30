@@ -5,15 +5,15 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Purple Admin</title>
+  <title>Login Admin</title>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/vendors/css/vendor.bundle.base.css">
   <!-- endinject -->
   <!-- inject:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/css/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo base_url();?>asset/admin/images/favicon.png" />
+  <link rel="shortcut icon" href="<?php echo base_url();?>asset/admin2/images/favicon.png" />
 </head>
 
 <body>
@@ -57,12 +57,12 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="<?php echo base_url();?>asset/admin/vendors/js/vendor.bundle.base.js"></script>
-  <script src="<?php echo base_url();?>asset/admin/vendors/js/vendor.bundle.addons.js"></script>
+  <script src="<?php echo base_url();?>asset/admin2/vendors/js/vendor.bundle.base.js"></script>
+  <script src="<?php echo base_url();?>asset/admin2/vendors/js/vendor.bundle.addons.js"></script>
   <!-- endinject -->
   <!-- inject:js -->
-  <script src="<?php echo base_url();?>asset/admin/js/off-canvas.js"></script>
-  <script src="<?php echo base_url();?>asset/admin/js/misc.js"></script>
+  <script src="<?php echo base_url();?>asset/admin2/js/off-canvas.js"></script>
+  <script src="<?php echo base_url();?>asset/admin2/js/misc.js"></script>
   <!-- endinject -->
 </body>
 
