@@ -32,7 +32,7 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('admin/Input_Universitas');
+			$this->load->view('Admin/Input_Universitas');
 		}
 		else
 		{
@@ -59,6 +59,7 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
+			
 			$this->load->view('admin/Input_Jurusan');
 		}
 		else

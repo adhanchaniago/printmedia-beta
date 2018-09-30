@@ -42,33 +42,18 @@
           <div class="col-md-12">
             <div class="card card-warning">
               <div class="card-header">
-                <h3 class="card-title">Input Universitas</h3>
+                <h3 class="card-title">Input Jurusan</h3>
             </div>
             <div class="card-body">
-                <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>">
-                <?php
+            <?php
                         if($this->session->flashdata('success')):
-                                    echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+                                    echo '<script>alert("Berhasil Menambahkan")</script>';
                                 endif;?>
-                  <!-- text input -->
-                  <div class="form-group">
-                    <label>Nama Universitas</label>
-                    <!-- <input type="text" class="form-control" placeholder="Pilih Kota"> -->
+                    <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Jurusan'); ?>">
                     <?php 
-                                    $data1 = array('type' => 'text', 'id' => 'univ', 'name' => 'univ', 'class' => 'form-control', 'value' => set_value('univ'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
-                                    echo form_input($data1); ?>
-                                    <?php echo form_error('univ', '<p class="text-danger">', '</p>'); ?>
-                  </div>
-                  <!-- select -->
-                  <div class="form-group">
-                  <label for="Kota">Kota</label>
-                   <select class="form-control select2" style="width: 100%;" name="Kota">
-                  <?php foreach ($data as $info) {?>
-                                      <option><?php echo $info['name'];?></option>
-                                <?php } ?>
-                   
-                  </select>
-                  </div>
+                            $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                            echo form_input($data1); ?>
+                            <?php echo form_error('jurusan', '<p class="text-danger">', '</p>'); ?>
                   <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
