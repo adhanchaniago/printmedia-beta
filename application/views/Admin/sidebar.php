@@ -34,9 +34,9 @@
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-pie-chart"></i>
+              <i class="nav-icon fa fa-user"></i>
               <p>
-                Charts
+                User
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -44,42 +44,42 @@
               <li class="nav-item">
                 <a href="pages/charts/chartjs.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>ChartJS</p>
+                  <p>Tampilkan User</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/charts/flot.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Flot</p>
+                  <p>Tambah User</p>
                 </a>
               </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-tree"></i>
+              <i class="nav-icon fa fa-globe"></i>
               <p>
-                UI Elements
+                Universitas
                 <i class="fa fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/UI/general.html" class="nav-link">
+                <a href="<?php echo base_url('Admin/Tampil_Univ'); ?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>General</p>
+                  <p>Tampil Universitas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/icons.html" class="nav-link">
+                <a href="<?php echo base_url('Admin/Input_Universitas');?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Icons</p>
+                  <p>Tambah Universitas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/UI/buttons.html" class="nav-link">
+                <a href="<?php echo base_url('Admin/Input_Jurusan');?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Buttons</p>
+                  <p>Tambah Jurusan</p>
                 </a>
               </li>
             </ul>

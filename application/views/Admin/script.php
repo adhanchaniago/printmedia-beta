@@ -3,6 +3,9 @@
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>asset/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url();?>asset/admin/plugins/datatables/jquery.dataTables.js"></script>
+<script src="<?php echo base_url();?>asset/admin/plugins/datatables/dataTables.bootstrap4.js"></script>
 <!-- Morris.js charts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="<?php echo base_url();?>asset/admin/plugins/morris/morris.min.js"></script>
