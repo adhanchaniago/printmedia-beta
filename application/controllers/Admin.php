@@ -33,10 +33,9 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			$this->load->model('Admin_model');
-		$data = $this->Admin_model->tampiluniv('regencies');
-		$data=array('data'=> $data);
-		$this->load->view('Admin/Input_Universitas',$data);
-			$this->load->view('Admin/Input_Universitas');
+			$data = $this->Admin_model->tampiluniv('regencies');
+			$data=array('data'=> $data);
+			$this->load->view('Admin/Input_Universitas',$data);
 		}
 		else
 		{
