@@ -1,4 +1,12 @@
-# Add any directories, files, or patterns you don't want to be tracked by version control
-
-/node_modules
-/bower_components
+*.DS_Store
+*.log
+*.zip
+.idea
+nbproject
+nbproject/private
+node_modules
+.sass-cache
+bower_components
+ad.js
+TODO
+test.html
