@@ -45,7 +45,7 @@ class Admin extends CI_Controller {
 			$data = $this->Admin_model->insert('universitas', $data);
 
 			$this->session->set_flashdata('success', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
-			redirect(base_url('Admin/Tampil_Univ'));
+			redirect(base_url('Admin/Input_Universitas'));
 		}
 			
 	}

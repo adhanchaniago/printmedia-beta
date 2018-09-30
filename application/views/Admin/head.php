@@ -20,5 +20,7 @@
   <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/plugins/daterangepicker/daterangepicker-bs3.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+   <!-- Select2 -->
+   <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/plugins/select2/select2.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
