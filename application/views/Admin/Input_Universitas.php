@@ -61,8 +61,8 @@
                   </div>
                   <!-- select -->
                   <div class="form-group">
-                  <label for="Kota">Kota</label>
-                   <select class="form-control select2" style="width: 100%;" name="Kota">
+                  <label for="kota">Kota</label>
+                   <select class="form-control select2" style="width: 100%;" name="kota">
                   <?php foreach ($data as $info) {?>
                                       <option><?php echo $info['name'];?></option>
                                 <?php } ?>
