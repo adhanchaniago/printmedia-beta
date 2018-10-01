@@ -203,61 +203,69 @@
                   </div>                  
 
                   <div class="form-group row">
-                    <label class="col-sm-3 form-control-label">Jurusan</label>
+                    <label class="col-sm-3 form-control-label">Program Studi</label>
                     <div class="col-sm-9">
-                      <?php
-                        $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'jurusan', 'id' => 'jurusan', 'value' => set_value('jurusan'));
-                        echo form_input($data);
-                      ?>
-                      <small class="form-text">Silahkan isi Jurusan yang sedang anda pelajari sekarang.</small>
+                    <div class="select">
+                        <select name="jurusan" class="form-control" id="jurusan">
+                        <?php
+                        $this->db->from('jurusan');
+                        $jurusan = $this->db->get();
+                        $data_jurusan = $jurusan->result_array();
+                        foreach($data_jurusan as $row) {
+                        ?>
+                          <option value="<?php echo $row['id']; ?>"><?php echo $row['jurusan']; ?></option>
+                        <?php } ?>                                                                  
+                        </select>
+                      </div>  
+                      <small class="form-text">Silahkan isi Progdi yang anda jalani.</small>
                     </div>
                   </div>
 
+                  
                   <div class="row">
-                    <div class="col-md-3">
+                  
+                    <div class="col-md-6">
                       <div class="form-group-material">
-                        <?php
-                          $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'jenjang', 'id' => 'jenjang', 'value' => set_value('jenjang'));
-                          echo form_input($data);
-                        ?>
-                        <label for="jenjang" class="label-material">Jenjang</label>
-                      </div>                        
+                        <label class="label">Tahun Masuk : </label>
+                        <div class="select">
+                          <select name="tahun_masuk" class="form-control" id="tahun_masuk">
+                          <option value="2015"> 2015 </option>
+                          <option value="2016"> 2016 </option>
+                          <option value="2017"> 2017 </option>
+                          <option value="2018"> 2018 </option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
 
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                       <div class="form-group-material">
-                        <?php
-                          $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'tahun_masuk', 'id' => 'tahun_masuk', 'value' => set_value('tahun_masuk'));
-                          echo form_input($data);
-                        ?>
-                        <label for="tahun_masuk" class="label-material">Tahun Masuk</label>
-                      </div>                        
+                        <label class="label">Tahun Masuk : </label>
+                        <div class="select">
+                          <select name="tahun_masuk" class="form-control" id="tahun_masuk">
+                          <option value="0"> Belum Lulus </option>
+                          <option value="2019"> 2019 </option>
+                          <option value="2020"> 2020 </option>
+                          <option value="2021"> 2021 </option>
+                          <option value="2022"> 2022 </option>
+                          </select>
+                        </div>
+                      </div>
                     </div>
-
-                    <div class="col-md-3">
-                      <div class="form-group-material">
-                        <?php
-                          $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'tahun_lulus', 'id' => 'tahun_lulus', 'value' => set_value('tahun_lulus'));
-                          echo form_input($data);
-                        ?>
-                        <label for="tahun_lulus" class="label-material">Tahun Lulus</label>
-                      </div>                        
-                    </div>
-
-                    <div class="col-md-3">
-                      <div class="form-group-material">
-                        <?php
-                          $data = array('type' => 'text', 'class' => 'input-material', 'name' => 'semester', 'id' => 'semester', 'value' => set_value('semester'));
-                          echo form_input($data);
-                        ?>
-                        <label for="semester" class="label-material">Semester</label>
-                      </div>                        
-                    </div>
-                  </div> 
+                  
+                  </div>
 
                   <div class="form-group row">
-                    <?php echo form_submit('submit', 'Submit', array('class' => 'btn btn-primary')); ?>
-                    <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger')); ?>
+                    <div class="container">
+                      <div class="row">
+                      <div class="col-md-6">
+                      <?php echo form_submit('submit', 'Submit', array('class' => 'btn btn-primary form-control')); ?>
+                      </div>
+                      <div class="col md-6">
+                      <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger form-control')); ?>
+                      </div>                                                                    
+                      </div>
+                    </div>
                   </div>                   
                 <?php echo form_close(); ?>                 
               </div>                                      
