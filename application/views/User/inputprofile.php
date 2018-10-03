@@ -129,6 +129,7 @@
                     </div>
                   </div>
 
+                  
                   <div class="row">
                     <div class="col-md-3">
                       <label class="label">Provinsi : </label>
@@ -229,10 +230,14 @@
                         <label class="label">Tahun Masuk : </label>
                         <div class="select">
                           <select name="tahun_masuk" class="form-control" id="tahun_masuk">
-                          <option value="2015"> 2015 </option>
-                          <option value="2016"> 2016 </option>
-                          <option value="2017"> 2017 </option>
-                          <option value="2018"> 2018 </option>
+                          <?php
+                        $this->db->from('tahun');
+                        $tahun = $this->db->get();
+                        $data_tahun = $tahun->result_array();
+                        foreach($data_tahun as $row) {
+                        ?>
+                          <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                        <?php } ?>
                           </select>
                         </div>
                       </div>
@@ -241,13 +246,16 @@
                     <div class="col-md-6">
                       <div class="form-group-material">
                         <label class="label">Tahun Masuk : </label>
-                        <div class="select">
-                          <select name="tahun_masuk" class="form-control" id="tahun_masuk">
-                          <option value="0"> Belum Lulus </option>
-                          <option value="2019"> 2019 </option>
-                          <option value="2020"> 2020 </option>
-                          <option value="2021"> 2021 </option>
-                          <option value="2022"> 2022 </option>
+                        <select name="tahun_keluar" class="form-control" id="tahun_keluar">
+                        <option value="Belum Lulus">Belum Lulus</option>
+                        <?php
+                        $this->db->from('tahun');
+                        $tahun = $this->db->get();
+                        $data_tahun = $tahun->result_array();
+                        foreach($data_tahun as $row) {
+                        ?>
+                          <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                        <?php } ?>
                           </select>
                         </div>
                       </div>
@@ -258,23 +266,34 @@
                   <div class="form-group row">
                     <div class="container">
                       <div class="row">
-                      <div class="col-md-6">
-                      <?php echo form_submit('submit', 'Submit', array('class' => 'btn btn-primary form-control')); ?>
-                      </div>
-                      <div class="col md-6">
-                      <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger form-control')); ?>
-                      </div>                                                                    
+                        <div class="col-md-6">
+                        <?php echo form_submit('submit', 'Submit', array('class' => 'btn btn-primary form-control')); ?>
+                        </div>
+                        
+                        <div class="col md-6">
+                        <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger form-control')); ?>
+                        </div>                                                                    
                       </div>
                     </div>
-                  </div>                   
+                  </div>
+
                 <?php echo form_close(); ?>                 
               </div>                                      
             </div>
           </div>            
           <!-- Akhiran Isi -->
 
-         <!-- Page Footer-->
-          <footer class="main-footer">
+          
+
+        </div>
+        <!-- Akhir Konten -->
+
+        
+
+      </div>
+
+      <!-- Page Footer-->
+    <footer class="main-footer">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
@@ -285,12 +304,10 @@
                 </div>
               </div>
             </div>
-          </footer>                  
-        </div>
-        <!-- Akhir Konten -->
-
-      </div>
+          </footer>
     </div>
+
+    
 
   <!-- JavaScript files-->
   <script src="<?php echo base_url();?>asset/user/vendor/jquery/jquery.min.js"></script>
