@@ -2,12 +2,14 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Waktu pembuatan: 29 Sep 2018 pada 23.55
--- Versi server: 5.7.23
--- Versi PHP: 7.2.8
+-- Host: 127.0.0.1
+-- Generation Time: Oct 03, 2018 at 08:46 AM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -23,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `activity_user`
+-- Table structure for table `activity_user`
 --
 
 CREATE TABLE `activity_user` (
@@ -37,7 +39,7 @@ CREATE TABLE `activity_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `activity_user`
+-- Dumping data for table `activity_user`
 --
 
 INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk`, `keterangan`, `session`) VALUES
@@ -59,12 +61,15 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (27, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:06:56', 'Melakukan Login', 'vraa67b520l54nu7e67bsjd35d63p4b7'),
 (28, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:43:27', 'Melakukan Login', 'a7gou807qnk5fm8efavmul4fhft6pr5h'),
 (29, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:46:34', 'Melakukan Login', 'ou10ttmgdc84iq32u5u9t02e0q55vuan'),
-(30, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:46:46', 'Melakukan Login', 'm6v8i19ho70rk905o4l95joampvr5so9');
+(30, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-09-29 09:46:46', 'Melakukan Login', 'm6v8i19ho70rk905o4l95joampvr5so9'),
+(31, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-01 05:26:02', 'Melakukan Login', 'vhe9lnrd6ptfa45hduku82058dllijjd'),
+(32, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-01 08:14:10', 'Melakukan Login', 'fen971r9mb4d94465ecn7k30um1643ln'),
+(33, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-03 12:51:30', 'Melakukan Login', '1i7756bi5n2g62aia8gch6o3svstlpgc');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth`
+-- Table structure for table `auth`
 --
 
 CREATE TABLE `auth` (
@@ -78,17 +83,17 @@ CREATE TABLE `auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `auth`
+-- Dumping data for table `auth`
 --
 
 INSERT INTO `auth` (`id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(31, '111201609357@mhs.dinus.ac.id', '1b37770a3a2ae24f29db76b1e322ba3e', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-09-26 14:08:28', 'Aktif'),
-(32, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-09-27 07:20:34', 'Aktif');
+(32, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-09-27 07:20:34', 'Aktif'),
+(34, '111201609356@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '8c7cb251509dd49f078b5c4772c6ab2c', '2018-09-29 03:54:28', 'Belum Aktif');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `districts`
+-- Table structure for table `districts`
 --
 
 CREATE TABLE `districts` (
@@ -98,7 +103,7 @@ CREATE TABLE `districts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `districts`
+-- Dumping data for table `districts`
 --
 
 INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
@@ -7325,7 +7330,7 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jurusan`
+-- Table structure for table `jurusan`
 --
 
 CREATE TABLE `jurusan` (
@@ -7333,135 +7338,29 @@ CREATE TABLE `jurusan` (
   `jurusan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data untuk tabel `jurusan`
+-- Table structure for table `pemesanan`
 --
 
-INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
-(2, 'Pendidikan Dokter dan Program Profesi Dokter-S1'),
-(3, 'Pendidikan Dokter dan Program Profesi Dokter-PPD'),
-(4, 'Farmasi-S1'),
-(5, 'Teknik Perencanaan Wilayah dan Kota (Planologi)-S1'),
-(7, 'Ilmu Hukum-S1'),
-(8, 'Manajemen-S1'),
-(9, 'Akuntansi-S1'),
-(10, 'Akuntansi-D3'),
-(11, 'Syari’ah (Ahwal Syakhshiyah)-S1'),
-(12, 'Tarbiyah (Pendidikan Agama Islam)-S1'),
-(13, 'Sejarah dan Kebudayaan Islam-S1'),
-(14, 'Teknik Elektro-S1'),
-(15, 'Teknik Industri-S1'),
-(16, 'Teknik Informatika-S1'),
-(17, 'Teknik Komputer-D3'),
-(18, 'Psikologi-S1'),
-(19, 'Ilmu Keperawatan-S1'),
-(20, 'Ilmu Keperawatan-Ners'),
-(21, 'Keperawatan-D3'),
-(22, 'Kebidanan-D3'),
-(23, 'Sastra Inggris-S1'),
-(24, 'Pendidikan Bahasa Inggris-S1'),
-(25, 'Ilmu Komunikasi-S1'),
-(26, 'Pendidikan Dokter Gigi-S1'),
-(27, 'Pendidikan Dokter Gigi-PPD'),
-(28, 'Pendidikan Bahasa dan Sastra Indonesia-S1'),
-(29, 'Pendidikan Matematika-S1'),
-(30, 'Pendidikan Guru Sekolah Dasar-S1'),
-(31, 'Magister Teknik Sipil-S2'),
-(32, 'Magister Ilmu Hukum-S2'),
-(33, 'Magister Manajemen-S2'),
-(34, 'Magister Teknik Elektro-S2'),
-(35, 'Magister Pendidikan Islam-S2'),
-(36, 'Magister Biomedik-S2'),
-(37, 'Doktor Ilmu Hukum-S3'),
-(38, 'Arsitektur-S1'),
-(39, 'Desain Komunikasi Visual-S1'),
-(40, 'Teknik Sipil-S1'),
-(41, 'Teknologi Energi-S1'),
-(42, 'Englishpreneurship-S1'),
-(43, 'Digital Performing Arts-S1'),
-(44, 'Perpajakan-D3'),
-(45, 'Teknologi Pangan-S1'),
-(46, 'Nutrisi & Tekno. Kuliner-S1'),
-(47, 'Sistem Informasi-S1'),
-(48, 'Game Technology-S1'),
-(49, 'E-Commerce Technology-S1'),
-(50, 'Akuntansi & Sis. Informasi-S1'),
-(51, 'Manajemen Unggulan-S1'),
-(52, 'Manajemen Unggulan-S2'),
-(53, 'Teknologi Pangan-S2'),
-(54, 'Lingkungan & Perkotaan-S2'),
-(55, 'Arsitektur-S2'),
-(56, 'Manajemen-S2'),
-(57, 'Sains Manajemen-S2'),
-(58, 'Sains Psikologi-S2'),
-(59, 'Profesi Psikologi-S2'),
-(60, 'Hukum Kesehatan-S2'),
-(61, 'Akuntansi-S2'),
-(62, 'Indonesian Traditional Herbal Medicine-NG'),
-(63, 'Entrepreneurship & Social Responsibility-NG'),
-(64, 'Sarjana Kedokteran & Profesi Dokter'),
-(65, 'Ilmu Lingkungan-S3'),
-(66, 'Film dan Televisi - SST'),
-(67, 'Animasi - SST'),
-(68, 'Teknik Informatika - D3'),
-(69, 'Broadcasting - D3'),
-(70, 'Sastra Jepang - S1'),
-(71, 'Manajemen Perhotelan - SST'),
-(72, 'Kesehatan Masyarakat - S1'),
-(73, 'Kesehatan Lingkungan - S1'),
-(74, 'Rekam Medik & Info. Kes. - D3'),
-(75, 'Teknik Biomedis - S1'),
-(76, 'Perhotelan-D3'),
-(77, 'Keuangan Perbankan-D3'),
-(78, 'Bahasa Jepang-D3'),
-(79, 'Administrasi Bisnis-D3'),
-(80, 'Teknologi Hasil Pertanian -S1'),
-(81, 'Ilmu Administrasi Negara-S1'),
-(82, 'Kenotariatan-S2'),
-(83, 'Teknik Kimia-S1'),
-(84, 'Ilmu Administrasi Niaga-S1'),
-(85, 'Ilmu Hukum-S2'),
-(86, 'Ilmu Administrasi-S2'),
-(87, 'Pendidikan Kimia-S1'),
-(88, 'Teknik Mesin-S1'),
-(89, 'Teknik Tenaga Elektrik-S1'),
-(90, 'Teknik Elektro Medik-S1'),
-(91, 'Teknologi Informasi-S1'),
-(92, 'Bahasa & Sastra Inggris-S1'),
-(94, 'Bimbingan dan Konseling-S1'),
-(95, 'Pendidikan Anak usia Dini-S1'),
-(96, 'Kependidikan Sekolah Dasar & Prasekolah-S1'),
-(97, 'Pendidikan Biologi-S1'),
-(98, 'Pendidikan Fisika-S1'),
-(99, 'Pendidikan Teknologi Informasi-S1'),
-(100, 'Pendidikan Pancasila Dan Kewarganegaraan-S1'),
-(101, 'Pendidikan Jasmani, Kesehatan dan Rekreasi-S1'),
-(102, 'Ilmu Ekonomi-S1'),
-(103, 'Teknik Lingkungan-S1'),
-(104, 'Sastra Daerah-S1'),
-(105, 'Teknik Elektronika-D3'),
-(106, 'Teknik Kimia-D3'),
-(107, 'Teknik Lingkungan-D3'),
-(108, 'Teknik Sipil-D3'),
-(109, 'Teknik Mesin-D3'),
-(110, 'Teknik Arsitektur-D3'),
-(111, 'Hubungan Masyarakat-D3'),
-(112, 'Hukum Ekonomi Syariah-S1'),
-(113, 'Ekonomi Islam-S1'),
-(114, 'Ilmu Hubungan Internasional-S1'),
-(115, 'Ilmu Politik-S1'),
-(116, 'Pendidikan Dokter-S1'),
-(117, 'Pendidikan Agama Islam-S1'),
-(118, 'Pendidikan Guru Madrasah Ibtidaiyah-S1'),
-(119, 'Agribisnis-S1'),
-(120, 'Muamalat-S2'),
-(121, 'Pendidikan Agama Islam-S2'),
-(122, 'Profesi Apoteker');
+CREATE TABLE `pemesanan` (
+  `id` int(11) NOT NULL,
+  `nama_dokumen` varchar(100) NOT NULL,
+  `nama_file` varchar(255) NOT NULL,
+  `ukuran_file` double NOT NULL,
+  `tipe_file` varchar(255) NOT NULL,
+  `nama_penerima` varchar(100) NOT NULL,
+  `nohape` varchar(100) NOT NULL,
+  `alamat` varchar(255) NOT NULL,
+  `catatan` varchar(100) NOT NULL,
+  `jenis` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `provinces`
+-- Table structure for table `provinces`
 --
 
 CREATE TABLE `provinces` (
@@ -7470,7 +7369,7 @@ CREATE TABLE `provinces` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `provinces`
+-- Dumping data for table `provinces`
 --
 
 INSERT INTO `provinces` (`id`, `name`) VALUES
@@ -7512,7 +7411,7 @@ INSERT INTO `provinces` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `regencies`
+-- Table structure for table `regencies`
 --
 
 CREATE TABLE `regencies` (
@@ -7522,7 +7421,7 @@ CREATE TABLE `regencies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `regencies`
+-- Dumping data for table `regencies`
 --
 
 INSERT INTO `regencies` (`id`, `province_id`, `name`) VALUES
@@ -8044,7 +7943,34 @@ INSERT INTO `regencies` (`id`, `province_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `universitas`
+-- Table structure for table `tahun`
+--
+
+CREATE TABLE `tahun` (
+  `id` int(11) NOT NULL,
+  `tahun` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tahun`
+--
+
+INSERT INTO `tahun` (`id`, `tahun`) VALUES
+(1, '2014'),
+(2, '2015'),
+(3, '2016'),
+(4, '2017'),
+(5, '2018'),
+(6, '2019'),
+(7, '2020'),
+(8, '2021'),
+(9, '2022'),
+(10, '2023');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `universitas`
 --
 
 CREATE TABLE `universitas` (
@@ -8054,7 +7980,7 @@ CREATE TABLE `universitas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `universitas`
+-- Dumping data for table `universitas`
 --
 
 INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
@@ -8107,7 +8033,7 @@ INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -8128,7 +8054,7 @@ CREATE TABLE `user` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `villages`
+-- Table structure for table `villages`
 --
 
 CREATE TABLE `villages` (
@@ -8138,7 +8064,7 @@ CREATE TABLE `villages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `villages`
+-- Dumping data for table `villages`
 --
 
 INSERT INTO `villages` (`id`, `district_id`, `name`) VALUES
@@ -83206,14 +83132,14 @@ INSERT INTO `villages` (`id`, `district_id`, `name`) VALUES
 --
 
 --
--- Indeks untuk tabel `activity_user`
+-- Indexes for table `activity_user`
 --
 ALTER TABLE `activity_user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `auth`
+-- Indexes for table `auth`
 --
 ALTER TABLE `auth`
   ADD PRIMARY KEY (`id`),
@@ -83221,106 +83147,131 @@ ALTER TABLE `auth`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `districts`
+-- Indexes for table `districts`
 --
 ALTER TABLE `districts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `districts_id_index` (`regency_id`);
 
 --
--- Indeks untuk tabel `jurusan`
+-- Indexes for table `jurusan`
 --
 ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `provinces`
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `regencies`
+-- Indexes for table `regencies`
 --
 ALTER TABLE `regencies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `regencies_province_id_index` (`province_id`);
 
 --
--- Indeks untuk tabel `universitas`
+-- Indexes for table `tahun`
+--
+ALTER TABLE `tahun`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `universitas`
 --
 ALTER TABLE `universitas`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD KEY `email` (`email`);
 
 --
--- Indeks untuk tabel `villages`
+-- Indexes for table `villages`
 --
 ALTER TABLE `villages`
   ADD PRIMARY KEY (`id`),
   ADD KEY `villages_district_id_index` (`district_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `activity_user`
+-- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT untuk tabel `auth`
+-- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT untuk tabel `jurusan`
+-- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `universitas`
+-- AUTO_INCREMENT for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tahun`
+--
+ALTER TABLE `tahun`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `universitas`
 --
 ALTER TABLE `universitas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `districts`
+-- Constraints for table `districts`
 --
 ALTER TABLE `districts`
   ADD CONSTRAINT `districts_regency_id_foreign` FOREIGN KEY (`regency_id`) REFERENCES `regencies` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `regencies`
+-- Constraints for table `regencies`
 --
 ALTER TABLE `regencies`
   ADD CONSTRAINT `regencies_province_id_foreign` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `villages`
+-- Constraints for table `villages`
 --
 ALTER TABLE `villages`
   ADD CONSTRAINT `villages_district_id_foreign` FOREIGN KEY (`district_id`) REFERENCES `districts` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
