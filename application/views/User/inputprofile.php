@@ -2,6 +2,7 @@
 <html>
   <head>
     
+  <title>Print Media - Layanan Jasa Cetak Masa Kini</title>
     <!-- All StyleSheet --> 
     <?php $this->load->view('user/user_stylesheet'); ?>
     <!-- All StyleSheet -->
@@ -11,11 +12,22 @@
   <body>
     <div class="page">
 
-      <!-- Navbar & Side Bar-->  
+      <!-- Awal Navbar-->  
         <?php $this->load->view('user/navbar'); ?>
-      <!-- Navbar & Side Bar-->  
+      <!-- Navbar-->
+      
+      <!-- Awal Page Content -->
+      <div class="page-content d-flex align-items-stretch">
+
+      </div>
+      <!-- Akhir Page Content -->
+
+      <!-- Awal Side Bar -->
+        <?php $this->load->view('user/sidebar'); ?>
+      <!-- Akhir Side Bar -->
 
         <!-- Awal Konten -->
+ 
         <div class="content-inner">
           <!-- Page Header-->
           <header class="page-header">
@@ -29,46 +41,48 @@
                   <small class="no-margin-bottom">Di sini kamu dapat mengganti profil pribadi dan profil pelajar.</small>
                 </div>
               </div>
-              
             </div>
           </header>
 
+          <!-- wa -->
+          
           <!-- Awalan Isi  -->
           <div style="margin-top: 10px;" class="container">
             <div class="card">
               <div class="card-body">
                 <?php echo form_open('user/inputdata', array('class' => 'form-horizontal')); ?>
-                  <div class="form-group row">
-                    <div class="container">
+                  <div class="container">
+                    <div class="row">
                       <h1>Profile Pribadi</h1>
                     </div>
                   </div>           
 
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="label">Nama Lengkap : </label>
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
+                          echo form_input($data);
+                          echo form_error('nama_lengkap');
+                        ?>                            
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group-material">
+                        <label class="label">No. Handphone : </label>
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
+                          echo form_input($data);
+                          echo form_error('no_handphone');
+                        ?>                                                  
+                      </div>   
+                    </div>
+                  </div><!-- AKHIR ROW -->
+
                   <div class="form-group row">
                     <div class="container">
-                      <div class="row">
-                        <div class="col-md-6">                  
-                          <div class="form-group-material">
-                            <label class="label">Nama Lengkap : </label>
-                            <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
-                              echo form_input($data);
-                              echo form_error('nama_lengkap');
-                            ?>                            
-                          </div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="form-group-material">
-                            <label class="label">No. Handphone : </label>
-                            <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
-                              echo form_input($data);
-                              echo form_error('no_handphone');
-                            ?>                                                  
-                          </div>   
-                        </div>
-                      </div>
 
                       <div class="row">
                         <div class="col-md-4">
@@ -90,8 +104,8 @@
                             <div class="input-group date">
                               <div class="input-group-addon"></div>                              
                                 <input type="text" class="form-control pull-right" id="tanggal_lahir" name="tanggal_lahir">                                                     
-                            </div>                              
-                          </div>                    
+                              </div>                              
+                            </div>                    
                         </div>
 
                         <div class="col-md-4">
@@ -293,18 +307,20 @@
       </div>
 
       <!-- Page Footer-->
-    <footer class="main-footer">
+      <footer class="main-footer">
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>Print Media</p>
+                  <p>Your company &copy; 2017-2019</p>
                 </div>
                 <div class="col-sm-6 text-right">
-                  <p>Design by <a href="<?php echo base_url('welcome/index');?>" class="external">Print Media</a>
+                  <p>Design by <a href="https://bootstrapious.com/admin-templates" class="external">Bootstrapious</a></p>
+                  <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
                 </div>
               </div>
             </div>
           </footer>
+    
     </div>
 
     

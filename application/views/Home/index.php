@@ -199,22 +199,22 @@
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
 <script>
-$(document).ready(function(){
-    var scroll_start = 0;
-    var startchange = $('#mulai');
-    var offset = startchange.offset();
-    if (startchange.length){
-    $(document).scroll(function() { 
-        scroll_start = $(this).scrollTop();
-        if(scroll_start > offset.top) {
-            $(".navbar").css('background-color', '#fff');
-        } 
-        else {
-            $('.navbar').css('background-color', 'transparent');
-       }
-    });
-    }
-});
+// $(document).ready(function(){
+//     var scroll_start = 0;
+//     var startchange = $('#mulai');
+//     var offset = startchange.offset();
+//     if (startchange.length){
+//     $(document).scroll(function() { 
+//         scroll_start = $(this).scrollTop();
+//         if(scroll_start > offset.top) {
+//             $(".navbar").css('background-color', '#fff');
+//         } 
+//         else {
+//             $('.navbar').css('background-color', 'transparent');
+//        }
+//     });
+//     }
+// });
 </script>
 
 </body>

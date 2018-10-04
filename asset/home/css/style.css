@@ -11,6 +11,9 @@ body{
 }
 
 /*---------- HEADER NAVBAR ----------*/
+.navbar{
+    background: #fff;
+}
 .section .default-header{
     text-align: center;
 }
@@ -221,6 +224,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0;
 }
 .footer .list ul li{
     background: #b9babe;
@@ -260,81 +264,13 @@ body{
 
 /* RESPONSIVE */
 /* ----- MOBILE ----- */
-@media only screen and (min-width: 320px) and (max-width: 370px){
-    .navbar{
-        background: #fff;
-    }
-    .navbar .navbar-brand{
-        color: #000;
-    }
-    .navbar .navbar-nav .nav-link{
-        color: #000;
-    }
-    .navbar .navbar-nav .kotak2 .nav-link{
-        color: #000;
-    }
-    .section-intro{
-        display: none;
-    }
-    .desktop{
-        display: none;
-    }
-    .section-auth-mobile{
-        padding: 175px 0;
-    }
-    .section-auth-mobile .header-mobile{
-        text-align: center;
-    }
-    .section-auth-mobile .btn-sign{
-        background-color: #F9A825;
-        color: #fff;
-        padding: 14px 20px;
-        margin: 2px;
-        cursor: pointer;
-        width: 100%;
-        border-radius: 24px;
-        border: 2px solid #fff;
-        transition: all 1s;
-        font-weight: 700;
-    }
-    .section .container{
-        width: 100%;
-        padding: 25px 30px;
-    }
-    .section-tutorial{
-        padding-top: 50px;
-    }
-    .section .default-header h3{
-        font-size: 1.5em;
-        padding-bottom: 15px;
-    }
-    .section-layanan{
-        text-align: center;
-    }
-    .section-layanan .header-layanan h4{
-        font-weight: 700;
-    }
-    .section .row{
-        margin-right: 0;
-    }
-    .section-layanan .my-4 .col-lg-6{
-        margin-left: 15px;
-    }
-    .section-layanan .col-lg-6 img{
-        width: 100%;
-        margin-left: 15px;
-    }
-    .section-layanan .col-lg-6 h4{
-        padding: 10px 0;
-        font-weight: 700;
-        color: #fff;
-    }
+@media only screen and (device-width: 320px){
     .section-about{
         display: none;
     }
 }
-@media only screen and (min-width: 375px) and (max-width: 480px){
-    .navbar{
+@media only screen and (min-width: 320px) and (max-width: 480px){
+    .navbar-light{
         background: #fff;
     }
     .navbar .navbar-brand{
@@ -348,6 +284,9 @@ body{
     }
     .section-intro{
         display: none;
+    }
+    .section-tentang-banner h4{
+        font-size: 3em;
     }
     .section-auth{
         display: none;
@@ -402,10 +341,13 @@ body{
         font-weight: 700;
         color: #fff;
     }
+    .footer .list ul{
+        padding: 0;
+    }
  }
  /* ----- TABLET IPAD ----- */
  @media screen and (min-width: 485px) and (max-width: 800px){
-    .navbar{
+    .navbar-light{
         background: #fff;
     }
     .navbar .navbar-brand{

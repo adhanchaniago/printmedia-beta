@@ -130,4 +130,9 @@ class User extends CI_Controller
 		echo json_encode($callback); // konversi varibael $callback menjadi JSON
 	}
 	
+	public function test()
+	{
+		$this->load->view('user/inputprofile2');
+	}
+	
 }
