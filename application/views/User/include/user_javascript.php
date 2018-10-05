@@ -8,5 +8,10 @@
 <!-- bootstrap datepicker -->
 <script src="<?php echo base_url();?>asset/user/plugin/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
+<!-- Scrip Data table -->
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+
+
 <!-- Main File-->
 <script src="<?php echo base_url();?>asset/user/js/front.js"></script>

@@ -24,7 +24,10 @@
 <link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/style.blue.css" id="theme-stylesheet">
   
 <!-- Custom stylesheet - for your changes-->
-<link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/custom.css">    
+<link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/custom.css">  
+
+ <!-- Data Table -->
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.17/css/dataTables.bootstrap4.min.css">
 
 <!-- bootstrap datepicker -->
 <link rel="stylesheet" href="<?php echo base_url();?>asset/user/plugin/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">

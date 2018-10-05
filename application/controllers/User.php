@@ -56,6 +56,11 @@ class User extends CI_Controller
 		$this->load->view('user/profile/myprofile', $cek);			
 	}
 
+	public function history()
+	{	
+		$this->load->view('user/history');			
+	}
+
 	public function upload()
 	{
 		$this->load->view('user/upload');
@@ -102,6 +107,45 @@ class User extends CI_Controller
 		}
 
 		
+	}
+
+	public function updatedata()
+	{
+		
+		$data = array(				
+			'nama' => $this->input->post('nama_lengkap'), // yang kanan nama di form
+			'nohape' => $this->input->post('no_handphone'),
+			'gender' => $this->input->post('jenis_kelamin'),
+			'tanggal_lahir' => $this->input->post('tanggal_lahir'),		
+			'alamat' => $this->input->post('alamat'),
+			'detail_alamat' => $this->input->post('detail_alamat'),
+			'provinsi' => $this->input->post('provinsi'),
+			'kota' => $this->input->post('kota'),
+			'kecamatan' => $this->input->post('kecamatan'),				
+			'kodepos' => $this->input->post('kodepos'),
+			'universitas' => $this->input->post('universitas'),
+			'progdi' => $this->input->post('jurusan'),
+			'tahun_masuk' => $this->input->post('tahun_masuk'),
+			'tahun_keluar' => $this->input->post('tahun_keluar'),
+		);
+
+
+		$where=array(
+			'email'=>$this->input->post('email')
+		);
+
+		$data=$this->User_model->update($where,$data,'user');
+
+		if($data=='1')
+		{
+			$this->session->set_flashdata('succes', 'BERHASIL UPDATE');
+			redirect(base_url('myprofile'));
+		}
+		else
+		{
+			$this->session->set_flashdata('error', 'GAGAL UPDATE');
+			redirect(base_url('myprofile'));
+		}
 	}
 
 	public function listkota()

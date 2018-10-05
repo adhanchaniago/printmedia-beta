@@ -20,6 +20,12 @@ class User_model extends CI_Model{
         return $res;
     }
 
+    public function update($where,$data,$table) /// Fungsi Untuk Edit data
+    {
+      $this->db->where($where);
+      $this->db->update($table,$data);
+    }
+
      public function tampilProfile($table, $data)
     {
         $res = $this->db->get_where($table, $data);

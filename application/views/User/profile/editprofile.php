@@ -63,7 +63,7 @@
                             <div class="form-group">
                               <label class="label">Nama Lengkap : </label>
                               <?php 
-                                $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
+                                $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => $info['nama']); 
                                 echo form_input($data);
                                 echo form_error('nama_lengkap');
                               ?>                            
@@ -74,7 +74,7 @@
                             <div class="form-group">
                               <label class="label">No. Handphone : </label>
                               <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
+                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => $info['nohape']); 
                               echo form_input($data);
                               echo form_error('no_handphone');
                               ?>                                                  
@@ -90,7 +90,7 @@
                               <label class="label">Jenis Kelamin : </label>
                               <?php
                                 $data = array('Laki-Laki' => 'Laki-Laki', 'Perempuan' => 'Perempuan');
-                                echo form_dropdown('jenis_kelamin', $data, set_value('jenis_kelamin'), ['class' => 'form-control']);
+                                echo form_dropdown('jenis_kelamin', $data, set_value('jenis_kelamin'), ['class' => 'form-control', 'value' => $info['gender']]);
                               ?>                          
                             </div>
                           </div>
@@ -101,7 +101,10 @@
                               <label class="label">Tanggal Lahir : </label>
                                 <div class="input-group date">
                                   <div class="input-group-addon"></div>                              
-                                    <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir">                                                     
+                                  <?php
+                                    $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tanggal_lahir','id'=>'tanggal_lahir','value' => $info['tanggal_lahir']);
+                                    echo form_input($data);
+                                  ?>     
                                 </div>                                                                  
                             </div>
                           </div>
@@ -123,7 +126,7 @@
                           <label class="col-sm-3 form-control-label">Alamat Asal</label>
                             <div class="col-sm-9">
                             <?php
-                            $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3);
+                            $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3, 'value'=>$info['alamat']);
                             echo form_textarea($data);
                             ?>
                           <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
@@ -136,7 +139,7 @@
                           <label class="col-sm-3 form-control-label">Detail Tempat Tinggal</label>
                             <div class="col-sm-9">
                             <?php
-                            $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3);
+                            $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3,'value'=>$info['detail_alamat']);
                             echo form_textarea($data);
                             ?>
                             <small>Misal: Perumahan Elok Permai Blok BC, RT/RW 03/09</small>
@@ -150,8 +153,8 @@
                             <div class="form-group">
                               <label class="label">Provinsi : </label>
                               <select name="provinsi" class="form-control" id="provinsi">
-                                <?php
-                                $this->db->from('provinces');
+                                <?php                                                          
+                                $this->db->from('provinces');                
                                 $provinsi = $this->db->get();
                                 $data_provinsi = $provinsi->result_array();
                                 foreach($data_provinsi as $row) {
@@ -188,7 +191,7 @@
                             <div class="form-group">
                               <label class="label">Kode Pos : </label>
                               <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => set_value('kodepos')); 
+                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => $info['kodepos']); 
                               echo form_input($data);                        
                               ?>      
                             </div>
@@ -223,7 +226,7 @@
                               $universitas = $this->db->get();
                               $data_universitas = $universitas->result_array();
                               foreach($data_universitas as $row) {
-                            ?>
+                            ?>                              
                               <option value="<?php echo $row['id']; ?>"><?php echo $row['nama_univ']; ?></option>
                             <?php } ?>                                                                  
                         </select>

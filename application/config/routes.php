@@ -21,7 +21,7 @@ $route['tentang'] = 'home/tentang';
 // USER
 $route['dashboard'] = 'user/dashboard';
 $route['myprofile'] = 'user/myprofile';
-$route['history'] = 'user/index';
+$route['history'] = 'user/history';
 $route['upload'] ='user/upload';
 $route['profile'] ='user/inputprofile';
 $route['editprofile']= 'user/editprofile';

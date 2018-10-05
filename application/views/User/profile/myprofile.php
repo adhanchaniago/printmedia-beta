@@ -305,9 +305,9 @@
     </div> <!-- Akhir Div Page -->
 
 
-  <!-- All StyleSheet --> 
+  <!-- All Java Scripts --> 
     <?php $this->load->view('user/include/user_javascript'); ?>
-  <!-- All StyleSheet -->
+  <!-- All Java Script -->
 
   </body>
 </html>
