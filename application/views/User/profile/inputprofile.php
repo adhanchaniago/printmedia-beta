@@ -29,11 +29,11 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-7">
-                  <h2 class="no-margin-bottom">Pengaturan Akun</h2>    
+                  <h2 class="no-margin-bottom">Pendaftaran Akun</h2>    
                 </div>
 
                 <div class="col-md-5">
-                  <small class="no-margin-bottom">Di sini kamu dapat mengganti profil pribadi dan profil pelajar.</small>
+                  <small class="no-margin-bottom">Selamat Datang di Print Media, Silahkan isi Form Data Diri Pribdadi dan Akademik.</small>
                 </div>
               </div>
             </div>
@@ -43,9 +43,10 @@
           <section class="forms"> 
             <div class="container-fluid">
             <?php echo form_open('user/inputdata', array('class' => 'form-horizontal')); ?>
+            <!-- Awal Row Form -->
               <div class="row">
 
-                <!-- Form Elements -->
+                <!-- Awal Data Diri Pribadi -->
                 <div class="col-lg-12">
 
                   <!-- Awal Card -->
@@ -69,7 +70,7 @@
                           </div>
 
                           <div class="col-md-6">
-                            <div class="form-group-material">
+                            <div class="form-group">
                               <label class="label">No. Handphone : </label>
                               <?php 
                               $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
@@ -199,34 +200,47 @@
                   <!-- Akhir Card -->
                   
                 </div>
+                <!-- Akhir Data Diri Pribadi -->
 
+                <!-- Awal Data Diri Akademik -->
                 <div class="col-lg-12">
-
+                  
+                  <!-- Awal Card Akademik -->
                   <div class="card">
                     <div class="card-header d-flex align-items-center">
                       <h3 class="h4">Data Diri Akademik</h3>
                     </div>
+
+                    <!--Awal Card Body  -->
                     <div class="card-body">
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Universitas</label>
                           <div class="col-sm-9 select">
-                            <select name="account" class="form-control">
-                              <option>option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                            </select>
+                            <select name="universitas" class="form-control" id="universitas">
+                            <?php
+                              $this->db->from('universitas');
+                              $universitas = $this->db->get();
+                              $data_universitas = $universitas->result_array();
+                              foreach($data_universitas as $row) {
+                            ?>
+                              <option value="<?php echo $row['id']; ?>"><?php echo $row['nama_univ']; ?></option>
+                            <?php } ?>                                                                  
+                        </select>
                           </div>
                         </div>
                         
                         <div class="form-group row">
                           <label class="col-sm-3 form-control-label">Program Studi</label>
                           <div class="col-sm-9 select">
-                            <select name="account" class="form-control">
-                              <option>option 1</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
+                            <select name="jurusan" class="form-control" id="jurusan">
+                            <?php
+                              $this->db->from('jurusan');
+                              $jurusan = $this->db->get();
+                              $data_jurusan = $jurusan->result_array();
+                              foreach($data_jurusan as $row) {
+                            ?>
+                              <option value="<?php echo $row['id']; ?>"><?php echo $row['jurusan']; ?></option>
+                            <?php } ?>                                                                  
                             </select>
                           </div>
                         </div>
@@ -234,43 +248,64 @@
                         <div class="row">                         
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="form-control-label">Jenis Kelamin</label>
-                              <select name="account" class="form-control">
-                                <option>option 1</option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option>option 4</option>
-                              </select>
+                              <label class="label">Tahun Masuk : </label>
+                                <select name="tahun_masuk" class="form-control" id="tahun_masuk">
+                                <?php
+                                  $this->db->from('tahun');
+                                  $tahun = $this->db->get();
+                                  $data_tahun = $tahun->result_array();
+                                  foreach($data_tahun as $row) {
+                                ?>
+                                  <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                                <?php } ?>
+                                </select>
                             </div>
                           </div>
                           
                           <div class="col-md-6">
                             <div class="form-group">
-                              <label class="form-control-label">Jenis Kelamin</label>
-                              <select name="account" class="form-control">
-                                <option>option 1</option>
-                                <option>option 2</option>
-                                <option>option 3</option>
-                                <option>option 4</option>
+                              <label class="label">Tahun Keluar : </label>
+                                <select name="tahun_keluar" class="form-control" id="tahun_keluar">
+                                  <option value="Belum Lulus">Belum Lulus</option>
+                                <?php
+                                  $this->db->from('tahun');
+                                  $tahun = $this->db->get();
+                                  $data_tahun = $tahun->result_array();
+                                  foreach($data_tahun as $row) {
+                                ?>
+                                  <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                                <?php } ?>
                               </select>
                             </div>
                           </div>
                         
                         </div>
+          
+                        <div class="row">
+                          <div class="col md-6">
+                            <div class="form-group">
+                              <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger form-control')); ?>  
+                            </div>              
+                          </div>
 
-                        <div class="line"></div>
-                        <div class="form-group row">
-                          <div class="col-sm-4 offset-sm-3">
-                            <button type="submit" class="btn btn-secondary">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                          <div class="col md-6">
+                            <div class="form-group">
+                              <?php echo form_submit('submit', 'Submit', array('class' => 'btn btn-primary form-control')); ?>
+                            </div>                        
                           </div>
                         </div>
+
+                        
                     </div>
+                    <!-- Akhir Card Body -->
                   </div>
+                  <!-- Akhir Card Akademik -->
 
                 </div>
+                <!-- Akhir Data Diri Akademik -->
 
               </div>
+            <!-- Ending Row FOrm -->
             <?php echo form_close(); ?> 
 
             </div>

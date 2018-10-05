@@ -37,7 +37,15 @@ class User extends CI_Controller
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->GetWhere('user', $email);
 		$cek = $cek->row_array();
-		$this->load->view('user/inputprofile');
+		$this->load->view('user/profile/inputprofile');
+	}
+
+	public function editprofile()
+	{
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->tampilProfile('user', $email);
+		$cek=array('cek'=> $cek);
+		$this->load->view('user/profile/editprofile', $cek);
 	}
 
 	public function myprofile()
@@ -45,7 +53,7 @@ class User extends CI_Controller
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->tampilProfile('user', $email);
 		$cek=array('cek'=> $cek);
-		$this->load->view('user/myprofile', $cek);			
+		$this->load->view('user/profile/myprofile', $cek);			
 	}
 
 	public function upload()
@@ -61,7 +69,7 @@ class User extends CI_Controller
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
 		//$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
 		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
-		$this->form_validation->set_message('min_length', 'KOlom %s  Wajib 5 Angka');
+		$this->form_validation->set_message('min_length', 'Kolom %s  Wajib 5 Angka');
 		$this->form_validation->set_message('max_length', '%s Nomernya Kebanyakan Bos');	
 
 		if($this->form_validation->run() == FALSE)
@@ -83,6 +91,10 @@ class User extends CI_Controller
 				'kota' => $this->input->post('kota'),
 				'kecamatan' => $this->input->post('kecamatan'),				
 				'kodepos' => $this->input->post('kodepos'),
+				'universitas' => $this->input->post('universitas'),
+				'progdi' => $this->input->post('jurusan'),
+				'tahun_masuk' => $this->input->post('tahun_masuk'),
+				'tahun_keluar' => $this->input->post('tahun_keluar'),
 			);
 
 			$data = $this->User_model->Insert('user', $data);
@@ -132,7 +144,10 @@ class User extends CI_Controller
 	
 	public function test()
 	{
-		$this->load->view('user/inputprofile2');
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->tampilProfile('user', $email);
+		$cek=array('cek'=> $cek);
+		$this->load->view('user/myprofile2', $cek);
 	}
 	
 }
