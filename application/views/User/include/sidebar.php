@@ -3,7 +3,12 @@
           <!-- Sidebar Header-->
           <div class="sidebar-header d-flex align-items-center">            
             <div class="title">
-              <h1 class="h4"><?php echo $this->session->userdata('username');?></h1>
+            <?php
+            $email = array('email' => $this->session->userdata('email')) ;
+            $cek = $this->User_model->GetWhere('user', $email);
+            $cek = $cek->row_array();
+            ?>
+              <h1 class="h4"><?php echo $cek['nama']; ?></h1>
               <p><?php echo $this->session->userdata('email');?></p>
             </div>
           </div>

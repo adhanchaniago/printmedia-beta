@@ -12,7 +12,7 @@
     <div class="page">
 
       <!-- Navbar & Side Bar-->  
-        <?php require_once(APPPATH. 'views/user/navbar.php'); ?>
+        <?php require_once(APPPATH. 'views/user/include/navbar.php'); ?>
       <!-- Navbar & Side Bar-->  
 
       
