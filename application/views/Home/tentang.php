@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 <!-- Material Design for Bootstrap fonts and icons -->
-<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"> -->
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -24,6 +23,20 @@
 <section class="section section-tentang-banner" id="mulai">
     <div class="container">
         <h4>Tentang Kami</h4>
+    </div>
+</section>
+
+<section class="section-tentang">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p>
+                    Print Media merupakan calon startup di Indonesia. Startup yang berfokus pada dunia <b>Percetakan Online</b> dimana kami membantu teman-teman agar mudah dalam mencetak tugas-tugas, jurnal dan makalah. 
+                    Kami hadir karena melihat kebutuhan dalam dunia dunia percetakan sangat penting, apalagi saat ini semuanya pada sibuk dan tidak sempat untuk datang ke sebuah tempat percetakan.
+                    Disinilah kami hadir dan memberikan nuansa yang berbeda, dimana kami selalu siap membantu kebutuhan-kebutuhan dalam dunia percetakan.
+                </p>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -106,25 +119,6 @@
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-
-<script>
-$(document).ready(function(){
-    var scroll_start = 0;
-    var startchange = $('#mulai');
-    var offset = startchange.offset();
-    if (startchange.length){
-    $(document).scroll(function() { 
-        scroll_start = $(this).scrollTop();
-        if(scroll_start > offset.top) {
-            $(".navbar").css('background-color', '#fff');
-        } 
-        else {
-            $('.navbar').css('background-color', 'transparent');
-       }
-    });
-    }
-});
-</script>
 
 </body>
 </html>

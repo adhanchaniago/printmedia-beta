@@ -5,10 +5,11 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/slick.css">
+<!-- <link rel="stylesheet" href="<?php //echo base_url(); ?>asset/home/css/slick-theme.css"> -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 </head>
@@ -18,8 +19,10 @@
     <?php $this->load->view('home/inc/header'); ?>
 </div>
 
-<section class="section section-intro" id="mulai">
-    <img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" alt="" width="100%">
+<section class="section section-intro your-class" id="mulai">
+    <div><img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
+    <div><img src="<?php echo base_url('asset/home/img/banner2.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
+    <div><img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
 </section>
 
 <section class="section section-tutorial">
@@ -30,7 +33,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
-                    <img src="<?php echo base_url('asset/home/img/register.png'); ?>" class="img-fluid" width="150" height="150">
+                    <img src="<?php echo base_url('asset/home/img/register.png'); ?>" data-src="<?php echo base_url('asset/home/img/register.png'); ?>" class="img-fluid lazyload" width="150" height="150">
                 </div>
                 <div class="tutorial-body">
                     <h4>Daftar di PrintMedia</h4>
@@ -39,18 +42,18 @@
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
-                    <img src="<?php echo base_url('asset/home/img/upload-dokumen.png'); ?>" class="img-fluid" width="150" height="150">
+                    <img src="<?php echo base_url('asset/home/img/upload-dokumen.png'); ?>" data-src="<?php echo base_url('asset/home/img/upload-dokumen.png'); ?>" class="img-fluid lazyload" width="150" height="150">
                 </div>
                 <div class="tutorial-body">
                     <h4>Upload Dokumen</h4>
-                    <p><b>1.</b> Anda mengunggah dokumen dengan format-format yang di inginkan.</p>
+                    <p><b>1.</b> Mahasiswa mengunggah dokumen dengan format-format yang di inginkan.</p>
                     <p><b>2.</b> Pilih jenis pembayaran dan pengiriman.</p>
-                    <p><b>3.</b> Pihak Print Media akan memproses pesanan Anda.</p>
+                    <p><b>3.</b> Pihak Print Media akan memproses pesanan.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="tutorial-header">
-                    <img src="<?php echo base_url('asset/home/img/shipping.png'); ?>" class="img-fluid" width="150" height="150">
+                    <img src="<?php echo base_url('asset/home/img/shipping.png'); ?>" data-src="<?php echo base_url('asset/home/img/shipping.png'); ?>" class="img-fluid lazyload" width="150" height="150">
                 </div>
                 <div class="tutorial-body">
                     <h4>Dokumen Sampai</h4>
@@ -71,31 +74,31 @@
 
                 <div class="row my-3">
                     <div class="col-lg-6">
-                        <img src="<?php echo base_url('asset/home/img/layanan1.jpg'); ?>" class="img-fluid" alt="">
+                        <img src="<?php echo base_url('asset/home/img/layanan1.jpg'); ?>" class="img-fluid lazyload" alt="">
                     </div>
                     <div class="col-lg-6">
                         <h4>Cetak Mudah &amp; Efisien</h4>
-                        <span>Cetak kebutuhan Anda online kapanpun dan dimanapun, tanpa macet atau antrian.</span>
+                        <span>Cetak kebutuhan Anda secara online.</span>
                     </div>
                 </div>
                     
                 <div class="row my-3">
                     <div class="col-lg-6">
-                        <img src="<?php echo base_url('asset/home/img/layanan2.jpg'); ?>" class="img-fluid" alt="">
+                        <img src="<?php echo base_url('asset/home/img/layanan2.jpg'); ?>" class="img-fluid lazyload" alt="">
                     </div>
                     <div class="col-lg-6">
                         <h4>Berbagai Pilihan Kertas</h4>
-                        <span>Kami menawarkan macam - macam kertas, agar bisa digunakan sesuai kebutuhan Anda.</span>
+                        <span>Berbagai macam kertas yang telah disediakan.</span>
                     </div>
                 </div>
                     <!-- 'oninvalid' => 'this.setCustomValidity('."'Username Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', -->
                 <div class="row my-3">
                     <div class="col-lg-6">
-                        <img src="<?php echo base_url('asset/home/img/layanan3.jpg'); ?>" class="img-fluid" alt="">
+                        <img src="<?php echo base_url('asset/home/img/layanan3.jpg'); ?>" class="img-fluid lazyload" alt="">
                     </div>
                     <div class="col-lg-6">
-                        <h4>Pengiriman Yang Fleksibel</h4>
-                        <span>Tersedia pilihan pengiriman oleh pihak Perusahaan atau Ojek Online.</span>
+                        <h4>Cepat dan Tanggap</h4>
+                        <span>Pengiriman dokumen yang profesional dan menjaga agar dokumen Anda tetap aman.</span>
                     </div>
                 </div>
             </div>
@@ -151,23 +154,9 @@
                 </div>
 
                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-header" id="headingTwo">
-                <h5 class="mb-0">
-                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Panduan Menggunakan Print Media
-                    </button>
-                </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                <div class="card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
+                    <div class="card-body">
+                        Print Media merupakan calon startup di Indonesia. Startup yang berfokus pada dunia <b>Percetakan Online</b> dimana kami membantu teman-teman agar mudah dalam mencetak tugas-tugas, jurnal dan makalah. Selengkapnya di <b><a href="<?php echo base_url('tentang'); ?>">Tentang Print Media</a></b>
+                    </div>
                 </div>
             </div>
         </div>      
@@ -196,25 +185,32 @@
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
+<script src="<?php echo base_url(''); ?>asset/home/js/slick.min.js"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
-
+<script async='async' src='https://cdn.rawgit.com/aFarkas/lazysizes/gh-pages/lazysizes.min.js' type='text/javascript'></script>
 <script>
-// $(document).ready(function(){
-//     var scroll_start = 0;
-//     var startchange = $('#mulai');
-//     var offset = startchange.offset();
-//     if (startchange.length){
-//     $(document).scroll(function() { 
-//         scroll_start = $(this).scrollTop();
-//         if(scroll_start > offset.top) {
-//             $(".navbar").css('background-color', '#fff');
-//         } 
-//         else {
-//             $('.navbar').css('background-color', 'transparent');
-//        }
-//     });
-//     }
-// });
+for(var imgEl=document.getElementsByTagName("img"),i=0;i<imgEl.length;i++)imgEl[i].getAttribute("src")&&(imgEl[i].setAttribute("data-src",imgEl[i].getAttribute("src")),imgEl[i].className+=" lazyload",imgEl[i].setAttribute("src","data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="));
+$(document).ready(function() {
+    $('iframe[src*="youtube.com"]').wrap('<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin:0 auto;width:100%"></div>').css({
+        "position": "absolute",
+        "top": "0",
+        "left": "0",
+        "width": "100%",
+        "height": "100%",
+        "border": "0"
+    }).addClass("lazyload").each(function() {
+        $(this).attr("data-src", $(this).attr("src"));
+        $(this).removeAttr("src", "")
+    });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.your-class').slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
+    });
+});
 </script>
 
 </body>

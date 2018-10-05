@@ -9,6 +9,10 @@ Template:	PRINT MEDIA
 body{
     background: #fff;
 }
+.section-intro .slick-arrow{
+    visibility: hidden;
+    display: none;
+}
 
 /*---------- HEADER NAVBAR ----------*/
 .navbar{
@@ -168,6 +172,10 @@ body{
     font-size: 4em;
     padding-top: 0;
 }
+.section-tentang{
+    padding: 50px;
+    text-align: center;
+}
 .section-visi-misi .col-lg-6{
     padding: 0 25px;
 }
@@ -282,7 +290,7 @@ body{
     .navbar .navbar-nav .kotak2 .nav-link{
         color: #000;
     }
-    .section-intro{
+    #mulai{
         display: none;
     }
     .section-tentang-banner h4{
@@ -358,6 +366,9 @@ body{
     }
     .navbar .navbar-nav .kotak2 .nav-link{
         color: #000;
+    }
+    .section-intro .slick-arrow{
+        visibility: hidden;
     }
     .section .container{
         width: 100%;
