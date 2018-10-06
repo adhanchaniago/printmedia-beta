@@ -8,8 +8,10 @@ class Admin extends CI_Controller {
 		$this->load->library('form_validation');
 	}
 	public function index()
-	{
-		$this->load->view('Admin/index');
+	{	$this->load->model('Admin_model');
+		$data=$this->Admin_model->tampiluser('activity_user');
+		$data=array('data'=> $data);
+		$this->load->view('Admin/index',$data);
 	}
 	public function Input_Universitas()
 	{
@@ -89,6 +91,9 @@ class Admin extends CI_Controller {
 	}
 	public function Tampil_Jurusan()
 	{
-		
+		$this->load->model('Admin_model');
+		$data=$this->Admin_model->tampiluniv('jurusan');
+		$data=array('data'=> $data);
+		$this->load->view('Admin/Data_Jurusan',$data);
 	}
 }

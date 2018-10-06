@@ -74,7 +74,6 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>44</h3>
-
                 <p>User Registrations</p>
               </div>
               <div class="icon">
@@ -85,6 +84,56 @@
           </div>
           <!-- ./col -->
         </div><!-- /.container-fluid -->
+
+        <div class="row">
+        <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Data Universitas</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th>IP</th>
+                  <th>Browser</th>
+                  <th>Waktu</th>
+                  <th>Keterangan</th>
+                </tr>
+                </thead>
+                <?php $no=1; ?>
+                <tbody>
+                <?php foreach ($data as $info) {?>
+                <tr>
+                  <td><?php echo $no++;?></td>
+                  <td><?php echo $info['email'];?></td>
+                  <td><?php echo $info['alamat_ip'];?></td>
+                  <td><?php echo $info['browser'];?></td>
+                  <td><?php echo $info['waktu_masuk'];?></td>
+                  <td><?php echo $info['keterangan'];?></td>
+                </tr>
+                <?php } ?>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>Nomor</th>
+                  <th>Email</th>
+                  <th>IP</th>
+                  <th>Browser</th>
+                  <th>Waktu</th>
+                  <th>Keterangan</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+    </div>
     </section>
     <!-- /.content -->
   </div>
@@ -107,6 +156,18 @@
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
-
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
 </body>
 </html>

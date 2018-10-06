@@ -71,6 +71,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="<?php echo base_url('Admin/Tampil_Jurusan');?>" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Tampil Jurusan</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="<?php echo base_url('Admin/Input_Universitas');?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Tambah Universitas & Jurusan</p>

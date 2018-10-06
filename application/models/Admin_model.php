@@ -18,4 +18,11 @@ class Admin_model extends CI_Model {
           return $query->result_array();
           
     }
+    public function tampiluser($table)
+    {
+        $this->db->from($table);
+        $this->db->order_by('id','DESC');
+        $res=$this->db->get();
+        return $res->result_array();
+    }
 }
