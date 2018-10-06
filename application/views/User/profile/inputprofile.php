@@ -65,6 +65,7 @@
                                 $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
                                 echo form_input($data);
                                 echo form_error('nama_lengkap');
+                                echo form_error('nama_lengkap', '<p class="text-danger">', '</p>');
                               ?>                            
                             </div>
                           </div>
@@ -75,7 +76,7 @@
                               <?php 
                               $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => set_value('no_handphone')); 
                               echo form_input($data);
-                              echo form_error('no_handphone');
+                              echo form_error('no_handphone', '<p class="text-danger">', '</p>');
                               ?>                                                  
                             </div>   
                           </div>
@@ -187,8 +188,9 @@
                             <div class="form-group">
                               <label class="label">Kode Pos : </label>
                               <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => set_value('kodepos')); 
-                              echo form_input($data);                        
+                              $data = array('type' => 'text', 'class' => 'form-control.p', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => set_value('kodepos')); 
+                              echo form_input($data);                             
+                              echo form_error('kodepos', '<p class="text-danger">', '</p>');                        
                               ?>      
                             </div>
                           </div>

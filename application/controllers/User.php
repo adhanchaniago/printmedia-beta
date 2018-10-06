@@ -68,18 +68,21 @@ class User extends CI_Controller
 
 	public function inputdata()
 	{
-		//$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
-		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|min_length[10]|max_length[13]');	
+		// Set Aturan
+		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|xss_clean|min_length[10]|max_length[13]');	
+		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|xss_clean|min_length[5]|max_length[5]');	
 
+		// Set Pesan
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
-		//$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
+		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
 		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
-		$this->form_validation->set_message('min_length', 'Kolom %s  Wajib 5 Angka');
-		$this->form_validation->set_message('max_length', '%s Nomernya Kebanyakan Bos');	
+		$this->form_validation->set_message('min_length', '<b>%s</b> Minimal <b>%s</b> Angka');
+		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');	
 
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('user/inputprofile');
+			$this->load->view('user/profile/inputprofile');
 		}
 		else
 		{
