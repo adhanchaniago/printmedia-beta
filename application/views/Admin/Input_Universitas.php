@@ -36,10 +36,18 @@
 
     <!-- Main content -->
     <section class="content">
- <?php
-                        if($this->session->flashdata('success')):
-                                    echo '<script>alert("Berhasil Menambahkan")</script>';
-                                endif;?>
+    <?php if($this->session->flashdata('success')):?>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
+      <script>
+        swal({
+              title: "Done",
+              text: "<?php echo $this->session->flashdata('success'); ?>",
+              timer: 1500,
+              showConfirmButton: false,
+              type: 'success'
+              });
+      </script>
+    <?php endif;?>
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
@@ -50,15 +58,26 @@
               </div>
             <div class="card-body">
             
-                <form role="form" method="post" action="" id="form1">
+                <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Univ')?>" id="form1">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Nama Universitas</label>
                     <!-- <input type="text" class="form-control" placeholder="Pilih Kota"> -->
+                    <?php $data1 = array('type' => 'text', 'id' => 'univ', 'name' => 'univ', 'class' => 'form-control', 'value' => set_value('univ'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                          echo form_input($data1); 
+                    ?>
                     <?php 
-                                    $data1 = array('type' => 'text', 'id' => 'univ', 'name' => 'univ', 'class' => 'form-control', 'value' => set_value('univ'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
-                                    echo form_input($data1); ?>
-                                    <?php echo form_error('univ', '<p class="text-danger">', '</p>'); ?>
+                    echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                    echo '<script>
+                            swal({
+                            text: "Mohon Lebih Teliti",
+                            title: "'.form_error('univ').'",
+                            timer: 2500,
+                            showConfirmButton: false,
+                            type: "'.'error'.'"
+                            });
+                          </script>'; 
+                    ?> 
                   </div>
                   <!-- select -->
                   <div class="form-group">
@@ -183,27 +202,6 @@
       showInputs: false
     })
   })
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('#form1').on('submit',function(e) {  
-  $.ajax({
-      url:'<?php echo base_url('Admin/Inputdb_Univ')?>', //nama action script php sobat
-      data:$(this).serialize(),
-      type:'POST',
-      success:function(data){
-          console.log(data);
-          swal("Success!", "Message sent!", "success");
-        
-      },
-      error:function(data){
-      swal("Oops...", "Something went wrong :(", "error");
-      }
-    });
-    e.preventDefault(); 
-  });
-});
 </script>
 </body>
 </html>

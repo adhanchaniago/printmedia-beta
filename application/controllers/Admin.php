@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Admin extends CI_Controller {
 	public function __construct()
 	{
+		
 		parent::__construct();
 		$this->load->library('form_validation');
 	}
@@ -37,25 +38,22 @@ class Admin extends CI_Controller {
 			$this->load->model('Admin_model');
 			$data = $this->Admin_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
-			echo validation_errors();
+			$this->session->set_flashdata('error',"Error");
 			$this->load->view('Admin/Input_Universitas',$data);
-			
 		}
 		else
 		{
 			$data = array
 			(
-				'nama_univ' => $this->input->post('univ'), // yang kanan nama di form
+				'nama_univ' => $this->input->post('univ'),
 				'kota' => $this->input->post('kota')
 	        );
 
 			$data = $this->Admin_model->insert('universitas', $data);
-
 			$this->session->set_flashdata('success', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
-			$this->session->set_flashdata('success');
 			redirect(base_url('Admin/Input_Universitas'));
+
 		}
-			
 	}
 
 	public function Inputdb_Jurusan()
@@ -107,3 +105,4 @@ class Admin extends CI_Controller {
 		$this->load->view('Admin/Data_User',$data);
 	}
 }
+?>
