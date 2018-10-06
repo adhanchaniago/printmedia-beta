@@ -66,18 +66,19 @@
                     <?php $data1 = array('type' => 'text', 'id' => 'univ', 'name' => 'univ', 'class' => 'form-control', 'value' => set_value('univ'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
                           echo form_input($data1); 
                     ?>
-                    <?php 
-                    echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
-                    echo '<script>
-                            swal({
-                            text: "Mohon Lebih Teliti",
-                            title: "'.form_error('univ').'",
-                            timer: 2500,
-                            showConfirmButton: false,
-                            type: "'.'error'.'"
-                            });
-                          </script>'; 
-                    ?> 
+                    <?php if(form_error('univ')!=NULL):?>
+                    <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                      echo '<script>
+                              swal({
+                              text: "Mohon Lebih Teliti",
+                              title: "'.form_error('univ').'",
+                              timer: 2500,
+                              showConfirmButton: false,
+                              type: "'.'error'.'"
+                              });
+                            </script>'; 
+                    ?>
+                    <?php endif;?> 
                   </div>
                   <!-- select -->
                   <div class="form-group">
@@ -109,8 +110,8 @@
                     <?php $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
                           echo form_input($data1); 
                     ?>
-                    <?php 
-                      echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                    <?php if(form_error('jurusan')!=NULL):?>
+                    <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
                       echo '<script>
                               swal({
                               text: "Mohon Lebih Teliti",
@@ -120,7 +121,8 @@
                               type: "'.'error'.'"
                               });
                             </script>'; 
-                    ?> 
+                    ?>
+                    <?php endif;?> 
                   <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>

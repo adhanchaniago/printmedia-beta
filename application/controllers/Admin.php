@@ -35,10 +35,10 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
+			$this->session->set_flashdata('error',"'.form_error('univ').'");
 			$this->load->model('Admin_model');
 			$data = $this->Admin_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
-			$this->session->set_flashdata('error',"Error");
 			$this->load->view('Admin/Input_Universitas',$data);
 		}
 		else
@@ -65,8 +65,10 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			
-			$this->load->view('admin/Input_Universitas');
+			$this->session->set_flashdata('error',"'.form_error('jurusan').'");
+			$data = $this->Admin_model->tampiluniv('regencies');
+			$data=array('data'=> $data);
+			$this->load->view('Admin/Input_Universitas',$data);
 		}
 		else
 		{
