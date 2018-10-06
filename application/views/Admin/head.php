@@ -24,3 +24,5 @@
    <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/plugins/select2/select2.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin/plugins/datatables/dataTables.bootstrap4.css">
