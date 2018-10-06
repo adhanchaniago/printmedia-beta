@@ -220,12 +220,9 @@
                           <label class="col-sm-3 form-control-label">Universitas</label>
                           <div class="col-sm-9 select">
                             <?php
-                                $data = array('id' => $info['universitas']) ;
-                                $universitas = $this->db->get_where('universitas', $data);
-                                $data_universitas = $universitas->result_array();
-                                $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'email', 'id' => 'email', 'value' => $data_universitas[0]['nama_univ'], 'readonly' => 'true');
-                                echo form_input($data);
-                            ?>
+                              $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'universitas','value' => $info['universitas'], 'readonly' => 'true');
+                              echo form_input($data);
+                            ?>  
                           </div>
                         </div>
                         
@@ -233,11 +230,8 @@
                           <label class="col-sm-3 form-control-label">Program Studi</label>
                           <div class="col-sm-9 select">
                             <?php
-                                $data = array('id' => $info['progdi']) ;
-                                $progdi = $this->db->get_where('jurusan', $data);
-                                $data_progdi = $progdi->result_array();
-                                $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'email', 'id' => 'email', 'value' => $data_progdi[0]['jurusan'], 'readonly' => 'true');
-                                echo form_input($data);
+                               $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'jurusan','value' => $info['progdi'], 'readonly' => 'true');
+                               echo form_input($data);
                             ?>
                           </div>
                         </div>
@@ -247,10 +241,7 @@
                             <div class="form-group">
                               <label class="label">Tahun Masuk : </label>
                                 <?php
-                                    $data = array('id' => $info['tahun_masuk']) ;
-                                    $masuk = $this->db->get_where('tahun', $data);
-                                    $data_masuk = $masuk->result_array();
-                                    $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'email', 'id' => 'email', 'value' => $data_masuk[0]['tahun'], 'readonly' => 'true');
+                                    $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tahun_masuk','value' => $info['tahun_masuk'], 'readonly' => 'true');
                                     echo form_input($data);
                                 ?>
                             </div>
@@ -260,10 +251,7 @@
                             <div class="form-group">
                               <label class="label">Tahun Keluar : </label>
                                 <?php
-                                    $data = array('id' => $info['tahun_masuk']) ;
-                                    $keluar = $this->db->get_where('tahun', $data);
-                                    $data_keluar = $keluar->result_array();
-                                    $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'email', 'id' => 'email', 'value' => $data_keluar[0]['tahun'], 'readonly' => 'true');
+                                    $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'tahun_keluar','value' => $info['tahun_keluar'], 'readonly' => 'true');
                                     echo form_input($data);
                                 ?>
                             </div>
