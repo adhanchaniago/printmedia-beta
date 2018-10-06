@@ -42,7 +42,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/charts/chartjs.html" class="nav-link">
+                <a href="<?php echo base_url('Admin/Tampil_User'); ?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Tampilkan User</p>
                 </a>

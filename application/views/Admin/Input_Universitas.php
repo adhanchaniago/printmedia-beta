@@ -36,7 +36,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <?php
+ <?php
                         if($this->session->flashdata('success')):
                                     echo '<script>alert("Berhasil Menambahkan")</script>';
                                 endif;?>
@@ -50,7 +50,7 @@
               </div>
             <div class="card-body">
             
-                <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>">
+                <form role="form" method="post" action="" id="form1">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Nama Universitas</label>
@@ -183,6 +183,27 @@
       showInputs: false
     })
   })
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('#form1').on('submit',function(e) {  
+  $.ajax({
+      url:'<?php echo base_url('Admin/Inputdb_Univ')?>', //nama action script php sobat
+      data:$(this).serialize(),
+      type:'POST',
+      success:function(data){
+          console.log(data);
+          swal("Success!", "Message sent!", "success");
+        
+      },
+      error:function(data){
+      swal("Oops...", "Something went wrong :(", "error");
+      }
+    });
+    e.preventDefault(); 
+  });
+});
 </script>
 </body>
 </html>

@@ -37,7 +37,9 @@ class Admin extends CI_Controller {
 			$this->load->model('Admin_model');
 			$data = $this->Admin_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
+			echo validation_errors();
 			$this->load->view('Admin/Input_Universitas',$data);
+			
 		}
 		else
 		{
@@ -50,6 +52,7 @@ class Admin extends CI_Controller {
 			$data = $this->Admin_model->insert('universitas', $data);
 
 			$this->session->set_flashdata('success', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
+			$this->session->set_flashdata('success');
 			redirect(base_url('Admin/Input_Universitas'));
 		}
 			
@@ -95,5 +98,12 @@ class Admin extends CI_Controller {
 		$data=$this->Admin_model->tampiluniv('jurusan');
 		$data=array('data'=> $data);
 		$this->load->view('Admin/Data_Jurusan',$data);
+	}
+	public function Tampil_User()
+	{
+		$this->load->model('Admin_model');
+		$data=$this->Admin_model->tampiluniv('user');
+		$data=array('data'=> $data);
+		$this->load->view('Admin/Data_User',$data);
 	}
 }
