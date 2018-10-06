@@ -63,7 +63,7 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			
-			$this->load->view('admin/Input_Jurusan');
+			$this->load->view('admin/Input_Universitas');
 		}
 		else
 		{
@@ -75,7 +75,7 @@ class Admin extends CI_Controller {
 			$data = $this->Admin_model->insert('jurusan', $data);
 
 			$this->session->set_flashdata('success', 'Berhasil Menambahkan Jurusan '.$this->input->post('jurusan'));
-			redirect(base_url('Admin/Input_Jurusan'));
+			redirect(base_url('admin/Input_Universitas'));
 		}
 		
 	}

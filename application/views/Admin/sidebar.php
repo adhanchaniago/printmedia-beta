@@ -73,13 +73,7 @@
               <li class="nav-item">
                 <a href="<?php echo base_url('Admin/Input_Universitas');?>" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Tambah Universitas</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('Admin/Input_Jurusan');?>" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Tambah Jurusan</p>
+                  <p>Tambah Universitas & Jurusan</p>
                 </a>
               </li>
             </ul>

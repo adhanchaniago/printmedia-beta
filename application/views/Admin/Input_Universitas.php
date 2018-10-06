@@ -36,20 +36,21 @@
 
     <!-- Main content -->
     <section class="content">
+    <?php
+                        if($this->session->flashdata('success')):
+                                    echo '<script>alert("Berhasil Menambahkan")</script>';
+                                endif;?>
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-6 col-sm-12">
             <div class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">Input Universitas</h3>
-            </div>
+              </div>
             <div class="card-body">
+            
                 <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Univ'); ?>">
-                <?php
-                        if($this->session->flashdata('success')):
-                                    echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
-                                endif;?>
                   <!-- text input -->
                   <div class="form-group">
                     <label>Nama Universitas</label>
@@ -76,10 +77,31 @@
               </div>
               <!-- /.card-body -->
           </div>
-        </div>
+        
         </div><!-- /.container-fluid -->
+          <div class="col-md-6 col-sm-12">
+            <div class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Input Jurusan</h3>
+            </div>
+            <div class="card-body">
+                    <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Jurusan'); ?>">
+                    <label>Nama Jurusan</label>
+                    <?php 
+                            $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                            echo form_input($data1); ?>
+                            <?php echo form_error('jurusan', '<p class="text-danger">', '</p>'); ?>
+                  <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </form>
+              </div>
+              <!-- /.card-body -->
+          </div>
+        </div>
     </section>
     <!-- /.content -->
+    
   </div>
   <!-- /.content-wrapper -->
   <?php $this->load->view('admin/footer'); ?>
