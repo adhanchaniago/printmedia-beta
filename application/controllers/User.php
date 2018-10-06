@@ -6,7 +6,7 @@ class User extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('User_model');
+		$this->load->model('User_model');		
 		$this->load->library('form_validation');
 	}
 	
@@ -154,6 +154,34 @@ class User extends CI_Controller
 		}
 	}
 
+	public function inputpemesanan()
+	{
+		$config['upload_path'] = "./asset/user/pemesanan";
+		$config['allowed_types'] = "pdf";
+		$config['max_size'] = "30720";
+		$config['remove_space'] = TRUE;
+		
+		$this->load->library('upload', $config);
+		if($this->upload->do_upload("upload_file"))
+		{
+			$data=array('upload_data' => $this->upload->data());
+
+			$datas = array(
+				'nama_file' => $data['upload_data']['file_name'],
+				'tipe_file' => $data['upload_data']['file_type'],
+				'ukuran_file' => $data['upload_data']['file_size'],
+			);
+
+			$datas = $this->User_model->Insert('pemesanan', $datas);
+			redirect('user/history');
+		}
+
+		echo $this->upload->display_errors();
+
+			
+
+	}
+
 	public function listkota()
 	{
 		// Ambil data ID Provinsi yang dikirim via ajax post
@@ -197,7 +225,7 @@ class User extends CI_Controller
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->tampilProfile('user', $email);
 		$cek=array('cek'=> $cek);
-		$this->load->view('user/myprofile2', $cek);
+		$this->load->view('user/test', $cek);
 	}
 	
 }
