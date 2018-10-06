@@ -72,6 +72,9 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
 		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|xss_clean|min_length[10]|max_length[13]');	
 		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|xss_clean|min_length[5]|max_length[5]');	
+		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
 
 		// Set Pesan
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');

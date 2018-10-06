@@ -159,7 +159,7 @@
                                 $data_provinsi = $provinsi->result_array();
                                 foreach($data_provinsi as $row) {
                                 ?>
-                                <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?></option>
+                                <option value="<?php echo $row['id']; ?>" <?php echo set_select('id', $row['id'], ($row['id'] == $info['provinsi'])? true : false ); ?>><?php echo $row['name']; ?></option>
                                 <?php } ?>                                                                
                               </select>
                             </div>
@@ -170,7 +170,7 @@
                               <label class="label">Kota/Kabupaten : </label>
                               <div class="select">
                                 <select name="kota" class="form-control" id="kota">
-                                  <option value=""></option>
+                                  <option value="" ></option>
                                 </select>
                               </div>
                             </div>
@@ -227,7 +227,7 @@
                               $data_universitas = $universitas->result_array();
                               foreach($data_universitas as $row) {
                             ?>                              
-                              <option value="<?php echo $row['id']; ?>"><?php echo $row['nama_univ']; ?></option>
+                              <option value="<?php echo $row['nama_univ']; ?>" <?php echo set_select('nama_univ', $row['nama_univ'], ($row['nama_univ'] == $info['universitas'])? true : false ); ?>><?php echo $row['nama_univ']; ?></option>
                             <?php } ?>                                                                  
                         </select>
                           </div>
@@ -243,7 +243,7 @@
                               $data_jurusan = $jurusan->result_array();
                               foreach($data_jurusan as $row) {
                             ?>
-                              <option value="<?php echo $row['id']; ?>"><?php echo $row['jurusan']; ?></option>
+                              <option value="<?php echo $row['jurusan']; ?>" <?php echo set_select('jurusan', $row['jurusan'], ($row['jurusan'] == $info['progdi'])? true : false ); ?>><?php echo $row['jurusan']; ?></option>
                             <?php } ?>                                                                  
                             </select>
                           </div>
@@ -260,7 +260,7 @@
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
                                 ?>
-                                  <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                                  <option value="<?php echo $row['tahun']; ?>" <?php echo set_select('tahun', $row['tahun'], ($row['tahun'] == $info['tahun_masuk'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                                 </select>
                             </div>
@@ -276,8 +276,8 @@
                                   $tahun = $this->db->get();
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
-                                ?>
-                                  <option value="<?php echo $row['id']; ?>"><?php echo $row['tahun']; ?></option>
+                                  ?>
+                                  <option value="<?php echo $row['tahun']; ?>" <?php echo set_select('tahun', $row['tahun'], ($row['tahun'] == $info['tahun_keluar'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                               </select>
                             </div>
