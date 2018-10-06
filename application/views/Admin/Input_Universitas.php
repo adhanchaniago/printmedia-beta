@@ -106,10 +106,21 @@
             <div class="card-body">
                     <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Jurusan'); ?>">
                     <label>Nama Jurusan</label>
+                    <?php $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
+                          echo form_input($data1); 
+                    ?>
                     <?php 
-                            $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
-                            echo form_input($data1); ?>
-                            <?php echo form_error('jurusan', '<p class="text-danger">', '</p>'); ?>
+                      echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                      echo '<script>
+                              swal({
+                              text: "Mohon Lebih Teliti",
+                              title: "'.form_error('jurusan').'",
+                              timer: 2500,
+                              showConfirmButton: false,
+                              type: "'.'error'.'"
+                              });
+                            </script>'; 
+                    ?> 
                   <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
