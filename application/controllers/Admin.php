@@ -87,4 +87,5 @@ class Admin extends CI_Controller {
 		$data=array('data'=> $data);
 		$this->load->view('Admin/Data_Univ',$data);
 	}
+	public fun
 }
