@@ -8,8 +8,7 @@
 <!-- Material Design for Bootstrap CSS -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/bootstrap.min.css">
 <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/style.css">
-<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>asset/home/css/login.css"> -->
-<!-- Material Design for Bootstrap fonts and icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.css" />
 <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto:400,700" rel="stylesheet">
 
 </head>
@@ -32,10 +31,38 @@
                                 </div>
                                 <?php        
                                 if($this->session->flashdata('error')):
-                                    echo '<div class="alert bg-danger">'.$this->session->flashdata('error').'</div>';
+                                    echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.js"></script>';
+                                    echo '<script>
+                                            swal({
+                                                type: "'.'error'.'",
+                                                title: "'.$this->session->flashdata('error').'",
+                                                timer: 3000,
+                                                customClass: "'.'animated bounceIn'.'",
+                                            })
+                                        </script>';
                                 endif;
-                                if($this->session->flashdata('success')):
-                                    echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+                                if($this->session->flashdata('errorpassword')):
+                                    echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.js"></script>';
+                                    echo '<script>
+                                            swal({
+                                                type: "'.'error'.'",
+                                                title: "'.$this->session->flashdata('errorpassword').'",
+                                                timer: 10000,
+                                                customClass: "'.'animated bounceIn'.'",
+                                            })
+                                        </script>';
+                                endif;
+                                if($this->session->flashdata('belumaktif')):
+                                    echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.js"></script>';
+                                    echo '<script>
+                                            swal({
+                                                type: "'.'error'.'",
+                                                title: "'.$this->session->flashdata('belumaktif').'",
+                                                text: "'.'Akun Anda Belum Aktif'.'",
+                                                timer: 10000,
+                                                customClass: "'.'animated bounceIn'.'",
+                                            })
+                                        </script>';
                                 endif;
                                 ?>
                                 <div class="form-group">
@@ -79,10 +106,16 @@
         <?php echo form_open('auth/proseslogin'); ?>
             <?php        
             if($this->session->flashdata('error')):
-                echo '<div class="alert bg-danger">'.$this->session->flashdata('error').'</div>';
-            endif;
-            if($this->session->flashdata('success')):
-                echo '<div class="alert bg-success">'.$this->session->flashdata('success').'</div>';
+                echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.min.js"></script>';
+                echo '<script>
+                        swal({
+                            type: "'.'error'.'",
+                            title: "'.$this->session->flashdata('error').'",
+                            text: "'.'Akun Anda Tidak Terdaftar'.'",
+                            timer: 3000,
+                            customClass: "'.'animated bounceIn'.'",
+                        })
+                    </script>';
             endif;
             ?>
             <div class="form-group">
@@ -117,23 +150,5 @@
 <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"  crossorigin="anonymous"></script>
 <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
 
-<script>
-$(document).ready(function(){
-    var scroll_start = 0;
-    var startchange = $('#mulai');
-    var offset = startchange.offset();
-    if (startchange.length){
-    $(document).scroll(function() { 
-        scroll_start = $(this).scrollTop();
-        if(scroll_start > offset.top) {
-            $(".navbar").css('background-color', '#fff');
-        } 
-        else {
-            $('.navbar').css('background-color', 'transparent');
-       }
-    });
-    }
-});
-</script>
 </body>
 </html>

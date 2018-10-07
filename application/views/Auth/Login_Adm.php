@@ -1,69 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Login Admin</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/vendors/css/vendor.bundle.base.css">
-  <!-- endinject -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="<?php echo base_url();?>asset/admin2/css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="<?php echo base_url();?>asset/admin2/images/favicon.png" />
+  <title>AdminLTE 3 | Log in</title>
+  <?php $this->load->view('admin/head'); ?>
 </head>
-
-<body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth">
-        <div class="row w-100">
-          <div class="col-lg-4 mx-auto">
-            <div class="auth-form-light text-left p-5">
-              <div class="brand-logo">
-                <h4>Sign In Developer</h4>
-              </div>
-              <?php echo form_open('auth/prosesloginadmin'); ?>
-                <div class="form-group">
-                  <?php
-                  $data = array('type' => 'email', 'class' => 'form-control', 'id' => 'email', 'name' => 'email', 'placeholder' => 'Masukkan Email', 'value' => set_value('email'), 'required' => 'true');
-                  echo form_input($data);
-                  echo form_error('email');
-                  ?>
-                </div>
-                <div class="form-group">
-                  <?php
-                  $data = array('type' => 'password', 'class' => 'form-control', 'id' => 'password', 'name' => 'password', 'placeholder' => 'Masukkan Email', 'value' => set_value('password'), 'required' => 'true');
-                  echo form_input($data);
-                  echo form_error('password');
-                  ?>
-                </div>
-                <div class="mt-3">
-                  <?php echo form_submit('submit', 'Login', array('class' => 'btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn')); ?>
-                </div>
-                <div class="my-2 d-flex justify-content-between align-items-center">
-                </div>
-              <?php echo form_close(); ?>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- content-wrapper ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="<?php echo base_url('/'); ?>"><b>Developer Print Media</a>
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="<?php echo base_url();?>asset/admin2/vendors/js/vendor.bundle.base.js"></script>
-  <script src="<?php echo base_url();?>asset/admin2/vendors/js/vendor.bundle.addons.js"></script>
-  <!-- endinject -->
-  <!-- inject:js -->
-  <script src="<?php echo base_url();?>asset/admin2/js/off-canvas.js"></script>
-  <script src="<?php echo base_url();?>asset/admin2/js/misc.js"></script>
-  <!-- endinject -->
-</body>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in Developer</p>
+      <?php
+        if($this->session->flashdata('success'))
+        { 
+          echo '<div class="alert alert-success">'. $this->session->flashdata('success') .'</div>';
+        }      
+        if($this->session->flashdata('error'))
+        {
+          echo '<div class="alert alert-danger">'. $this->session->flashdata('error') .'</div>';
+        }
+      ?>
+      <?php echo form_open('auth/prosesloginadmin'); ?>
+        <div class="form-group has-feedback">
+          <?php
+            $data = array('type' => 'email', 'class' => 'form-control', 'id' => 'email', 'name' => 'email', 'placeholder' => 'Masukkan Email', 'value' => set_value('email'), 'required' => 'true');
+            echo form_input($data);
+            echo form_error('email');
+          ?>
+        </div>
+        <div class="form-group has-feedback">
+          <?php
+            $data = array('type' => 'password', 'class' => 'form-control', 'id' => 'password', 'name' => 'password', 'placeholder' => 'Masukkan Email', 'value' => set_value('password'), 'required' => 'true');
+            echo form_input($data);
+            echo form_error('password');
+          ?>
+        </div>
+        <div class="row">
+          <!-- /.col -->
+          <div class="col-12">
+          <?php echo form_submit('submit', 'Login', array('class' => 'btn btn-primary btn-block btn-flat')); ?>
+          </div>
+          <!-- /.col -->
+        </div>
+      <?php echo form_close(); ?>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
 
+<?php $this->load->view('admin/script'); ?>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass   : 'iradio_square-blue',
+      increaseArea : '20%' // optional
+    })
+  })
+</script>
+</body>
 </html>

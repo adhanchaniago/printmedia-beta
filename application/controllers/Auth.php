@@ -77,12 +77,12 @@ class Auth extends CI_Controller {
 
 				$data = $this->Auth_model->Insert('auth', $data);
 				
-				$this->session->set_flashdata('success', 'Terima Kasih telah mendaftar di Print Media. Silahkan cek email Anda untuk melakukan aktivasi akun.');
+				$this->session->set_flashdata('success', 'Berhasil Mendaftar!');
 				redirect(base_url('register'));
 			} 
 			else 
 			{ 
-				$this->session->set_flashdata('error', 'Mohon Maaf! Hanya Email berdomain <b>.ac.id</b> dan <b>.edu</b> yang bisa Mendaftar.');
+				$this->session->set_flashdata('error', 'Gagal Mendaftar!');
 				redirect(base_url('register'));
 			}  
 		}
@@ -94,15 +94,7 @@ class Auth extends CI_Controller {
 		$where = array('token' => $token);
 		$data = $this->Auth_model->GetWhere('auth', $where);
 		$data = array('data' => $data);
-		$this->load->view('auth/suksesaktivasi', $data);	
-		// if($data[0]['status'] == 'Belum Aktif')
-		// {
-		// 	$this->load->view('auth/suksesaktivasi', $data);	
-		// }
-		// else
-		// {
-		// 	redirect(base_url('login'));
-		// }
+		$this->load->view('auth/suksesaktivasi', $data);
 	}
 
 	public function login()
@@ -115,8 +107,8 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
-		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin kurang dari 8 karakter.');
-		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> yang dimasukkin lebih dari 15 karakter.');
+		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal 8 karakter.');
+		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal 15 karakter.');
 		$email=$this->input->post('email');
 		$password=$this->input->post('password');
 		
@@ -171,13 +163,13 @@ class Auth extends CI_Controller {
 					
 					if($data['level'] === 'Admin' )
 					{
-						$this->session->set_flashdata('error', 'Maaf Akun Anda <b>TIDAK TERDAFTAR</b>.');
+						$this->session->set_flashdata('error', 'Gagal Login!');
 						redirect(base_url('login'));
 					}
 				}
 				if($data['status'] == 'Belum Aktif')
 				{
-					$this->session->set_flashdata('error', 'Maaf Akun Anda <b>BELUM AKTIF</b>. Silahkan aktifkan terlebih dahulu dengan cara membuka Email yang telah kami kirimkan.');
+					$this->session->set_flashdata('belumaktif', 'Gagal Login!');
 					redirect(base_url('login'));
 				}
 				if($data['status'] == 'Suspend')
@@ -193,20 +185,14 @@ class Auth extends CI_Controller {
 
 				if($data['email'] != $email && $data['password'] != $password)
 				{
-					$this->session->set_flashdata('error', 'Maaf Akun Anda Tidak Terdaftar');
+					$this->session->set_flashdata('error', 'Gagal Login!');
 					redirect(base_url('login'));
 				}
 				else
 				{
-					if($data['email'] != $email)
-					{
-						$this->session->set_flashdata('error', 'Maaf Email Salah');
-						var_dump($data); echo "<br>";
-						redirect(base_url('login'));
-					}
 					if($data['password'] != $password)
 					{
-						$this->session->set_flashdata('error', 'Maaf Password Salah');
+						$this->session->set_flashdata('errorpassword', 'Maaf Password Salah');
 						var_dump($data); echo "<br>";
 						redirect(base_url('login'));
 					}
@@ -219,22 +205,6 @@ class Auth extends CI_Controller {
     {
 		$this->session->sess_destroy();
         redirect(base_url('login'), 'refresh');
-	}
-	
-	public function hash()
-	{
-		$password = 'hunter2';
-		$hash = $this->bcrypt->hash_password($password);
-		echo $hash . "<br>";
-
-		if ($this->bcrypt->check_password($password, $hash))
-		{
-			return $password;
-		}
-		else
-		{
-			return false;
-		}
 	}
 	
 	public function login_admin()
@@ -301,15 +271,20 @@ class Auth extends CI_Controller {
 						redirect(base_url('admin/index'));
 					}
 				}
+				if($data['level'] !== 'Admin' )
+				{
+					$this->session->set_flashdata('error', 'Salah Tempat');
+					redirect(base_url('developer'));
+				}
 				if($data['status'] == 'Belum Aktif')
 				{
 					$this->session->set_flashdata('error', 'Maaf Akun Anda <b>BELUM AKTIF</b>. Silahkan aktifkan terlebih dahulu dengan cara membuka Email yang telah kami kirimkan.');
-					redirect(base_url('login'));
+					redirect(base_url('developer'));
 				}
 				if($data['status'] == 'Suspend')
 				{
 					$this->session->set_flashdata('error', 'Maaf! Akun Anda telah kami <b>SUSPEND</b>. Karena terbukti melanggar beberapa peraturan yang telah diterapkan. Harap hubungi kami melalui menu Kontak, jika terbukti tidak melakukan kesalahan.');
-					redirect(base_url('login'));
+					redirect(base_url('developer'));
 				}
 			}
 			else
@@ -320,21 +295,15 @@ class Auth extends CI_Controller {
 				if($data['email'] != $email && $data['password'] != $password)
 				{
 					$this->session->set_flashdata('error', 'Maaf Akun Anda Tidak Terdaftar');
-					redirect(base_url('login'));
+					redirect(base_url('developer'));
 				}
 				else
 				{
-					if($data['email'] != $email)
-					{
-						$this->session->set_flashdata('error', 'Maaf Email Salah');
-						var_dump($data); echo "<br>";
-						redirect(base_url('login'));
-					}
 					if($data['password'] != $password)
 					{
 						$this->session->set_flashdata('error', 'Maaf Password Salah');
 						var_dump($data); echo "<br>";
-						redirect(base_url('login'));
+						redirect(base_url('developer'));
 					}
 				}	
 			}
