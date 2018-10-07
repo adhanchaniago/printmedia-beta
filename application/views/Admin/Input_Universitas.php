@@ -72,8 +72,7 @@
                               swal({
                               text: "Mohon Lebih Teliti",
                               title: "'.form_error('univ').'",
-                              timer: 2500,
-                              showConfirmButton: false,
+                              showConfirmButton: true,
                               type: "'.'error'.'"
                               });
                             </script>'; 
