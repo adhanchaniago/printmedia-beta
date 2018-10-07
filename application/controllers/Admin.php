@@ -106,5 +106,19 @@ class Admin extends CI_Controller {
 		$data=array('data'=> $data);
 		$this->load->view('Admin/Data_User',$data);
 	}
+	public function Hapus_Univ($id)
+		{
+			$this->load->model('Admin_model');
+			$where = array('id' => $id);
+			$data=$this->Admin_model->hapus('universitas',$where);
+			if($data){
+				$this->session->set_flashdata('success', 'BERHASIL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_Univ'));
+			}
+			else{
+				$this->session->set_flashdata('error', 'GAGAL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_Univ'));
+			}
+		}
 }
 ?>

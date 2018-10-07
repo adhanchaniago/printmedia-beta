@@ -25,4 +25,10 @@ class Admin_model extends CI_Model {
         $res=$this->db->get();
         return $res->result_array();
     }
+    public function hapus($table,$id)
+    {
+        $this->db->where($id);
+		$res=$this->db->delete($table);
+		return $res;
+    }
 }

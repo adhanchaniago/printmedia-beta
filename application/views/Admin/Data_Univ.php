@@ -43,6 +43,31 @@
               <h3 class="card-title">Data Universitas</h3>
             </div>
             <!-- /.card-header -->
+           <?php if($this->session->flashdata('success')){?>
+            <?php echo  '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+              echo '<script>
+                swal({
+                      title: "Done",
+                      text: "Berhasil Menghapus",
+                      timer: 1500,
+                      showConfirmButton: false,
+                      type: "'.'success'.'"
+                      });
+              </script>';?>
+            <?php } elseif($this->session->flashdata('error')) { ?>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
+              <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                      echo '<script>
+                              swal({
+                              text: "Gagal Menghapus",
+                              title: "Failed",
+                              timer: 2500,
+                              showConfirmButton: false,
+                              type: "'.'error'.'"
+                              });
+                            </script>'; 
+                    ?>
+            <?php } ?>
             <div class="card-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
@@ -59,7 +84,9 @@
                   <td><?php echo $info['id'];?></td>
                   <td><?php echo $info['nama_univ'];?></td>
                   <td><?php echo $info['kota'];?></td>
-                  <td><a  class="fa fa-times" href="#" ></a></td>
+                  <td>
+                  <a  class="fa fa-times" id="remove"  onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Univ/<?php echo $info['id'];?>" ></a>
+                  </td>
                 </tr>
                 <?php } ?>
                 </tbody>
