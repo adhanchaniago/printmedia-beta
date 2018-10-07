@@ -36,7 +36,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <?php if($this->session->flashdata('success')):?>
+    <?php if($this->session->flashdata('success_univ')||$this->session->flashdata('success_jurusan')):?>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
       <script>
         swal({

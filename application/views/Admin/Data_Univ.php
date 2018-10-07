@@ -43,7 +43,7 @@
               <h3 class="card-title">Data Universitas</h3>
             </div>
             <!-- /.card-header -->
-           <?php if($this->session->flashdata('success')){?>
+           <?php if($this->session->flashdata('success_del_univ')){?>
             <?php echo  '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
               echo '<script>
                 swal({
@@ -54,7 +54,7 @@
                       type: "'.'success'.'"
                       });
               </script>';?>
-            <?php } elseif($this->session->flashdata('error')) { ?>
+            <?php } elseif($this->session->flashdata('error_del_univ')) { ?>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
               <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
                       echo '<script>

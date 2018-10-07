@@ -35,7 +35,7 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->session->set_flashdata('error',"'.form_error('univ').'");
+			$this->session->set_flashdata('error_univ',"'.form_error('univ').'");
 			$this->load->model('Admin_model');
 			$data = $this->Admin_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
@@ -50,7 +50,7 @@ class Admin extends CI_Controller {
 	        );
 
 			$data = $this->Admin_model->insert('universitas', $data);
-			$this->session->set_flashdata('success', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
+			$this->session->set_flashdata('success_univ', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
 			redirect(base_url('Admin/Input_Universitas'));
 
 		}
@@ -65,7 +65,7 @@ class Admin extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->session->set_flashdata('error',"'.form_error('jurusan').'");
+			$this->session->set_flashdata('error_jurusan',"'.form_error('jurusan').'");
 			$data = $this->Admin_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
 			$this->load->view('Admin/Input_Universitas',$data);
@@ -79,7 +79,7 @@ class Admin extends CI_Controller {
 
 			$data = $this->Admin_model->insert('jurusan', $data);
 
-			$this->session->set_flashdata('success', 'Berhasil Menambahkan Jurusan '.$this->input->post('jurusan'));
+			$this->session->set_flashdata('success_jurusan', 'Berhasil Menambahkan Jurusan '.$this->input->post('jurusan'));
 			redirect(base_url('admin/Input_Universitas'));
 		}
 		
@@ -112,11 +112,11 @@ class Admin extends CI_Controller {
 			$where = array('id' => $id);
 			$data=$this->Admin_model->hapus('universitas',$where);
 			if($data){
-				$this->session->set_flashdata('success', 'BERHASIL MENGHAPUS');
+				$this->session->set_flashdata('success_del_univ', 'BERHASIL MENGHAPUS');
 				redirect(base_url('Admin/Tampil_Univ'));
 			}
 			else{
-				$this->session->set_flashdata('error', 'GAGAL MENGHAPUS');
+				$this->session->set_flashdata('error_del_univ', 'GAGAL MENGHAPUS');
 				redirect(base_url('Admin/Tampil_Univ'));
 			}
 		}
