@@ -42,7 +42,7 @@
           <!-- Awalan Forms-->
           <section class="forms"> 
             <div class="container-fluid">
-            <?php echo form_open('user/updatedata', array('class' => 'form-horizontal')); ?>
+            <?php echo form_open('user/updatedataprofile', array('class' => 'form-horizontal')); ?>
             <!-- Awal Row Form -->
               <div class="row">
 
@@ -65,7 +65,7 @@
                               <?php 
                                 $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => $info['nama']); 
                                 echo form_input($data);
-                                echo form_error('nama_lengkap');
+                                echo form_error('nama_lengkap', '<p class="text-danger">', '</p>');
                               ?>                            
                             </div>
                           </div>
@@ -76,7 +76,7 @@
                               <?php 
                               $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'no_handphone', 'id' => 'no_handphone', 'value' => $info['nohape']); 
                               echo form_input($data);
-                              echo form_error('no_handphone');
+                              echo form_error('no_handphone', '<p class="text-danger">', '</p>');
                               ?>                                                  
                             </div>   
                           </div>
@@ -128,6 +128,7 @@
                             <?php
                             $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3, 'value'=>$info['alamat']);
                             echo form_textarea($data);
+                            echo form_error('alamat', '<p class="text-danger">', '</p>');
                             ?>
                           <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
                             </div>
@@ -141,6 +142,7 @@
                             <?php
                             $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3,'value'=>$info['detail_alamat']);
                             echo form_textarea($data);
+                            echo form_error('detail_alamat', '<p class="text-danger">', '</p>');
                             ?>
                             <small>Misal: Perumahan Elok Permai Blok BC, RT/RW 03/09</small>
                           </div>
@@ -192,7 +194,8 @@
                               <label class="label">Kode Pos : </label>
                               <?php 
                               $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'kodepos', 'id' => 'kodepos', 'value' => $info['kodepos']); 
-                              echo form_input($data);                        
+                              echo form_input($data);
+                              echo form_error('kodepos', '<p class="text-danger">', '</p>');                       
                               ?>      
                             </div>
                           </div>

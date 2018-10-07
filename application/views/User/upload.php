@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+
+    <title>Print Media - Layanan Jasa Cetak Masa Kini</title>
     <!-- All StyleSheet --> 
-    <?php $this->load->view('user/user_stylesheet'); ?>
-    <!-- All StyleSheet -->
-        
+      <?php $this->load->view('user/include/user_stylesheet'); ?>
+    <!-- All StyleSheet -->    
+
   </head>
 
   <body>
     <div class="page">
 
-      <!-- Navbar & Side Bar-->  
-        <?php require_once(APPPATH. 'views/user/include/navbar.php'); ?>
-      <!-- Navbar & Side Bar-->  
-
+      <!-- Awal Navbar-->  
+        <?php $this->load->view('user/include/navbar'); ?>
+      <!-- Navbar-->
       
+      <div class="page-content d-flex align-items-stretch">
 
-        <!-- Awal Konten -->
+      <!-- Awal Sidebar-->  
+        <?php $this->load->view('user/include/sidebar'); ?>
+      <!-- Akhir Side Bar-->
+
         <div class="content-inner">
+
           <!-- Page Header-->
           <header class="page-header">
             <div class="container-fluid">
-              <h2 class="no-margin-bottom">Upload Dokumen</h2>
+              <div class="row">
+                <div class="col-md-7">
+                  <h2 class="no-margin-bottom">Riwayat Pemesanan</h2>    
+                </div>
+
+                <div class="col-md-5">
+                  <small class="no-margin-bottom">Di sini kamu dapat melihat status pemesanan kamu.</small>
+                </div>
+              </div>
             </div>
           </header>
-
-          <!-- Awalan Isi  -->
-          <div style="margin-top: 10px;" class="container">
-            <div class="card">
-              <div class="card-body">
-                <p>
-                  Pastikan dokumen yang kamu upload sudah benar dan sesuai dengan ketentuan.
-                  Pastikan data pengiriman di bawah ini kamu isi dengan <b>Jelas</b>, <b>Lengkap</b>, dan <b>Benar</b>.                  
-                </p>
-                <p>
-                  <b>Bila dokumen kamu tidak dapat dikirim atau tidak mencapai tujuan yang benar atau jadi terhambat / tertunda karena data pengiriman yang tidak benar / lengkap, itu diluar tanggung jawab Print Media
-                  </b>
-                </p>                
-              </div>
-            </div>            
-          </div>
           
-          <div style="margin-top: 20px;" class="container">
+          <!-- Awalan Forms-->
+          <section class="forms"> 
+            <div class="container-fluid">
+            
+            <!-- Awal Card -->
             <div class="card">
-              <div class="card-body">
+              <div class="card-header d-flex align-items-center">
+                <h3 class="h4">Striped table with hover effect</h3>
+              </div>
 
-                <div class="row">                  
+              <div class="card-body">
+              <div class="row">                  
                   <!-- Ini Sisi Kiri -->                
                   <div class="col-md-9">
-                  <form class="form-horizontal">
+                  <?php echo form_open('user/inputpemesanan', array('enctype' => 'multipart/form-data', 'class' => 'form-horizontal')); ?>
                     <div class="form-group row">
                       <label class="col-sm-3 form-control-label">Judul Dokumen</label>
                       <div class="col-sm-9">
@@ -62,7 +66,7 @@
                       <label class="col-sm-3 form-control-label">File</label>
                       <div class="col-sm-9">
                         <div class="custom-file mb-3">
-                         <input type="file" class="custom-file-input" id="customFile" name="filename">
+                         <input type="file" class="custom-file-input" id="customFile" name="upload_file">
                           <label class="custom-file-label" for="customFile">Choose file</label>
                          </div>
                       </div>
@@ -127,53 +131,32 @@
                     <p><strong>Pemesanan yang sudah dipesan TIDAK DAPAT DIBATALKAN</strong></p><hr>
                     <p>Pastikan data dan pesanan sudah <b>BENAR</b></p>                  
                 </div>
-                
-              </div>
+                    </div>
             </div>
-          </div>            
-        </div>
-        <!-- Akhiran Isi -->
-        
-        <!-- Page Footer-->
-        <footer class="main-footer">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-sm-6">
-                <p>Print Media</p>
-              </div>
-              <div class="col-sm-6 text-right">
-                <p>Design by <a href="<?php echo base_url('welcome/index');?>" class="external">Print Media</a>
-              </div>
+            <!-- Akhir Card -->
+
             </div>
-          </div>
-        </footer>      
+          </section>
+          <!-- Akhiran Form -->
 
-  <!-- JavaScript files-->
-  <script src="<?php echo base_url('asset/user/vendor/jquery/jquery.min.js');?>"></script>
-  <script src="<?php echo base_url('asset/user/vendor/popper.js/umd/popper.min.js');?>"> </script>
-  <script src="<?php echo base_url('asset/user/vendor/bootstrap/js/bootstrap.min.js');?>"></script>
-  <script src="<?php echo base_url('asset/user/vendor/jquery.cookie/jquery.cookie.js');?>"> </script>
-  <script src="<?php echo base_url('asset/user/vendor/chart.js/Chart.min.js');?>"></script>
-  <script src="<?php echo base_url('asset/user/vendor/jquery-validation/jquery.validate.min.js');?>"></script>
-  <script src="<?php echo base_url('asset/user/js/charts-home.js');?>"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.js" type="text/javascript"></script>
+          <!-- Awla Page Footer-->
+            <?php $this->load->view('user/include/footer'); ?>
+          <!-- Akhir Page Footer-->
+
+        </div> <!-- Akhir Div Content Inner -->
+      </div> <!-- Akhir Div Page Content -->
+    </div> <!-- Akhir Div Page -->
 
 
-  <script>
+  <!-- All Java Scripts --> 
+    <?php $this->load->view('user/include/user_javascript'); ?>
+  <!-- All Java Script -->
+
+   <script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#tabelriwayat').DataTable();
     } );
   </script>
-
-  <!-- Scrip Data table -->
-  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-  
-
-    
-  <!-- Main File-->
-  <script src="<?php echo base_url('asset/user/js/front.js');?>"></script>
 
   </body>
 </html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 06, 2018 at 05:45 AM
+-- Generation Time: Oct 07, 2018 at 04:59 PM
 -- Server version: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -73,7 +73,13 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (39, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-05 01:45:06', 'Melakukan Login', 'ilj3265smp8bpohsn7b1nqhj4slit1uj'),
 (40, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 12:02:02', 'Melakukan Login', 'fjsjgspms5um29r9fgrk6cnk406j092t'),
 (41, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:21:21', 'Melakukan Login', 'e7p5lm1pchfmsp4k0naohcppq58r604f'),
-(42, '111201609359@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:33:26', 'Melakukan Login', 'bltr096i348rbv9ffh91bgb1ta75ot16');
+(42, '111201609359@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:33:26', 'Melakukan Login', 'bltr096i348rbv9ffh91bgb1ta75ot16'),
+(43, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:06:04', 'Melakukan Login', 'su4gd7eo71rss3ht04dvmpd22g3a887d'),
+(44, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:08', 'Melakukan Login', 'l3l7seh66ph55e565qd5it5oumsvhj3j'),
+(45, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:40', 'Melakukan Login', 'i3ug3rt6og3rkg2nqofc5asl6od064ko'),
+(46, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:25:59', 'Melakukan Login', 'ccvp6gjgo70r2hq6rjdtqt1752o9oskq'),
+(47, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:28:01', 'Melakukan Login', 'e8rpombs8mtahqmmpi0fi9c76bcioceo'),
+(48, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:38:36', 'Melakukan Login', '5barri01nep2d9cale9kgv6epvsanqkm');
 
 -- --------------------------------------------------------
 
@@ -7353,7 +7359,9 @@ CREATE TABLE `jurusan` (
 --
 
 INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
-(1, 'Tehnik Informatika - S1');
+(1, 'Tehnik Informatika - S1'),
+(2, 'Desain Komunikasi Visual - S1'),
+(4, 'asd');
 
 -- --------------------------------------------------------
 
@@ -7373,6 +7381,13 @@ CREATE TABLE `pemesanan` (
   `catatan` varchar(100) NOT NULL,
   `jenis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemesanan`
+--
+
+INSERT INTO `pemesanan` (`id`, `nama_dokumen`, `nama_file`, `ukuran_file`, `tipe_file`, `nama_penerima`, `nohape`, `alamat`, `catatan`, `jenis`) VALUES
+(0, '', 'Dokumentasi_Pertemuan_3.pdf', 326.71, 'application/pdf', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -8066,9 +8081,9 @@ CREATE TABLE `user` (
   `kota` varchar(100) NOT NULL,
   `kecamatan` varchar(100) NOT NULL,
   `kodepos` varchar(10) NOT NULL,
-  `universitas` int(11) NOT NULL,
-  `progdi` int(11) NOT NULL,
-  `tahun_masuk` int(11) NOT NULL,
+  `universitas` varchar(100) NOT NULL,
+  `progdi` varchar(100) NOT NULL,
+  `tahun_masuk` varchar(100) NOT NULL,
   `tahun_keluar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -8077,7 +8092,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `nohape`, `gender`, `tanggal_lahir`, `email`, `alamat`, `detail_alamat`, `provinsi`, `kota`, `kecamatan`, `kodepos`, `universitas`, `progdi`, `tahun_masuk`, `tahun_keluar`) VALUES
-(1, 'Bugi Setiawan', '087830431896', 'Laki-Laki', '1900-11-20', '111201609358@mhs.dinus.ac.id', 'asdsd', 'asdsd', '12', '1201', '1201061', '21345', 3, 1, 2, 'Belum Lulus');
+(1, 'Bugi Setiawan', '087830431896', 'Laki-Laki', '1900-11-20', '111201609358@mhs.dinus.ac.id', 'asdsd', 'asdsd', '11', '1101', '1101010', '123456', 'Universitas Dian Nuswantoro', 'Tehnik Informatika - S1', '2016', 'Belum Lulus');
 
 -- --------------------------------------------------------
 
@@ -83188,6 +83203,12 @@ ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
@@ -83199,6 +83220,12 @@ ALTER TABLE `provinces`
 ALTER TABLE `regencies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `regencies_province_id_index` (`province_id`);
+
+--
+-- Indexes for table `tahun`
+--
+ALTER TABLE `tahun`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `universitas`
@@ -83228,7 +83255,7 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `auth`
@@ -83240,7 +83267,7 @@ ALTER TABLE `auth`
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `universitas`
