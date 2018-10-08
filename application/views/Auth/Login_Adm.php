@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AdminLTE 3 | Log in</title>
+  <title>PrintMedia | Developer</title>
   <?php $this->load->view('admin/head'); ?>
 </head>
 <body class="hold-transition login-page">

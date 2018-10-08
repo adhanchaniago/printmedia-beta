@@ -51,9 +51,9 @@
             <div class="col-lg-6">
                 <h4 class="text-center"><span>MI</span>SI</h4>
                 <ul class="list-group">
-                    <li class="list-group-item">Mencetak Generasi yang cerdas dan tidak malas.</li>
-                    <li class="list-group-item">Memudahkan para pelajar agar tidak pusing memikirkan tugas - tugas.</li>
-                    <li class="list-group-item">Membuat sebuah perubahan dalam dunia Percetakan.</li>
+                    <li class="list-group-item">Memudahkan para Mahasiswa agar mudah dalam mencetak Tugas.</li>
+                    <li class="list-group-item">-</li>
+                    <li class="list-group-item">-</li>
                 </ul>
             </div>
         </div>

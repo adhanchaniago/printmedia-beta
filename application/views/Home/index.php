@@ -21,8 +21,8 @@
 
 <section class="section section-intro your-class" id="mulai">
     <div><img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
-    <div><img src="<?php echo base_url('asset/home/img/banner2.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
-    <div><img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
+    <div><img src="<?php echo base_url('asset/home/img/banner5.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
+    <div><img src="<?php echo base_url('asset/home/img/banner3.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
 </section>
 
 <section class="section section-tutorial">
@@ -120,13 +120,13 @@
                             <tr>
                                 <td>A4</td>
                                 <td>Rp. 300 / pcs</td>
-                                <td>Rp. 1000 / pcs</td>
+                                <td>Rp. 600 / pcs</td>
                             </tr>
                             
                             <tr>
                                 <td>F4</td>
-                                <td>Rp. 300 / pcs</td>
-                                <td>Rp. 1000 / pcs</td>
+                                <td>Rp. 400 / pcs</td>
+                                <td>Rp. 700 / pcs</td>
                             </tr>
                         </tbody>
                     </table>
@@ -208,7 +208,7 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.your-class').slick({
         autoplay: true,
-        autoplaySpeed: 5000,
+        autoplaySpeed: 3000,
     });
 });
 </script>
