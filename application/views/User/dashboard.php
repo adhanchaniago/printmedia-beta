@@ -4,7 +4,7 @@
     
     <title>Print Media - Layanan Jasa Cetak Masa Kini</title>
     <!-- All StyleSheet --> 
-    <?php $this->load->view('user/user_stylesheet'); ?>
+    <?php $this->load->view('user/include/user_stylesheet'); ?>
     <!-- All StyleSheet -->
 
   </head>
