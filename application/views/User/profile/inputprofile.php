@@ -42,7 +42,7 @@
           <!-- Awalan Forms-->
           <section class="forms"> 
             <div class="container-fluid">
-            <?php echo form_open('user/inputdata', array('class' => 'form-horizontal')); ?>
+            <?php echo form_open('user/inputdataprofile', array('class' => 'form-horizontal')); ?>
             <!-- Awal Row Form -->
               <div class="row">
 

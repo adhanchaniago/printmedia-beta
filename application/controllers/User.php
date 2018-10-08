@@ -63,10 +63,13 @@ class User extends CI_Controller
 
 	public function upload()
 	{
-		$this->load->view('user/upload');
+		$email = array('email' => $this->session->userdata('email')) ;
+		$cek = $this->User_model->tampilProfile('user', $email);
+		$cek=array('cek'=> $cek);		
+		$this->load->view('user/upload', $cek);
 	}
 
-	public function inputdata()
+	public function inputdataprofile()
 	{
 		// Set Aturan
 		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
@@ -115,46 +118,72 @@ class User extends CI_Controller
 		
 	}
 
-	public function updatedata()
+	public function updatedataprofile()
 	{
-		
-		$data = array(				
-			'nama' => $this->input->post('nama_lengkap'), // yang kanan nama di form
-			'nohape' => $this->input->post('no_handphone'),
-			'gender' => $this->input->post('jenis_kelamin'),
-			'tanggal_lahir' => $this->input->post('tanggal_lahir'),		
-			'alamat' => $this->input->post('alamat'),
-			'detail_alamat' => $this->input->post('detail_alamat'),
-			'provinsi' => $this->input->post('provinsi'),
-			'kota' => $this->input->post('kota'),
-			'kecamatan' => $this->input->post('kecamatan'),				
-			'kodepos' => $this->input->post('kodepos'),
-			'universitas' => $this->input->post('universitas'),
-			'progdi' => $this->input->post('jurusan'),
-			'tahun_masuk' => $this->input->post('tahun_masuk'),
-			'tahun_keluar' => $this->input->post('tahun_keluar'),
-		);
+		// Set Aturan
+		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|xss_clean|min_length[10]|max_length[13]');	
+		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|xss_clean|min_length[5]|max_length[5]');	
+		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
 
+		// Set Pesan
+		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
+		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
+		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
+		$this->form_validation->set_message('min_length', '<b>%s</b> Minimal <b>%s</b> Angka');
+		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');
 
-		$where=array(
-			'email'=>$this->input->post('email')
-		);
-
-		$data=$this->User_model->update($where,$data,'user');
-
-		if($data=='1')
+		if($this->form_validation->run() == FALSE)
 		{
-			$this->session->set_flashdata('succes', 'BERHASIL UPDATE');
-			redirect(base_url('myprofile'));
+			$this->load->view('user/profile/inputprofile');
 		}
+
 		else
 		{
-			$this->session->set_flashdata('error', 'GAGAL UPDATE');
-			redirect(base_url('myprofile'));
+
+			$data = array(				
+				'nama' => $this->input->post('nama_lengkap'), // yang kanan nama di form
+				'nohape' => $this->input->post('no_handphone'),
+				'gender' => $this->input->post('jenis_kelamin'),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir'),		
+				'alamat' => $this->input->post('alamat'),
+				'detail_alamat' => $this->input->post('detail_alamat'),
+				'provinsi' => $this->input->post('provinsi'),
+				'kota' => $this->input->post('kota'),
+				'kecamatan' => $this->input->post('kecamatan'),				
+				'kodepos' => $this->input->post('kodepos'),
+				'universitas' => $this->input->post('universitas'),
+				'progdi' => $this->input->post('jurusan'),
+				'tahun_masuk' => $this->input->post('tahun_masuk'),
+				'tahun_keluar' => $this->input->post('tahun_keluar'),
+			);
+	
+	
+			$where=array(
+				'email'=>$this->input->post('email')
+			);
+	
+			$data=$this->User_model->update($where,$data,'user');
+	
+			if($data=='1')
+			{
+				$this->session->set_flashdata('succes', 'BERHASIL UPDATE');
+				redirect(base_url('myprofile'));
+			}
+			else
+			{
+				$this->session->set_flashdata('error', 'GAGAL UPDATE');
+				redirect(base_url('myprofile'));
+			}
+
 		}
+		
+		
 	}
 
-	public function inputpemesanan()
+	public function inputdatapemesanan()
 	{
 		$config['upload_path'] = "./asset/user/pemesanan";
 		$config['allowed_types'] = "pdf";
