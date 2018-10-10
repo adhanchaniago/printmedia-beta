@@ -120,5 +120,19 @@ class Admin extends CI_Controller {
 				redirect(base_url('Admin/Tampil_Univ'));
 			}
 		}
+	public function Hapus_Jurusan($id)
+		{
+			$this->load->model('Admin_model');
+			$where = array('id' => $id);
+			$data=$this->Admin_model->hapus('jurusan',$where);
+			if($data){
+				$this->session->set_flashdata('success_del_jurusan', 'BERHASIL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_Jurusan'));
+			}
+			else{
+				$this->session->set_flashdata('error_del_jurusan', 'GAGAL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_Jurusan'));
+			}
+		}
 }
 ?>
