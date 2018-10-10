@@ -106,6 +106,7 @@ class Admin extends CI_Controller {
 		$data=array('data'=> $data);
 		$this->load->view('Admin/Data_User',$data);
 	}
+
 	public function Hapus_Univ($id)
 		{
 			$this->load->model('Admin_model');
@@ -120,6 +121,7 @@ class Admin extends CI_Controller {
 				redirect(base_url('Admin/Tampil_Univ'));
 			}
 		}
+
 	public function Hapus_Jurusan($id)
 		{
 			$this->load->model('Admin_model');
@@ -134,5 +136,25 @@ class Admin extends CI_Controller {
 				redirect(base_url('Admin/Tampil_Jurusan'));
 			}
 		}
+
+	public function Hapus_User($email)
+		{
+			$this->load->model('Admin_model');
+			$where = array('email' => $email);
+			$data=$this->Admin_model->hapus('auth',$where);
+			$data1=$this->Admin_model->hapus('user',$where);
+			if($data){
+				if($data1){
+					$this->session->set_flashdata('success_del_user', 'BERHASIL MENGHAPUS');
+					redirect(base_url('Admin/Tampil_User'));
+				}
+				$this->session->set_flashdata('error_del_user', 'GAGAL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_User'));
+			}
+			else{
+				$this->session->set_flashdata('error_del_user', 'GAGAL MENGHAPUS');
+				redirect(base_url('Admin/Tampil_User'));
+			}
+		}	
 }
 ?>
