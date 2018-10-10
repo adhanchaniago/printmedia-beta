@@ -82,7 +82,7 @@
                 <tr>
                   <td><?php echo $info['id'];?></td>
                   <td><?php echo $info['jurusan'];?></td>
-                  <td><a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Jurusan/<?php echo $info['id'];?>"" ></a></td>
+                  <td><a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Jurusan/<?php echo $info['id'];?>" ></a></td>
                 </tr>
                 <?php } ?>
                 </tbody>
