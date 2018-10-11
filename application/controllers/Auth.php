@@ -78,9 +78,9 @@ class Auth extends CI_Controller {
 				$data = $this->Auth_model->Insert('auth', $data);
 				
 				$this->session->set_flashdata('success', 'Berhasil Mendaftar!');
-				// redirect(base_url('register'));
-				print_r($isi); echo "<br>";
-				print_r($ci);
+				redirect(base_url('register'));
+				// print_r($isi); echo "<br>";
+				// print_r($ci);
 			} 
 			else 
 			{ 
