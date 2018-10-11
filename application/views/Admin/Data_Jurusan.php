@@ -3,7 +3,7 @@
 <head>
   <!-- SRC include  -->
   <?php $this->load->view('Admin/head'); ?>
-  <title>PrintMedia-Admin | Universitas</title>
+  <title>PrintMedia-Admin | Jurusan</title>
  
 </head>
 <body class="hold-transition sidebar-mini">
@@ -16,6 +16,31 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+  <?php if($this->session->flashdata('success_del_jurusan')){?>
+            <?php echo  '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+              echo '<script>
+                swal({
+                      title: "Done",
+                      text: "Berhasil Menghapus",
+                      timer: 1500,
+                      showConfirmButton: false,
+                      type: "'.'success'.'"
+                      });
+              </script>';?>
+            <?php } elseif($this->session->flashdata('error_del_jurusan')) { ?>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
+              <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
+                      echo '<script>
+                              swal({
+                              text: "Gagal Menghapus",
+                              title: "Failed",
+                              timer: 2500,
+                              showConfirmButton: false,
+                              type: "'.'error'.'"
+                              });
+                            </script>'; 
+                    ?>
+            <?php } ?>
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -57,7 +82,7 @@
                 <tr>
                   <td><?php echo $info['id'];?></td>
                   <td><?php echo $info['jurusan'];?></td>
-                  <td><a  class="fa fa-times" href="#" ></a></td>
+                  <td><a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Jurusan/<?php echo $info['id'];?>" ></a></td>
                 </tr>
                 <?php } ?>
                 </tbody>
