@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-<title>PrintMedia Percetakana Online di Indonesia Kelas Mahasiswa</title>
+<title>PrintMedia Percetakan Online di Indonesia Kelas Mahasiswa</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,10 +19,8 @@
     <?php $this->load->view('home/inc/header'); ?>
 </div>
 
-<section class="section section-intro your-class" id="mulai">
-    <div><img src="<?php echo base_url('asset/home/img/banner4.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
-    <div><img src="<?php echo base_url('asset/home/img/banner5.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
-    <div><img src="<?php echo base_url('asset/home/img/banner3.jpg'); ?>" class="lazyload" alt="" width="100%"></div>
+<section class="section section-intro" id="mulai">
+    <img src="<?php echo base_url('asset/home/img/banner6.jpg'); ?>" class="img-fluid" alt="">
 </section>
 
 <section class="section section-tutorial">

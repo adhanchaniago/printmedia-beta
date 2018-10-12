@@ -51,10 +51,11 @@ body{
     padding: 75px 0;
 }
 .section-intro{
-    min-height: 100vh;
+    padding-top: 60px;
 }
 .section-intro img{
-    height: 100vh;
+    height: 350px;
+    width: 100%;
 }
 /*---------- SECTION TUTORIAL ----------*/
 .section-tutorial{
@@ -367,8 +368,8 @@ body{
     .navbar .navbar-nav .kotak2 .nav-link{
         color: #000;
     }
-    .section-intro .slick-arrow{
-        visibility: hidden;
+    .section-intro{
+        padding-top: 55px;
     }
     .section .container{
         width: 100%;
