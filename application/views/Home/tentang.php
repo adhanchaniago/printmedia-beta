@@ -31,8 +31,8 @@
         <div class="row">
             <div class="col-sm-12">
                 <p>
-                    Print Media merupakan calon startup di Indonesia. Startup yang berfokus pada dunia <b>Percetakan Online</b> dimana kami membantu teman-teman agar mudah dalam mencetak tugas-tugas, jurnal dan makalah. 
-                    Kami hadir karena melihat kebutuhan dalam dunia dunia percetakan sangat penting, apalagi saat ini semuanya pada sibuk dan tidak sempat untuk datang ke sebuah tempat percetakan.
+                    Print Media merupakan calon startup di Indonesia. Startup yang berfokus di bidang <b>Percetakan</b> dimana kami membantu teman-teman agar mudah dalam mencetak tugas-tugas, jurnal dan makalah. 
+                    Kami hadir karena melihat kebutuhan dalam dunia percetakan sangat penting, apalagi saat ini semuanya pada sibuk dan tidak sempat untuk datang ke sebuah tempat percetakan.
                     Disinilah kami hadir dan memberikan nuansa yang berbeda, dimana kami selalu siap membantu kebutuhan-kebutuhan dalam dunia percetakan.
                 </p>
             </div>
@@ -43,12 +43,12 @@
 <section class="section section-visi-misi">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 visi">
+            <div class="col-lg-6 col-md-6 col-sm-12 visi">
                 <h4 class="text-center">VI<span>SI</span></h4>
                 <p>Sebuah karya anak bangsa Indonesia yang berfokus pada dunia percetakan. Kami hadir dengan nuansa yang beda dan membantu para pelajar agar mudah untuk belajar.</p>
             </div>
 
-            <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6 col-sm-12">
                 <h4 class="text-center"><span>MI</span>SI</h4>
                 <ul class="list-group">
                     <li class="list-group-item">Memudahkan para Mahasiswa agar mudah dalam mencetak Tugas.</li>
