@@ -6,7 +6,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand -->
-                <a href="<?php echo base_url('/'); ?>" class="navbar-brand d-none d-sm-inline-block">
+                <a href="<?php echo base_url('user/index'); ?>" class="navbar-brand d-none d-sm-inline-block">
                 <div class="brand-text d-none d-lg-inline-block"><span>Print</span><strong> Media</strong></div>
                 </a>
               

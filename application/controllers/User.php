@@ -70,9 +70,9 @@ class User extends CI_Controller
 	}
 
 	public function inputdataprofile()
-	{
+	{	
 		// Set Aturan
-		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|regex_match[/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/]');
 		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|xss_clean|min_length[10]|max_length[13]');	
 		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|xss_clean|min_length[5]|max_length[5]');	
 		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'trim|required|xss_clean');
@@ -80,11 +80,10 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
 
 		// Set Pesan
-		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
-		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
-		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
+		$this->form_validation->set_message('required', ' Maaf, Kolom <b>%s</b> Anda Tidak Boleh Kosong');
 		$this->form_validation->set_message('min_length', '<b>%s</b> Minimal <b>%s</b> Angka');
-		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');	
+		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');
+		$this->form_validation->set_message('regex_match', 'Maaf, kolom <b>%s</b> Salah');	
 
 		if($this->form_validation->run() == FALSE)
 		{
@@ -121,23 +120,28 @@ class User extends CI_Controller
 	public function updatedataprofile()
 	{
 		// Set Aturan
-		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|alpha|xss_clean');
+		$this->form_validation->set_rules('nama_lengkap', 'Nama', 'trim|required|regex_match[/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/]');
 		$this->form_validation->set_rules('no_handphone', 'Nomor Handphone', 'trim|required|numeric|xss_clean|min_length[10]|max_length[13]');	
 		$this->form_validation->set_rules('kodepos', 'Kode Pos', 'trim|required|numeric|xss_clean|min_length[5]|max_length[5]');	
 		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
+			
 
 		// Set Pesan
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
 		$this->form_validation->set_message('alpha', '<b>%s</b> tidak boleh mengandung angka');
-		$this->form_validation->set_message('numeric', '%s Tidak boleh mengandung huruf');
-		$this->form_validation->set_message('min_length', '<b>%s</b> Minimal <b>%s</b> Angka');
-		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');
+		$this->form_validation->set_message('numeric', 'Maaf, %s Tidak boleh mengandung huruf');
+		$this->form_validation->set_message('min_length', 'Maaf, <b>%s</b> Minimal <b>%s</b> Angka');
+		$this->form_validation->set_message('max_length', 'Maaf, <b>%s</b> Maksimal <b>%s</b> Angka');
+		$this->form_validation->set_message('regex_match', 'Maaf, Kolom <b>%s</b> Salah');
 
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('user/profile/inputprofile');
+			$email = array('email' => $this->session->userdata('email')) ;
+			$cek = $this->User_model->tampilProfile('user', $email);
+			$cek=array('cek'=> $cek);
+			$this->load->view('user/profile/editprofile', $cek);			
 		}
 
 		else
