@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 07, 2018 at 04:59 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 7.1.11
+-- Generation Time: Oct 16, 2018 at 02:55 PM
+-- Server version: 10.1.35-MariaDB
+-- PHP Version: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -74,12 +74,10 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (40, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 12:02:02', 'Melakukan Login', 'fjsjgspms5um29r9fgrk6cnk406j092t'),
 (41, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:21:21', 'Melakukan Login', 'e7p5lm1pchfmsp4k0naohcppq58r604f'),
 (42, '111201609359@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:33:26', 'Melakukan Login', 'bltr096i348rbv9ffh91bgb1ta75ot16'),
-(43, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:06:04', 'Melakukan Login', 'su4gd7eo71rss3ht04dvmpd22g3a887d'),
-(44, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:08', 'Melakukan Login', 'l3l7seh66ph55e565qd5it5oumsvhj3j'),
-(45, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:40', 'Melakukan Login', 'i3ug3rt6og3rkg2nqofc5asl6od064ko'),
-(46, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:25:59', 'Melakukan Login', 'ccvp6gjgo70r2hq6rjdtqt1752o9oskq'),
-(47, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:28:01', 'Melakukan Login', 'e8rpombs8mtahqmmpi0fi9c76bcioceo'),
-(48, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:38:36', 'Melakukan Login', '5barri01nep2d9cale9kgv6epvsanqkm');
+(43, 'dev@printmedia.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 10:26:00', 'Melakukan Login', 'kkv8v7ruenp9slfca2th0nlshtk47vi2'),
+(44, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 11:10:58', 'Melakukan Login', 'q31n24b165umlii4geun7cuo57sgucqj'),
+(45, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-08 07:57:29', 'Melakukan Login', '2lcr8htgd7o2defj7v0tifi0dkoecpc7'),
+(46, '111201610010@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-09 01:13:16', 'Melakukan Login', 'r9sm0a6kjgnfm1rc43s7f2710b9ehlp4');
 
 -- --------------------------------------------------------
 
@@ -102,9 +100,11 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(31, '111201609357@mhs.dinus.ac.id', '1b37770a3a2ae24f29db76b1e322ba3e', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-09-26 14:08:28', 'Aktif'),
-(32, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-09-27 07:20:34', 'Aktif'),
-(33, '111201609359@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '66f61bc4d69fb493e6b670d1a9e7aaed', '2018-10-06 03:30:34', 'Aktif');
+(31, '111201609357@mhs.dinus.ac.id', '25D55AD283AA400AF464C76D713C07AD', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-10-07 03:16:54', 'Aktif'),
+(39, '111201609354@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '1af7eae38d3b517249c02370935fc7ba', '2018-10-07 03:02:51', 'Belum Aktif'),
+(40, 'dev@printmedia.id', '25d55ad283aa400af464c76d713c07ad', 'Admin', '-', '2018-10-07 03:18:01', 'Aktif'),
+(43, '111201610010@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '3b7904751572ec11d8c169fc79fdda45', '2018-10-09 06:13:04', 'Aktif'),
+(44, '111201609664@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'c84690fc0d3a9493926c2b5de9682ec9', '2018-10-12 06:21:42', 'Belum Aktif');
 
 -- --------------------------------------------------------
 
@@ -7359,9 +7359,255 @@ CREATE TABLE `jurusan` (
 --
 
 INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
-(1, 'Tehnik Informatika - S1'),
-(2, 'Desain Komunikasi Visual - S1'),
-(4, 'asd');
+(2, 'Matematika'),
+(3, 'Fisika'),
+(4, 'Kimia'),
+(5, 'Biologi'),
+(6, 'Geografi'),
+(7, 'Geofisika'),
+(8, 'Geologi'),
+(9, 'Astronomi'),
+(10, 'Statistika'),
+(11, 'Sastra Arab'),
+(12, 'Sastra Jepang'),
+(13, 'Sastra Cina'),
+(14, 'Sastra Jawa'),
+(15, 'Bahasa dan Kebudayaan Korea'),
+(16, 'Sastra Indonesia'),
+(17, 'Sastra Inggris'),
+(18, 'Sastra Belanda'),
+(19, 'Sastra Perancis'),
+(20, 'Sastra Jerman'),
+(21, 'Sastra Rusia'),
+(22, 'Arkeologi'),
+(23, 'Ilmu Sejarah'),
+(24, 'Filsafat'),
+(25, 'Ilmu Perpustakaan'),
+(26, 'PGSD'),
+(27, 'PGPAUD'),
+(28, 'Teknik Metalurgi dan Material'),
+(29, 'Teknik Mesin'),
+(30, 'Teknik Perkapalan'),
+(31, 'Teknik Komputer'),
+(32, 'Teknik Geologi'),
+(33, 'Teknik Kimia'),
+(34, 'Teknik Bioproses'),
+(35, 'Teknik Sipil'),
+(36, 'Teknik Lingkungan'),
+(37, 'Teknik Kelautan'),
+(38, 'Kedokteran'),
+(39, 'Kedokteran Gigi'),
+(40, 'Kedokteran Hewan'),
+(41, 'Kesehatan Masyarakat'),
+(42, 'Kesehatan Lingkungan'),
+(43, 'Ilmu Gizi'),
+(44, 'Keselamatan dan Kesehatan Kerja'),
+(45, 'Ilmu Keperawatan'),
+(46, 'Farmasi'),
+(47, 'Nutrisi dan Teknologi Pangan'),
+(48, 'Kebidanan'),
+(49, 'Fisioterafi'),
+(50, 'Ilmu Keolahragaan'),
+(51, 'Teknik Radiodiagnostik dan Radioterapi'),
+(52, 'Manajemen Pelayanan Rumah Sakit'),
+(53, 'Bioteknologi'),
+(54, 'Meteorologi'),
+(55, 'Biokimia'),
+(56, 'Aktuaria'),
+(57, 'Statistika Terapan'),
+(58, 'Mikrobiologi'),
+(59, 'Bioentrepreneurship'),
+(60, 'Ilmu Pangan'),
+(61, 'Matematika Bisnis'),
+(62, 'Fisika Medis'),
+(63, 'Kartografi dan Penginderaan Jauh'),
+(64, 'Pengelolaan dan Pemberdayaan SDA dan Lingkungan'),
+(65, 'Ilmu Politik'),
+(66, 'Kriminologi'),
+(67, 'Psikologi'),
+(68, 'Ilmu Hukum'),
+(69, 'Sosiologi'),
+(70, 'Jurnalistik'),
+(71, 'Antropologi'),
+(72, 'Hubungan Internasional'),
+(73, 'Ilmu Kesejahteraan Sosial'),
+(74, 'Ilmu Pemerintahan'),
+(75, 'Administrasi Publik'),
+(76, 'Administrasi Bisnis'),
+(77, 'Ilmu Komunikasi'),
+(78, 'Hubungan Masyarakat'),
+(79, 'Marketing Communication'),
+(80, 'Penyiaran'),
+(81, 'Periklanan (Advertising)'),
+(82, 'Peradilan Agama'),
+(83, 'Politik Islam'),
+(84, 'Pembangunan Sosial dan Kesejahteraan'),
+(85, 'Business Law'),
+(86, 'Manajemen Komunikasi'),
+(87, 'Branding'),
+(88, 'Kearsipan'),
+(89, 'Sains Komunikasi dan Pengembangan Masyarakat'),
+(90, 'Ilmu Keluarga dan Konsumen'),
+(91, 'Manajemen Produksi Media'),
+(92, 'Akuntansi'),
+(93, 'Manajemen Keuangan'),
+(94, 'Manajemen Sumber Daya Manusia dan Organisasi'),
+(95, 'Manajemen Operasi'),
+(96, 'Manajemen Pemasaran'),
+(97, 'Administrasi Fiskal'),
+(98, 'Ekonomi'),
+(99, 'Bisnis Internasional'),
+(100, 'Manajemen Informatika'),
+(101, 'Ekonomi Pembangunan'),
+(102, 'Technopreneurship'),
+(103, 'Green Economy'),
+(104, 'Manajemen Bisnis'),
+(105, 'Administrasi Niaga'),
+(106, 'Manajemen Keuangan Syariah'),
+(107, 'Bisnis Islam'),
+(108, 'Business Creation'),
+(109, 'Kewirausahaan'),
+(110, 'Manajemen Bisnis dan Pemasaran'),
+(111, 'Manajemen Bisnis Internasional'),
+(112, 'Ekonomi Syariah'),
+(113, 'Keuangan'),
+(114, 'Pemasaran Internasional'),
+(115, 'Ekonomi Bisnis'),
+(116, 'Akuntasi Bisnis'),
+(117, 'Manajemen Pariwisata'),
+(118, 'Manajemen'),
+(119, 'Manajemen Transportasi'),
+(120, 'Akuntansi Sektor Publik'),
+(121, 'Manajemen Industri Katering'),
+(122, 'Administrasi Keuangan'),
+(123, 'Manajemen Bisnis Telekomunikasi Informatika'),
+(124, 'Sastra Korea'),
+(125, 'Sastra Sunda'),
+(126, 'Sastra Bali'),
+(127, 'Sastra Slavia'),
+(128, 'Sastra Minangkabau'),
+(129, 'Sastra Nusantara'),
+(130, 'Sejarah dan Kebudayaan Islam'),
+(131, 'Teknik Informatika'),
+(132, 'Mobile Application dan Technology'),
+(133, 'Sistem Informasi'),
+(134, 'Teknologi Game'),
+(135, 'Ilmu Komputasi'),
+(136, 'Cyber Security'),
+(137, 'Bioinformatika'),
+(138, 'Sistem Komputer'),
+(139, 'Sistem Informasi Bisnis'),
+(140, 'Software Engineering'),
+(141, 'Sistem dan Teknologi Informasi'),
+(142, 'Computerized Accounting'),
+(143, 'Information Systems Audit'),
+(144, 'Accounting Information'),
+(145, 'Audio Engineering'),
+(146, 'Ilmu Komputer'),
+(147, 'Human Computer Interaction'),
+(148, 'Manajemen Pendidikan'),
+(149, 'Kurikulum dan Teknologi Pendidikan'),
+(150, 'Pendidikan Luar Sekolah'),
+(151, 'Pendidikan Luar Biasa'),
+(152, 'Pendidikan Anak Usia Dini'),
+(153, 'Administrasi Pendidikan'),
+(154, 'Pendidikan Bimbingan Konseling'),
+(155, 'Teologi'),
+(156, 'Pendidikan Kependudukan'),
+(157, 'Tafsir Hadits'),
+(158, 'Pendidikan Pancasila dan Kewarganegaraan'),
+(159, 'Pendidikan Agama Islam'),
+(160, 'Pendidikan Kepelatihan Olahraga'),
+(161, 'Pendidikan Jasmani Kesehatan dan Rekreasi'),
+(162, 'Pendidikan Ilmu Pengetahuan Alam'),
+(163, 'Pendidikan Bahasa Inggris'),
+(164, 'Pendidikan Bahasa dan Sastra Indonesia'),
+(165, 'Pendidikan Sejarah'),
+(166, 'Pendidikan Matematika'),
+(167, 'Manajemen Pendidikan Islam'),
+(168, 'Pendidikan Geografi'),
+(169, 'Pendidikan Bahasa Arab'),
+(170, 'Agronomi dan Hortikultura'),
+(171, 'Mikrobiologi Pertanian'),
+(172, 'Agribisnis'),
+(173, 'Agroteknologi'),
+(174, 'Ilmu Kelautan'),
+(175, 'Peternakan'),
+(176, 'Kehutana'),
+(177, 'Budidaya Perairan'),
+(178, 'Teknologi Pangan'),
+(179, 'Rekayasa Pertanian'),
+(180, 'Teknologi Pasca Panen'),
+(181, 'Teknologi Hasil Hutan'),
+(182, 'Silvikulutur'),
+(183, 'Konservasi Sumberdaya Hutan dan Ekowisata'),
+(184, 'Ilmu Hama dan Penyakit Tumbuhan'),
+(185, 'Teknologi Industri Pertanian'),
+(186, 'Manajemen Sumberdaya Lahan'),
+(187, 'Teknologi Hasil Perikana'),
+(188, 'Agrobisnis Perkanian'),
+(189, 'Pengelolaan Hutan'),
+(190, 'Pemanfaatan Sumberdaya Perikanan'),
+(191, 'Teknologi Industri Benih'),
+(192, 'Produksi Ternak'),
+(193, 'Teknologi Hasil Ternak'),
+(194, 'Manajemen Sumberdaya Perairan'),
+(195, 'Manajemen Hutan'),
+(196, 'Penyuluhan dan Komunikasi Pertanian'),
+(197, 'Teknik Pertanian'),
+(198, 'Manajemen Bisnis Unggas'),
+(199, 'Pariwisita'),
+(200, 'Pendidikan Kepolisian'),
+(201, 'Pendidikan Militer'),
+(202, 'Penerbang (Pendidikan Pilot)'),
+(203, 'Pendidikan Intelijen'),
+(204, 'Komunikasi Penerbangan'),
+(205, 'Lalu Lintas Udara'),
+(206, 'Manajemen Logistik'),
+(207, 'Desain Interior'),
+(208, 'Desain Produk'),
+(209, 'Furniture Design'),
+(210, 'Tata Boga'),
+(211, 'Desain Grafis'),
+(212, 'Animasi'),
+(213, 'DKV New Media'),
+(214, 'DKV Creative Advertising'),
+(215, 'Teknik Pertambangan'),
+(216, 'Arsitektur'),
+(217, 'Teknik Geodesi'),
+(218, 'Teknik Elektro'),
+(219, 'Teknik Industri'),
+(220, 'Teknik Perancangan Jalan dan Jembatan'),
+(221, 'Teknik Refrigerasi dan Tata Udara'),
+(222, 'Teknik Telekomunikasi'),
+(223, 'Teknologi Bioproses'),
+(224, 'Teknik Grafika'),
+(225, 'Transportasi Laut'),
+(226, 'Teknik Otomasi Manufaktur dan Mekatronika'),
+(227, 'Rekayasa Hayati'),
+(228, 'Teknik Material'),
+(229, 'Teknik Otomotif dan Robotik'),
+(230, 'Teknik Tenaga Listrik'),
+(231, 'Teknik Sistem Komputer'),
+(232, 'Manajemen Rekayasa Industri'),
+(233, 'Teknik Bioenergi dan Kemurgi'),
+(234, 'Desain Industri Robotik'),
+(235, 'Teknik Fisika'),
+(236, 'Teknik Geomatika'),
+(237, 'Teknik Perminyakan'),
+(238, 'Teknik Alat Berat'),
+(239, 'Rekayasa Infrastruktur Lingkungan'),
+(240, 'Teknik Pesawat Udara'),
+(241, 'Teknik Telekomunikasi dan Navigasi Udara'),
+(242, 'Teknik Bangunan dan Landasan'),
+(243, 'Teknik Listrik Bandara'),
+(244, 'Teknik Ekonomi Konstruksi'),
+(245, 'Teknik Sistem Perkapalan'),
+(246, 'Teknik Pengairan'),
+(247, 'Meteorologi Terapan'),
+(248, 'Arsitektur Lanskap'),
+(249, 'Teknik Konversi Energi'),
+(250, 'Teknik Perpipaan');
 
 -- --------------------------------------------------------
 
@@ -7381,13 +7627,6 @@ CREATE TABLE `pemesanan` (
   `catatan` varchar(100) NOT NULL,
   `jenis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `pemesanan`
---
-
-INSERT INTO `pemesanan` (`id`, `nama_dokumen`, `nama_file`, `ukuran_file`, `tipe_file`, `nama_penerima`, `nohape`, `alamat`, `catatan`, `jenis`) VALUES
-(0, '', 'Dokumentasi_Pertemuan_3.pdf', 326.71, 'application/pdf', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -8016,7 +8255,6 @@ CREATE TABLE `universitas` (
 --
 
 INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
-(3, 'Universitas Islam Sultan Agung', 'KOTA SEMARANG'),
 (4, 'Universitas Katolik Soegijapranoto', 'KOTA SEMARANG'),
 (5, 'Universitas Dian Nuswantoro', 'KOTA SEMARANG'),
 (6, 'Universitas STIKUBANK Semarang', 'KOTA SEMARANG'),
@@ -8060,7 +8298,27 @@ INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
 (44, 'Akademi Pelayaran Nasional Semarang', 'KOTA SEMARANG'),
 (45, 'Akademi Teknik Elektro Medik (ATEM) Semarang', 'KOTA SEMARANG'),
 (46, 'Akademi Kesejahteraan Sosial (AKS) Ibu Kartini', 'KOTA SEMARANG'),
-(47, 'Akademi Kolese Pika', 'KOTA SEMARANG');
+(47, 'Akademi Kolese Pika', 'KOTA SEMARANG'),
+(48, 'Universitas Diponegoro', 'KOTA SEMARANG'),
+(49, 'Universitas Negeri Semarang', 'KOTA SEMARANG'),
+(50, 'Politeknik Negeri Semarang', 'KOTA SEMARANG'),
+(51, 'Politeknik Maritim Negeri Indonesia', 'KOTA SEMARANG'),
+(52, 'UIN Walisongo', 'KOTA SEMARANG'),
+(53, 'Akademi Kepolisian (AKPOL)', 'KOTA SEMARANG'),
+(54, 'Politeknik Ilmu Pelayaran Semarang', 'KOTA SEMARANG'),
+(55, 'Politeknik Kesehatan Semarang', 'KOTA SEMARANG'),
+(58, 'ascfas', 'KABUPATEN SIMEULUE'),
+(59, 'asdas', 'KABUPATEN SIMEULUE'),
+(60, 'asdasdasd', 'KABUPATEN SIMEULUE'),
+(61, 'acxzczxcxz', 'KABUPATEN SIMEULUE'),
+(62, 'zzzz', 'KABUPATEN SIMEULUE'),
+(63, 'xcxzczxcxz', 'KABUPATEN SIMEULUE'),
+(64, 'xzcxzcxzc', 'KABUPATEN SIMEULUE'),
+(65, 'AKIU SAYANG', 'KABUPATEN SIMEULUE'),
+(66, 'UNIVERSITAS ABDIEL', 'KABUPATEN SIMEULUE'),
+(67, 'akus ayang', 'KABUPATEN SIMEULUE'),
+(68, '[removed]  for(var i = 0; i&lt;100; i++)     {      alert&#40;\"I am an alert box!\"&#41;;     } [remo', 'KABUPATEN SIMEULUE'),
+(69, 'jsoajdoas', 'KOTA SEMARANG');
 
 -- --------------------------------------------------------
 
@@ -8086,13 +8344,6 @@ CREATE TABLE `user` (
   `tahun_masuk` varchar(100) NOT NULL,
   `tahun_keluar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `nama`, `nohape`, `gender`, `tanggal_lahir`, `email`, `alamat`, `detail_alamat`, `provinsi`, `kota`, `kecamatan`, `kodepos`, `universitas`, `progdi`, `tahun_masuk`, `tahun_keluar`) VALUES
-(1, 'Bugi Setiawan', '087830431896', 'Laki-Laki', '1900-11-20', '111201609358@mhs.dinus.ac.id', 'asdsd', 'asdsd', '11', '1101', '1101010', '123456', 'Universitas Dian Nuswantoro', 'Tehnik Informatika - S1', '2016', 'Belum Lulus');
 
 -- --------------------------------------------------------
 
@@ -83203,12 +83454,6 @@ ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pemesanan`
---
-ALTER TABLE `pemesanan`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `provinces`
 --
 ALTER TABLE `provinces`
@@ -83220,12 +83465,6 @@ ALTER TABLE `provinces`
 ALTER TABLE `regencies`
   ADD PRIMARY KEY (`id`),
   ADD KEY `regencies_province_id_index` (`province_id`);
-
---
--- Indexes for table `tahun`
---
-ALTER TABLE `tahun`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `universitas`
@@ -83255,31 +83494,31 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
 
 --
 -- AUTO_INCREMENT for table `universitas`
 --
 ALTER TABLE `universitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

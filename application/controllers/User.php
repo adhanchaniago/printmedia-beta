@@ -251,10 +251,24 @@ class User extends CI_Controller
 	
 	public function test()
 	{
-		$email = array('email' => $this->session->userdata('email')) ;
-		$cek = $this->User_model->tampilProfile('user', $email);
-		$cek=array('cek'=> $cek);
-		$this->load->view('user/test', $cek);
+		$this->load->view('user/test');
 	}
+
+	public function prosestest()
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'trim|required|regex_match[/^[a-zA-Z]+(?:[\s.]+[a-zA-Z]+)*$/]');
+		$this->form_validation->set_message('regex_match', '%s Salah');
+		
+		if($this->form_validation->run() == FALSE)
+		{
+			$this->load->view('user/test');
+		}
+		else
+		{
+			echo 'Bener ';
+			echo '<a href="../user/test">Balik</a>';
+		}
+	}
+
 	
 }
