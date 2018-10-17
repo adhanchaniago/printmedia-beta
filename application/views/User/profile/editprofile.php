@@ -235,22 +235,44 @@
                         </select>
                           </div>
                         </div>
-                        
-                        <div class="form-group row">
-                          <label class="col-sm-3 form-control-label">Program Studi</label>
-                          <div class="col-sm-9 select">
-                            <select name="jurusan" class="form-control" id="jurusan">
-                            <?php
-                              $this->db->from('jurusan');
-                              $jurusan = $this->db->get();
-                              $data_jurusan = $jurusan->result_array();
-                              foreach($data_jurusan as $row) {
-                            ?>
-                              <option value="<?php echo $row['jurusan']; ?>" <?php echo set_select('jurusan', $row['jurusan'], ($row['jurusan'] == $info['progdi'])? true : false ); ?>><?php echo $row['jurusan']; ?></option>
-                            <?php } ?>                                                                  
-                            </select>
+
+                        <div class="row">
+                          <div class="col-md-10">
+                            <div class="form-group">
+                              <label class="label">Jurusan : </label>                          
+                              <select name="jurusan" class="form-control" id="jurusan">
+                              <?php
+                                $this->db->from('jurusan');
+                                $jurusan = $this->db->get();
+                                $data_jurusan = $jurusan->result_array();
+                                foreach($data_jurusan as $row) {
+                              ?>
+                                <option value="<?php echo $row['jurusan']; ?>" <?php echo set_select('jurusan', $row['jurusan'], ($row['jurusan'] == $info['jurusan'])? true : false ); ?>><?php echo $row['jurusan']; ?></option>
+                              <?php } ?>                                                                  
+                              </select>                          
+                            </div> 
+                          </div>
+
+                          <div class="col-md-2">
+                            <div class="form-group">
+                              <label class="label">Jenjang : </label>                  
+                              <select name="jenjang" class="form-control" id="jurusan">
+                              <?php
+                                $this->db->from('jenjang');
+                                $jenjang = $this->db->get();
+                                $data_jenjang = $jenjang->result_array();
+                                foreach($data_jenjang as $row) {
+                              ?>
+                                <option value="<?php echo $row['jenjang']; ?>" <?php echo set_select('jenjang', $row['jenjang'], ($row['jenjang'] == $info['jenjang'])? true : false ); ?>><?php echo $row['jenjang']; ?></option>
+                              <?php } ?>                                                                  
+                              </select>               
+                              </div>
                           </div>
                         </div>
+                        
+                       
+
+                       
                         
                         <div class="row">                         
                           <div class="col-md-6">

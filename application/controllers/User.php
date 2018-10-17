@@ -105,7 +105,8 @@ class User extends CI_Controller
 				'kecamatan' => $this->input->post('kecamatan'),				
 				'kodepos' => $this->input->post('kodepos'),
 				'universitas' => $this->input->post('universitas'),
-				'progdi' => $this->input->post('jurusan'),
+				'jurusan' => $this->input->post('jurusan'),
+				'jenjang' => $this->input->post('jenjang'),
 				'tahun_masuk' => $this->input->post('tahun_masuk'),
 				'tahun_keluar' => $this->input->post('tahun_keluar'),
 			);
@@ -159,7 +160,8 @@ class User extends CI_Controller
 				'kecamatan' => $this->input->post('kecamatan'),				
 				'kodepos' => $this->input->post('kodepos'),
 				'universitas' => $this->input->post('universitas'),
-				'progdi' => $this->input->post('jurusan'),
+				'jurusan' => $this->input->post('jurusan'),
+				'jenjang' => $this->input->post('jenjang'),
 				'tahun_masuk' => $this->input->post('tahun_masuk'),
 				'tahun_keluar' => $this->input->post('tahun_keluar'),
 			);

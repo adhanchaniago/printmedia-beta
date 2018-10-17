@@ -225,16 +225,32 @@
                             ?>  
                           </div>
                         </div>
-                        
-                        <div class="form-group row">
-                          <label class="col-sm-3 form-control-label">Program Studi</label>
-                          <div class="col-sm-9 select">
+
+                        <div class="row">
+                          <div class="col-md-10">
+                          <div class="form-group">
+                          <label class="label">Jurusan : </label>                        
                             <?php
-                               $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'jurusan','value' => $info['progdi'], 'readonly' => 'true');
+                               $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'jurusan','value' => $info['jurusan'], 'readonly' => 'true');
                                echo form_input($data);
-                            ?>
+                            ?>                        
+                        </div>
+                          </div>
+                      
+                          <div class="col-md-2">
+                          <div class="form-group">
+                          <label class="label">Jenjang : </label>                     
+                            <?php
+                               $data = array('type'=>'text', 'class' => 'form-control', 'name' => 'jenjang','value' => $info['jenjang'], 'readonly' => 'true');
+                               echo form_input($data);
+                            ?>                    
+                        </div>
                           </div>
                         </div>
+                        
+                        
+
+                        
                         
                         <div class="row">                         
                           <div class="col-md-6">
