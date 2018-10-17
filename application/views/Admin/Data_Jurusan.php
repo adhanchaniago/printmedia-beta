@@ -72,8 +72,8 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Nomor</th>
-                  <th>Nama Universitas</th>
+                  <th>#</th>
+                  <th>Nama Jurusan</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -88,8 +88,8 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>Nomor</th>
-                  <th>Nama Universitas</th>
+                  <th>#</th>
+                  <th>Nama Jurusan</th>
                   <th>Action</th>
                 </tr>
                 </tfoot>
