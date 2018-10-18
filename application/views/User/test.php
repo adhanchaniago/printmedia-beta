@@ -164,6 +164,7 @@
                                 <option value="<?php echo $row['id']; ?>" <?php echo set_select('id', $row['id'], ($row['id'] == $info['provinsi'])? true : false ); ?>><?php echo $row['name']; ?></option>
                                 <?php } ?>                                                                
                               </select>
+                              <input type="hidden" id="infoprovinsi" value="<?php echo $info['provinsi']; ?>">
                             </div>
                           </div>
                           

@@ -24,9 +24,15 @@
 
         <div class="content-inner">
         <?php if($this->session->flashdata('success_input') == true):?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
         <script>
-          doconfirm();
-         </script>
+          swal({
+              title: "Done",
+              text: "Selamat Bergabung Dengan Printmedia",              
+              showConfirmButton: true,
+              type: 'success'
+              });
+        </script>
       <?php endif;?>
 
           <!-- Page Header-->
@@ -120,9 +126,13 @@
 
                     <div class="form-group row">
                       <button class="btn btn-primary form-control" type="submit">Upload</button>
-                    </div>                    
-                  </form>                  
+                    </div>
+                    
+                    
+                  </form> 
+                  
                   </div> 
+                  
 
                   <!-- Ini Sisi Kanan  -->
                   <div class="col-md-3">
@@ -162,18 +172,6 @@
     $('#tabelriwayat').DataTable();
     } );
   </script>
-
-  <script type="text/javascript">
-    function doconfirm()
-    {
-      swal({
-              title: "Done",
-              text: "Selamat Bergabung dengan Kami",
-              showConfirmButton: true,
-              type: 'success'
-              });
-    }
-    </script>
 
   </body>
 </html>

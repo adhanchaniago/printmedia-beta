@@ -65,7 +65,7 @@ class User extends CI_Controller
 	{
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->tampilProfile('user', $email);
-		$cek=array('cek'=> $cek);		
+		$cek=array('cek'=> $cek);	
 		$this->load->view('user/upload', $cek);
 	}
 
