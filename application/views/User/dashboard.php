@@ -29,6 +29,7 @@
               <h2 class="no-margin-bottom">Dashboard</h2>
             </div>
           </header>
+          
           <!-- Dashboard Counts Section-->
           <section class="dashboard-counts no-padding-bottom">
             <div class="container-fluid">

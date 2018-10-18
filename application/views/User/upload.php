@@ -23,6 +23,11 @@
       <!-- Akhir Side Bar-->
 
         <div class="content-inner">
+        <?php if($this->session->flashdata('success_input') == true):?>
+        <script>
+          doconfirm();
+         </script>
+      <?php endif;?>
 
           <!-- Page Header-->
           <header class="page-header">
@@ -157,6 +162,18 @@
     $('#tabelriwayat').DataTable();
     } );
   </script>
+
+  <script type="text/javascript">
+    function doconfirm()
+    {
+      swal({
+              title: "Done",
+              text: "Selamat Bergabung dengan Kami",
+              showConfirmButton: true,
+              type: 'success'
+              });
+    }
+    </script>
 
   </body>
 </html>

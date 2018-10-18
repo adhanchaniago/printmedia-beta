@@ -13,5 +13,9 @@
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
 
+<!-- Scrip Sweet Alert -->
+<script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
+
+
 <!-- Main File-->
 <script src="<?php echo base_url();?>asset/user/js/front.js"></script>
