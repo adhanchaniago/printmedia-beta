@@ -23,6 +23,18 @@
       <!-- Akhir Side Bar-->
 
         <div class="content-inner">
+        
+        <?php if($this->session->flashdata('success_update') == true):?>
+        <script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
+        <script>
+          swal({
+              title: "Done",
+              text: "Data Diri Berhasil di Update",              
+              showConfirmButton: true,
+              type: 'success'
+              });
+        </script>
+        <?php endif;?>
 
           <!-- Page Header-->
           <header class="page-header">

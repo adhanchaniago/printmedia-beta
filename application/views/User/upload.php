@@ -24,7 +24,7 @@
 
         <div class="content-inner">
         <?php if($this->session->flashdata('success_input') == true):?>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
+        <script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
         <script>
           swal({
               title: "Done",
