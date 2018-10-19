@@ -53,7 +53,6 @@ class User extends CI_Controller
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->tampilProfile('user', $email);
 		$cek=array('cek'=> $cek);
-		$this->session->set_flashdata('success_udpate', 'Berhasil Mengupdate Data');
 		$this->load->view('user/profile/myprofile', $cek);			
 	}
 
@@ -66,8 +65,7 @@ class User extends CI_Controller
 	{
 		$email = array('email' => $this->session->userdata('email')) ;
 		$cek = $this->User_model->tampilProfile('user', $email);
-		$cek=array('cek'=> $cek);	
-		$this->session->set_flashdata('success_input', 'Berhasil Menambahkan Data');
+		$cek=array('cek'=> $cek);
 		$this->load->view('user/upload', $cek);
 	}
 
@@ -145,6 +143,7 @@ class User extends CI_Controller
 			$email = array('email' => $this->session->userdata('email')) ;
 			$cek = $this->User_model->tampilProfile('user', $email);
 			$cek=array('cek'=> $cek);
+			
 			$this->load->view('user/profile/editprofile', $cek);			
 		}
 
@@ -178,7 +177,7 @@ class User extends CI_Controller
 	
 			if($data=='1')
 			{
-				$this->session->set_flashdata('succes_update', 'Berhasil Update Data');
+				$this->session->set_flashdata('success_update', 'Berhasil Mengupdate Data');
 				redirect(base_url('myprofile'));
 			}
 			else

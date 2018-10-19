@@ -24,7 +24,7 @@
 
         <div class="content-inner">
         
-        <?php if($this->session->flashdata('success_update') == true):?>
+        <?php if($this->session->flashdata('success_update')== true):?>
         <script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
         <script>
           swal({
