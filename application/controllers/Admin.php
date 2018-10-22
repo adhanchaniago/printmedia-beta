@@ -110,7 +110,7 @@ class Admin extends CI_Controller {
 	public function Hapus_Univ($id)
 		{
 			$this->load->model('Admin_model');
-			$where = array('id' => $id);
+			$where = array('universitas_id' => $id);
 			$data=$this->Admin_model->hapus('universitas',$where);
 			if($data){
 				$this->session->set_flashdata('success_del_univ', 'BERHASIL MENGHAPUS');
@@ -125,7 +125,7 @@ class Admin extends CI_Controller {
 	public function Hapus_Jurusan($id)
 		{
 			$this->load->model('Admin_model');
-			$where = array('id' => $id);
+			$where = array('jurusan_id' => $id);
 			$data=$this->Admin_model->hapus('jurusan',$where);
 			if($data){
 				$this->session->set_flashdata('success_del_jurusan', 'BERHASIL MENGHAPUS');

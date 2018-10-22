@@ -82,11 +82,11 @@
                 <tbody>
                 <?php foreach ($data as $info) {?>
                 <tr>
-                  <td><?php echo $info['id'];?></td>
+                  <td><?php echo $info['universitas_id'];?></td>
                   <td><?php echo $info['nama_univ'];?></td>
                   <td><?php echo $info['kota'];?></td>
                   <td>
-                  <a  class="fa fa-times" id="remove"  onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Univ/<?php echo $info['id'];?>" ></a>
+                  <a  class="fa fa-times" id="remove"  onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Univ/<?php echo $info['universitas_id'];?>" ></a>
                   </td>
                 </tr>
                 <?php } ?>

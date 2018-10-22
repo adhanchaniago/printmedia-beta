@@ -34,3 +34,4 @@
 
 <!-- Sweet Alert -->
 <link rel="stylesheet" href="<?php echo base_url();?>asset/user/plugin/sweetalert/src/sweetalert2.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>asset/user/css/style.css">
