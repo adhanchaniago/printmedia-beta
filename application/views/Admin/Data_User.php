@@ -25,8 +25,9 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('admin');?>">Home</a></li>
-              <li class="breadcrumb-item active">Universitas</li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-danger">PDF</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-success">EXCEL</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-primary">SQL</a></li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
