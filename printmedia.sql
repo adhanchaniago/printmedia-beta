@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2018 at 02:55 PM
+-- Generation Time: Oct 22, 2018 at 08:33 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -74,10 +74,25 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (40, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 12:02:02', 'Melakukan Login', 'fjsjgspms5um29r9fgrk6cnk406j092t'),
 (41, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:21:21', 'Melakukan Login', 'e7p5lm1pchfmsp4k0naohcppq58r604f'),
 (42, '111201609359@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 10:33:26', 'Melakukan Login', 'bltr096i348rbv9ffh91bgb1ta75ot16'),
-(43, 'dev@printmedia.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 10:26:00', 'Melakukan Login', 'kkv8v7ruenp9slfca2th0nlshtk47vi2'),
-(44, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 11:10:58', 'Melakukan Login', 'q31n24b165umlii4geun7cuo57sgucqj'),
-(45, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-08 07:57:29', 'Melakukan Login', '2lcr8htgd7o2defj7v0tifi0dkoecpc7'),
-(46, '111201610010@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-09 01:13:16', 'Melakukan Login', 'r9sm0a6kjgnfm1rc43s7f2710b9ehlp4');
+(43, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:06:04', 'Melakukan Login', 'su4gd7eo71rss3ht04dvmpd22g3a887d'),
+(44, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:08', 'Melakukan Login', 'l3l7seh66ph55e565qd5it5oumsvhj3j'),
+(45, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-06 11:42:40', 'Melakukan Login', 'i3ug3rt6og3rkg2nqofc5asl6od064ko'),
+(46, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:25:59', 'Melakukan Login', 'ccvp6gjgo70r2hq6rjdtqt1752o9oskq'),
+(47, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:28:01', 'Melakukan Login', 'e8rpombs8mtahqmmpi0fi9c76bcioceo'),
+(48, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-07 08:38:36', 'Melakukan Login', '5barri01nep2d9cale9kgv6epvsanqkm'),
+(49, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-08 07:18:35', 'Melakukan Login', '7gv9engrhqkk8m8kghgi2t41obc5gue3'),
+(50, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-10 11:17:19', 'Melakukan Login', 'v7pjb52m30kpso77mhqmi3tui64n7kom'),
+(51, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-14 11:08:45', 'Melakukan Login', 'fb60ad7efiofvmd5u449dgf3uqtql41l'),
+(52, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-16 09:45:12', 'Melakukan Login', 'rt99dnvveithhpouipmnojh0aa0dernn'),
+(53, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-16 09:48:36', 'Melakukan Login', 'v4n6lboqdb61eujlb30bstue4v5b7tto'),
+(54, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-16 10:04:12', 'Melakukan Login', 'd124kj4h7g0kbptjhucleio1duletpsm'),
+(55, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-17 08:17:00', 'Melakukan Login', '7pjci04cgtgcjck22ppvjboipbgt9eak'),
+(56, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-18 02:11:44', 'Melakukan Login', '6d2c6pudqnjkjdadu4nj035n4hvfrrpp'),
+(57, '111201609359@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-18 02:15:20', 'Melakukan Login', 't12dgsgkqb5maok1bgbtoo1mt6svbmql'),
+(58, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-19 01:02:58', 'Melakukan Login', 'keo0u1ait6t5abvbmh08kue1qi5hcdsn'),
+(59, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-19 03:48:38', 'Melakukan Login', 'urhutt79k552v6qb1ldgsfmuvl613brp'),
+(60, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 12:43:06', 'Melakukan Login', '3hvmi5201ocqh1pk2dineuhrn3euvq6t'),
+(61, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 12:44:34', 'Melakukan Login', 'kjf4lvpnbhhi1s205ndlahrh68fc5u33');
 
 -- --------------------------------------------------------
 
@@ -86,7 +101,7 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 --
 
 CREATE TABLE `auth` (
-  `id` int(11) NOT NULL,
+  `auth_id` int(11) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `level` varchar(100) NOT NULL,
@@ -99,12 +114,10 @@ CREATE TABLE `auth` (
 -- Dumping data for table `auth`
 --
 
-INSERT INTO `auth` (`id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(31, '111201609357@mhs.dinus.ac.id', '25D55AD283AA400AF464C76D713C07AD', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-10-07 03:16:54', 'Aktif'),
-(39, '111201609354@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '1af7eae38d3b517249c02370935fc7ba', '2018-10-07 03:02:51', 'Belum Aktif'),
-(40, 'dev@printmedia.id', '25d55ad283aa400af464c76d713c07ad', 'Admin', '-', '2018-10-07 03:18:01', 'Aktif'),
-(43, '111201610010@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '3b7904751572ec11d8c169fc79fdda45', '2018-10-09 06:13:04', 'Aktif'),
-(44, '111201609664@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'c84690fc0d3a9493926c2b5de9682ec9', '2018-10-12 06:21:42', 'Belum Aktif');
+INSERT INTO `auth` (`auth_id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
+(33, '111201609359@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '66f61bc4d69fb493e6b670d1a9e7aaed', '2018-10-06 03:30:34', 'Aktif'),
+(34, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-10-16 15:04:04', 'Aktif'),
+(35, '111201609357@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-10-22 05:44:25', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -7346,11 +7359,35 @@ INSERT INTO `districts` (`id`, `regency_id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jenjang`
+--
+
+CREATE TABLE `jenjang` (
+  `jenjang_id` int(11) NOT NULL,
+  `jenjang` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jenjang`
+--
+
+INSERT INTO `jenjang` (`jenjang_id`, `jenjang`) VALUES
+(1, 'D1'),
+(2, 'D2'),
+(3, 'D3'),
+(4, 'D4'),
+(5, 'S1'),
+(6, 'S2'),
+(7, 'S3');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jurusan`
 --
 
 CREATE TABLE `jurusan` (
-  `id` int(11) NOT NULL,
+  `jurusan_id` int(11) NOT NULL,
   `jurusan` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -7358,7 +7395,7 @@ CREATE TABLE `jurusan` (
 -- Dumping data for table `jurusan`
 --
 
-INSERT INTO `jurusan` (`id`, `jurusan`) VALUES
+INSERT INTO `jurusan` (`jurusan_id`, `jurusan`) VALUES
 (2, 'Matematika'),
 (3, 'Fisika'),
 (4, 'Kimia'),
@@ -8218,7 +8255,7 @@ INSERT INTO `regencies` (`id`, `province_id`, `name`) VALUES
 --
 
 CREATE TABLE `tahun` (
-  `id` int(11) NOT NULL,
+  `tahun_id` int(11) NOT NULL,
   `tahun` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -8226,7 +8263,7 @@ CREATE TABLE `tahun` (
 -- Dumping data for table `tahun`
 --
 
-INSERT INTO `tahun` (`id`, `tahun`) VALUES
+INSERT INTO `tahun` (`tahun_id`, `tahun`) VALUES
 (1, '2014'),
 (2, '2015'),
 (3, '2016'),
@@ -8245,7 +8282,7 @@ INSERT INTO `tahun` (`id`, `tahun`) VALUES
 --
 
 CREATE TABLE `universitas` (
-  `id` int(11) NOT NULL,
+  `universitas_id` int(11) NOT NULL,
   `nama_univ` varchar(100) NOT NULL,
   `kota` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -8254,7 +8291,8 @@ CREATE TABLE `universitas` (
 -- Dumping data for table `universitas`
 --
 
-INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
+INSERT INTO `universitas` (`universitas_id`, `nama_univ`, `kota`) VALUES
+(3, 'Universitas Islam Sultan Agung', 'KOTA SEMARANG'),
 (4, 'Universitas Katolik Soegijapranoto', 'KOTA SEMARANG'),
 (5, 'Universitas Dian Nuswantoro', 'KOTA SEMARANG'),
 (6, 'Universitas STIKUBANK Semarang', 'KOTA SEMARANG'),
@@ -8298,27 +8336,7 @@ INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
 (44, 'Akademi Pelayaran Nasional Semarang', 'KOTA SEMARANG'),
 (45, 'Akademi Teknik Elektro Medik (ATEM) Semarang', 'KOTA SEMARANG'),
 (46, 'Akademi Kesejahteraan Sosial (AKS) Ibu Kartini', 'KOTA SEMARANG'),
-(47, 'Akademi Kolese Pika', 'KOTA SEMARANG'),
-(48, 'Universitas Diponegoro', 'KOTA SEMARANG'),
-(49, 'Universitas Negeri Semarang', 'KOTA SEMARANG'),
-(50, 'Politeknik Negeri Semarang', 'KOTA SEMARANG'),
-(51, 'Politeknik Maritim Negeri Indonesia', 'KOTA SEMARANG'),
-(52, 'UIN Walisongo', 'KOTA SEMARANG'),
-(53, 'Akademi Kepolisian (AKPOL)', 'KOTA SEMARANG'),
-(54, 'Politeknik Ilmu Pelayaran Semarang', 'KOTA SEMARANG'),
-(55, 'Politeknik Kesehatan Semarang', 'KOTA SEMARANG'),
-(58, 'ascfas', 'KABUPATEN SIMEULUE'),
-(59, 'asdas', 'KABUPATEN SIMEULUE'),
-(60, 'asdasdasd', 'KABUPATEN SIMEULUE'),
-(61, 'acxzczxcxz', 'KABUPATEN SIMEULUE'),
-(62, 'zzzz', 'KABUPATEN SIMEULUE'),
-(63, 'xcxzczxcxz', 'KABUPATEN SIMEULUE'),
-(64, 'xzcxzcxzc', 'KABUPATEN SIMEULUE'),
-(65, 'AKIU SAYANG', 'KABUPATEN SIMEULUE'),
-(66, 'UNIVERSITAS ABDIEL', 'KABUPATEN SIMEULUE'),
-(67, 'akus ayang', 'KABUPATEN SIMEULUE'),
-(68, '[removed]  for(var i = 0; i&lt;100; i++)     {      alert&#40;\"I am an alert box!\"&#41;;     } [remo', 'KABUPATEN SIMEULUE'),
-(69, 'jsoajdoas', 'KOTA SEMARANG');
+(47, 'Akademi Kolese Pika', 'KOTA SEMARANG');
 
 -- --------------------------------------------------------
 
@@ -8327,7 +8345,7 @@ INSERT INTO `universitas` (`id`, `nama_univ`, `kota`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `nohape` varchar(100) NOT NULL,
   `gender` varchar(20) NOT NULL,
@@ -8340,10 +8358,18 @@ CREATE TABLE `user` (
   `kecamatan` varchar(100) NOT NULL,
   `kodepos` varchar(10) NOT NULL,
   `universitas` varchar(100) NOT NULL,
-  `progdi` varchar(100) NOT NULL,
+  `jurusan` varchar(100) NOT NULL,
+  `jenjang` varchar(100) NOT NULL,
   `tahun_masuk` varchar(100) NOT NULL,
   `tahun_keluar` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `nama`, `nohape`, `gender`, `tanggal_lahir`, `email`, `alamat`, `detail_alamat`, `provinsi`, `kota`, `kecamatan`, `kodepos`, `universitas`, `jurusan`, `jenjang`, `tahun_masuk`, `tahun_keluar`) VALUES
+(5, 'Wahyu Rizky Eka Perwira', '085712032051', 'Laki-Laki', '2018-10-14', '111201609357@mhs.dinus.ac.id', 'Jl. Imam Bonjol No.207, Pendrikan Kidul, Semarang Tengah, Kota Semarang, Jawa Tengah 50131', 'Samping Tugumuda', '33', '3374', '3374130', '50131', '5', '131', '5', '3', 'Belum Lulus');
 
 -- --------------------------------------------------------
 
@@ -83436,7 +83462,7 @@ ALTER TABLE `activity_user`
 -- Indexes for table `auth`
 --
 ALTER TABLE `auth`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`auth_id`),
   ADD UNIQUE KEY `token` (`token`),
   ADD UNIQUE KEY `email` (`email`);
 
@@ -83448,9 +83474,21 @@ ALTER TABLE `districts`
   ADD KEY `districts_id_index` (`regency_id`);
 
 --
+-- Indexes for table `jenjang`
+--
+ALTER TABLE `jenjang`
+  ADD PRIMARY KEY (`jenjang_id`);
+
+--
 -- Indexes for table `jurusan`
 --
 ALTER TABLE `jurusan`
+  ADD PRIMARY KEY (`jurusan_id`);
+
+--
+-- Indexes for table `pemesanan`
+--
+ALTER TABLE `pemesanan`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -83467,16 +83505,22 @@ ALTER TABLE `regencies`
   ADD KEY `regencies_province_id_index` (`province_id`);
 
 --
+-- Indexes for table `tahun`
+--
+ALTER TABLE `tahun`
+  ADD PRIMARY KEY (`tahun_id`);
+
+--
 -- Indexes for table `universitas`
 --
 ALTER TABLE `universitas`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`universitas_id`);
 
 --
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`user_id`),
   ADD KEY `email` (`email`);
 
 --
@@ -83494,31 +83538,37 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `jenjang`
+--
+ALTER TABLE `jenjang`
+  MODIFY `jenjang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `jurusan`
 --
 ALTER TABLE `jurusan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+  MODIFY `jurusan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
 
 --
 -- AUTO_INCREMENT for table `universitas`
 --
 ALTER TABLE `universitas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `universitas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables

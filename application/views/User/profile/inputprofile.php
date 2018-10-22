@@ -100,7 +100,7 @@
                               <label class="label">Tanggal Lahir : </label>
                                 <div class="input-group date">
                                   <div class="input-group-addon"></div>                              
-                                    <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir">                                                                                        
+                                    <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?php set_value('tanggal_lahir'); ?>">                                                                                        
                                 </div>                                                                  
                             </div>
                           </div>
@@ -122,11 +122,11 @@
                           <label class="col-sm-3 form-control-label">Alamat Asal</label>
                             <div class="col-sm-9">
                             <?php
-                            $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3);
+                            $data = array('class' => 'form-control', 'name' => 'alamat', 'rows' => 3, 'value' => set_value('alamat'));
                             echo form_textarea($data);
                             echo form_error('alamat', '<p class="text-danger">', '</p>');
                             ?>
-                          <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
+                            <small>Alamat asal (bukan tempat kost). Misal: Jl. Jembrana XI no 5</small>
                             </div>
                         </div>
                         <!-- AKHIR ROW 3 -->
@@ -136,7 +136,7 @@
                           <label class="col-sm-3 form-control-label">Detail Tempat Tinggal</label>
                             <div class="col-sm-9">
                             <?php
-                            $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3);
+                            $data = array('class' => 'form-control', 'name' => 'detail_alamat', 'rows' => 3, 'value' => set_value('detail_alamat'));
                             echo form_textarea($data);
                             echo form_error('detail_alamat', '<p class="text-danger">', '</p>');
                             ?>
@@ -228,7 +228,7 @@
                               $data_universitas = $universitas->result_array();
                               foreach($data_universitas as $row) {
                             ?>
-                              <option value="<?php echo $row['nama_univ']; ?>"><?php echo $row['nama_univ']; ?></option>
+                              <option value="<?php echo $row['universitas_id']; ?>"><?php echo $row['nama_univ']; ?></option>
                             <?php } ?>                                                                  
                         </select>
                           </div>
@@ -245,7 +245,7 @@
                               $data_jurusan = $jurusan->result_array();
                               foreach($data_jurusan as $row) {
                             ?>
-                              <option value="<?php echo $row['jurusan']; ?>"><?php echo $row['jurusan']; ?></option>
+                              <option value="<?php echo $row['jurusan_id']; ?>"><?php echo $row['jurusan']; ?></option>
                             <?php } ?>                                                                  
                             </select>
                             </div>
@@ -261,16 +261,12 @@
                               $data_jenjang = $jenjang->result_array();
                               foreach($data_jenjang as $row) {
                             ?>
-                              <option value="<?php echo $row['jenjang']; ?>"><?php echo $row['jenjang']; ?></option>
+                              <option value="<?php echo $row['jenjang_id']; ?>"><?php echo $row['jenjang']; ?></option>
                             <?php } ?>                                                                  
                             </select>
                             </div>
                           </div>
                         </div>
-                        
-                        
-
-                        
                         
                         <div class="row">                         
                           <div class="col-md-6">
@@ -283,7 +279,7 @@
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
                                 ?>
-                                  <option value="<?php echo $row['tahun']; ?>"><?php echo $row['tahun']; ?></option>
+                                  <option value="<?php echo $row['tahun_id']; ?>"><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                                 </select>
                             </div>
@@ -300,7 +296,7 @@
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
                                 ?>
-                                  <option value="<?php echo $row['tahun']; ?>"><?php echo $row['tahun']; ?></option>
+                                  <option value="<?php echo $row['tahun_id']; ?>"><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                               </select>
                             </div>

@@ -79,11 +79,12 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
 
-		// Set Pesan
+		// Set Pesan 
 		$this->form_validation->set_message('required', ' Maaf, Kolom <b>%s</b> Anda Tidak Boleh Kosong');
 		$this->form_validation->set_message('min_length', '<b>%s</b> Minimal <b>%s</b> Angka');
 		$this->form_validation->set_message('max_length', '<b>%s</b> Maksimal <b>%s</b> Angka');
-		$this->form_validation->set_message('regex_match', 'Maaf, kolom <b>%s</b> Salah');	
+		$this->form_validation->set_message('regex_match', 'Maaf, <b>%s</b> Anda Tidak Manusiawi');
+		$this->form_validation->set_message('numeric', 'Maaf, <b>%s</b> Harus Berupa Angka');
 
 		if($this->form_validation->run() == FALSE)
 		{
@@ -113,7 +114,7 @@ class User extends CI_Controller
 
 			$data = $this->User_model->Insert('user', $data);
 			$this->session->set_flashdata('success_input', 'Berhasil Menambahkan Data');
-			redirect(base_url('upload'));
+			redirect(base_url('dashboard'));
 		}
 
 		
@@ -128,7 +129,6 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('tanggal_lahir', 'Tanggal Lahir', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required|xss_clean');
 		$this->form_validation->set_rules('detail_alamat', 'Detail Alamat', 'trim|required|xss_clean');
-			
 
 		// Set Pesan
 		$this->form_validation->set_message('required', 'Kolom <b>%s</b> Anda Tidak Boleh Kosong');
@@ -142,14 +142,11 @@ class User extends CI_Controller
 		{
 			$email = array('email' => $this->session->userdata('email')) ;
 			$cek = $this->User_model->tampilProfile('user', $email);
-			$cek=array('cek'=> $cek);
-			
+			$cek=array('cek'=> $cek);		
 			$this->load->view('user/profile/editprofile', $cek);			
 		}
-
 		else
 		{
-
 			$data = array(				
 				'nama' => $this->input->post('nama_lengkap'), // yang kanan nama di form
 				'nohape' => $this->input->post('no_handphone'),
@@ -166,26 +163,13 @@ class User extends CI_Controller
 				'jenjang' => $this->input->post('jenjang'),
 				'tahun_masuk' => $this->input->post('tahun_masuk'),
 				'tahun_keluar' => $this->input->post('tahun_keluar'),
-			);
-	
-	
+			);	
 			$where=array(
 				'email'=>$this->input->post('email')
-			);
-	
+			);	
 			$data=$this->User_model->update($where,$data,'user');
-	
-			if($data=='1')
-			{
-				$this->session->set_flashdata('success_update', 'Berhasil Mengupdate Data');
-				redirect(base_url('myprofile'));
-			}
-			else
-			{
-				$this->session->set_flashdata('error', 'GAGAL UPDATE');
-				redirect(base_url('myprofile'));
-			}
-
+			$this->session->set_flashdata('success_update', 'Berhasil Mengupdate Data');
+			redirect(base_url('myprofile'));
 		}
 		
 		
@@ -212,11 +196,7 @@ class User extends CI_Controller
 			$datas = $this->User_model->Insert('pemesanan', $datas);
 			redirect('user/history');
 		}
-
 		echo $this->upload->display_errors();
-
-			
-
 	}
 
 	public function listkota()

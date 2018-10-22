@@ -29,7 +29,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-7">
-                  <h2 class="no-margin-bottom">Edit Profil Ku</h2>    
+                  <h2 class="no-margin-bottom">Ubah Data Diri</h2>    
                 </div>
 
                 <div class="col-md-5">
@@ -358,11 +358,11 @@
   <!-- Datepicker -->
   <script>
     $(document).ready(function () {
-                $('#tanggal_lahir').datepicker({
-                    format: "yyyy-mm-dd",
-                    autoclose:true
-                });
-            });
+      $('#tanggal_lahir').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose:true
+      });
+    });
   </script>
 
   <!-- Untuk Provinsi, Kota dan kecamatan -->
