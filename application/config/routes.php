@@ -26,3 +26,4 @@ $route['upload'] ='user/upload';
 $route['profile'] ='user/inputprofile';
 $route['editprofile']= 'user/editprofile';
 
+// MITRA

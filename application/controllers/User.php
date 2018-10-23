@@ -274,7 +274,6 @@ class User extends CI_Controller
 
 		else
 		{
-
 			$data = array(				
 				'nama' => $this->input->post('nama_lengkap'), // yang kanan nama di form
 				'nohape' => $this->input->post('no_handphone'),
