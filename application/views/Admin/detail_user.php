@@ -9,42 +9,14 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-<!-- Awal Navbar -->
  <?php $this->load->view('admin/navbar');?>
+
+ <!--sidebar load  -->
  <?php $this->load->view('admin/sidebar');?>
- <!-- Akhir Navbar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Daftar Jurusan</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-danger">PDF</a></li>
-              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-success">EXCEL</a></li>
-              <li class="breadcrumb-item"><a href="<?php echo base_url('');?>" class="btn btn-primary">SQL</a></li>
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
-
-    <!-- Main content -->
-    <section class="content">
-    <div class="row">
-        <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Data Jurusan</h3>
-            </div>
-            <!-- /.card-header -->
-            <?php if($this->session->flashdata('success_del_user')){?>
+  <?php if($this->session->flashdata('success_del_jurusan')){?>
             <?php echo  '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
               echo '<script>
                 swal({
@@ -55,7 +27,7 @@
                       type: "'.'success'.'"
                       });
               </script>';?>
-            <?php } elseif($this->session->flashdata('error_del_user')) { ?>
+            <?php } elseif($this->session->flashdata('error_del_jurusan')) { ?>
               <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>
               <?php  echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.28.4/sweetalert2.all.min.js"></script>';
                       echo '<script>
@@ -69,44 +41,118 @@
                             </script>'; 
                     ?>
             <?php } ?>
-            <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Daftar Detail User</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+        <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Data Detail User</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="table-responsive">
+              <table class="table">
                 <thead>
-                <tr>
-                  <th>Nomor</th>
-                  <th>Nama</th>
-                  <th>Gender</th>
-                  <th>No.HP</th>
-                  <th>Email</th>
-                  <th>Action</th>
-                </tr>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                  </tr>
                 </thead>
                 <tbody>
-                <?php $no=1;?>
-                <?php foreach ($data as $info) {?>
-                <tr>
-                  <td><?php echo $no;?></td>
-                  <td><?php echo $info['nama'];?></td>
-                  <td><?php echo $info['gender'];?></td>
-                  <td><?php echo $info['nohape'];?></td>
-                  <td><?php echo $info['email'];?></td>
-                  <td>
-                    <a  class="fa fa-eye" href="#" title="Detail"></a>
-                    <a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_User/<?php echo $info['email'];?>" title="Delete"></a>
-                  </td>
-                </tr>
-                <?php } ?>
+                  <tr>
+                    <th scope="row">Nama</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">No.Handphone</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Gender</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tanggal Lahir</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Email</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Alamat</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Detail Alamat</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Provinsi</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Kota</th>
+                    <td></td>
+                    <td></td> 
+                  </tr>
+                  <tr>
+                    <th scope="row">Kecamatan</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Kode Pos</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Universitas</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Jurusan</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Jenjang</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tahun Masuk</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tahun Keluar</th>
+                    <td></td>
+                    <td></td>
+                  </tr>
                 </tbody>
-                <tfoot>
-                <tr>
-                  <th>Nomor</th>
-                  <th>Nama</th>
-                  <th>Gender</th>
-                  <th>No.HP</th>
-                  <th>Email</th>
-                  <th>Action</th>
-                </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->
@@ -151,3 +197,4 @@
 </script>
 </body>
 </html>
+
