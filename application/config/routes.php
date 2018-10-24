@@ -26,6 +26,7 @@ $route['history'] = 'user/history';
 $route['upload'] ='user/upload';
 $route['profile'] ='user/inputprofile';
 $route['editprofile']= 'user/editprofile';
+$route['test']= 'user/test';
 
 // MITRA
 $route['mitra/profil/toko'] = 'mitra/profiltoko';

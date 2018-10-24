@@ -40,11 +40,11 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-md-7">
-                  <h2 class="no-margin-bottom">Riwayat Pemesanan</h2>    
+                  <h2 class="no-margin-bottom">Upload Dokumen</h2>    
                 </div>
 
                 <div class="col-md-5">
-                  <small class="no-margin-bottom">Di sini kamu dapat melihat status pemesanan kamu.</small>
+                  <small class="no-margin-bottom">Di sini kamu dapat mengupload dokumen untuk melakukan pemesanan.</small>
                 </div>
               </div>
             </div>
