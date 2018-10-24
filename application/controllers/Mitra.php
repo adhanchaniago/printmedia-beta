@@ -13,4 +13,14 @@ class Mitra extends CI_Controller {
     {
         $this->load->view('mitra/index');
     }
+
+    public function profiltoko()
+    {
+        $this->load->view('mitra/profil/toko');
+    }
+
+    public function profilpemilik()
+    {
+        $this->load->view('mitra/profil/pemilik');
+    }
 }

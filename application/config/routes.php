@@ -28,3 +28,5 @@ $route['profile'] ='user/inputprofile';
 $route['editprofile']= 'user/editprofile';
 
 // MITRA
+$route['mitra/profil/toko'] = 'mitra/profiltoko';
+$route['mitra/profil/pemilik'] = 'mitra/profilpemilik';
