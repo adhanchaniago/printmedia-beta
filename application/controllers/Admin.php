@@ -155,6 +155,11 @@ class Admin extends CI_Controller {
 				$this->session->set_flashdata('error_del_user', 'GAGAL MENGHAPUS');
 				redirect(base_url('Admin/Tampil_User'));
 			}
-		}	
+		}
+
+	public function detailuser()
+	{
+		$this->load->view('admin/detail_user');
+	
+	}
 }
-?>

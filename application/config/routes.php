@@ -14,6 +14,7 @@ $route['aktivasi/(:any)'] = 'auth/aktivasi/$1';
 $route['developer'] ='auth/login_admin';
 
 // ADMIN
+$route['detailuser'] = 'user/detailuser';
 
 // HOME
 $route['tentang'] = 'home/tentang';
