@@ -2,7 +2,7 @@
 <html>
 <head>
   <!-- SRC include  -->
-  <?php $this->load->view('Admin/detail_user'); ?>
+  <?php $this->load->view('Admin/head'); ?>
   <title>PrintMedia-Admin | Detail User</title>
  
 </head>
@@ -11,6 +11,7 @@
 
 <!-- Awal Navbar -->
  <?php $this->load->view('admin/navbar');?>
+ <?php $this->load->view('admin/sidebar');?>
  <!-- Akhir Navbar -->
 
   <!-- Content Wrapper. Contains page content -->

@@ -158,8 +158,9 @@ class Admin extends CI_Controller {
 		}
 
 	public function detailuser()
-	{
-		$this->load->view('admin/detail_user');
-	
-	}
+		{
+			$this->load->view('Admin/detail_user');
+		
+		}
 }
+?>
