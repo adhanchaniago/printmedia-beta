@@ -23,17 +23,6 @@
       <!-- Akhir Side Bar-->
 
         <div class="content-inner">
-        <?php if($this->session->flashdata('success_input') == true):?>
-        <script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
-        <script>
-          swal({
-              title: "Done",
-              text: "Selamat Bergabung Dengan Printmedia",              
-              showConfirmButton: true,
-              type: 'success'
-              });
-        </script>
-      <?php endif;?>
 
           <!-- Page Header-->
           <header class="page-header">
@@ -64,28 +53,40 @@
                 <div class="card-body">
                   <div class="container">
                     <?php echo form_open('user/inputdataprofile', array('class' => 'form-horizontal')); ?>
+                  
 
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group-row">
-                          <label class="label">Nama Penerima : </label>
-                          <?php 
-                            $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
-                            echo form_input($data);                                                    
-                          ?>                            
-                          </div>
-                        </div>
+                      <?php
+                        function getPDFPages($document)
+                        {                                                      
+                          $cmd = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\pdfinfo.exe";
+                        
+                           
+                            // Parse entire output
+                            // Surround with double quotes if file name has spaces
+                            exec("$cmd \"$document\"", $output);
 
-                        <div class="col-md-6">
-                          <div class="form-group-row">
-                            <label class="label">No. Handphone penerima : </label>
-                            <?php 
-                              $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'nama_lengkap', 'id' => 'nama_lengkap', 'value' => set_value('nama_lengkap')); 
-                              echo form_input($data);                                                    
-                            ?>                            
-                            </div>
-                        </div>
-                      
+                            // Iterate through lines
+                            $pagecount = 0;
+                            foreach($output as $op)
+                            {
+                              // Extract the number
+                              if(preg_match("/Pages:\s*(\d+)/i", $op, $matches) === 1)
+                              {
+                                $pagecount = intval($matches[1]);
+                                break;
+                              }
+                            }
+
+                              return $pagecount;
+                        }
+                      ?>
+
+                      <div class="form-group row">
+                        <?php
+                          $src = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\test11.pdf";                                                
+                          echo "Jumlah Page PDF : ";
+                          echo getPDFPages($src); 
+                        ?>
                       </div>
 
                       

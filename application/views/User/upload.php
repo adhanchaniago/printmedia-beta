@@ -64,7 +64,7 @@
               <div class="row">                  
                   <!-- Ini Sisi Kiri -->                
                   <div class="col-md-9">
-                  <?php echo form_open('user/inputpemesanan', array('enctype' => 'multipart/form-data', 'class' => 'form-horizontal')); ?>
+                  <?php echo form_open('user/inputdatapemesanan', array('enctype' => 'multipart/form-data', 'class' => 'form-horizontal')); ?>
                     <div class="form-group row">
                       <label class="col-sm-3 form-control-label">Judul Dokumen</label>
                       <div class="col-sm-9">
