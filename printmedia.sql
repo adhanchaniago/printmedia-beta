@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2018 at 08:33 AM
+-- Generation Time: Nov 11, 2018 at 02:02 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -92,7 +92,12 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (58, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-19 01:02:58', 'Melakukan Login', 'keo0u1ait6t5abvbmh08kue1qi5hcdsn'),
 (59, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-19 03:48:38', 'Melakukan Login', 'urhutt79k552v6qb1ldgsfmuvl613brp'),
 (60, '111201609358@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 12:43:06', 'Melakukan Login', '3hvmi5201ocqh1pk2dineuhrn3euvq6t'),
-(61, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 12:44:34', 'Melakukan Login', 'kjf4lvpnbhhi1s205ndlahrh68fc5u33');
+(61, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 12:44:34', 'Melakukan Login', 'kjf4lvpnbhhi1s205ndlahrh68fc5u33'),
+(62, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-22 01:35:18', 'Melakukan Login', 'ltds5375rupm17ku6vf3peevcq8jv73t'),
+(63, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-23 12:48:44', 'Melakukan Login', '8asdh69eeq66q29jrrme3vvt490cnilg'),
+(64, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-07 09:43:06', 'Melakukan Login', 'lhclhauco79stavcfdpnimsji64qo357'),
+(65, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-11 04:48:07', 'Melakukan Login', '3n8pg8dpavr8ih3lsop9chanbic5akug'),
+(66, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-11 06:08:31', 'Melakukan Login', 've65eaap0c7t7nk6jk2qfnlbr7a7g81o');
 
 -- --------------------------------------------------------
 
@@ -115,9 +120,8 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`auth_id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(33, '111201609359@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '66f61bc4d69fb493e6b670d1a9e7aaed', '2018-10-06 03:30:34', 'Aktif'),
-(34, '111201609358@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', 'fa593687948fba232deed033472d11cb', '2018-10-16 15:04:04', 'Aktif'),
-(35, '111201609357@mhs.dinus.ac.id', '25d55ad283aa400af464c76d713c07ad', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-10-22 05:44:25', 'Aktif');
+(44, '111201609357@mhs.dinus.ac.id', '$2y$10$P34MPn4P2hKfiR0JIUXlDOuBbCYxm87U5ZGhRxZCTYuRM4.2cxHXO', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-11-11 11:22:14', 'Belum Aktif'),
+(45, '111201609358@mhs.dinus.ac.id', '$2y$10$cl.fuBu1HLkSGoXGgd3FGeDo60LLLwE3sefoMRlD.wHWClYQjolEe', 'Member', 'fa593687948fba232deed033472d11cb', '2018-11-11 11:32:55', 'Belum Aktif');
 
 -- --------------------------------------------------------
 
@@ -7649,6 +7653,21 @@ INSERT INTO `jurusan` (`jurusan_id`, `jurusan`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `mitra`
+--
+
+CREATE TABLE `mitra` (
+  `mitra_id` int(11) NOT NULL,
+  `nama_mitra` varchar(100) NOT NULL,
+  `nama_pemilik` varchar(100) NOT NULL,
+  `no_handphone` int(14) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `alamat` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pemesanan`
 --
 
@@ -8351,25 +8370,18 @@ CREATE TABLE `user` (
   `gender` varchar(20) NOT NULL,
   `tanggal_lahir` date NOT NULL,
   `email` varchar(100) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  `detail_alamat` varchar(100) NOT NULL,
-  `provinsi` varchar(100) NOT NULL,
-  `kota` varchar(100) NOT NULL,
-  `kecamatan` varchar(100) NOT NULL,
+  `alamat` text NOT NULL,
+  `detail_alamat` text NOT NULL,
+  `provinsi` int(10) NOT NULL,
+  `kota` int(10) NOT NULL,
+  `kecamatan` int(10) NOT NULL,
   `kodepos` varchar(10) NOT NULL,
-  `universitas` varchar(100) NOT NULL,
-  `jurusan` varchar(100) NOT NULL,
-  `jenjang` varchar(100) NOT NULL,
-  `tahun_masuk` varchar(100) NOT NULL,
-  `tahun_keluar` varchar(100) NOT NULL
+  `universitas` int(10) NOT NULL,
+  `jurusan` int(10) NOT NULL,
+  `jenjang` int(10) NOT NULL,
+  `tahun_masuk` int(10) NOT NULL,
+  `tahun_keluar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`user_id`, `nama`, `nohape`, `gender`, `tanggal_lahir`, `email`, `alamat`, `detail_alamat`, `provinsi`, `kota`, `kecamatan`, `kodepos`, `universitas`, `jurusan`, `jenjang`, `tahun_masuk`, `tahun_keluar`) VALUES
-(5, 'Wahyu Rizky Eka Perwira', '085712032051', 'Laki-Laki', '2018-10-14', '111201609357@mhs.dinus.ac.id', 'Jl. Imam Bonjol No.207, Pendrikan Kidul, Semarang Tengah, Kota Semarang, Jawa Tengah 50131', 'Samping Tugumuda', '33', '3374', '3374130', '50131', '5', '131', '5', '3', 'Belum Lulus');
 
 -- --------------------------------------------------------
 
@@ -83486,6 +83498,12 @@ ALTER TABLE `jurusan`
   ADD PRIMARY KEY (`jurusan_id`);
 
 --
+-- Indexes for table `mitra`
+--
+ALTER TABLE `mitra`
+  ADD PRIMARY KEY (`mitra_id`);
+
+--
 -- Indexes for table `pemesanan`
 --
 ALTER TABLE `pemesanan`
@@ -83521,7 +83539,10 @@ ALTER TABLE `universitas`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`user_id`),
-  ADD KEY `email` (`email`);
+  ADD KEY `email` (`email`),
+  ADD KEY `universitas` (`universitas`),
+  ADD KEY `jurusan` (`jurusan`),
+  ADD KEY `jenjang` (`jenjang`);
 
 --
 -- Indexes for table `villages`
@@ -83538,13 +83559,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `jenjang`
@@ -83557,6 +83578,12 @@ ALTER TABLE `jenjang`
 --
 ALTER TABLE `jurusan`
   MODIFY `jurusan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=251;
+
+--
+-- AUTO_INCREMENT for table `mitra`
+--
+ALTER TABLE `mitra`
+  MODIFY `mitra_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `universitas`
@@ -83585,6 +83612,14 @@ ALTER TABLE `districts`
 --
 ALTER TABLE `regencies`
   ADD CONSTRAINT `regencies_province_id_foreign` FOREIGN KEY (`province_id`) REFERENCES `provinces` (`id`);
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`email`) REFERENCES `auth` (`email`),
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`universitas`) REFERENCES `universitas` (`universitas_id`),
+  ADD CONSTRAINT `user_ibfk_3` FOREIGN KEY (`jurusan`) REFERENCES `jurusan` (`jurusan_id`);
 
 --
 -- Constraints for table `villages`
