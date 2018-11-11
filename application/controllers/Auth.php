@@ -156,7 +156,7 @@ class Auth extends CI_Controller {
 							'session' => session_id(),
 						);
 						$data = $this->Auth_model->Insert('activity_user', $data);
-						redirect(base_url('admin/index'));
+						redirect(base_url('Developer/index'));
 					}
 				}
 				if($data['level'] !== 'Admin' )

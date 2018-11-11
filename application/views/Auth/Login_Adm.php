@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>PrintMedia | Developer</title>
-  <?php $this->load->view('admin/head'); ?>
+  <?php $this->load->view('Developer/head'); ?>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -52,7 +52,7 @@
 </div>
 <!-- /.login-box -->
 
-<?php $this->load->view('admin/script'); ?>
+<?php $this->load->view('Developer/script'); ?>
 <script>
   $(function () {
     $('input').iCheck({
