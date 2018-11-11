@@ -58,7 +58,7 @@
                       <?php
                         function getPDFPages($document)
                         {                                                      
-                          $cmd = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\pdfinfo.exe";
+                          $cmd = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\pdfinfo.exe";                          
                         
                            
                             // Parse entire output
@@ -83,7 +83,7 @@
 
                       <div class="form-group row">
                         <?php
-                          $src = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\test11.pdf";                                                
+                          $src = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\test11.pdf";                          
                           echo "Jumlah Page PDF : ";
                           echo getPDFPages($src); 
                         ?>

@@ -230,7 +230,7 @@
                               $data_universitas = $universitas->result_array();
                               foreach($data_universitas as $row) {
                             ?>                              
-                              <option value="<?php echo $row['nama_univ']; ?>" <?php echo set_select('nama_univ', $row['nama_univ'], ($row['nama_univ'] == $info['universitas'])? true : false ); ?>><?php echo $row['nama_univ']; ?></option>
+                              <option value="<?php echo $row['universitas_id']; ?>" <?php echo set_select('nama_univ', $row['universitas_id'], ($row['universitas_id'] == $info['universitas'])? true : false ); ?>><?php echo $row['nama_univ']; ?></option>
                             <?php } ?>                                                                  
                         </select>
                           </div>
@@ -247,7 +247,7 @@
                                 $data_jurusan = $jurusan->result_array();
                                 foreach($data_jurusan as $row) {
                               ?>
-                                <option value="<?php echo $row['jurusan']; ?>" <?php echo set_select('jurusan', $row['jurusan'], ($row['jurusan'] == $info['jurusan'])? true : false ); ?>><?php echo $row['jurusan']; ?></option>
+                                <option value="<?php echo $row['jurusan_id']; ?>" <?php echo set_select('jurusan', $row['jurusan'], ($row['jurusan'] == $info['jurusan'])? true : false ); ?>><?php echo $row['jurusan']; ?></option>
                               <?php } ?>                                                                  
                               </select>                          
                             </div> 
@@ -285,7 +285,7 @@
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
                                 ?>
-                                  <option value="<?php echo $row['tahun']; ?>" <?php echo set_select('tahun', $row['tahun'], ($row['tahun'] == $info['tahun_masuk'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
+                                  <option value="<?php echo $row['tahun_id']; ?>" <?php echo set_select('tahun', $row['tahun_id'], ($row['tahun_id'] == $info['tahun_masuk'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                                 </select>
                             </div>
@@ -294,15 +294,14 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="label">Tahun Keluar : </label>
-                                <select name="tahun_keluar" class="form-control" id="tahun_keluar">
-                                  <option value="Belum Lulus">Belum Lulus</option>
+                                <select name="tahun_keluar" class="form-control" id="tahun_keluar">                                  
                                 <?php
                                   $this->db->from('tahun');
                                   $tahun = $this->db->get();
                                   $data_tahun = $tahun->result_array();
                                   foreach($data_tahun as $row) {
                                   ?>
-                                  <option value="<?php echo $row['tahun']; ?>" <?php echo set_select('tahun', $row['tahun'], ($row['tahun'] == $info['tahun_keluar'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
+                                  <option value="<?php echo $row['tahun_id']; ?>" <?php echo set_select('tahun', $row['tahun_id'], ($row['tahun_id'] == $info['tahun_keluar'])? true : false ); ?>><?php echo $row['tahun']; ?></option>
                                 <?php } ?>
                               </select>
                             </div>

@@ -288,8 +288,7 @@
                           <div class="col-md-6">
                             <div class="form-group">
                               <label class="label">Tahun Keluar : </label>
-                                <select name="tahun_keluar" class="form-control" id="tahun_keluar">
-                                  <option value="Belum Lulus">Belum Lulus</option>
+                                <select name="tahun_keluar" class="form-control" id="tahun_keluar">                                  
                                 <?php
                                   $this->db->from('tahun');
                                   $tahun = $this->db->get();

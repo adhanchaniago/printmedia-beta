@@ -114,7 +114,7 @@ class User extends CI_Controller
 
 			$data = $this->User_model->Insert('user', $data);
 			$this->session->set_flashdata('success_input', 'Berhasil Menambahkan Data');
-			redirect(base_url('dashboard'));
+			redirect(base_url('upload'));
 		}
 
 		
