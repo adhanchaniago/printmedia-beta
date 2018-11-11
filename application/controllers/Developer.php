@@ -1,34 +1,33 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Developer extends CI_Controller {
 	public function __construct()
 	{
 		
 		parent::__construct();
 		$this->load->library('form_validation');
+		$this->load->model('Developer_model');
 	}
 	public function index()
-	{	$this->load->model('Admin_model');
-		$data=$this->Admin_model->tampiluser('activity_user');
+	{	
+		$data=$this->Developer_model->tampiluser('activity_user');
 		$data=array('data'=> $data);
-		$this->load->view('Admin/index',$data);
+		$this->load->view('Developer/index',$data);
 	}
 	public function Input_Universitas()
 	{
-		$this->load->model('Admin_model');
-		$data = $this->Admin_model->tampiluniv('regencies');
+		$data = $this->Developer_model->tampiluniv('regencies');
 		$data=array('data'=> $data);
-		$this->load->view('Admin/Input_Universitas',$data);
+		$this->load->view('Developer/Input_Universitas',$data);
 	}
 	public function Input_Jurusan()
 	{
-		$this->load->view('Admin/Input_Jurusan');
+		$this->load->view('Developer/Input_Jurusan');
 	}
 
 	public function Inputdb_Univ()
 	{
-		$this->load->model('Admin_model');
 		$this->form_validation->set_rules('univ', 'Universitas', 'trim|required|is_unique[universitas.nama_univ]|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
 		$this->form_validation->set_message('is_unique', 'Mohon Maaf! <b>%s</b> sudah diinputkan.');
@@ -36,10 +35,9 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('error_univ',"'.form_error('univ').'");
-			$this->load->model('Admin_model');
-			$data = $this->Admin_model->tampiluniv('regencies');
+			$data = $this->Developer_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
-			$this->load->view('Admin/Input_Universitas',$data);
+			$this->load->view('Developer/Input_Universitas',$data);
 		}
 		else
 		{
@@ -49,16 +47,15 @@ class Admin extends CI_Controller {
 				'kota' => $this->input->post('kota')
 	        );
 
-			$data = $this->Admin_model->insert('universitas', $data);
+			$data = $this->Developer_model->insert('universitas', $data);
 			$this->session->set_flashdata('success_univ', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
-			redirect(base_url('Admin/Input_Universitas'));
+			redirect(base_url('Developer/Input_Universitas'));
 
 		}
 	}
 
 	public function Inputdb_Jurusan()
 	{
-		$this->load->model('Admin_model');
 		$this->form_validation->set_rules('jurusan', 'Jurusan', 'trim|required|is_unique[jurusan.jurusan]|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
 		$this->form_validation->set_message('is_unique', 'Mohon Maaf! <b>%s</b> sudah diinputkan.');
@@ -66,9 +63,9 @@ class Admin extends CI_Controller {
 		if($this->form_validation->run() == FALSE)
 		{
 			$this->session->set_flashdata('error_jurusan',"'.form_error('jurusan').'");
-			$data = $this->Admin_model->tampiluniv('regencies');
+			$data = $this->Developer_model->tampiluniv('regencies');
 			$data=array('data'=> $data);
-			$this->load->view('Admin/Input_Universitas',$data);
+			$this->load->view('Developer/Input_Universitas',$data);
 		}
 		else
 		{
@@ -77,93 +74,86 @@ class Admin extends CI_Controller {
 				'jurusan' => $this->input->post('jurusan') // yang kanan nama di form
 	        );
 
-			$data = $this->Admin_model->insert('jurusan', $data);
+			$data = $this->Developer_model->insert('jurusan', $data);
 
 			$this->session->set_flashdata('success_jurusan', 'Berhasil Menambahkan Jurusan '.$this->input->post('jurusan'));
-			redirect(base_url('admin/Input_Universitas'));
+			redirect(base_url('Developer/Input_Universitas'));
 		}
 		
 	}
 
 	public function Tampil_Univ()
 	{
-		$this->load->model('Admin_model');
-		$data=$this->Admin_model->tampiluniv('universitas');
+		$data=$this->Developer_model->tampiluniv('universitas');
 		$data=array('data'=> $data);
-		$this->load->view('Admin/Data_Univ',$data);
+		$this->load->view('Developer/Data_Univ',$data);
 	}
 	public function Tampil_Jurusan()
 	{
-		$this->load->model('Admin_model');
-		$data=$this->Admin_model->tampiluniv('jurusan');
+		$data=$this->Developer_model->tampiluniv('jurusan');
 		$data=array('data'=> $data);
-		$this->load->view('Admin/Data_Jurusan',$data);
+		$this->load->view('Developer/Data_Jurusan',$data);
 	}
 	public function Tampil_User()
 	{
-		$this->load->model('Admin_model');
-		$data=$this->Admin_model->tampiluniv('user');
+		$data=$this->Developer_model->tampiluniv('user');
 		$data=array('data'=> $data);
-		$this->load->view('Admin/Data_User',$data);
+		$this->load->view('Developer/Data_User',$data);
 	}
 
 	public function Hapus_Univ($id)
 		{
-			$this->load->model('Admin_model');
 			$where = array('universitas_id' => $id);
-			$data=$this->Admin_model->hapus('universitas',$where);
+			$data=$this->Developer_model->hapus('universitas',$where);
 			if($data){
 				$this->session->set_flashdata('success_del_univ', 'BERHASIL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_Univ'));
+				redirect(base_url('Developer/Tampil_Univ'));
 			}
 			else{
 				$this->session->set_flashdata('error_del_univ', 'GAGAL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_Univ'));
+				redirect(base_url('Developer/Tampil_Univ'));
 			}
 		}
 
 	public function Hapus_Jurusan($id)
 		{
-			$this->load->model('Admin_model');
 			$where = array('jurusan_id' => $id);
-			$data=$this->Admin_model->hapus('jurusan',$where);
+			$data=$this->Developer_model->hapus('jurusan',$where);
 			if($data){
 				$this->session->set_flashdata('success_del_jurusan', 'BERHASIL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_Jurusan'));
+				redirect(base_url('Developer/Tampil_Jurusan'));
 			}
 			else{
 				$this->session->set_flashdata('error_del_jurusan', 'GAGAL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_Jurusan'));
+				redirect(base_url('Developer/Tampil_Jurusan'));
 			}
 		}
 
 	public function Hapus_User($email)
 		{
-			$this->load->model('Admin_model');
 			$where = array('email' => $email);
-			$data=$this->Admin_model->hapus('auth',$where);
-			$data1=$this->Admin_model->hapus('user',$where);
+			$data=$this->Developer_model->hapus('auth',$where);
+			$data1=$this->Developer_model->hapus('user',$where);
 			if($data){
 				if($data1){
 					$this->session->set_flashdata('success_del_user', 'BERHASIL MENGHAPUS');
-					redirect(base_url('Admin/Tampil_User'));
+					redirect(base_url('Developer/Tampil_User'));
 				}
 				$this->session->set_flashdata('error_del_user', 'GAGAL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_User'));
+				redirect(base_url('Developer/Tampil_User'));
 			}
 			else{
 				$this->session->set_flashdata('error_del_user', 'GAGAL MENGHAPUS');
-				redirect(base_url('Admin/Tampil_User'));
+				redirect(base_url('Developer/Tampil_User'));
 			}
 		}
 
 	public function Detail_User($email)
 		{
-			$this->load->model('Admin_model');
 			$email = array('email' => $email) ;
-			$cek = $this->Admin_model->detailuser('user', $email);
+			$cek = $this->Developer_model->detailuser('user', $email);
 			$cek=array('cek'=> $cek);
-			$this->load->view('Admin/detail_user', $cek);
+			$this->load->view('Developer/detail_user', $cek);
 		
 		}
 }

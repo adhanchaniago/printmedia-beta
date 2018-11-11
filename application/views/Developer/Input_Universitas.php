@@ -2,17 +2,17 @@
 <html>
 <head>
   <!-- SRC include  -->
-  <?php $this->load->view('Admin/head'); ?>
+  <?php $this->load->view('Developer/head'); ?>
   <title>PrintMedia-Admin | Dashboard</title>
  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
- <?php $this->load->view('admin/navbar');?>
+ <?php $this->load->view('Developer/navbar');?>
 
  <!--sidebar load  -->
- <?php $this->load->view('admin/sidebar');?>
+ <?php $this->load->view('Developer/sidebar');?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,7 +25,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('admin');?>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('Developer');?>">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -58,7 +58,7 @@
               </div>
             <div class="card-body">
             
-                <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Univ')?>" id="form1">
+                <form role="form" method="post" action="<?php echo base_url('Developer/Inputdb_Univ')?>" id="form1">
                   <!-- text input -->
                   <div class="form-group">
                     <label>Nama Universitas</label>
@@ -104,7 +104,7 @@
                 <h3 class="card-title">Input Jurusan</h3>
             </div>
             <div class="card-body">
-                    <form role="form" method="post" action="<?php echo base_url('Admin/Inputdb_Jurusan'); ?>">
+                    <form role="form" method="post" action="<?php echo base_url('Developer/Inputdb_Jurusan'); ?>">
                     <label>Nama Jurusan</label>
                     <?php $data1 = array('type' => 'text', 'id' => 'jurusan', 'name' => 'jurusan', 'class' => 'form-control mb-2 mr-sm-2', 'value' => set_value('jurusan'), 'required' => 'true', 'oninvalid' => 'this.setCustomValidity('."'Tidak Boleh Kosong'".')', 'oninput' => 'setCustomValidity('."''".')', 'autofocus' => 'true'); 
                           echo form_input($data1); 
@@ -135,7 +135,7 @@
     
   </div>
   <!-- /.content-wrapper -->
-  <?php $this->load->view('admin/footer'); ?>
+  <?php $this->load->view('Developer/footer'); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -147,7 +147,7 @@
 
 
 
-<?php $this->load->view('admin/script'); ?>
+<?php $this->load->view('Developer/script'); ?>
 <!-- Page script -->
 <script>
   $(function () {

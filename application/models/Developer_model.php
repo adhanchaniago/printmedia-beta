@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_model extends CI_Model {
+class Developer_model extends CI_Model {
 
 	public function Insert($table,$data)
     {

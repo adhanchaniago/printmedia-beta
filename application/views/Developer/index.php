@@ -2,17 +2,17 @@
 <html>
 <head>
   <!-- SRC include  -->
-  <?php $this->load->view('Admin/head'); ?>
+  <?php $this->load->view('Developer/head'); ?>
   <title>PrintMedia-Admin | Dashboard</title>
  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
- <?php $this->load->view('admin/navbar');?>
+ <?php $this->load->view('Developer/navbar');?>
 
  <!--sidebar load  -->
- <?php $this->load->view('admin/sidebar');?>
+ <?php $this->load->view('Developer/sidebar');?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -25,7 +25,7 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="<?php echo base_url('admin');?>">Home</a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('Developer');?>">Home</a></li>
               <li class="breadcrumb-item active">Dashboard</li>
             </ol>
           </div><!-- /.col -->
@@ -50,7 +50,7 @@
               <div class="icon">
                 <i class="ion ion-clipboard"></i>
               </div>
-              <a href="<?php echo base_url('Admin/Tampil_Univ'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('Developer/Tampil_Univ'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -65,7 +65,7 @@
               <div class="icon">
                 <i class="ion ion-briefcase"></i>
               </div>
-              <a href="<?php echo base_url('Admin/Tampil_Jurusan');?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('Developer/Tampil_Jurusan');?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -79,7 +79,7 @@
               <div class="icon">
                 <i class="ion ion-person-add"></i>
               </div>
-              <a href="<?php echo base_url('Admin/Tampil_User'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              <a href="<?php echo base_url('Developer/Tampil_User'); ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -138,7 +138,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php $this->load->view('admin/footer'); ?>
+  <?php $this->load->view('Developer/footer'); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -150,7 +150,7 @@
 
 
 <!-- Script include  -->
-<?php $this->load->view('Admin/script'); ?>
+<?php $this->load->view('Developer/script'); ?>
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>

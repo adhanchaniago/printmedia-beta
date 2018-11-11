@@ -2,17 +2,17 @@
 <html>
 <head>
   <!-- SRC include  -->
-  <?php $this->load->view('Admin/head'); ?>
+  <?php $this->load->view('Developer/head'); ?>
   <title>PrintMedia-Admin | Jurusan</title>
  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
- <?php $this->load->view('admin/navbar');?>
+ <?php $this->load->view('Developer/navbar');?>
 
  <!--sidebar load  -->
- <?php $this->load->view('admin/sidebar');?>
+ <?php $this->load->view('Developer/sidebar');?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -83,7 +83,7 @@
                 <tr>
                   <td><?php echo $info['jurusan_id'];?></td>
                   <td><?php echo $info['jurusan'];?></td>
-                  <td><a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_Jurusan/<?php echo $info['jurusan_id'];?>" ></a></td>
+                  <td><a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Developer/Hapus_Jurusan/<?php echo $info['jurusan_id'];?>" ></a></td>
                 </tr>
                 <?php } ?>
                 </tbody>
@@ -105,7 +105,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php $this->load->view('admin/footer'); ?>
+  <?php $this->load->view('Developer/footer'); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -117,7 +117,7 @@
 
 
 <!-- Script include  -->
-<?php $this->load->view('Admin/script'); ?>
+<?php $this->load->view('Developer/script'); ?>
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>

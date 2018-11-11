@@ -2,17 +2,17 @@
 <html>
 <head>
   <!-- SRC include  -->
-  <?php $this->load->view('Admin/head'); ?>
+  <?php $this->load->view('Developer/head'); ?>
   <title>PrintMedia-Admin | Detail User</title>
  
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
- <?php $this->load->view('admin/navbar');?>
+ <?php $this->load->view('Developer/navbar');?>
 
  <!--sidebar load  -->
- <?php $this->load->view('admin/sidebar');?>
+ <?php $this->load->view('Developer/sidebar');?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -212,7 +212,7 @@
                 <?php }?>
               </table>
               <div class="card-footer">
-                  <a href="<?php echo base_url('Admin/Tampil_User'); ?>" class="btn btn-primary">Back</a>
+                  <a href="<?php echo base_url('Developer/Tampil_User'); ?>" class="btn btn-primary">Back</a>
                 </div>
             </div>
             <!-- /.card-body -->
@@ -224,7 +224,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  <?php $this->load->view('admin/footer'); ?>
+  <?php $this->load->view('Developer/footer'); ?>
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -236,7 +236,7 @@
 
 
 <!-- Script include  -->
-<?php $this->load->view('Admin/script'); ?>
+<?php $this->load->view('Developer/script'); ?>
 
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
