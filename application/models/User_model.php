@@ -13,6 +13,41 @@ class User_model extends CI_Model{
         return $res; 
     } 
 
+    public function cekUser($where)
+    {
+        $this->db->from('user');
+        $this->db->select('nama, email'); // nama kolom di tabel database
+        $this->db->where('email', $where);
+        $res = $this->db->get();
+        return $res;
+    }
+
+    public function inputProfile()
+    {
+        $data = array
+			(
+				'nama' => $this->input->post('nama_lengkap'), // Kiri Nama Kolom
+				'nohape' => $this->input->post('no_handphone'), // Kanan nama form di views
+				'gender' => $this->input->post('jenis_kelamin'),
+				'tanggal_lahir' => $this->input->post('tanggal_lahir'),
+				'email' => $this->input->post('email'),
+				'alamat' => $this->input->post('alamat'),
+				'detail_alamat' => $this->input->post('detail_alamat'),
+				'provinsi' => $this->input->post('provinsi'),
+				'kota' => $this->input->post('kota'),
+				'kecamatan' => $this->input->post('kecamatan'),				
+				'kodepos' => $this->input->post('kodepos'),
+				'universitas' => $this->input->post('universitas'),
+				'jurusan' => $this->input->post('jurusan'),
+				'jenjang' => $this->input->post('jenjang'),
+				'tahun_masuk' => $this->input->post('tahun_masuk'),
+				'tahun_keluar' => $this->input->post('tahun_keluar'),
+            );
+        
+        $res = $this->db->insert('user', $data);
+        return $res;
+        
+    }
 
     public function GetWhere($table, $data)
     {

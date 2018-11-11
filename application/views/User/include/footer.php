@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <p>Printmedia &copy; <?php echo date('Y'); ?></p>
+                <p>Printmedia &copy; <?php echo date('Y'); ?> Eksekusi Time: {elapsed_time} s | Memory Usage: {memory_usage}</p>
             </div>
 
             <div class="col-sm-6 text-right">

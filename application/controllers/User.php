@@ -12,8 +12,8 @@ class User extends CI_Controller
 	
 	public function index()
 	{
-		$email = array('email' => $this->session->userdata('email')) ;
-		$cek = $this->User_model->GetWhere('user', $email);
+		$email = $this->session->userdata('email');
+		$cek = $this->User_model->cekUser($email);
 		$cek = $cek->row_array();
 		
 		if($cek == NULL)
@@ -92,27 +92,7 @@ class User extends CI_Controller
 		}
 		else
 		{
-			$data = array
-			(
-				'nama' => $this->input->post('nama_lengkap'), // Kiri Nama Kolom
-				'nohape' => $this->input->post('no_handphone'), // Kanan nama form di views
-				'gender' => $this->input->post('jenis_kelamin'),
-				'tanggal_lahir' => $this->input->post('tanggal_lahir'),
-				'email' => $this->input->post('email'),
-				'alamat' => $this->input->post('alamat'),
-				'detail_alamat' => $this->input->post('detail_alamat'),
-				'provinsi' => $this->input->post('provinsi'),
-				'kota' => $this->input->post('kota'),
-				'kecamatan' => $this->input->post('kecamatan'),				
-				'kodepos' => $this->input->post('kodepos'),
-				'universitas' => $this->input->post('universitas'),
-				'jurusan' => $this->input->post('jurusan'),
-				'jenjang' => $this->input->post('jenjang'),
-				'tahun_masuk' => $this->input->post('tahun_masuk'),
-				'tahun_keluar' => $this->input->post('tahun_keluar'),
-			);
-
-			$data = $this->User_model->Insert('user', $data);
+			$this->User_model->inputProfile();
 			$this->session->set_flashdata('success_input', 'Berhasil Menambahkan Data');
 			redirect(base_url('upload'));
 		}

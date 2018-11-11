@@ -23,7 +23,7 @@
       <!-- Akhir Side Bar-->
 
         <div class="content-inner">
-        <?php if($this->session->flashdata('success_input') == true):?>
+        <?php if($this->session->flashdata('success_input')):?>
         <script src="<?php echo base_url();?>asset/user/plugin/sweetalert/dist/sweetalert2.all.min.js"></script>
         <script>
           swal({
