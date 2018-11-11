@@ -31,4 +31,9 @@ class Admin_model extends CI_Model {
 		$res=$this->db->delete($table);
 		return $res;
     }
+    public function detailuser($table,$where)
+    {
+        $res = $this->db->get_where($table, $where);
+        return $res->result_array();
+    }
 }

@@ -91,7 +91,7 @@
                   <td><?php echo $info['nohape'];?></td>
                   <td><?php echo $info['email'];?></td>
                   <td>
-                    <a  class="fa fa-eye" href="#" title="Detail"></a>
+                    <a  class="fa fa-eye" href="<?php echo base_url();?>Admin/Detail_User/<?php echo $info['email'];?>" title="Detail"></a>
                     <a  class="fa fa-times" onClick="return confirm('Are you sure you want to delete this item?');" href="<?php echo base_url();?>Admin/Hapus_User/<?php echo $info['email'];?>" title="Delete"></a>
                   </td>
                 </tr>

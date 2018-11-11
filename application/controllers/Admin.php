@@ -157,9 +157,13 @@ class Admin extends CI_Controller {
 			}
 		}
 
-	public function detailuser()
+	public function Detail_User($email)
 		{
-			$this->load->view('Admin/detail_user');
+			$this->load->model('Admin_model');
+			$email = array('email' => $email) ;
+			$cek = $this->Admin_model->detailuser('user', $email);
+			$cek=array('cek'=> $cek);
+			$this->load->view('Admin/detail_user', $cek);
 		
 		}
 }

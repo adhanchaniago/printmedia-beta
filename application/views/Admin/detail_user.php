@@ -68,92 +68,152 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">1</th>
-                    <th scope="col">2</th>
                   </tr>
                 </thead>
+                <?php foreach ($cek as $info) {?>
                 <tbody>
                   <tr>
                     <th scope="row">Nama</th>
-                    <td></td>
+                    <td><?php echo $info['nama'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">No.Handphone</th>
-                    <td></td>
+                    <td><?php echo $info['nohape'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Gender</th>
-                    <td></td>
+                    <td><?php echo $info['gender'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Tanggal Lahir</th>
-                    <td></td>
+                    <td><?php echo $info['tanggal_lahir'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Email</th>
-                    <td></td>
+                    <td><?php echo $info['email'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Alamat</th>
-                    <td></td>
+                    <td><?php echo $info['alamat'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Detail Alamat</th>
-                    <td></td>
+                    <td><?php echo $info['detail_alamat'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Provinsi</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('id' => $info['provinsi']) ;
+                      $provinsi = $this->db->get_where('provinces', $data);
+                      $data_provinsi = $provinsi->result_array(); 
+                      echo $data_provinsi[0]['name'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Kota</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('id' => $info['kota']) ;
+                      $kota = $this->db->get_where('regencies', $data);
+                      $data_kota = $kota->result_array(); 
+                      echo $data_kota[0]['name'];                          
+                    ?>
+                    </td>
                     <td></td> 
                   </tr>
                   <tr>
                     <th scope="row">Kecamatan</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('id' => $info['kecamatan']) ;
+                      $kecamatan = $this->db->get_where('districts', $data);
+                      $data_kecamatan = $kecamatan->result_array(); 
+                      echo $data_kecamatan[0]['name'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Kode Pos</th>
-                    <td></td>
+                    <td><?php echo $info['kodepos'];?></td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Universitas</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('universitas_id' => $info['universitas']) ;
+                      $univ = $this->db->get_where('universitas', $data);
+                      $data_univ = $univ->result_array(); 
+                      echo $data_univ[0]['nama_univ'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Jurusan</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('jurusan_id' => $info['jurusan']) ;
+                      $jurusan = $this->db->get_where('jurusan', $data);
+                      $data_jurusan = $jurusan->result_array(); 
+                      echo $data_jurusan[0]['jurusan'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Jenjang</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('jenjang_id' => $info['jenjang']) ;
+                      $jenjang = $this->db->get_where('jenjang', $data);
+                      $data_jenjang = $jenjang->result_array(); 
+                      echo $data_jenjang[0]['jenjang'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Tahun Masuk</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('tahun_id' => $info['tahun_masuk']) ;
+                      $thn_masuk = $this->db->get_where('tahun', $data);
+                      $tahun_masuk = $thn_masuk->result_array(); 
+                      echo $tahun_masuk[0]['tahun'];                          
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                   <tr>
                     <th scope="row">Tahun Keluar</th>
-                    <td></td>
+                    <td>
+                    <?php                    
+                      $data = array('tahun_id' => $info['tahun_keluar']) ;
+                      $thn_keluar = $this->db->get_where('tahun', $data);
+                      $tahun_keluar = $thn_keluar->result_array(); 
+                      echo $tahun_keluar[0]['tahun'];                       
+                    ?>
+                    </td>
                     <td></td>
                   </tr>
                 </tbody>
+                <?php }?>
               </table>
+              <div class="card-footer">
+                  <a href="<?php echo base_url('Admin/Tampil_User'); ?>" class="btn btn-primary">Back</a>
+                </div>
             </div>
             <!-- /.card-body -->
           </div>
