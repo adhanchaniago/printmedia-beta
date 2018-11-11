@@ -7,10 +7,6 @@ class Auth extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Auth_model');
-		$this->load->helper('url');
-		$this->load->library('form_validation');
-		$this->load->helper('security');
-		$this->load->library('user_agent');
 	}
 
 	public function register()
@@ -24,8 +20,8 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
 		$this->form_validation->set_message('is_unique', 'Mohon Maaf! <b>%s</b> sudah digunakan.');
-		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal 8 karakter.');
-		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal 15 karakter.');
+		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal %s karakter.');
+		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal %s karakter.');
 		$this->form_validation->set_message('valid_email', 'Mohon Maaf! Harap Memasukkan <b>%s</b> yang Benar.');
 		$this->form_validation->set_message('valid_emails', 'Mohon Maaf! Harap Memasukkan <b>%s</b> yang Benar.');
 
@@ -37,46 +33,7 @@ class Auth extends CI_Controller {
 		{
 			if(preg_match("/ac.id/", $this->input->post('email', TRUE)) || preg_match("/.edu/", $this->input->post('email', TRUE)) ) 
 			{
-				date_default_timezone_set("Asia/Jakarta");
-				$data = array(
-					'email' => $this->input->post('email', TRUE),
-					'password' => md5($this->input->post('password', TRUE)),
-					'level' => 'Member',
-					'token' => md5($this->input->post('email', TRUE)),
-					'waktu' => date('Y-m-d H:i:s'),
-					'status' => 'Belum Aktif',
-				);
-
-				$ci = get_instance();
-				$ci->load->library('email');
-				$email = $this->input->post('email');
-				$code = md5($this->input->post('email'));
-				$config['protocol'] = "smtp";
-				$config['smtp_host'] = "ssl://smtp.gmail.com";
-				$config['smtp_port'] = "465";
-				$config['smtp_user'] = "testingemailmahasiswa@gmail.com";
-				$config['smtp_pass'] = "akusayangkamu123";
-				$config['charset'] = "utf-8";
-				$config['mailtype'] = "html";
-				$config['newline'] = "\r\n";
-				
-				$ci->email->initialize($config);
-
-				$isi = '<table>';
-				$isi .= '<tr><td><h4>Aktifkan Akun Print Media!</h4></td></tr>';
-				$isi .= '<tr><td><p>Halo <b>' . $email . '</b> terima kasih telah melakukan pendaftaran di Print Media. Kami beritahukan kepada Anda untuk melakukan aktivasi akun agar bisa digunakan.</p></td></tr>';
-				$isi .= '<tr><td><a href="http://localhost/printmedia-beta/aktivasi/'.$code.' ">AKTIVASI AKUN</a></td></tr>';
-				$isi .= '<tr><td><p>Terima Kasih, Salam Print Media</p></td></tr>';
-				$isi .= '</table>';
-
-				$ci->email->from('noreply@printmedia.com', 'PRINT MEDIA');
-				$ci->email->to($email);
-				$ci->email->subject('AKTIFASI AKUN PRINT MEDIA');
-				$ci->email->message($isi);
-				$this->email->send();
-
-				$data = $this->Auth_model->Insert('auth', $data);
-				
+				$data = $this->Auth_model->daftarUser();
 				$this->session->set_flashdata('success', 'Berhasil Mendaftar!');
 				redirect(base_url('register'));
 			} 
@@ -97,6 +54,16 @@ class Auth extends CI_Controller {
 		$this->load->view('auth/suksesaktivasi', $data);
 	}
 
+	public function hai()
+	{
+		$data = $this->Auth_model->loginUser();
+		if($data)
+		{
+			echo 'y';
+		}
+		echo ' s';
+	}
+
 	public function login()
 	{
 		$this->load->view('auth/Login');
@@ -104,11 +71,11 @@ class Auth extends CI_Controller {
 
 	public function proseslogin()
 	{		
-		$this->form_validation->set_rules('email', 'Email', 'trim|required');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|xss_clean');
+		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
-		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal 8 karakter.');
-		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal 15 karakter.');
+		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal %s karakter.');
+		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal %s karakter.');
 		$email=$this->input->post('email');
 		$password=$this->input->post('password');
 		
@@ -118,86 +85,7 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
-			$cek=$this->Auth_model->login('auth', array('email' => $email, 'password' => md5($password)));
-
-			if( $cek->num_rows() > 0 )
-			{
-				$data = $cek->row_array();	
-				if($data['status'] == 'Aktif')
-				{
-					if($data['level'] === 'Member' )
-					{
-						$this->session->set_userdata('akses', 'Member');
-						$this->session->set_userdata('email', $data['email']);
-						$this->session->set_userdata('status', 'login');
-
-						if ($this->agent->is_browser())
-						{
-								$agent = $this->agent->browser().' '.$this->agent->version();
-						}
-						elseif ($this->agent->is_robot())
-						{
-								$agent = $this->agent->robot();
-						}
-						elseif ($this->agent->is_mobile())
-						{
-								$agent = $this->agent->mobile();
-						}
-						else
-						{
-								$agent = 'Unidentified User Agent';
-						}
-
-						date_default_timezone_set("Asia/Jakarta");
-						$data = array(
-							'email' => $this->input->post('email'),
-							'alamat_ip' => $this->input->ip_address(),
-							'browser' => $agent.' - '.$this->agent->platform(),
-							'waktu_masuk' => date('Y-m-d h:i:s'),
-							'keterangan' => 'Melakukan Login',
-							'session' => session_id(),
-						);
-						$data = $this->Auth_model->Insert('activity_user', $data);
-						redirect(base_url('user/index'));
-					}
-					
-					if($data['level'] === 'Admin' )
-					{
-						$this->session->set_flashdata('error', 'Gagal Login!');
-						redirect(base_url('login'));
-					}
-				}
-				if($data['status'] == 'Belum Aktif')
-				{
-					$this->session->set_flashdata('belumaktif', 'Gagal Login!');
-					redirect(base_url('login'));
-				}
-				if($data['status'] == 'Suspend')
-				{
-					$this->session->set_flashdata('error', 'Maaf! Akun Anda telah kami <b>SUSPEND</b>. Karena terbukti melanggar beberapa peraturan yang telah diterapkan. Harap hubungi kami melalui menu Kontak, jika terbukti tidak melakukan kesalahan.');
-					redirect(base_url('login'));
-				}
-			}
-			else
-			{
-				$cek = $this->db->get_where('auth', array('email' => $email));
-				$data = $cek->row_array();
-
-				if($data['email'] != $email && $data['password'] != $password)
-				{
-					$this->session->set_flashdata('error', 'Gagal Login!');
-					redirect(base_url('login'));
-				}
-				else
-				{
-					if($data['password'] != $password)
-					{
-						$this->session->set_flashdata('errorpassword', 'Maaf Password Salah');
-						var_dump($data); echo "<br>";
-						redirect(base_url('login'));
-					}
-				}	
-			}
+			$query = $this->Auth_model->loginUser();
 		}		
 	}
 

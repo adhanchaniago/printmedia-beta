@@ -23,7 +23,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="intro-kiri" style="padding-top:5px">
                     <div class="card">
-                        <?php echo form_open('auth/proseslogin'); ?>
+                        <?php echo form_open('auth/hai'); ?>
                             <div class="containerform">
                                 <div class="form-top">
                                     <h4>Login</h4>

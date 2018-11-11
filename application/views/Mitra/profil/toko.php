@@ -17,9 +17,7 @@
         <header id="header" class="header">
             <?php $this->load->view('mitra/include/header'); ?>
         </header><!-- /header -->
-        <!-- Header-->
-
-        
+        <!-- Header-->       
 
         <div class="content mt-3">
             <div class="animated fadeIn">
