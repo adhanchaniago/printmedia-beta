@@ -54,16 +54,6 @@ class Auth extends CI_Controller {
 		$this->load->view('auth/suksesaktivasi', $data);
 	}
 
-	public function hai()
-	{
-		$data = $this->Auth_model->loginUser();
-		if($data)
-		{
-			echo 'y';
-		}
-		echo ' s';
-	}
-
 	public function login()
 	{
 		$this->load->view('auth/Login');
@@ -85,7 +75,7 @@ class Auth extends CI_Controller {
 		}
 		else
 		{
-			$query = $this->Auth_model->loginUser();
+			$this->Auth_model->loginUser();
 		}		
 	}
 
@@ -190,7 +180,6 @@ class Auth extends CI_Controller {
 					if($data['password'] != $password)
 					{
 						$this->session->set_flashdata('error', 'Maaf Password Salah');
-						var_dump($data); echo "<br>";
 						redirect(base_url('developer'));
 					}
 				}	

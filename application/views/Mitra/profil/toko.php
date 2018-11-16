@@ -21,10 +21,11 @@
 
         <div class="content mt-3">
             <div class="animated fadeIn">
+                <!-- KONTEN KIRI -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title mb-3">Profil Toko</strong>
+                            <strong class="card-title mb-3">Pemilik</strong>
                         </div>
                         <div class="card-body">
                             <div class="mx-auto d-block">
@@ -35,6 +36,48 @@
                         </div>
                     </div>
                 </div>
+                <!-- KONTEN KIRI -->
+
+                <!-- KONTEN KANAN -->
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Profil Toko</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                              <tbody>
+                                <tr>
+                                    <td>Nama Toko</td>
+                                    <td width="5">:</td>
+                                    <td>Nama</td>
+                                </tr>
+                                <tr>
+                                    <td>No Handphone</td>
+                                    <td width="5">:</td>
+                                    <td>Nama</td>
+                                </tr>
+                                <tr>
+                                    <td>Email</td>
+                                    <td width="5">:</td>
+                                    <td>Nama</td>
+                                </tr>
+                                <tr>
+                                    <td>Jam Operasional</td>
+                                    <td width="5">:</td>
+                                    <td>Nama</td>
+                                </tr>
+                                <tr>
+                                    <td>Alamat Toko</td>
+                                    <td width="5">:</td>
+                                    <td>Nama</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- KONTEN KANAN -->
             </div>
         </div> <!-- .content -->
     </div><!-- /#right-panel -->
