@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class Auth extends CI_Controller {
 
 	public function __construct()
@@ -66,8 +65,9 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
 		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal %s karakter.');
 		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal %s karakter.');
-		$email=$this->input->post('email');
-		$password=$this->input->post('password');
+		
+		$email		= $this->input->post('email');
+		$password	= $this->input->post('password');
 		
 		if($this->form_validation->run() == FALSE)
 		{

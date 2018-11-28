@@ -91,7 +91,8 @@ class Auth_model extends CI_Model{
         $this->db->from('auth');
         $this->db->select('email, password, level, status');
         $this->db->where('email', $email);
-        $query = $this->db->get();
+		$query = $this->db->get();
+		
         if($query->num_rows() > 0)
         {
             $data = $query->row_array();
@@ -140,6 +141,7 @@ class Auth_model extends CI_Model{
 						$this->session->set_flashdata('error', 'Gagal Login!');
 						redirect(base_url('login'));
 					}
+					
 					if($data['level'] === 'Mitra')
 					{
 						$this->session->set_flashdata('error', 'Gagal Login!');

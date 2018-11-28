@@ -219,14 +219,13 @@ class User extends CI_Controller
 	
 	public function test()
 	{
-		$this->load->library('PDFParser');
-		// Parse pdf file and build necessary objects.
-		$parser = new \Smalot\PdfParser\Parser();
-		$data = base_url('asset/user/pemesanan/test1.pdf');
-		$pdf    = $parser->parseFile($data);
- 		// Retrieve all pages from the pdf file.
-		$pages  = $pdf->getPages();
-		echo $pages;
+		$this->load->library('tcpdf');
+		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
+		$total = $pdf->getAliasNumPage();
+		$url = base_url('asset/user/pemesanan/test1.pdf');
+		echo $total;
+
+
 	}
 
 	

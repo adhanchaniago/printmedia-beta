@@ -51,47 +51,7 @@
 
                 <!--Awal Card Body -->
                 <div class="card-body">
-                  <div class="container">
-                    <?php echo form_open('user/inputdataprofile', array('class' => 'form-horizontal')); ?>
-                  
-
-                      <?php
-                        function getPDFPages($document)
-                        {                                                      
-                          $cmd = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\pdfinfo.exe";                          
-                        
-                           
-                            // Parse entire output
-                            // Surround with double quotes if file name has spaces
-                            exec("$cmd \"$document\"", $output);
-
-                            // Iterate through lines
-                            $pagecount = 0;
-                            foreach($output as $op)
-                            {
-                              // Extract the number
-                              if(preg_match("/Pages:\s*(\d+)/i", $op, $matches) === 1)
-                              {
-                                $pagecount = intval($matches[1]);
-                                break;
-                              }
-                            }
-
-                              return $pagecount;
-                        }
-                      ?>
-
-                      <div class="form-group row">
-                        <?php
-                          $src = "C:\\xampp\\htdocs\\printmedia-beta\\asset\\user\\pemesanan\\test11.pdf";                          
-                          echo "Jumlah Page PDF : ";
-                          echo getPDFPages($src); 
-                        ?>
-                      </div>
-
-                      
-                    <?php echo form_close(); ?> 
-                  </div>                      
+                                   
                   
                 </div>
                 <!-- Akhir cardBody -->
