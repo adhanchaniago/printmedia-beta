@@ -224,8 +224,6 @@ class User extends CI_Controller
 		$total = $pdf->getAliasNumPage();
 		$url = base_url('asset/user/pemesanan/test1.pdf');
 		echo $total;
-
-
 	}
 
 	
