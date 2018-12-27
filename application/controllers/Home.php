@@ -17,17 +17,20 @@ class Home extends CI_Controller {
 	public function test()
 	{
 		$parser = new \Smalot\PdfParser\Parser();
-		$pdf    = $parser->parseFile('coba4.pdf');
+		$pdf    = $parser->parseFile('coba3.pdf');
  
 		$details  = $pdf->getDetails();
- 
+		$pagecount = 0;
+		echo "Halamannya adalah: ". $details['Pages'];
+		// echo json_encode($details);
 		// Loop over each property to extract values (string or array).
-		foreach ($details as $property => $value) {
-			if (is_array($value)) {
-				$value = implode(', ', $value);
-			}
-			echo $property . ' => ' . $value . "<br>";
-		}
+		// foreach ($details as $property => $value) {
+			
+		// 	// echo $property . ' => ' . $value . "<br>";
+		// 	echo "<br>";
+		// 	echo $details['Pages'];
+		// }
+
 		
 	}
 }
