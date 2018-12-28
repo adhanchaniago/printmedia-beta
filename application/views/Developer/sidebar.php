@@ -76,12 +76,6 @@
                   <p>Tampil Jurusan</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?php echo base_url('Developer/Input_Universitas');?>" class="nav-link">
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Tambah Universitas & Jurusan</p>
-                </a>
-              </li>
             </ul>
           </li>
         </ul>

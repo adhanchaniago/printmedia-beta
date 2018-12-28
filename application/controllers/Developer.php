@@ -9,21 +9,12 @@ class Developer extends CI_Controller {
 		$this->load->library('form_validation');
 		$this->load->model('Developer_model');
 	}
+	
 	public function index()
 	{	
 		$data=$this->Developer_model->tampiluser('activity_user');
 		$data=array('data'=> $data);
 		$this->load->view('Developer/index',$data);
-	}
-	public function Input_Universitas()
-	{
-		$data = $this->Developer_model->tampiluniv('regencies');
-		$data=array('data'=> $data);
-		$this->load->view('Developer/Input_Universitas',$data);
-	}
-	public function Input_Jurusan()
-	{
-		$this->load->view('Developer/Input_Jurusan');
 	}
 
 	public function Inputdb_Univ()
@@ -34,10 +25,11 @@ class Developer extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->session->set_flashdata('error_univ',"'.form_error('univ').'");
-			$data = $this->Developer_model->tampiluniv('regencies');
-			$data=array('data'=> $data);
-			$this->load->view('Developer/Input_Universitas',$data);
+			//$this->session->set_flashdata('error_univ',validation_errors());
+			//var_dump(validation_errors());
+			//$errors = $this->form_validation->error_array();
+			//echo json_encode(['error' => true, 'errors' => $errors]);
+			
 		}
 		else
 		{
@@ -49,7 +41,7 @@ class Developer extends CI_Controller {
 
 			$data = $this->Developer_model->insert('universitas', $data);
 			$this->session->set_flashdata('success_univ', 'Berhasil Menambahkan Universitas '.$this->input->post('univ'));
-			redirect(base_url('Developer/Input_Universitas'));
+			echo json_encode(array("status" => TRUE));
 
 		}
 	}
@@ -62,11 +54,11 @@ class Developer extends CI_Controller {
 		
 		if($this->form_validation->run() == FALSE)
 		{
-			$this->session->set_flashdata('error_jurusan',"'.form_error('jurusan').'");
-			$data = $this->Developer_model->tampiluniv('regencies');
-			$data=array('data'=> $data);
-			$this->load->view('Developer/Input_Universitas',$data);
-		}
+		// 	$this->session->set_flashdata('error_jurusan',"'.form_error('jurusan').'");
+		// 	$data = $this->Developer_model->tampiluniv('regencies');
+		// 	$data=array('data'=> $data);
+		// 	$this->load->view('Developer/Input_Universitas',$data);
+		 }
 		else
 		{
 			$data = array
@@ -77,7 +69,8 @@ class Developer extends CI_Controller {
 			$data = $this->Developer_model->insert('jurusan', $data);
 
 			$this->session->set_flashdata('success_jurusan', 'Berhasil Menambahkan Jurusan '.$this->input->post('jurusan'));
-			redirect(base_url('Developer/Input_Universitas'));
+			// redirect(base_url('Developer/Input_Universitas'));
+			echo json_encode(array("status" => TRUE));
 		}
 		
 	}
@@ -85,7 +78,11 @@ class Developer extends CI_Controller {
 	public function Tampil_Univ()
 	{
 		$data=$this->Developer_model->tampiluniv('universitas');
-		$data=array('data'=> $data);
+		$kota=$this->Developer_model->tampiluniv('regencies');
+		$data=array(
+			'data'=> $data,
+			'kota'=>$kota
+		);
 		$this->load->view('Developer/Data_Univ',$data);
 	}
 	public function Tampil_Jurusan()
@@ -106,8 +103,7 @@ class Developer extends CI_Controller {
 			$where = array('universitas_id' => $id);
 			$data=$this->Developer_model->hapus('universitas',$where);
 			if($data){
-				$this->session->set_flashdata('success_del_univ', 'BERHASIL MENGHAPUS');
-				redirect(base_url('Developer/Tampil_Univ'));
+				echo json_encode(array("status" => TRUE));
 			}
 			else{
 				$this->session->set_flashdata('error_del_univ', 'GAGAL MENGHAPUS');
@@ -120,8 +116,7 @@ class Developer extends CI_Controller {
 			$where = array('jurusan_id' => $id);
 			$data=$this->Developer_model->hapus('jurusan',$where);
 			if($data){
-				$this->session->set_flashdata('success_del_jurusan', 'BERHASIL MENGHAPUS');
-				redirect(base_url('Developer/Tampil_Jurusan'));
+				echo json_encode(array("status" => TRUE));
 			}
 			else{
 				$this->session->set_flashdata('error_del_jurusan', 'GAGAL MENGHAPUS');
