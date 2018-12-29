@@ -1,11 +1,21 @@
-<script src="<?php echo base_url() ?>asset/mitra/assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/plugins.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/main.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/lib/chart-js/Chart.bundle.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/dashboard.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/widgets.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/lib/vector-map/jquery.vmap.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-    <script src="<?php echo base_url() ?>asset/mitra/assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/jquery.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/popper.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/tooltip.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/moment.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/js/stisla.js"></script>
+
+<!-- JS Libraies -->
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/jquery.sparkline.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/chart.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/owlcarousel2/dist/owl.carousel.min.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/summernote/summernote-bs4.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/modules/chocolat/dist/js/jquery.chocolat.min.js"></script>
+
+<!-- Page Specific JS File -->
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/js/page/dashboard-ecommerce.js"></script>
+
+<!-- Template JS File -->
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/js/scripts.js"></script>
+<script src="<?php echo base_url('asset/mitra/'); ?>dist/js/custom.js"></script>
