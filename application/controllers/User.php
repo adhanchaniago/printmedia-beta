@@ -1,8 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+include "vendor/autoload.php";
 class User extends CI_Controller 
 {
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -217,13 +219,35 @@ class User extends CI_Controller
 		echo json_encode($callback); // konversi varibael $callback menjadi JSON
 	}
 	
+	public function hitunghalaman()
+	{	
+
+		$config['upload_path'] = "./asset/user/pemesanan";
+		$config['allowed_types'] = "pdf";
+		$config['max_size'] = "30720";
+		$config['remove_space'] = TRUE;
+		
+		$this->load->library('upload', $config);
+
+		if($this->upload->do_upload("upload_file"))
+		{
+			$data=array('upload_data' => $this->upload->data());
+			$data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
+
+			$parser = new \Smalot\PdfParser\Parser();
+			$pdf    = $parser->parseFile($data2);
+	
+			$details  = $pdf->getDetails();			
+			$pagecount = 0;			
+			
+		}
+
+		echo $this->upload->display_errors();
+	}
+
 	public function test()
 	{
-		$this->load->library('tcpdf');
-		$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-		$total = $pdf->getAliasNumPage();
-		$url = base_url('asset/user/pemesanan/test1.pdf');
-		echo $total;
+		$this->load->view('user/test');
 	}
 
 	
