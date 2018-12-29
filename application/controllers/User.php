@@ -220,29 +220,30 @@ class User extends CI_Controller
 	}
 	
 	public function hitunghalaman()
-	{	
-
+	{
 		$config['upload_path'] = "./asset/user/pemesanan";
-		$config['allowed_types'] = "pdf";
-		$config['max_size'] = "30720";
-		$config['remove_space'] = TRUE;
-		
-		$this->load->library('upload', $config);
+ 		$config['allowed_types'] = "pdf";
+ 		$config['max_size'] = "30720";
+ 		$config['remove_space'] = TRUE;
+ 		
+ 		$this->load->library('upload', $config);
+ 
+ 		if($this->upload->do_upload("upload_file"))
+ 		{
+ 			$data=array('upload_data' => $this->upload->data());
+ 			$data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
+ 
+ 			$parser = new \Smalot\PdfParser\Parser();
+ 			$pdf    = $parser->parseFile($data2);
+ 	
+ 			$details  = $pdf->getDetails();			
+			$pagecount = 0;
+ 		}
+ 
+ 		echo $this->upload->display_errors();
 
-		if($this->upload->do_upload("upload_file"))
-		{
-			$data=array('upload_data' => $this->upload->data());
-			$data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
+				
 
-			$parser = new \Smalot\PdfParser\Parser();
-			$pdf    = $parser->parseFile($data2);
-	
-			$details  = $pdf->getDetails();			
-			$pagecount = 0;			
-			
-		}
-
-		echo $this->upload->display_errors();
 	}
 
 	public function test()
