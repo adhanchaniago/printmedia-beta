@@ -91,7 +91,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label">Jumlah Halaman</label>                    
-                          <input type="text" class="form-control form-control-success" disabled="" id="halaman" value="<?php echo $halaman ?>">
+                          <input type="text" class="form-control form-control-success" disabled="" id="halaman" value="">
                         </div>
                       </div>
                     </div>                                            
@@ -158,8 +158,8 @@
         async:false,
         success: function(data){
             alert("Upload Data Berhasil.");
-            $("#halaman").val("<?php echo "$data3[0]" ?>"); //alert jika upload berhasil
-                   }
+            $("#halaman").val("<?php echo "$data3"  ?>"); //alert jika upload berhasil            
+          }
       });
     });
   });

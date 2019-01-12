@@ -49,6 +49,22 @@ class User_model extends CI_Model{
         
     }
 
+    public function inputTemp($data,$halaman)
+    {
+        $data = array
+        (
+            'judul_dokumen' => $this->input->post('judul_dokumen'), // Kiri Nama Kolom
+            'nama_file' => $data, // Kanan nama form di views
+            'jenis_kertas' => $this->input->post('jenis_kertas'),
+            'jenis_warna' => $this->input->post('jenis_warna'),
+            'jumlah_halaman' => $halaman,            
+        );
+        
+        $res = $this->db->insert('temppemesanan', $data);
+        return $res;
+        
+    }
+
     public function GetWhere($table, $data)
     {
         $res = $this->db->get_where($table, $data);

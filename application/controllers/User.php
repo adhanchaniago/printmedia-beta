@@ -218,6 +218,38 @@ class User extends CI_Controller
 		$callback = array('list_kota'=>$lists); // Masukan variabel lists tadi ke dalam array $callback dengan index array : list_kota
 		echo json_encode($callback); // konversi varibael $callback menjadi JSON
 	}
+
+	public function hitunghalaman1()
+	{
+		$config['upload_path'] = "./asset/user/pemesanan";
+ 		$config['allowed_types'] = "pdf";
+ 		$config['max_size'] = "30720";
+ 		$config['remove_space'] = TRUE;
+ 		
+ 		$this->load->library('upload', $config);
+ 
+ 		if($this->upload->do_upload("inputFile"))
+ 		{
+			$data=array('upload_data' => $this->upload->data());
+			$nama=$data['upload_data']['file_name'];				 
+			$data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
+ 
+ 			$parser = new \Smalot\PdfParser\Parser();
+ 			$pdf    = $parser->parseFile($data2);
+ 	
+			$details  = $pdf->getDetails();							
+			
+			$halaman = $details['Pages'];
+			
+			$this->User_model->inputTemp($nama,$halaman);
+
+			
+			$this->load->view('user/upload2');
+		 }		
+ 
+ 		echo $this->upload->display_errors();
+		
+	}
 	
 	public function hitunghalaman()
 	{
@@ -228,27 +260,25 @@ class User extends CI_Controller
  		
  		$this->load->library('upload', $config);
  
- 		if($this->upload->do_upload("upload_file"))
+ 		if($this->upload->do_upload("inputFile"))
  		{
  			$data=array('upload_data' => $this->upload->data());
- 			$data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
+			 $data2 = base_url('asset/user/pemesanan/').$data['upload_data']['file_name'];
  
  			$parser = new \Smalot\PdfParser\Parser();
  			$pdf    = $parser->parseFile($data2);
  	
- 			$details  = $pdf->getDetails();			
-			$pagecount = 0;
- 		}
+ 			$details  = $pdf->getDetails();						
+			$data3=$details['Pages'];	
+		 }		
  
  		echo $this->upload->display_errors();
-
-				
-
+		
 	}
 
 	public function test()
 	{
-		$this->load->view('user/test');
+		$this->load->view('user/upload2');
 	}
 
 	
