@@ -57,19 +57,22 @@
             <!-- Awal Card -->
             <div class="card">
               <div class="card-header d-flex align-items-center">
-                <h3 class="h4">Striped table with hover effect</h3>
+                <h3 class="h4">Form Upload</h3>
               </div>
 
               <div class="card-body">
               <div class="row">                  
                   <!-- Ini Sisi Kiri -->                
                   <div class="col-md-9">
-                  <?php echo form_open('user/inputdatapemesanan', array('enctype' => 'multipart/form-data', 'class' => 'form-horizontal')); ?>
-                    <div class="form-group row">
+                  <?php echo form_open('user/hitunghalaman1', array('enctype' => 'multipart/form-data','id' => 'submit', 'class' => 'form-horizontal')); ?>
+
+                  <div class="form-group row">
                       <label class="col-sm-3 form-control-label">Judul Dokumen</label>
                       <div class="col-sm-9">
-                      <input id="inputHorizontalSuccess" type="text" class="form-control form-control-success">
-                      <small class="form-text">Isikan judul dokumen, misal: Interaksi Manusia dan Komputer.</small>
+                        <?php 
+                          $data = array('type' => 'text', 'class' => 'form-control', 'name' => 'judul_dokumen', 'id' => 'judul_dokumen', 'value' => set_value('judul_dokumen')); 
+                          echo form_input($data);                                                      
+                        ?>    
                       </div>
                     </div>
 
@@ -77,59 +80,51 @@
                       <label class="col-sm-3 form-control-label">File</label>
                       <div class="col-sm-9">
                         <div class="custom-file mb-3">
-                         <input type="file" class="custom-file-input" id="customFile" name="upload_file">
-                          <label class="custom-file-label" for="customFile">Choose file</label>
-                         </div>
+                        <?php 
+                          $data = array('type' => 'file', 'class' => 'form-control', 'name' => 'inputFile', 'id' => 'inputFile', 'value' => set_value('inputFile')); 
+                          echo form_input($data);                          
+                        ?>    
+                        </div>
                       </div>
                     </div>
 
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">Nama Penerima</label>
-                      <div class="col-sm-9">
-                      <input type="text" class="form-control form-control-success" disabled="">
-                      <small class="form-text">Disesuaikan dengan nama yang terdaftar.</small>
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label">Jenis Kertas :</label>                          
+                            <?php
+                                $data = array('A4 HVS - 80gr' => 'A4 HVS - 80gr', 'F4 HVS - 80gr' => 'F4 HVS - 80gr');
+                                echo form_dropdown('jenis_kertas', $data, set_value('jenis_kertas'), ['class' => 'form-control']);
+                            ?>                           
+                        </div>
                       </div>
-                    </div>
 
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">No Handphone Penerima</label>
-                      <div class="col-sm-9">
-                      <input type="text" class="form-control form-control-success" disabled="">
-                      <small class="form-text">Disesuaikan dengan nomor handphone yang telah terdaftar.</small>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label">Jenis Warna :</label>                    
+                            <?php
+                                $data = array('Hitam - Putih' => 'Hitam - Putih', 'Berwarna' => 'Berwarna');
+                                echo form_dropdown('jenis_warna', $data, set_value('jenis_warna'), ['class' => 'form-control']);
+                            ?>   
+                        </div>
                       </div>
-                    </div>
+                    </div>                                            
 
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">Alamat Pengiriman</label>
-                      <div class="col-sm-9">
-                      <textarea class="form-control" rows="3"></textarea>
-                      </div>
-                    </div>
+                    <div class="row">
+                        <div class="col md-6">
+                          <div class="form-group">
+                            <?php echo form_reset('reset', 'Reset', array('class' => 'btn btn-danger form-control')); ?>  
+                          </div>              
+                        </div>
 
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">Catatan Tambahan</label>
-                      <div class="col-sm-9">
-                      <textarea class="form-control" rows="3"></textarea>
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <label class="col-sm-3 form-control-label">Jenis Layanan</label>
-                      <div class="col-sm-9">
-                        <select class="form-control">
-                              <option>Print Standar</option>
-                              <option>Print + Jilid Biasa</option>
-                              <option>Print + Jilid Spiral</option>                            
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="form-group row">
-                      <button class="btn btn-primary form-control" type="submit">Upload</button>
-                    </div>
+                        <div class="col md-6">
+                          <div class="form-group">
+                            <?php echo form_submit('submit', 'Next', array('class' => 'btn btn-primary form-control')); ?>
+                          </div>                        
+                        </div>
+                      </div>                    
                     
-                    
-                  </form> 
+                  <?php echo form_close(); ?>
                   
                   </div> 
                   
@@ -139,9 +134,7 @@
                     <p><b>MOHON PERHATIAN!</b></p><hr>
                     <p>File yang di upload harus berupa <B>PDF</B>.</p><hr>
                     <p>Jangan memprotek dokumen PDF dengan Password</p><hr>
-                    <p>Ukuran file PDF maksimum adalah 30mb</p><hr>
-                    <p>Dokumen PDF Maksimum berisi 120  Halaman</p><hr>
-                    <p>Waktu Pengantaran Maksimal 7 Hari Kerja</p><hr>
+                    <p>Ukuran file PDF maksimum adalah 30mb</p><hr>                                        
                     <p>Jumlah tagihan pembayaran akan dikirim melalui Email</p><hr>
                     <p><strong>Pemesanan yang sudah dipesan TIDAK DAPAT DIBATALKAN</strong></p><hr>
                     <p>Pastikan data dan pesanan sudah <b>BENAR</b></p>                  
@@ -173,5 +166,6 @@
     } );
   </script>
 
+  
   </body>
 </html>
