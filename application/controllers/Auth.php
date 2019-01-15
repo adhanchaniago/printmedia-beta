@@ -15,14 +15,17 @@ class Auth extends CI_Controller {
 
 	public function prosesregister()
 	{
-		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[auth.email]|valid_email|valid_emails|xss_clean');
-		$this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[8]|max_length[15]|xss_clean');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required|is_unique[pm1_auth.pm1_auth_email]|valid_email|valid_emails|xss_clean');
+		$this->form_validation->set_rules('password', 'Kata Sandi', 'trim|required|min_length[8]|max_length[15]|xss_clean');
+		$this->form_validation->set_rules('konfirmasi_password', 'Konfirmasi Kata Sandi', 'trim|required|min_length[8]|max_length[15]|matches[password]|xss_clean');
+		$this->form_validation->set_rules('validasi', 'Checkbox', 'trim|required|xss_clean');
 		$this->form_validation->set_message('required', 'Mohon Maaf! Harap mengisi kolom <b>%s</b>.');
 		$this->form_validation->set_message('is_unique', 'Mohon Maaf! <b>%s</b> sudah digunakan.');
 		$this->form_validation->set_message('min_length', 'Mohon Maaf! <b>%s</b> minimal %s karakter.');
 		$this->form_validation->set_message('max_length', 'Mohon Maaf! <b>%s</b> maksimal %s karakter.');
 		$this->form_validation->set_message('valid_email', 'Mohon Maaf! Harap Memasukkan <b>%s</b> yang Benar.');
 		$this->form_validation->set_message('valid_emails', 'Mohon Maaf! Harap Memasukkan <b>%s</b> yang Benar.');
+		$this->form_validation->set_message('matches', 'Mohon Maaf! <b>%s</b> Tidak Sama dengan <b>%s</b>.');
 
 		if($this->form_validation->run() == FALSE)
 		{

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2018 at 02:02 PM
+-- Generation Time: Jan 13, 2019 at 12:49 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -97,7 +97,8 @@ INSERT INTO `activity_user` (`id`, `email`, `alamat_ip`, `browser`, `waktu_masuk
 (63, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 69.0.3497.100 - Windows 10', '2018-10-23 12:48:44', 'Melakukan Login', '8asdh69eeq66q29jrrme3vvt490cnilg'),
 (64, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-07 09:43:06', 'Melakukan Login', 'lhclhauco79stavcfdpnimsji64qo357'),
 (65, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-11 04:48:07', 'Melakukan Login', '3n8pg8dpavr8ih3lsop9chanbic5akug'),
-(66, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-11 06:08:31', 'Melakukan Login', 've65eaap0c7t7nk6jk2qfnlbr7a7g81o');
+(66, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 70.0.3538.77 - Windows 10', '2018-11-11 06:08:31', 'Melakukan Login', 've65eaap0c7t7nk6jk2qfnlbr7a7g81o'),
+(67, '111201609357@mhs.dinus.ac.id', '::1', 'Chrome 71.0.3578.98 - Windows 10', '2019-01-01 09:37:40', 'Melakukan Login', '5ak3e88l31jpvm6ckeabrs5o4eevtuj3');
 
 -- --------------------------------------------------------
 
@@ -120,8 +121,8 @@ CREATE TABLE `auth` (
 --
 
 INSERT INTO `auth` (`auth_id`, `email`, `password`, `level`, `token`, `waktu`, `status`) VALUES
-(44, '111201609357@mhs.dinus.ac.id', '$2y$10$P34MPn4P2hKfiR0JIUXlDOuBbCYxm87U5ZGhRxZCTYuRM4.2cxHXO', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2018-11-11 11:22:14', 'Belum Aktif'),
-(45, '111201609358@mhs.dinus.ac.id', '$2y$10$cl.fuBu1HLkSGoXGgd3FGeDo60LLLwE3sefoMRlD.wHWClYQjolEe', 'Member', 'fa593687948fba232deed033472d11cb', '2018-11-11 11:32:55', 'Belum Aktif');
+(45, '111201609358@mhs.dinus.ac.id', '$2y$10$cl.fuBu1HLkSGoXGgd3FGeDo60LLLwE3sefoMRlD.wHWClYQjolEe', 'Member', 'fa593687948fba232deed033472d11cb', '2018-11-11 11:32:55', 'Belum Aktif'),
+(46, '111201609357@mhs.dinus.ac.id', '$2y$10$iObQbXr2iCvpmZ7IJovisOT0wOVjkUrvyD2DePUJ3VXnSAYOVx2L6', 'Member', '70eac08fb16df48e3c2d73ccca2dd5c2', '2019-01-01 02:37:36', 'Aktif');
 
 -- --------------------------------------------------------
 
@@ -83559,13 +83560,13 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `activity_user`
 --
 ALTER TABLE `activity_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT for table `auth`
 --
 ALTER TABLE `auth`
-  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `auth_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `jenjang`
@@ -83595,7 +83596,7 @@ ALTER TABLE `universitas`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables

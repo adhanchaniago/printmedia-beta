@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="navbar">
-    <?php $this->load->view('home/inc/header'); ?>
+    <?php $this->load->view('Home/include/header'); ?>
 </div>
 
 <section class="section section-sukses" id="mulai">
